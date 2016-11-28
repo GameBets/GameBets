@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>form_users</name>
+        <uri>form_users</uri>
+    </function>
+    <function>
+        <name>result_users</name>
+        <uri>result_users</uri>
+    </function>
+    <function>
+        <name>alta_users</name>
+        <uri>alta_users</uri>
+    </function>
+    <function>
+        <name>upload_avatar_users</name>
+        <uri>upload_avatar_users</uri>
+    </function>
+    <function>
+        <name>delete_avatar_users</name>
+        <uri>delete_avatar_users</uri>
+    </function>
+    <function>
+        <name>load_result_users</name>
+        <uri>load_result_users</uri>
+    </function>
+    <function>
+        <name>load_data_users</name>
+        <uri>load_data_users</uri>
+    </function>
+    <function>
+        <name>load_pais_users</name>
+        <uri>load_pais_users</uri>
+    </function>
+    <function>
+        <name>load_provincias_users</name>
+        <uri>load_provincias_users</uri>
+    </function>
+    <function>
+        <name>load_poblacion_products</name>
+        <uri>load_poblacion_products</uri>
+    </function>
+</functions>
