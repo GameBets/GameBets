@@ -55,3 +55,7 @@
   define('UTILS_PRODUCTS_PATH', MODULES_PATH . 'products/utils/');
   define('JS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/js/');
   define('CSS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/css/');
+
+  //MODULE CHAT
+  define('JS_CHAT_PATH', SITE_PATH . 'modules/chat/view/js/');
+  define('CSS_CHAT_PATH', SITE_PATH . 'modules/chat/view/css/');

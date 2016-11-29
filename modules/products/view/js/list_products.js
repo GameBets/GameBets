@@ -54,7 +54,7 @@ function search_not_empty(keyword) {
 function search_empty() {
     $.post("../../products/num_pages_products/", {'num_pages': true}, function (data, status) {
         var json = JSON.parse(data);
-
+        console.log(json);
         var pages = json.pages;
         $("#results").load("../../products/obtain_products/"); //load initial records
 
@@ -194,7 +194,7 @@ $(document).ready(function () {
         //console.log(data);
         var json = JSON.parse(data);
         var nom_productos = json.nom_productos;
-        //console.log(nom_productos);
+        console.log(nom_productos);
         var suggestions = new Array();
         for (var i = 0; i < nom_productos.length; i++) {
             suggestions.push(nom_productos[i].name);

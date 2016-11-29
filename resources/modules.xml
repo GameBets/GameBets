@@ -12,4 +12,8 @@
         <name>users</name>
         <uri>users</uri>
     </module>
+    <module>
+        <name>chat</name>
+        <uri>chat</uri>
+      </module>
 </modules>

@@ -1,2 +1,3 @@
 #Log de errores de la aplicación
 log/*
+model/bd.ini
