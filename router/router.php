@@ -7,6 +7,7 @@
 	include(UTILS_PATH . "filters.inc.php");
 	include(UTILS_PATH . "response_code.inc.php");
 	include(UTILS_PATH . "utils.inc.php");
+	include(UTILS_PATH . "mail.inc.php");
 
 	if(PRODUCTION){ //estamos en producción
 		ini_set('display_errors', '1');

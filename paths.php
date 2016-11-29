@@ -55,3 +55,10 @@
   define('UTILS_PRODUCTS_PATH', MODULES_PATH . 'products/utils/');
   define('JS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/js/');
   define('CSS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/css/');
+
+  // MODULE CONTACT
+  define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
+  define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
+  define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
+  define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
+  define('CONTACT_VIEW_PATH', 'modules/contact/view/');

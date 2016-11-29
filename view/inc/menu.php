@@ -15,7 +15,7 @@
 				<li class="active"><a class="color1" href="<?php amigable('?module=main'); ?>"  >Home</a></li>
 				<li><a class="color2" href="<?php amigable('?module=products&function=list_products'); ?>"  >Games</a></li>
 				<li><a class="color5" href="<?php amigable('?module=users&function=form_users'); ?>"  >Users</a></li>
-				<li><a class="color6" href="contact.html" >Contact</a></li>
+				<li><a class="color6" href="<?php amigable('?module=contact&function=view_contact'); ?>">Contact</a></li>
 				<div class="clearfix"> </div>
 			</ul>
 
