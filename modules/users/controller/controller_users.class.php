@@ -9,25 +9,11 @@
         }
 
         public function form_users() {
-          include_once(INC_PATH . "top.php");
-          include_once(INC_PATH . "header.php");
-          include_once(INC_PATH . "menu.php");
-
-          loadView('modules/users/view/', 'create_users.php');
-
-          include_once(INC_PATH . "footer.php");
-          include_once(INC_PATH . "bottom.php");
+            loadView('modules/users/view/', 'create_users.php');
         }
 
         public function result_users() {
-          include_once(INC_PATH . "top.php");
-          include_once(INC_PATH . "header.php");
-          include_once(INC_PATH . "menu.php");
-
-          loadView('modules/users/view/', 'result_users.php');
-
-          include_once(INC_PATH . "footer.php");
-          include_once(INC_PATH . "bottom.php");
+            loadView('modules/users/view/', 'result_users.php');
         }
 
         public function alta_users(){

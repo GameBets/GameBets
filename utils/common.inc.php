@@ -23,10 +23,17 @@
   function loadView($rutaVista, $templateName, $arrPassValue = '') {
   		$view_path = $rutaVista . $templateName;
   		$arrData = '';
+
   		if (file_exists($view_path)) {
     			if (isset($arrPassValue))
     				  $arrData = $arrPassValue;
+
+          include_once(INC_PATH . "top.php");
+          include_once(INC_PATH . "header.php");
+          include_once(INC_PATH . "menu.php");
     			include_once($view_path);
+          include_once(INC_PATH . "footer.php");
+          include_once(INC_PATH . "bottom.php");
   		} else {
           $result = filter_num_int($rutaVista);
           if ($result['resultado']) {
@@ -40,7 +47,11 @@
 
           $result = response_code($rutaVista);
           $arrData = $result;
+          include_once(INC_PATH . "top.php");
+          include_once(INC_PATH . "header.php");
+          include_once(INC_PATH . "menu.php");
           require_once (INC_PATH . 'error.php');
-          //exit();
+          include_once(INC_PATH . "footer.php");
+          include_once(INC_PATH . "bottom.php");
   		}
   }

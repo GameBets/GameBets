@@ -7,14 +7,7 @@ class controller_products {
     }
 
     function list_products() {
-      include_once(INC_PATH . "top.php");
-      include_once(INC_PATH . "header.php");
-      include_once(INC_PATH . "menu.php");
-
         loadView('modules/products/view/', 'list_products.php');
-
-        include_once(INC_PATH . "footer.php");
-        include_once(INC_PATH . "bottom.php");
     }
 
     function autocomplete_products() {

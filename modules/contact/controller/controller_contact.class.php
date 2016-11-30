@@ -8,14 +8,7 @@
         }
 
         public function view_contact() {
-          include_once(INC_PATH . "top.php");
-          include_once(INC_PATH . "header.php");
-          include_once(INC_PATH . "menu.php");
-
             loadView(CONTACT_VIEW_PATH, 'contact.php');
-            
-            include_once(INC_PATH . "footer.php");
-            include_once(INC_PATH . "bottom.php");
         }
 
         public function process_contact() {
