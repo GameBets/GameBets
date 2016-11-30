@@ -19,5 +19,8 @@ class chat_bll {
         return $this->dao->checkLogged_DAO($this->db);
     }
 
+    public function obtain_gravatar_BLL($user) {
+        return $this->dao->obtain_gravatar_DAO($this->db, $user);
+    }
 
 }

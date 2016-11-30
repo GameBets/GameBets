@@ -18,5 +18,10 @@ class chat_dao {
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
+    public function obtain_gravatar_DAO($db, $user) {
+        $sql = "SELECT name_user FROM users WHERE user=" . $user;
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
 
 }

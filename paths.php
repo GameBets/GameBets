@@ -59,3 +59,4 @@
   //MODULE CHAT
   define('JS_CHAT_PATH', SITE_PATH . 'modules/chat/view/js/');
   define('CSS_CHAT_PATH', SITE_PATH . 'modules/chat/view/css/');
+  define('MODEL_CHAT_PATH', MODULES_PATH . 'chat/model/model/');
