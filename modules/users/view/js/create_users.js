@@ -437,7 +437,7 @@ function validate_users() {
     var data_users_JSON = JSON.stringify(data);
 
     //Le enviamos el JSON al Controllador de PHP
-    $.post("../../users/alta_users/",
+    $.post("../../users/signup_users/",
             {create_users: data_users_JSON},
       function (response) { //Si la respuesta del controlador de PHP es positiva
         //console.log(response);
