@@ -4,4 +4,8 @@
         <name>chat_users</name>
         <uri>chat_users</uri>
     </function>
+    <function>
+        <name>checkLogged</name>
+        <uri>checkLogged</uri>
+    </function>
 </functions>

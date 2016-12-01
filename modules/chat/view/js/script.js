@@ -1,12 +1,11 @@
 $(document).ready(function() {
 
     // Run the init method on document ready:
-    chat.init();
-
+    // chat.init();
+    checkLogin();
 });
 
 var chat = {
-
     // data holds variables for use in the class:
 
     data: {
@@ -21,7 +20,7 @@ var chat = {
         // Using the defaultText jQuery plugin, included at the bottom:
         $('#name').defaultText('Nickname');
         $('#email').defaultText('Email (Gravatars are Enabled)');
-
+console.log("hola");
         // Converting the #chatLineHolder div into a jScrollPane,
         // and saving the plugin's API in chat.data:
 
@@ -36,25 +35,26 @@ var chat = {
         var working = false;
 
         // Logging a person in the chat:
-
-        $('#loginForm').submit(function() {
+        //
+        // $('#loginForm').submit(function() {
 
             if (working) return false;
             working = true;
 
             // Using our tzPOST wrapper function
             // (defined in the bottom):
-
-            $.tzPOST('login', $(this).serialize(), function(r) {
+            console.log($(this).serialize());
+            $.post("../../chat/login/", $(this).serialize(), function(data) {
+            // $.tzPOST('login', $(this).serialize(), function(r) {
                 working = false;
 
-                if (r.error) {
-                    chat.displayError(r.error);
-                } else chat.login(r.name, r.gravatar);
+                if (data.error) {
+                    chat.displayError(data.error);
+                } else chat.login(data.name, data.gravatar);
             });
-
-            return false;
-        });
+        //
+        //     return false;
+        // });
 
         // Submitting a new chat entry:
 
@@ -341,14 +341,15 @@ var chat = {
 };
 
 // Custom GET & POST wrappers:
+// $.tzPOST('login', $(this).serialize(), function(r) {
 
-$.tzPOST = function(action, data, callback) {
-    $.post('php/ajax.php?action=' + action, data, callback, 'json');
-}
-
-$.tzGET = function(action, data, callback) {
-    $.get('php/ajax.php?action=' + action, data, callback, 'json');
-}
+// $.tzPOST = function(action, data, callback) {
+//     $.post('php/ajax.php?action=' + action, data, callback, 'json');
+// }
+//
+// $.tzGET = function(action, data, callback) {
+//     $.get('php/ajax.php?action=' + action, data, callback, 'json');
+// }
 
 // A custom jQuery method for placeholder text:
 
@@ -370,30 +371,42 @@ $.fn.defaultText = function(value) {
     return element.blur();
 };
 
+function InitChat(){
 
+}
 
 
 
 function checkLogin() {
-    var user = Tool.readCookie("user");
+    var user = Tools.readCookie("user");
+    console.log(user);
     if (user) {
-        $.post("../../chat/checkLogged/", {
-            'user': user
-        }, function(data, status) {
+        $.post("../../chat/checkLogged/", {'user': user}, function(data, status) {
+          // console.log("hola");
             var json = JSON.parse(data);
             var logged = json.logged;
             if (json.logged) {
                 var user = json.loggedAs.name;
                 var gravatar = json.loggedAs.gravatar;
+								//pintarchat?
+                // InitChat(user,gravatar);
+                  chat.init();
             } else {
-
+							//pintar vista error o redirigir a sign up
+							window.location.href =json.redirect;
             }
 
 
         }).fail(function(xhr) {
+          // console.log("holahola");
             $("#chatContainer").load("../../chat/view_error_true/", {
                 'view_error': true
             });
         });
-    }
+    }else{
+console.log("hola");
+			// window.location.href ="<?php amigable('?module=users&function=form_users'); ?>";
+			//la cookie no existe
+			//redirigir a sign up
+		}
 }

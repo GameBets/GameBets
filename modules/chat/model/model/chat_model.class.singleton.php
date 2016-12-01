@@ -18,7 +18,7 @@ class chat_model {
         return $this->bll->checkLogged_BLL();
     }
 
-    public function obtain_gravatar() {
-        return $this->bll->obtain_gravatar_BLL();
+    public function obtain_gravatar($user) {
+        return $this->bll->obtain_gravatar_BLL($user);
     }
 }
