@@ -1,39 +1,57 @@
 /*****************************************************************************/
-/* Create Users																															 */
+/* Sign Up																															 */
 /*****************************************************************************/
-
-
-#form_users {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
+#page{
+  min-height: 33vh;
 }
 
-#form_users section {
-  width: 40vw;
-  margin-left: 4.5vw;
-  margin-right: 4.5vw;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
+#signup {
+  display: flex;
+  flex-direction: column;
+  background-color: #99cc00;
+  padding: 20px;
 }
 
-#form_users section input, #form_users section select {
-	width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+#signup input {
+	width: 90%;
+  padding: 5px;
+  margin: 8px;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-	border-color: #0066cc;
+  border-width: 0;
+  border-bottom: 1px solid white;
   box-sizing: border-box;
+  background-color: #99cc00;
+}
+
+#signup input:focus {
+	outline:0px;
+  border-bottom: 2px solid white;
+}
+
+.ui-dialog,
+.ui-widget,
+.ui-widget-content,
+.ui-corner-all,
+.ui-draggable,
+.ui-resizable {
+  background: #99cc00;
+  border-width: 0;
+}
+
+.ui-widget-header {
+    display: none;
+}
+
+.ui-button {
   background-color: white;
+  width: 100px;
 }
 
-#form_users button {
-  margin: 20px;
+.ui-button:hover {
+  border: 0;
+  font-weight: bold;
 }
-
+​
 /*****************************************************************************/
 /* Dropzone																																	 */
 /*****************************************************************************/
@@ -112,6 +130,7 @@
 /*****************************************************************************/
 
 .error_javascript {
+  display: block;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -129,10 +148,10 @@
 /*****************************************************************************/
 
 #content {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 33vh;
+  min-height: 35vh;
 }
 
 #content span{
