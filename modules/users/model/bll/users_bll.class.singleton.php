@@ -16,6 +16,10 @@
           return self::$_instance;
       }
 
+      public function signup_bll($arrArgument) {
+          return $this->dao->signup_dao($this->db, $arrArgument);
+      }
+
       public function create_users_bll($arrArgument) {
           return $this->dao->create_users_dao($this->db, $arrArgument);
       }
@@ -30,6 +34,18 @@
 
       public function obtain_poblaciones_bll($arrArgument) {
           return $this->dao->obtain_poblaciones_dao($arrArgument);
+      }
+
+      public function update_BLL($arrArgument) {
+          return $this->dao->update_DAO($this->db, $arrArgument);
+      }
+
+      public function count_BLL($arrArgument) {
+          return $this->dao->count_DAO($this->db, $arrArgument);
+      }
+
+      public function select_BLL($arrArgument) {
+          return $this->dao->select_DAO($this->db, $arrArgument);
       }
 
   }

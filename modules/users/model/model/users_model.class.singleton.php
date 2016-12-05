@@ -17,6 +17,10 @@
           return self::$_instance;
       }
 
+      public function signup($arrArgument) {
+          return $this->bll->signup_bll($arrArgument);
+      }
+
       public function create_users($arrArgument) {
           return $this->bll->create_users_bll($arrArgument);
       }
@@ -31,6 +35,18 @@
 
       public function obtain_poblaciones($arrArgument) {
           return $this->bll->obtain_poblaciones_bll($arrArgument);
+      }
+
+      public function update($arrArgument) {
+          return $this->bll->update_BLL($arrArgument);
+      }
+
+      public function count($arrArgument) {
+          return $this->bll->count_BLL($arrArgument);
+      }
+
+       public function select($arrArgument) {
+          return $this->bll->select_BLL($arrArgument);
       }
 
   }
