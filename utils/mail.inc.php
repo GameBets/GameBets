@@ -10,7 +10,7 @@
         switch ($arr['type']) {
             case 'alta':
                 $subject = 'Tu Alta en Gamebets';
-                $ruta = "<a href='" . amigable("?module=users&function=active&aux=" . $arr['token'], true) . "'>aqu&iacute;</a>";
+                $ruta = "<a href='" . amigable("?module=users&function=active", true) . $arr['token'] ."'>aqu&iacute;</a>";
                 $body = 'Gracias por unirte a nuestra aplicaci&oacute;n<br> Para finalizar el registro, pulsa ' . $ruta;
                 break;
 
