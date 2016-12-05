@@ -17,6 +17,9 @@
   //PRETTY URL
   define('URL_AMIGABLES', true);
 
+  //LIBS
+  define('LIBS', SITE_ROOT . 'libs/');
+
   //MODEL
   define('MODEL_PATH', SITE_ROOT . 'model/');
 
