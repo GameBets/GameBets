@@ -2,7 +2,6 @@
 function paint_template_error($message) {
     $log = log::getInstance();
     $log->add_log_general("error paint_template_error", "products", "response" . http_response_code()); //$text, $controller, $function
-    $log->add_log_user("error paint_template_error", "", "products", "response" . http_response_code()); //$msg, $username = "", $controller, $function
 
     $arrData = response_code(http_response_code());
 
@@ -47,7 +46,6 @@ function paint_template_products($arrData) {
 function paint_template_search($message){
     	$log = log::getInstance();
 		$log->add_log_general("error paint_template_search", "products", "response ".http_response_code()); //$text, $controller, $function
-		$log->add_log_user("error paint_template_search", "", "products", "response ".http_response_code()); //$msg, $username = "", $controller, $function
 
 		print ("<section> \n");
 	      	print ("<div class='container'> \n");
