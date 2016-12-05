@@ -1,5 +1,45 @@
 <?php
 
+  function validate_signup($value) {
+      $error = array();
+      $valido = true;
+
+      //FILTER
+      //Valores que se pueden verificar con expresiones regulares
+      $filtro = array(
+          'password' => array(
+              'filter' => FILTER_VALIDATE_REGEXP,
+              'options' => array('regexp' => '/^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/')
+          ),
+          'email' => array(
+              'filter' => FILTER_VALIDATE_REGEXP,
+              'options' => array('regexp' => '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/')
+          ),
+      );
+
+      //Filtramos los datos con su expresion regular
+      //return true or false
+      $resultado = filter_var_array($value, $filtro);
+
+      if ($resultado != null && $resultado) {
+
+          if (!$resultado['password']) {
+              $error['password'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
+              $valido = false;
+          }
+
+          if (!$resultado['email']) {
+              $error['email'] = 'Ejemplo: micorreo@ejemplo.com';
+              $valido = false;
+          }
+
+      } else {
+          $valido = false;
+      };
+
+      return $return = array('resultado' => $valido, 'error' => $error, 'datos' => $resultado);
+  };
+
   function validate_users($value) {
       $error = array();
       $valido = true;
@@ -157,4 +197,20 @@
       }
 
       return true;
+  }
+
+  function send_email($arrArgument, $type) {
+      $mail = array(
+          'type' => $type,
+          'token' => $arrArgument['token'],
+          'inputEmail' => $arrArgument['email']
+      );
+      set_error_handler('ErrorHandler');
+      try {
+          enviar_email($mail);
+          return true;
+      } catch (Exception $e) {
+          return false;
+      }
+      restore_error_handler();
   }
