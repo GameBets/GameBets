@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `token` varchar(1000) NOT NULL,
   `name_user` varchar(50) DEFAULT NULL,
-  `passwd` varchar(50) NOT NULL,
+  `passwd` varchar(1000) NOT NULL,
   `avatar` varchar(1000) NOT NULL,
   `named` varchar(50) DEFAULT NULL,
   `surname` varchar(50) DEFAULT NULL,
@@ -47,9 +47,13 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('bdfe1c14497677ad2f320446f3316d0d','angel','ontinyent-1993','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g','angel','conesa','19/07/1993','ancoca1993@gmail.com','658661147','AW','','',0,'');
+INSERT INTO `users` VALUES ('2eeea84353a882b48e61d76c13b9cf8d',NULL,'$2y$10$TLWLp674SgtxBeC/a00KreCSphjhItS8n0fiZ8T3G/EGtOfLWkvuG','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'GameBets_DB'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -60,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-04 11:28:54
+-- Dump completed on 2016-12-05 21:21:19
