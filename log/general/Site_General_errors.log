@@ -22,3 +22,16 @@ Notice on line 60 in file /var/www/html/Gamebets/classes/email/email.class.singl
 29/11/16 08:40:14 PM | ERROR: [8] Use of undefined constant IMG_Gamebets - assumed 'IMG_Gamebets'
 Notice on line 28 in file /var/www/html/Gamebets/classes/email/email.class.singleton.php
  | contact | response 200
+05/12/16 09:16:16 PM | error loadView general | users | response 400
+05/12/16 09:29:19 PM | ERROR: [8] Use of undefined constant IMG_Gamebets - assumed 'IMG_Gamebets'
+Notice on line 28 in file /var/www/html/Gamebets/classes/email/email.class.singleton.php
+ | users | response 200
+05/12/16 09:29:19 PM | ERROR: [8] Undefined index: inputName
+Notice on line 50 in file /var/www/html/Gamebets/utils/mail.inc.php
+ | users | response 200
+05/12/16 09:34:21 PM | ERROR: [8] Undefined variable: change
+Notice on line 157 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+05/12/16 09:34:21 PM | ERROR: [8] Undefined variable: sql
+Notice on line 162 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
