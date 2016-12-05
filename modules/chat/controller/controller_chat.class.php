@@ -27,6 +27,8 @@
 
             if (isset($_POST['user'])) {
                 $gravatar = loadModel(MODEL_CHAT_PATH, 'chat_model', 'obtain_gravatar', ($_POST['user']));
+                // echo json_encode($gravatar);
+                // exit;
                 if ($gravatar) {
                     $response['logged'] = true;
                     $response['loggedAs'] = array(
@@ -36,7 +38,7 @@
                     echo json_encode($response);
                     exit;
                 } else {
-                    $response['redirect'] =MODULES_PATH."users/result_users";
+                    $response['redirect'] = MODULES_PATH.'users/result_users';
                     var_dump($response['redirect']);
                     exit;
                     echo json_encode($response);
@@ -47,37 +49,37 @@
 
         public function login($name, $email)
         {
-          if(!$name || !$email){
-      			throw new Exception('Fill in all the required fields.');
-      		}
+            if (!$name || !$email) {
+                throw new Exception('Fill in all the required fields.');
+            }
 
-      		if(!filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)){
-      			throw new Exception('Your email is invalid.');
-      		}
+            if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
+                throw new Exception('Your email is invalid.');
+            }
 
-      		// Preparing the gravatar hash:
-      		$gravatar = md5(strtolower(trim($email)));
+              // Preparing the gravatar hash:
+              $gravatar = md5(strtolower(trim($email)));
 
-      		$user = new ChatUser(array(
-      			'name'		=> $name,
-      			'gravatar'	=> $gravatar
-      		));
+            $user = new ChatUser(array(
+                  'name' => $name,
+                  'gravatar' => $gravatar,
+              ));
 
-      		// The save method returns a MySQLi object
-      		if($user->save()->affected_rows != 1){
-      			throw new Exception('This nick is in use.');
-      		}
+              // The save method returns a MySQLi object
+              if ($user->save()->affected_rows != 1) {
+                  throw new Exception('This nick is in use.');
+              }
 
-      		$_SESSION['user']	= array(
-      			'name'		=> $name,
-      			'gravatar'	=> $gravatar
-      		);
+            $_SESSION['user'] = array(
+                  'name' => $name,
+                  'gravatar' => $gravatar,
+              );
 
-      		return array(
-      			'status'	=> 1,
-      			'name'		=> $name,
-      			'gravatar'	=> Chat::gravatarFromHash($gravatar)
-      		);
+            return array(
+                  'status' => 1,
+                  'name' => $name,
+                  'gravatar' => Chat::gravatarFromHash($gravatar),
+              );
         }
 
         public function view_error_true()

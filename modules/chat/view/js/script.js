@@ -20,7 +20,7 @@ var chat = {
         // Using the defaultText jQuery plugin, included at the bottom:
         $('#name').defaultText('Nickname');
         $('#email').defaultText('Email (Gravatars are Enabled)');
-console.log("hola");
+        console.log("hola");
         // Converting the #chatLineHolder div into a jScrollPane,
         // and saving the plugin's API in chat.data:
 
@@ -38,20 +38,20 @@ console.log("hola");
         //
         // $('#loginForm').submit(function() {
 
-            if (working) return false;
-            working = true;
+        if (working) return false;
+        working = true;
 
-            // Using our tzPOST wrapper function
-            // (defined in the bottom):
-            console.log($(this).serialize());
-            $.post("../../chat/login/", $(this).serialize(), function(data) {
+        // Using our tzPOST wrapper function
+        // (defined in the bottom):
+        console.log($(this).serialize());
+        $.post("../../chat/login/", $(this).serialize(), function(data) {
             // $.tzPOST('login', $(this).serialize(), function(r) {
-                working = false;
+            working = false;
 
-                if (data.error) {
-                    chat.displayError(data.error);
-                } else chat.login(data.name, data.gravatar);
-            });
+            if (data.error) {
+                chat.displayError(data.error);
+            } else chat.login(data.name, data.gravatar);
+        });
         //
         //     return false;
         // });
@@ -371,42 +371,45 @@ $.fn.defaultText = function(value) {
     return element.blur();
 };
 
-function InitChat(){
+function InitChat() {
 
 }
 
 
 
 function checkLogin() {
+    var user = Tools.createCookie("user", "angel",10);
     var user = Tools.readCookie("user");
-    console.log(user);
+    // console.log(user);
     if (user) {
         $.post("../../chat/checkLogged/", {'user': user}, function(data, status) {
-          // console.log("hola");
+            console.log(data);
             var json = JSON.parse(data);
+            console.log(json);
             var logged = json.logged;
             if (json.logged) {
                 var user = json.loggedAs.name;
-                var gravatar = json.loggedAs.gravatar;
-								//pintarchat?
+                var gravatar = json.loggedAs.gravatar[0].avatar;
+                console.log(gravatar);
+                //pintarchat?
                 // InitChat(user,gravatar);
-                  chat.init();
+                chat.login(user, gravatar);
             } else {
-							//pintar vista error o redirigir a sign up
-							window.location.href =json.redirect;
+                //pintar vista error o redirigir a sign up
+                window.location.href = json.redirect;
             }
 
 
         }).fail(function(xhr) {
-          // console.log("holahola");
+            // console.log("holahola");
             $("#chatContainer").load("../../chat/view_error_true/", {
                 'view_error': true
             });
         });
-    }else{
-console.log("hola");
-			// window.location.href ="<?php amigable('?module=users&function=form_users'); ?>";
-			//la cookie no existe
-			//redirigir a sign up
-		}
+    } else {
+        // console.log("hola");
+        // window.location.href ="<?php amigable('?module=users&function=form_users'); ?>";
+        //la cookie no existe
+        //redirigir a sign up
+    }
 }

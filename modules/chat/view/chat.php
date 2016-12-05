@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo JS_CHAT_PATH ?>jScrollPane/jScrollPane.css" >
 <link rel="stylesheet" href="<?php echo CSS_CHAT_PATH ?>page.css">
 <link rel="stylesheet" href="<?php echo CSS_CHAT_PATH ?>chat.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="<?php echo JS_CHAT_PATH ?>jScrollPane/jquery.mousewheel.js"></script>
 <script src="<?php echo JS_CHAT_PATH ?>jScrollPane/jScrollPane.min.js"></script>
 <script src="<?php echo JS_CHAT_PATH ?>script.js"></script>

@@ -29,4 +29,15 @@
 			set_include_path('model/');
 			spl_autoload($className);
 		}
+
+		if( file_exists('modules/chat/model/bll/'.$className.'.class.singleton.php' ) ){//require(BLL_CHAT . "CHAT_bll.class.singleton.php");
+			set_include_path('modules/chat/model/bll/');
+			spl_autoload($className);
+		}elseif( file_exists('modules/chat/model/dao/'.$className.'.class.singleton.php' ) ){//require(DAO_CHAT . "CHAT_dao.class.singleton.php");
+			set_include_path('modules/chat/model/dao/');
+			spl_autoload($className);
+		}elseif( file_exists('model/'.$className.'.class.singleton.php' ) ){//require(MODEL_PATH . "db.class.singleton.php");
+			set_include_path('model/');
+			spl_autoload($className);
+		}
 	}

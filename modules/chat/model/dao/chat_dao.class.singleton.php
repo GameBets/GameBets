@@ -12,14 +12,14 @@ class chat_dao {
             self::$_instance = new self();
         return self::$_instance;
     }
-
-    public function checkLogged_DAO($db) {
-        $sql = "SELECT name_user FROM users";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
-    }
+    //
+    // public function checkLogged_DAO($db) {
+    //     $sql = "SELECT name_user FROM users";
+    //     $stmt = $db->ejecutar($sql);
+    //     return $db->listar($stmt);
+    // }
     public function obtain_gravatar_DAO($db, $user) {
-        $sql = "SELECT name_user FROM users WHERE user=" . $user;
+        $sql = "SELECT avatar FROM users WHERE name_user='".$user."'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

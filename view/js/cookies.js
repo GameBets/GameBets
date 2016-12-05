@@ -7,7 +7,7 @@
             }else var expires = "";
               document.cookie = name+"="+value+expires+"; path=/";
           },
-        
+
           readCookie: function(name) {
             var nameEQ = name + "=";
             var ca = document.cookie.split(';');
@@ -18,9 +18,8 @@
             }
             return null;
           },
-        
+
           eraseCookie: function(name) {
             Tools.createCookie(name,"",-1);
           }
         };
-        
