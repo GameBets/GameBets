@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `GameBets_DB` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `GameBets_DB`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
 -- Host: localhost    Database: GameBets_DB
@@ -25,19 +23,22 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `name_user` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `passwd` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `avatar` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `named` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `surname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `date_birthday` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
-  `email` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `phone` varchar(9) CHARACTER SET utf8 DEFAULT NULL,
-  `country` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `province` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `town` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`name_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `token` varchar(1000) NOT NULL,
+  `name_user` varchar(50) DEFAULT NULL,
+  `passwd` varchar(50) NOT NULL,
+  `avatar` varchar(1000) NOT NULL,
+  `named` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `date_birthday` varchar(15) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(9) DEFAULT NULL,
+  `country` varchar(50) DEFAULT NULL,
+  `province` varchar(50) DEFAULT NULL,
+  `town` varchar(50) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +47,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('angel','ontinyent-1993','media/default-results.png','angel','conesa','19/07/1993','ancoca1993@gmail.com','658661147','AT','','');
+INSERT INTO `users` VALUES ('bdfe1c14497677ad2f320446f3316d0d','angel','ontinyent-1993','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g','angel','conesa','19/07/1993','ancoca1993@gmail.com','658661147','AW','','',0,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-27 14:27:30
+-- Dump completed on 2016-12-04 11:28:54
