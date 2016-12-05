@@ -5,12 +5,12 @@
         <uri>signup</uri>
     </function>
     <function>
-        <name>result_users</name>
-        <uri>result_users</uri>
-    </function>
-    <function>
         <name>signup_users</name>
         <uri>signup_users</uri>
+    </function>
+    <function>
+        <name>active</name>
+        <uri>active</uri>
     </function>
     <function>
         <name>upload_avatar_users</name>
