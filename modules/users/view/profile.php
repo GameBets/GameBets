@@ -7,32 +7,32 @@
             <div class="control-group">
                 <label class="nombre pefil">Nombre:</label>
                 <p>
-                    <input type="text" id="inputName" name="inputName" placeholder="Nombre" class="form-control" dir="auto" maxlength="100">
+                    <input type="text" id="name" name="name" placeholder="Nombre" class="form-control" dir="auto" maxlength="100">
                 </p>
             </div>
             <div class="control-group">
                 <label class="pefil">Apellidos:</label>
                 <p>
-                    <input type="text" id="inputSurn" name="inputSurn" placeholder="Apellidos" class="form-control" dir="auto" maxlength="100">
+                    <input type="text" id="surname" name="surname" placeholder="Apellidos" class="form-control" dir="auto" maxlength="100">
                 </p>
             </div>
             <div class="control-group">
                 <label class="pefil">Fecha de Nacimiento:</label>
                 <p>
-                    <input type="text" id="inputBirth" name="inputBirth" class="form-control" dir="auto" maxlength="100">
+                    <input type="text" id="date_birthday" name="date_birthday" class="form-control" dir="auto" maxlength="100">
                 </p>
             </div>
             <div class="control-group">
                 <label class="pefil">Contraseña:</label>
                 <p>
-                    <input type="password" id="inputPass" name="inputPass" placeholder="Contraseña" class="form-control" dir="auto" maxlength="100">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" dir="auto" maxlength="100">
                 </p>
             </div>
 
             <div class="control-group">
-                <label class="pefil">Nº cuenta bancaria:</label>
+                <label class="pefil">Repeat Password</label>
                 <p>
-                    <input type="text" id="inputBank" name="inputBank" class="form-control" dir="auto" maxlength="100">
+                    <input type="text" id="repeat_password" name="repeat_password" class="form-control" dir="auto" maxlength="100">
                 </p>
             </div>
 
@@ -40,7 +40,7 @@
         <!--- Centro --->
         <div class="center">
             <br>
-            <h1 class="form-profile-heading" id="username">UserName</h1>
+            <h1 class="form-profile-heading" id="name_user">UserName</h1>
             <img id="avatar_user" src="" />
 
             <span id="e_avatar" class="styerror" style="color:#FF0000"></span>
@@ -61,30 +61,30 @@
         <div class=" der">
             <label class="email pefil">Email:</label>
             <p>
-                <input type="text" id="inputEmail" name="inputEmail" placeholder="Email" class="form-control" maxlength="100">
+                <input type="text" id="email" name="email" placeholder="Email" class="form-control" maxlength="100">
             </p>
-            <label class="pefil">DNI:</label>
+            <label class="pefil">Telephone:</label>
             <p>
-                <input type="text" id="inputDni" name="inputDni" placeholder="DNI" class="form-control" dir="auto" maxlength="100">
+                <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" dir="auto" maxlength="100">
             </p>
             <div class="control-group">
                 <label class="pefil">Pais:</label>
                 <p>
-                    <select id="pais" name="pais"></select>
+                    <select id="country" name="country"></select>
 
                 </p>
             </div>
             <div class="control-group">
                 <label class="pefil">Provincia:</label>
                 <p>
-                    <select id="provincia" name="provincia"></select>
+                    <select id="province" name="province"></select>
 
                 </p>
             </div>
             <div class="control-group">
                 <label class="pefil">Poblacion:</label>
                 <p>
-                    <select id="poblacion" name="poblacion"></select>
+                    <select id="town" name="town"></select>
 
                 </p>
             </div>
