@@ -28,4 +28,12 @@ class chat_model
     {
         return $this->bll->obtain_gravatar_BLL($user);
     }
+    public function delete_chats_low_than_10min()
+    {
+        return $this->bll->delete_chats_low_than_10min_BLL();
+    }
+    public function get_users_online()
+    {
+        return $this->bll->get_users_online_BLL();
+    }
 }

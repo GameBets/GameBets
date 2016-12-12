@@ -30,6 +30,7 @@
                 // echo json_encode($gravatar);
                 // exit;
                 if ($gravatar) {
+                    $gravatar = SITE_PATH.$gravatar[0]['avatar'];
                     $response['logged'] = true;
                     $response['loggedAs'] = array(
                         'name' => ($_POST['user']),
@@ -47,40 +48,61 @@
             }
         }
 
-        public function login($name, $email)
-        {
-            if (!$name || !$email) {
-                throw new Exception('Fill in all the required fields.');
-            }
+        public function getUsers(){
+      		// Deleting chats older than 10 minutes
+          // loadModel(MODEL_CHAT_PATH, 'chat_model', 'delete_chats_low_than_10min',"");
 
-            if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
-                throw new Exception('Your email is invalid.');
-            }
+      		$result = loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_users_online',"");
+          echo json_encode($result);
+          exit;
+          //DB::query('SELECT * FROM webchat_users ORDER BY name ASC LIMIT 18');
 
-              // Preparing the gravatar hash:
-              $gravatar = md5(strtolower(trim($email)));
+      		$users = array();
+      		while($user = $result->fetch_object()){
+      			$user->gravatar = Chat::gravatarFromHash($user->gravatar,30);
+      			$users[] = $user;
+      		}
 
-            $user = new ChatUser(array(
-                  'name' => $name,
-                  'gravatar' => $gravatar,
-              ));
+      		return array(
+      			'users' => $users,
+      			'total' => DB::query('SELECT COUNT(*) as cnt FROM webchat_users')->fetch_object()->cnt
+      		);
+      	}
 
-              // The save method returns a MySQLi object
-              if ($user->save()->affected_rows != 1) {
-                  throw new Exception('This nick is in use.');
-              }
-
-            $_SESSION['user'] = array(
-                  'name' => $name,
-                  'gravatar' => $gravatar,
-              );
-
-            return array(
-                  'status' => 1,
-                  'name' => $name,
-                  'gravatar' => Chat::gravatarFromHash($gravatar),
-              );
-        }
+        // public function login($name, $email)
+        // {
+        //     if (!$name || !$email) {
+        //         throw new Exception('Fill in all the required fields.');
+        //     }
+        //
+        //     if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
+        //         throw new Exception('Your email is invalid.');
+        //     }
+        //
+        //       // Preparing the gravatar hash:
+        //       $gravatar = md5(strtolower(trim($email)));
+        //
+        //     $user = new ChatUser(array(
+        //           'name' => $name,
+        //           'gravatar' => $gravatar,
+        //       ));
+        //
+        //       // The save method returns a MySQLi object
+        //       if ($user->save()->affected_rows != 1) {
+        //           throw new Exception('This nick is in use.');
+        //       }
+        //
+        //     $_SESSION['user'] = array(
+        //           'name' => $name,
+        //           'gravatar' => $gravatar,
+        //       );
+        //
+        //     return array(
+        //           'status' => 1,
+        //           'name' => $name,
+        //           'gravatar' => Chat::gravatarFromHash($gravatar),
+        //       );
+        // }
 
         public function view_error_true()
         {

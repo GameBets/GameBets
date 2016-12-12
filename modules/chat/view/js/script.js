@@ -18,9 +18,9 @@ var chat = {
     init: function() {
 
         // Using the defaultText jQuery plugin, included at the bottom:
-        $('#name').defaultText('Nickname');
-        $('#email').defaultText('Email (Gravatars are Enabled)');
-        console.log("hola");
+        // $('#name').defaultText('Nickname');
+        // $('#email').defaultText('Email (Gravatars are Enabled)');
+        // console.log("hola");
         // Converting the #chatLineHolder div into a jScrollPane,
         // and saving the plugin's API in chat.data:
 
@@ -144,6 +144,7 @@ var chat = {
 
         chat.data.name = name;
         chat.data.gravatar = gravatar;
+        console.log(chat.data);
         $('#chatTopBar').html(chat.render('loginTopBar', chat.data));
 
         $('#loginForm').fadeOut(function() {
@@ -162,7 +163,7 @@ var chat = {
         switch (template) {
             case 'loginTopBar':
                 arr = [
-                    '<span><img src="', params.gravatar, '" width="23" height="23" />',
+                    '<span><img src="' ,params.gravatar, '" width="23" height="23" />',
                     '<span class="name">', params.name,
                     '</span><a href="" class="logoutButton rounded">Logout</a></span>'
                 ];
@@ -291,31 +292,39 @@ var chat = {
 
     // Requesting a list with all the users.
 
-    getUsers: function(callback) {
-        $.tzGET('getUsers', function(r) {
-
-            var users = [];
-
-            for (var i = 0; i < r.users.length; i++) {
-                if (r.users[i]) {
-                    users.push(chat.render('user', r.users[i]));
-                }
-            }
-
-            var message = '';
-
-            if (r.total < 1) {
-                message = 'No one is online';
-            } else {
-                message = r.total + ' ' + (r.total == 1 ? 'person' : 'people') + ' online';
-            }
-
-            users.push('<p class="count">' + message + '</p>');
-
-            $('#chatUsers').html(users.join(''));
-
-            setTimeout(callback, 15000);
-        });
+    getUsers: function() {
+      $.post("../../chat/getUsers/", function(data, status) {
+        // $.tzGET('getUsers', function(r) {
+console.log(data);
+console.log("hola");
+}).fail(function(xhr) {
+    // console.log("holahola");
+    $("#chatContainer").load("../../chat/view_error_true/", {
+        'view_error': true
+    });
+});
+        //     var users = [];
+        //
+        //     for (var i = 0; i < data.users.length; i++) {
+        //         if (data.users[i]) {
+        //             users.push(chat.render('user', data.users[i]));
+        //         }
+        //     }
+        //
+        //     var message = '';
+        //
+        //     if (data.total < 1) {
+        //         message = 'No one is online';
+        //     } else {
+        //         message = data.total + ' ' + (data.total == 1 ? 'person' : 'people') + ' online';
+        //     }
+        //
+        //     users.push('<p class="count">' + message + '</p>');
+        //
+        //     $('#chatUsers').html(users.join(''));
+        //
+        //     setTimeout(callback, 15000);
+        // });
     },
 
     // This method displays an error message on the top of the page:
@@ -353,34 +362,28 @@ var chat = {
 
 // A custom jQuery method for placeholder text:
 
-$.fn.defaultText = function(value) {
-
-    var element = this.eq(0);
-    element.data('defaultText', value);
-
-    element.focus(function() {
-        if (element.val() == value) {
-            element.val('').removeClass('defaultText');
-        }
-    }).blur(function() {
-        if (element.val() == '' || element.val() == value) {
-            element.addClass('defaultText').val(value);
-        }
-    });
-
-    return element.blur();
-};
-
-function InitChat() {
-
-}
-
+// $.fn.defaultText = function(value) {
+//
+//     var element = this.eq(0);
+//     element.data('defaultText', value);
+//
+//     element.focus(function() {
+//         if (element.val() == value) {
+//             element.val('').removeClass('defaultText');
+//         }
+//     }).blur(function() {
+//         if (element.val() == '' || element.val() == value) {
+//             element.addClass('defaultText').val(value);
+//         }
+//     });
+//
+//     return element.blur();
+// };
 
 
 function checkLogin() {
     var user = Tools.createCookie("user", "angel",10);
     var user = Tools.readCookie("user");
-    // console.log(user);
     if (user) {
         $.post("../../chat/checkLogged/", {'user': user}, function(data, status) {
             console.log(data);
@@ -389,11 +392,12 @@ function checkLogin() {
             var logged = json.logged;
             if (json.logged) {
                 var user = json.loggedAs.name;
-                var gravatar = json.loggedAs.gravatar[0].avatar;
+                var gravatar = json.loggedAs.gravatar;
                 console.log(gravatar);
                 //pintarchat?
                 // InitChat(user,gravatar);
                 chat.login(user, gravatar);
+                chat.getUsers();
             } else {
                 //pintar vista error o redirigir a sign up
                 window.location.href = json.redirect;

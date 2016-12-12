@@ -8,4 +8,8 @@
         <name>checkLogged</name>
         <uri>checkLogged</uri>
     </function>
+    <function>
+        <name>getUsers</name>
+        <uri>getUsers</uri>
+    </function>
 </functions>

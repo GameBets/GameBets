@@ -123,3 +123,10 @@ Warning on line 39 in file /var/www/html/Gamebets/model/db.class.singleton.php
 05/12/16 09:15:30 PM | error loadView general | chat | response 400
 05/12/16 09:30:44 PM | error loadView general | chat | response 400
 05/12/16 09:34:19 PM | error loadView general | chat | response 400
+07/12/16 07:24:50 PM | error loadView general | chat/chat_users | response 400
+07/12/16 07:25:02 PM | error loadView general | chat/chat_users | response 400
+07/12/16 07:32:01 PM | error loadView general | chat/chat_users | response 400
+07/12/16 07:32:58 PM | error loadView general | chat/chat_users | response 400
+07/12/16 07:56:35 PM | error loadView general | chat/chat_users | response 400
+07/12/16 08:03:35 PM | error loadView general | chat/chat_users | response 400
+07/12/16 08:24:48 PM | error loadView general | chat/chat_users | response 400
