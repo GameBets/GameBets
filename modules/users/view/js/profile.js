@@ -29,42 +29,80 @@ $(document).ready(function () {
         validate_modify_user();
     });
 
-    $("#name, #surname, #password, #repeat_password").keyup(function () {
-        if ($(this).val() !== "") {
-            $(".error").fadeOut();
+    //Regular expressions
+    var name_user_reg = /^[0-9a-zA-z]+$/;
+    var password_reg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+    var name_reg = /^[a-zA-Z]+$/;
+    var surname_reg = /^[a-zA-Z\ ]+$/;
+    var date_birthday_reg = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/;
+    var email_reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var phone_reg = /^[0-9]{9}$/;
+
+    //Corregir error
+    //Hasta que no introduzcamos un valor que acepte la expresion regular, no se borrara el error
+    $("#name_user").keyup(function () {
+        if ($(this).val() !== "" && name_user_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
             return false;
         }
     });
+
+    $("#password").keyup(function () {
+        if ($(this).val() !== "" && password_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
+            return false;
+        }
+    });
+
+    $("#repeat_password").keyup(function () {
+        if ($(this).val() !== "" && $(this).val() === $("#password").val()) {
+            $(".error_javascript").fadeOut();
+            return false;
+        }
+    });
+
     $("#name").keyup(function () {
-        if ($(this).val().length >= 2) {
-            $(".error").fadeOut();
+        if ($(this).val() !== "" && name_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
             return false;
         }
     });
-    $("#surname").keyup(function () {
-        if ($(this).val().length >= 3) {
-            $(".error").fadeOut();
+
+    $("#surname").click(function () {
+        if ($(this).val() !== "" && surname_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
             return false;
         }
     });
-    $("#repeat_password").keyup(function () {
-        if ($(this).val().length >= 6) {
-            $(".error").fadeOut();
+
+    $("#date_birthday").click(function () {
+        if ($(this).val() !== "" && date_birthday_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
             return false;
         }
     });
-    $("#repeat_password").keyup(function () {
-        if ($(this).val().length >= 6) {
-            $(".error").fadeOut();
+
+    $("#email").click(function () {
+        if ($(this).val() !== "" && email_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
             return false;
         }
     });
+
+    $("#phone").keyup(function () {
+        if ($(this).val() !== "" && phone_reg.test($(this).val())) {
+            $(".error_javascript").fadeOut();
+            return false;
+        }
+    });
+  });
 
     $("#progress").hide();
 
-    Dropzone.autoDiscover = false;
+  //  Dropzone.autoDiscover = false;
     $("#dropzone").dropzone({
-        url: amigable("?module=user&function=upload_avatar"),
+        url: amigable("?module=users&function=upload_avatar"),
+        params:{'upload':true},
         addRemoveLinks: true,
         maxFileSize: 1000,
         dictResponseError: "Ha ocurrido un error en el server",
@@ -89,9 +127,9 @@ $(document).ready(function () {
         removedfile: function (file, serverFileName) {
             var name = file.name;
             $.ajax({
-                type: "GET",
-                url: amigable("?module=user&function=delete_avatar&delete=true"),
-                data: {"filename": name},
+                type: "POST",
+                url: amigable("?module=users&function=delete_avatar"),
+                data: {"filename": name, "delete":true},
                 success: function (data) {
                     $("#progress").hide();
                     $('.msg').text('').removeClass('msg_ok');
@@ -251,7 +289,7 @@ function load_provincias_v2(prov) {
 }
 
 function load_provincias_v1(prov) { //provinciasypoblaciones.xml - xpath
-    $.get(amigable("?module=user&function=load_provincias_user&load_provincias=true"),
+    $.get(amigable("?module=users&function=load_provincias_user&load_provincias=true"),
             function (response) {
                 $("#province").empty();
                 //$("#provincia").append('<option value="" selected="selected">Selecciona una Provincia</option>');
@@ -328,131 +366,208 @@ function load_poblaciones_v1(prov, pobl) {
 }
 
 function validate_modify_user() {
+
     var result = true;
-    var nomreg = /^\D{3,30}$/;
-    var apelreg = /^(\D{3,30})+$/;
-    var nombre = $("#inputName").val();
-    var apellidos = $("#inputSurn").val();
-    var email = $("#inputEmail").val();
-    var password = $("#inputPass").val();
-    var date_birthday = $("#inputBirth").val();
-    var bank = $("#inputBank").val();
-    var dni = $("#inputDni").val();
-    var pais = $("#pais").val();
-    var provincia = $("#provincia").val();
-    var poblacion = $("#poblacion").val();
+
+    //Recogemos los valores del usuario
+    var name_user = document.getElementById('name_user').value;
+    var password = document.getElementById('password').value;
+    var repeat_password = document.getElementById('repeat_password').value;
+    var name = document.getElementById('name').value;
+    var surname = document.getElementById('surname').value;
+    var date_birthday = document.getElementById('date_birthday').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var country = document.getElementById('country').value;
+    var province = document.getElementById('province').value;
+    var town = document.getElementById('town').value;
+
+    //Regular expressions
+    var name_user_reg = /^[0-9a-zA-z]+$/;
+    var password_reg = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/;
+    var name_reg = /^[a-zA-Z]+$/;
+    var surname_reg = /^[a-zA-Z\ ]+$/;
+    var date_birthday_reg = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/;
+    var email_reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var phone_reg = /^[0-9]{9}$/;
 
     $(".error").remove();
-    if ($("#inputName").val() === "" || !nomreg.test($("#inputName").val())) {
-        $("#inputName").focus().after("<span class='error'>Ingrese su nombre</span>");
+
+    //Pintar los errores
+    //Si no hemos insertado correctamente el valor, se nos mostrara el mensaje de error
+    if ($("#name_user").val() === "" || $("#name_user").val() == "Nombre de usuario") {
+        $("#name_user").focus().after("<span class='error_javascript'>Introduzca nombre de usuario</span>");
         result = false;
-    } else if ($("#inputName").val().length < 2) {
-        $("#inputName").focus().after("<span class='error'>Mínimo 2 carácteres para el nombre</span>");
+        return false;
+    } else if (!name_user_reg.test($("#name_user").val())) {
+        $("#name_user").focus().after("<span class='error_javascript'>Solo puede contener numeros y letras</span>");
         result = false;
-    } else if ($("#inputSurn").val() === "" || !apelreg.test($("#inputSurn").val())) {
-        $("#inputSurn").focus().after("<span class='error'>Ingrese sus apellidos</span>");
-        result = false;
-    } else if ($("#inputSurn").val().length < 3) {
-        $("#inputSurn").focus().after("<span class='error'>Mínimo 3 carácteres para los apellidos</span>");
-        result = false;
-    } else if ($("#inputPass").val() === "") {
-        $("#inputPass").focus().after("<span class='error'>Ingrese su contraseña</span>");
-        result = false;
-    } else if ($("#inputPass").val().length < 6) {
-        $("#inputPass").focus().after("<span class='error'>Mínimo 6 carácteres para la contraseña</span>");
-        result = false;
+        return false;
     }
 
-    if (result) {
-        if (provincia == null) {
-            provincia = '';
-        } else if (provincia.length == 0) {
-            provincia = '';
-        } else if (provincia === 'Selecciona una Provincia') {
-            return '';
-        }
-
-        if (poblacion == null) {
-            poblacion = '';
-        } else if (poblacion.length == 0) {
-            poblacion = '';
-        } else if (poblacion === 'Selecciona una Poblacion') {
-            return '';
-        }
-
-        var data = {"nombre": nombre, "apellidos": apellidos, "date_birthday": date_birthday, "password": password, "bank": bank,
-            "usuario": $("#username").text(), "email": email, "dni": dni, "pais": pais, "provincia": provincia, "poblacion": poblacion};
-        var data_users_JSON = JSON.stringify(data);
-        $.post(amigable('?module=user&function=modify'), {mod_user_json: data_users_JSON},
-        function (response) {
-            if (response.success) {
-                window.location.href = response.redirect;
-            } else {
-                if (response.redirect) {
-                    window.location.href = response.redirect;
-                } else
-                if (response["datos"]["nombre"] !== undefined && response["datos"]["nombre"] !== null) {
-                    $("#inputName").focus().after("<span class='error'>" + response["datos"]["nombre"] + "</span>");
-                }
-                if (response["datos"]["apellidos"] !== undefined && response["datos"]["apellidos"] !== null) {
-                    $("#inputSurn").focus().after("<span class='error'>" + response["datos"]["apellidos"] + "</span>");
-                }
-                if (response["datos"]["password"] !== undefined && response["datos"]["password"] !== null) {
-                    $("#inputPass").focus().after("<span class='error'>" + response.error.password + "</span>");
-                }
-                if (response["datos"]["date_birthday"] !== undefined && response["datos"]["date_birthday"] !== null) {
-                    $("#inputBirth").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
-                }
-                if (response["datos"]["bank"] !== undefined && response["datos"]["bank"] !== null) {
-                    $("#inputBank").focus().after("<span class='error'>" + response["datos"]["bank"] + "</span>");
-                }
-                if (response["datos"]["dni"] !== undefined && response["datos"]["dni"] !== null) {
-                    $("#inputDni").focus().after("<span class='error'>" + response["datos"]["dni"] + "</span>");
-                }
-                if (response["datos"]["pais"] !== undefined && response["datos"]["pais"] !== null) {
-                    $("#pais").focus().after("<span class='error'>" + response["datos"]["pais"] + "</span>");
-                }
-                if (response["datos"]["provincia"] !== undefined && response["datos"]["provincia"] !== null) {
-                    $("#provincia").focus().after("<span class='error'>" + response["datos"]["provincia"] + "</span>");
-                }
-                if (response["datos"]["poblacion"] !== undefined && response["datos"]["poblacion"] !== null) {
-                    $("#poblacion").focus().after("<span class='error'>" + response["datos"]["poblacion"] + "</span>");
-                }
-            }
-        }, "json").fail(function (xhr, textStatus, errorThrown) {
-            if (xhr.responseJSON === undefined || xhr.responseJSON === null)
-                xhr.responseJSON = JSON.parse(xhr.responseText);
-            if (xhr.status === 0) {
-                alert('Not connect: Verify Network.');
-            } else if (xhr.status === 404) {
-                alert('Requested page not found [404]');
-            } else if (xhr.status === 500) {
-                alert('Internal Server Error [500].');
-            } else if (textStatus === 'parsererror') {
-                alert('Requested JSON parse failed.');
-            } else if (textStatus === 'timeout') {
-                alert('Time out error.');
-            } else if (textStatus === 'abort') {
-                alert('Ajax request aborted.');
-            } else {
-                alert('Uncaught Error: ' + xhr.responseText);
-            }
-        });
+    if ($("#password").val() === "" || $("#password").val() == "Contraseña") {
+        $("#password").focus().after("<span class='error_javascript'>Inserte contraseña</span>");
+        result = false;
+        return false;
+    } else if (!password_reg.test($("#password").val())) {
+        $("#password").focus().after("<span class='error_javascript'>Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial</span>");
+        result = false;
+        return false;
     }
-}
+
+    if ($("#repeat_password").val() === "" || $("#repeat_password").val() == "Contraseña") {
+        $("#repeat_password").focus().after("<span class='error_javascript'>Inserte contraseña</span>");
+        result = false;
+        return false;
+    } else if ($("#repeat_password").val() !== $("#password").val()) {
+        $("#repeat_password").focus().after("<span class='error_javascript'>La contraseña no coincide</span>");
+        result = false;
+        return false;
+    }
+
+    else if ($("#name").val() === "" || $("#name").val() == "Nombre") {
+        $("#name").focus().after("<span class='error_javascript'>Inserte nombre</span>");
+        result = false;
+        return false;
+    } else if (!name_reg.test($("#name").val())) {
+        $("#name").focus().after("<span class='error_javascript'>Solo puede contener letras</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#surname").val() === "" || $("#surname").val() == "Apellidos") {
+        $("#surname").focus().after("<span class='error_javascript'>Inserte apellidos</span>");
+        result = false;
+        return false;
+    } else if (!surname_reg.test($("#surname").val())) {
+        $("#surname").focus().after("<span class='error_javascript'>Solo puede contener letras y 1 espacio</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#date_birthday").val() === "" || $("#date_birthday").val() == "mm/dd/yyyy") {
+        $("#date_birthday").focus().after("<span class='error_javascript'>Inserte fecha de nacimiento</span>");
+        result = false;
+        return false;
+    } else if (!date_birthday_reg.test($("#date_birthday").val())) {
+        $("#date_birthday").focus().after("<span class='error_javascript'>Error formato de fecha [mm/dd/yyyy]</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#email").val() === "" || $("#email").val() == "Correo electrónico") {
+        $("#email").focus().after("<span class='error_javascript'>Inserte correo electrónico</span>");
+        result = false;
+        return false;
+    } else if (!email_reg.test($("#email").val())) {
+        $("#email").focus().after("<span class='error_javascript'>Ejemplo: micorreo@ejemplo.com</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#phone").val() === "" || $("#phone").val() == "Telefono") {
+        $("#phone").focus().after("<span class='error_javascript'>Inserte telefono</span>");
+        result = false;
+        return false;
+    } else if (!phone_reg.test($("#phone").val())) {
+        $("#phone").focus().after("<span class='error_javascript'>Debe contener 9 digitos</span>");
+        result = false;
+        return false;
+    }
+
+    if (!validate_pais($("#country").val())){
+      $("#country").focus().after("<span class='error_javascript'>Seleccione un pais</span>");
+      result = false;
+      return false;
+    }
+
+    if (!validate_provincia($("#province").val())){
+      $("#province").focus().after("<span class='error_javascript'>Seleccione una provincia</span>");
+      result = false;
+      return false;
+    }
+
+    if (!validate_poblacion($("#town").val())){
+      $("#town").focus().after("<span class='error_javascript'>Seleccione una poblacion</span>");
+      result = false;
+      console.log("8");
+      return false;
+    }
+
+    if (result) { //Si el resultado es positivo, cogemos todos los valores y se los enviamos al controlador de PHP  con un JSON
+      var data = {"name_user": name_user, "password": password, "name": name, "surname": surname, "date_birthday": date_birthday,
+                  "email": email, "phone": phone, "country": country, "province": province, "town": town};
+
+      //Metemos todos los datos en un JSON
+      var data_users_JSON = JSON.stringify(data);
+
+      //Le enviamos el JSON al Controllador de PHP
+      $.post("../../users/signup_users/",
+              {create_users: data_users_JSON},
+        function (response) { //Si la respuesta del controlador de PHP es positiva
+          //console.log(response);
+          if (response.success) {
+            window.location.href =response.redirect;
+          }
+      }, "json").fail(function (xhr){
+        //console.log(xhr);
+        if (xhr.responseJSON.error.name_user){ //Si la respuesta del controlador de PHP es negativa, pintamos los errores
+          $("#name_user").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name_user + "</span>");
+        }
+        if (xhr.responseJSON.error.password){
+          $("#password").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.password + "</span>");
+        }
+        if (xhr.responseJSON.success_avatar) {
+            if (xhr.responseJSON.img_users !== "/media/default-avatar.png") {
+                //$("#progress").show();
+                //$("#bar").width('100%');
+                //$("#percent").html('100%');
+                //$('.msg').text('').removeClass('msg_error');
+                //$('.msg').text('Success Upload image!!').addClass('msg_ok').animate({ 'right' : '300px' }, 300);
+            }
+        } else {
+            $("#progress").hide();
+            $('.msg').text('').removeClass('msg_ok');
+            $('.msg').text('Error Upload image!!').addClass('msg_error').animate({'width': '40vw'}, 300);
+        }
+        if (xhr.responseJSON.error.name){
+          $("#name").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name + "</span>");
+        }
+        if (xhr.responseJSON.error.surname){
+          $("#surname").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.surname + "</span>");
+        }
+        if (xhr.responseJSON.error.date_birthday){
+          $("#date_birthday").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.date_birthday + "</span>");
+        }
+        if (xhr.responseJSON.error.email){
+          $("#email").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.email + "</span>");
+        }
+        if (xhr.responseJSON.error.phone){
+          $("#phone").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.phone + "</span>");
+        }
+        if (xhr.responseJSON.error.country){
+          $("#country").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.country + "</span>");
+        }
+        if (xhr.responseJSON.error.province){
+          $("#province").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.province + "</span>");
+        }
+        if (xhr.responseJSON.error.town){
+          $("#town").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.town + "</span>");
+        }
+      });
+    }
+  }
 
 function fill(user) {
-    $("#inputName").val(user['nombre']);
-    $("#inputSurn").val(user['apellidos']);
-    $("#inputBirth").val(user['date_birthday']);
-    $("#inputPass").val("");
-    $("#inputBank").val(user['bank']);
-    $("#username").html(user['nombre']);
+    $("#name").val(user['name']);
+    $("#surname").val(user['surname']);
+    $("#date_birthday").val(user['date_birthday']);
+    $("#password").val("");
+    $("#repeat_password").val(user['repeat_password']);
+    $("#name_user").html(user['name_user']);
     $("#avatar_user").attr('src', user['avatar']);
-    $("#inputEmail").val(user['email']);
-    $("#inputDni").val(user['dni']);
+    $("#email").val(user['email']);
     if (user['email'])
         $("#inputEmail").attr('disabled', true);
-    if (user['dni'])
-        $("#inputDni").attr('disabled', true);
+
 }

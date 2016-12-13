@@ -195,7 +195,7 @@
 //----------------------------------------------------------------------------------------------------------------/
  ////////////////////////////////////////////////////////////////// START PROFILE --- //////////////////////////////
         function profile() {
-            loadView('modules/user/view/', 'profile.php');
+            loadView('modules/users/view/', 'profile.php');
         }
 
         function upload_avatar() {
@@ -217,7 +217,7 @@
         if (isset($_POST['usuario'])) {
             set_error_handler('ErrorHandler');
             try {
-                $arrValue = loadModel(MODEL_USER, "user_model", "select", array(column => array('usuario'), like => array($_POST['usuario']), field => array('*')));
+                $arrValue = loadModel(MODEL_USER, "users_model", "select", array(column => array('usuario'), like => array($_POST['usuario']), field => array('*')));
             } catch (Exception $e) {
                 $arrValue = false;
             }
@@ -374,14 +374,14 @@
                     restore_error_handler();
 
                     if ($arrValue) {
-                  $url = amigable('?module=user&function=profile&param=done', true);
+                  $url = amigable('?module=users&function=profile&param=done', true);
                   $jsondata["success"] = true;
                   $jsondata["redirect"] = $url;
                   echo json_encode($jsondata);
                   exit;
               } else {
                   $jsondata["success"] = false;
-                  $jsondata["redirect"] = $url = amigable('?module=user&function=profile&param=503', true);
+                  $jsondata["redirect"] = $url = amigable('?module=users&function=profile&param=503', true);
                   echo json_encode($jsondata);
               }
           } else {

@@ -3,7 +3,7 @@
 <form id="profile_form" name="profile_form" class="form-perfil">
     <br />
     <div id="contenido" class="row">
-        <div class=" izq">
+        <div class="izq">
             <div class="control-group">
                 <label class="nombre pefil">Nombre:</label>
                 <p>
@@ -85,7 +85,6 @@
                 <label class="pefil">Poblacion:</label>
                 <p>
                     <select id="town" name="town"></select>
-
                 </p>
             </div>
         </div>

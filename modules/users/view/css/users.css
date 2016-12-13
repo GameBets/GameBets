@@ -191,7 +191,92 @@
   text-align: center;
   font-size: 2em;
 }
-​
+
+/**** Dropzone ****/
+
+.izq,.der{
+    width: 25%;
+}
+.der{
+    float: right;
+}
+.center{
+    text-align: center;
+    width: 49%;
+}
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #444;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, .75);
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: normal;
+    padding: 8px 10px;
+}
+
+form {
+    display: block;
+    margin: 20px auto;
+    background: #eee;
+    border-radius: 10px;
+    padding: 15px
+}
+
+#progress {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 1px;
+    border-radius: 3px;
+}
+
+#bar {
+    background-color: #B4F5B4;
+    width: 0%;
+    height: 20px;
+    border-radius: 3px;
+}
+
+#percent {
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 48%;
+}
+
+.msg {
+    color: white;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    position: absolute;
+    right: -155px;
+    text-transform: uppercase;
+    min-width: 121px;
+}
+
+.msg_ok {
+    background: #589D05;
+}
+
+.msg_error {
+    background: red;
+}
+
 /*****************************************************************************/
 /* Dropzone																																	 */
 /*****************************************************************************/

@@ -107,3 +107,29 @@ Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_
 13/12/16 03:47:22 PM | ERROR: [8] Undefined offset: 0
 Notice on line 33 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
  | users | response 200
+13/12/16 06:44:54 PM | ERROR: [8] Use of undefined constant IMG_Gamebets - assumed 'IMG_Gamebets'
+Notice on line 28 in file /var/www/html/Gamebets/classes/email/email.class.singleton.php
+ | users | response 200
+13/12/16 06:44:54 PM | ERROR: [8] Undefined index: inputName
+Notice on line 50 in file /var/www/html/Gamebets/utils/mail.inc.php
+ | users | response 200
+13/12/16 06:45:07 PM | ERROR: [8] Undefined variable: change
+Notice on line 157 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:07 PM | ERROR: [8] Undefined variable: sql
+Notice on line 162 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 124 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 124 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+13/12/16 06:45:28 PM | error loadView general | users | response 200
+13/12/16 06:46:46 PM | error loadView general | users | response 200
