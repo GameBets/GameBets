@@ -141,11 +141,184 @@
            }
        }
 
-        public function modify(){
+       function profile_filler() {
+        if (isset($_POST['usuario'])) {
+            set_error_handler('ErrorHandler');
+            try {
+                $arrValue = loadModel(MODEL_USER, "user_model", "select", array(column => array('usuario'), like => array($_POST['usuario']), field => array('*')));
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
 
+            if ($arrValue) {
+                $jsondata["success"] = true;
+                $jsondata['user'] = $arrValue[0];
+                echo json_encode($jsondata);
+                exit();
+            } else {
+                $url = amigable('?module=main', true);
+                $jsondata["success"] = false;
+                $jsondata['redirect'] = $url;
+                echo json_encode($jsondata);
+                exit();
+            }
+            } else {
+                $url = amigable('?module=main', true);
+                $jsondata["success"] = false;
+                $jsondata['redirect'] = $url;
+                echo json_encode($jsondata);
+                exit();
+                }
+            }
+
+            ///////////// PROVINC ....
+
+
+      public function load_pais_users() {
+        if(  (isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)  ){
+          $json = array();
+
+          $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+
+          try {
+            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_paises", $url);
+          } catch (Exception $e) {
+            $json = array();
+          }
+
+          if($json){
+            echo $json;
+            exit;
+          }else{
+            $json = "error";
+            echo $json;
+            exit;
+          }
         }
+      }
+
+      public function load_provincias_users() {
+        echo json_encode("HOLA");
+        exit;
+        if(  (isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)  ){
+          $jsondata = array();
+          $json = array();
+
+          try {
+            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_provincias");
+          } catch (Exception $e) {
+            $json = array();
+          }
+
+          if($json){
+            $jsondata["provincias"] = $json;
+            echo json_encode($jsondata);
+            exit;
+          }else{
+            $jsondata["provincias"] = "error";
+            echo json_encode($jsondata);
+            exit;
+          }
+        }
+      }
+
+      public function load_poblacion_users() {
+        if(  isset($_POST['idPoblac']) ){
+          $jsondata = array();
+          $json = array();
+
+          try {
+            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_poblaciones", $_POST['idPoblac']);
+          } catch (Exception $e) {
+            $json = array();
+          }
+
+          if($json){
+            $jsondata["poblaciones"] = $json;
+            echo json_encode($jsondata);
+            exit;
+          }else{
+            $jsondata["poblaciones"] = "error";
+            echo json_encode($jsondata);
+            exit;
+          }
+        }
+      }
+
+        public function modify(){
+          $jsondata = array();
+                $userJSON = json_decode($_POST['mod_user_json'], true);
+                $userJSON['password2'] = $userJSON['password'];
+
+                $result = validate_userPHP($userJSON);
+                if ($result['resultado']) {
+                  $arrArgument = array(
+                     'name_user' => $result['datos']['name_user'],
+                     'password' => $result['datos']['password'],
+                     'avatar' => $result_avatar['datos'],
+                     'name' => $result['datos']['name'],
+                     'surname' => $result['datos']['surname'],
+                     'date_birthday' => $result['datos']['date_birthday'],
+                     'email' => $result['datos']['email'],
+                     'phone' => $result['datos']['phone'],
+                     'country' => $result['datos']['country'],
+                     'province' => $result['datos']['province'],
+                     'town' => $result['datos']['town'],
+                     'token' => ""
+                    );
+
+                    /* Control de registro */
+                set_error_handler('ErrorHandler');
+                try {
+                    //loadModel
+                    $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('name_user'), 'like' => array($arrArgument['name_user'])));
+                    if ($arrValue[0]['total'] == 1) {
+                        $arrValue = false;
+                        $result['error']['name_user'] = "Nombre de usuario no disponible";
+                    } else {
+                        $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('email'), 'like' => array($arrArgument['email'])));
+                        if ($arrValue[0]['total'] == 1) {
+                            $arrValue = false;
+                            $result['error']['email'] = "Email ya registrado";
+                        }
+                    }
+                } catch (Exception $e) {
+                    $arrValue = false;
+                }
+                restore_error_handler();
+                /* Fin de control de registro */
 
 
+
+                if($arrValue) {
+                    set_error_handler('ErrorHandler');
+                    try {
+                    $arrArgument['token'] = md5(uniqid(rand(), true));
+                      $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
+                    } catch (Exception $e) {
+                      showErrorPage(2, "ERROR - 503 BD", 'HTTP/1.0 503 Service Unavailable', 503);
+                    }
+                    restore_error_handler();
+
+                    if ($arrValue) {
+                  $url = amigable('?module=user&function=profile&param=done', true);
+                  $jsondata["success"] = true;
+                  $jsondata["redirect"] = $url;
+                  echo json_encode($jsondata);
+                  exit;
+              } else {
+                  $jsondata["success"] = false;
+                  $jsondata["redirect"] = $url = amigable('?module=user&function=profile&param=503', true);
+                  echo json_encode($jsondata);
+              }
+          } else {
+              $jsondata["success"] = false;
+              $jsondata['datos'] = $result;
+              echo json_encode($jsondata);
+            }
+          }
+        }
 
 
 ////////////////////////////////////// END PROFILE -- /////////////////////////////////////////////////////
