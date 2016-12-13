@@ -24,11 +24,7 @@ $(document).ready(function () {
       modal: false, //<!-- ------------ si esta en true bloquea el contenido de la web mientras la ventana esta activa (muy elegante) -->
       buttons: {
           Registrar: function () {
-              var check =validate();
-              console.log(check);
-              if(check){
-                  $(this).dialog("close");
-              }
+              validate();
           }
       },
       show: {
@@ -95,7 +91,7 @@ function validate() {
       var data_users_JSON = JSON.stringify(data);
       console.log(data_users_JSON);
       //Le enviamos el JSON al Controllador de PHP
-      $.post("../../users/signup_users/",
+      $.post(amigable("?module=users&function=signup_users"),
               {alta_users: data_users_JSON},
         function (response) { //Si la respuesta del controlador de PHP es positiva
           console.log(response);
@@ -103,7 +99,7 @@ function validate() {
           if (response.success) {
             $("#content").show();
             $("#content").html("<span>"+response.msje+"</span>");
-            result = true;
+            $("#dialog").dialog("close");
           }else{
             if (response.error.password){
               $("#password").focus().after("<span class='error_javascript'>" + response.error.password + "</span>");
@@ -111,7 +107,6 @@ function validate() {
             if (response.error.email){
               $("#email").focus().after("<span class='error_javascript'>" + response.error.email + "</span>");
             }
-            result = false;
           }
       }, "json").fail(function (xhr){
         console.log(xhr.responseText);
