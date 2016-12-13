@@ -9,6 +9,78 @@
           $_SESSION['module'] = "users";
         }
 
+/////////////SIGNIN/////////////////////////////////////////////////////////////
+
+        public function signin() {
+          loadView('modules/users/view/', 'signin.php');
+        }
+
+        public function signin_users() {
+          if(isset($_POST['login_json'])){
+              $user = json_decode($_POST['login_json'], true);
+
+            $arrArgument = array(
+                'column' => array('email'),
+                'like' => array($user['email']),
+                'field' => array('passwd')
+            );
+
+            set_error_handler('ErrorHandler');
+            try {
+                //loadModel
+                $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+                $pass = password_hash($user['password'], PASSWORD_BCRYPT);
+                $arrValue = password_verify($user['password'], $arrValue[0]['passwd']);
+            } catch (Exception $e) {
+                $arrValue = "error";
+            }
+            restore_error_handler();
+
+            if ($arrValue !== "error") {
+                if ($arrValue) { //OK
+                    set_error_handler('ErrorHandler');
+                    try {
+                        $arrArgument = array(
+                            'column' => array("email", "active"),
+                            'like' => array($user['email'], "1")
+                        );
+                        $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", $arrArgument);
+
+                        if ($arrValue[0]["total"] == 1) {
+                            $arrArgument = array(
+                                'column' => array("email"),
+                                'like' => array($user['email']),
+                                'field' => array('*')
+                            );
+                            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+                            echo json_encode($arrValue);
+                            exit();
+                        } else {
+                            $value = array(
+                                "error" => true,
+                                "datos" => "El usuario no ha sido activado, revise su correo"
+                            );
+                            echo json_encode($value);
+                            exit();
+                        }
+                    } catch (Exception $e) {
+                        showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
+                    }
+                } else {
+                    $value = array(
+                        "error" => true,
+                        "datos" => "El usuario y la contraseña no coinciden"
+                    );
+                    echo json_encode($value);
+                }
+            } else {
+                showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
+            }
+          }
+        }
+
+/////////////END SIGNIN/////////////////////////////////////////////////////////
+
 /////////////SIGNUP/////////////////////////////////////////////////////////////
 
         public function signup() {
