@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <functions>
     <function>
+        <name>signin</name>
+        <uri>signin</uri>
+    </function>
+    <function>
+        <name>signin_users</name>
+        <uri>signin_users</uri>
+    </function>
+    <function>
         <name>signup</name>
         <uri>signup</uri>
     </function>
