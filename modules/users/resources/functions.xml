@@ -9,6 +9,10 @@
         <uri>signin_users</uri>
     </function>
     <function>
+        <name>logout</name>
+        <uri>logout</uri>
+    </function>
+    <function>
         <name>signup</name>
         <uri>signup</uri>
     </function>
