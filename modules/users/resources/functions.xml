@@ -48,4 +48,28 @@
         <name>load_poblacion_products</name>
         <uri>load_poblacion_products</uri>
     </function>
+    <function>
+        <name>profile_filler</name>
+        <uri>profile_filler</uri>
+    </function>
+    <function>
+        <name>upload_avatar</name>
+        <uri>upload_avatar</uri>
+    </function>
+    <function>
+        <name>delete_avatar</name>
+        <uri>delete_avatar</uri>
+    </function>
+    <function>
+        <name>profile</name>
+        <uri>profile</uri>
+    </function>
+    <function>
+        <name>modify</name>
+        <uri>modify</uri>
+    </function>
+    <function>
+        <name>social_signin</name>
+        <uri>social_signin</uri>
+    </function>
 </functions>
