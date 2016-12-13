@@ -569,7 +569,7 @@ function load_countries_v1() {
                 load_countries_v2("../../users/load_pais_users/",{'load_pais':true}); //oorsprong.org
             }
     }).fail(function(response) {
-        load_countries_v2(".../../resources/ListOfCountryNamesByName.json");
+        load_countries_v2("../../resources/ListOfCountryNamesByName.json");
     });
 }
 

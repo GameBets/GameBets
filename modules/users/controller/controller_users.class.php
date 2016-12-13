@@ -126,9 +126,25 @@
             loadView('modules/user/view/', 'profile.php');
         }
 
-        public function modify(){
-          
+        function upload_avatar() {
+	        $result_avatar = upload_files();
+	        $_SESSION['avatar'] = $result_avatar;
         }
+
+        function delete_avatar() {
+           $_SESSION['avatar'] = array();
+           $result = remove_files();
+           if ($result === true) {
+               echo json_encode(array("res" => true));
+           } else {
+               echo json_encode(array("res" => false));
+           }
+       }
+
+        public function modify(){
+
+        }
+
 
 
 
