@@ -1,4 +1,132 @@
 /*****************************************************************************/
+/* Sign In																															 */
+/*****************************************************************************/
+.signin_modal {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.signin {
+  width: 70%;
+  padding: 5%;
+}
+
+.vertical_separator {
+  width: 1%;
+  border-left: 1px solid #cccccc;
+}
+
+.social_signin {
+  width: 24%;
+  height: 80%;
+  padding-left: 5%;
+}
+
+.contact_signin {
+  width: 100%;
+  height: 20%;
+  margin-top: 5px;
+  border-top: 1px solid #cccccc;
+  font-size: 1.5em;
+}
+
+.signin input {
+	width: 90%;
+  border-width: 0;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 1.5em;
+  margin: 5px 0 5px 10px;
+}
+
+.signin input:focus {
+	outline:0px;
+  border-bottom: 2px solid black;
+}
+
+.align_right {
+  margin: 5px 0 5px 10px;
+  text-align: right;
+}
+
+#login {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 50px 10px 50px;
+  background-color: white;
+  font-size: 1.5em;
+}
+
+#login:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 50px 10px 50px;
+  background-color: black;
+  color: white;
+}
+
+#facebook
+{
+  background-image: url("../images/facebook_2.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 70px;
+}
+
+#facebook:hover
+{
+  background-image: url("../images/facebook.png");
+}
+
+#twitter
+{
+  background-image: url("../images/twitter_2.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 70px;
+}
+
+#twitter:hover
+{
+  background-image: url("../images/twitter.png");
+}
+
+#google-plus
+{
+  background-image: url("../images/google-plus_2.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 70px;
+}
+
+#google-plus:hover
+{
+  background-image: url("../images/google-plus.png");
+}
+
+/*****************************************************************************/
 /* Sign Up																															 */
 /*****************************************************************************/
 #page{
@@ -50,6 +178,18 @@
 .ui-button:hover {
   border: 0;
   font-weight: bold;
+}
+
+#content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 35vh;
+}
+
+#content span{
+  text-align: center;
+  font-size: 2em;
 }
 ​
 /*****************************************************************************/
@@ -141,20 +281,4 @@
 
 .error_php {
   color: #ff0000;
-}
-
-/*****************************************************************************/
-/* Result Users																															 */
-/*****************************************************************************/
-
-#content {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: 35vh;
-}
-
-#content span{
-  text-align: center;
-  font-size: 2em;
 }
