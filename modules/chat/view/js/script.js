@@ -154,44 +154,6 @@ var chat = {
 
     },
 
-    // The render method generates the HTML markup
-    // that is needed by the other methods:
-
-    render: function(template, params) {
-
-        var arr = [];
-        switch (template) {
-            case 'loginTopBar':
-                arr = [
-                    '<span><img src="' ,params.gravatar, '" width="23" height="23" />',
-                    '<span class="name">', params.name,
-                    '</span><a href="" class="logoutButton rounded">Logout</a></span>'
-                ];
-                break;
-
-            case 'chatLine':
-                arr = [
-                    '<div class="chat chat-', params.id, ' rounded"><span class="gravatar"><img src="', params.gravatar,
-                    '" width="23" height="23" onload="this.style.visibility=\'visible\'" />', '</span><span class="author">', params.author,
-                    ':</span><span class="text">', params.text, '</span><span class="time">', params.time, '</span></div>'
-                ];
-                break;
-
-            case 'user':
-                arr = [
-                    '<div class="user" title="', params.name, '"><img src="',
-                    params.gravatar, '" width="30" height="30" onload="this.style.visibility=\'visible\'" /></div>'
-                ];
-                break;
-        }
-
-        // A single array join is faster than
-        // multiple concatenations
-
-        return arr.join('');
-
-    },
-
     // The addChatLine method ads a chat entry to the page
 
     addChatLine: function(params) {
@@ -245,9 +207,8 @@ var chat = {
     // (since lastID), and adds them to the page.
 
     getChats: function(callback) {
-        $.tzGET('getChats', {
-            lastID: chat.data.lastID
-        }, function(r) {
+
+        $.tzGET('getChats', {lastID: chat.data.lastID}, function(r) {
 
             for (var i = 0; i < r.chats.length; i++) {
                 chat.addChatLine(r.chats[i]);
@@ -292,39 +253,82 @@ var chat = {
 
     // Requesting a list with all the users.
 
-    getUsers: function() {
-      $.post("../../chat/getUsers/", function(data, status) {
-        // $.tzGET('getUsers', function(r) {
-console.log(data);
-console.log("hola");
-}).fail(function(xhr) {
-    // console.log("holahola");
-    $("#chatContainer").load("../../chat/view_error_true/", {
-        'view_error': true
-    });
-});
-        //     var users = [];
-        //
-        //     for (var i = 0; i < data.users.length; i++) {
-        //         if (data.users[i]) {
-        //             users.push(chat.render('user', data.users[i]));
-        //         }
-        //     }
-        //
-        //     var message = '';
-        //
-        //     if (data.total < 1) {
-        //         message = 'No one is online';
-        //     } else {
-        //         message = data.total + ' ' + (data.total == 1 ? 'person' : 'people') + ' online';
-        //     }
-        //
-        //     users.push('<p class="count">' + message + '</p>');
-        //
-        //     $('#chatUsers').html(users.join(''));
-        //
-        //     setTimeout(callback, 15000);
-        // });
+    getUsers: function(callback) {
+        $.post("../../chat/getUsers/", function(data, status) {
+            // console.log(data);
+            var json = JSON.parse(data);
+            var array = [];
+            console.log(json.users);
+            var usuaris = [];
+            for (var i = 0; i < json.users.name.length; i++) {
+                var j = 0;
+                // usuaris = [];
+                if (json.users.name[i]) {
+                    // console.log(usuaris);
+                    usuaris[j] = json.users.name[i];
+                    j++;
+                    usuaris[j] = json.users.gravatar[i];
+                    usuaris.push(chat.render('user', usuaris));
+                }
+            }
+
+            var message = '';
+            if (json.total[0].cnt < 1) {
+                message = 'No one is online';
+            } else {
+                message = json.total[0].cnt + ' ' + (json.total[0].cnt == 1 ? 'person' : 'people') + ' online';
+            }
+            //
+
+            $('#chatUsers').append('<p class="count">' + message + '</p>');
+            setTimeout(callback, 15000);
+        }).fail(function(xhr) {
+            $("#chatContainer").load("../../chat/view_error_true/", {
+                'view_error': true
+            });
+        });
+
+    },
+
+    // The render method generates the HTML markup
+    // that is needed by the other methods:
+
+    render: function(template, params) {
+
+        var arr = [];
+        switch (template) {
+            case 'loginTopBar':
+                // console.log(params);
+                arr = [
+                    '<span><img src="', params.gravatar, '" width="23" height="23" />',
+                    '<span class="name">', params.name,
+                    '</span><a href="" class="logoutButton rounded">Logout</a></span>'
+                ];
+                break;
+
+            case 'chatLine':
+                arr = [
+                    '<div class="chat chat-', params.id, ' rounded"><span class="gravatar"><img src="', params.gravatar,
+                    '" width="23" height="23" onload="this.style.visibility=\'visible\'" />', '</span><span class="author">', params.author,
+                    ':</span><span class="text">', params.text, '</span><span class="time">', params.time, '</span></div>'
+                ];
+                break;
+
+            case 'user':
+                // console.log(params);
+                arr = [
+                    '<div class="user" title="', params[0], '"><img src="',
+                    params[1], '" width="30" height="30" onload="this.style.visibility=\'visible\'" /></div>'
+                ];
+                $('#chatUsers').append(arr.join(''));
+                break;
+        }
+
+        // A single array join is faster than
+        // multiple concatenations
+
+        return arr.join('');
+
     },
 
     // This method displays an error message on the top of the page:
@@ -382,10 +386,12 @@ console.log("hola");
 
 
 function checkLogin() {
-    var user = Tools.createCookie("user", "angel",10);
+    var user = Tools.createCookie("user", "angel", 10);
     var user = Tools.readCookie("user");
     if (user) {
-        $.post("../../chat/checkLogged/", {'user': user}, function(data, status) {
+        $.post("../../chat/checkLogged/", {
+            'user': user
+        }, function(data, status) {
             console.log(data);
             var json = JSON.parse(data);
             console.log(json);

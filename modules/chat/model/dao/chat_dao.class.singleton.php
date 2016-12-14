@@ -18,6 +18,8 @@ class chat_dao {
     //     $stmt = $db->ejecutar($sql);
     //     return $db->listar($stmt);
     // }
+
+
     public function delete_chats_low_than_10min_DAO($db) {
         $sql = "DELETE FROM webchat_lines WHERE ts < SUBTIME(NOW(),'0:10:0')";
         $stmt = $db->ejecutar($sql);
@@ -26,6 +28,11 @@ class chat_dao {
 
     public function get_users_online_DAO($db) {
         $sql = "SELECT name_user, avatar FROM users WHERE online= 1 ORDER BY name_user ASC LIMIT 18";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+    public function get_n_users_online_DAO($db) {
+        $sql = "SELECT COUNT(*) as cnt FROM users where online=1";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

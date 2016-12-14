@@ -48,55 +48,56 @@
             }
         }
 
-        public function getUsers(){
-      		// Deleting chats older than 10 minutes
-          // loadModel(MODEL_CHAT_PATH, 'chat_model', 'delete_chats_low_than_10min',"");
+        public function getUsers()
+        {
+            // Deleting chats older than 10 minutes
+          //  $h = loadModel(MODEL_CHAT_PATH, 'chat_model', 'delete_chats_low_than_10min',"");
+          $result = loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_users_online', '');
+          $j = 0;
+          $array = [];
+          foreach ($result as $key) {
+            if ($key != "") {
+                $array['name'][$j] = $result[$j]['name_user'];
+                $array['gravatar'][$j] = SITE_PATH.$result[$j]['avatar'];
+                $j++;
+            }
 
-      		$result = loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_users_online',"");
-          echo json_encode($result);
-          exit;
-          //DB::query('SELECT * FROM webchat_users ORDER BY name ASC LIMIT 18');
-
-      		$users = array();
-      		while($user = $result->fetch_object()){
-      			$user->gravatar = Chat::gravatarFromHash($user->gravatar,30);
-      			$users[] = $user;
-      		}
-
-      		return array(
-      			'users' => $users,
-      			'total' => DB::query('SELECT COUNT(*) as cnt FROM webchat_users')->fetch_object()->cnt
-      		);
-      	}
+          }
+            echo json_encode(array(
+                  'users' => $array,
+                  'total' => loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_n_users_online', ''),
+              ));
+            exit;
+        }
 
         // public function login($name, $email)
         // {
         //     if (!$name || !$email) {
         //         throw new Exception('Fill in all the required fields.');
         //     }
-        //
+
         //     if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
         //         throw new Exception('Your email is invalid.');
         //     }
-        //
+
         //       // Preparing the gravatar hash:
         //       $gravatar = md5(strtolower(trim($email)));
-        //
+
         //     $user = new ChatUser(array(
         //           'name' => $name,
         //           'gravatar' => $gravatar,
         //       ));
-        //
+
         //       // The save method returns a MySQLi object
         //       if ($user->save()->affected_rows != 1) {
         //           throw new Exception('This nick is in use.');
         //       }
-        //
+
         //     $_SESSION['user'] = array(
         //           'name' => $name,
         //           'gravatar' => $gravatar,
         //       );
-        //
+
         //     return array(
         //           'status' => 1,
         //           'name' => $name,

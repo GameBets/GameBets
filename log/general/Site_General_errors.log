@@ -130,3 +130,5 @@ Warning on line 39 in file /var/www/html/Gamebets/model/db.class.singleton.php
 07/12/16 07:56:35 PM | error loadView general | chat/chat_users | response 400
 07/12/16 08:03:35 PM | error loadView general | chat/chat_users | response 400
 07/12/16 08:24:48 PM | error loadView general | chat/chat_users | response 400
+13/12/16 09:21:46 PM | error loadView general | main | response 400
+14/12/16 07:49:06 PM | error loadView general | chat/chat_users/<br>http:/localhost/Gamebets | response 400

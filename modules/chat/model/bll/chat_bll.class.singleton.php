@@ -22,11 +22,16 @@ class chat_bll {
     public function obtain_gravatar_BLL($user) {
         return $this->dao->obtain_gravatar_DAO($this->db, $user);
     }
+
     public function delete_chats_low_than_10min_BLL() {
         return $this->dao->delete_chats_low_than_10min_DAO($this->db);
     }
 
     public function get_users_online_BLL() {
         return $this->dao->get_users_online_DAO($this->db);
+    }
+
+    public function get_n_users_online_BLL() {
+        return $this->dao->get_n_users_online_DAO($this->db);
     }
 }
