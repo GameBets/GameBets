@@ -223,7 +223,7 @@ function load_countries_v1(pais) {
                 if (response === 'error') {
                     load_countries_v2("../../resources/ListOfCountryNamesByName.json", pais);
                 } else {
-                    load_countries_v2(amigable("?module=user&function=load_pais_user&load_pais=true"), pais); //oorsprong.org
+                    load_countries_v2(amigable("?module=users&function=load_pais_user&load_pais=true"), pais); //oorsprong.org
                 }
             })
             .fail(function (response) {
