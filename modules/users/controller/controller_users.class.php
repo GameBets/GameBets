@@ -93,6 +93,7 @@
                         "datos" => "El usuario y la contraseña no coinciden"
                     );
                     echo json_encode($value);
+                    exit;
                 }
             } else {
                 showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
@@ -238,6 +239,81 @@
         }
 
 /////////////END SIGNUP/////////////////////////////////////////////////////////
+
+/////////////RECOVERY PASSWORD//////////////////////////////////////////////////
+        public function recovery() {
+          loadView('modules/users/view/', 'recovery_password.php');
+        }
+
+        public function recovery_password() {
+          if(isset($_POST['recovery_json'])){
+            $userJSON = json_decode($_POST["recovery_json"], true);
+
+            /* Control de registro */
+            set_error_handler('ErrorHandler');
+            try {
+                //loadModel
+                $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('email'), 'like' => array($userJSON['email'])));
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            /* Fin de control de registro */
+
+            if ($arrValue[0]['total'] == 1) {
+              $arrArgument = array(
+                  'column' => array("email"),
+                  'like' => array($userJSON['email']),
+                  'field' => array('*')
+              );
+              $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+              send_email($arrValue[0], "update");
+
+              $value = false;
+              echo json_encode($value);
+              exit();
+            } else {
+              $value =  true;
+              echo json_encode($value);
+              exit();
+            }
+          }
+        }
+
+        public function request() {
+          if ($_GET['aux']) {
+            loadView('modules/users/view/', 'request_password.php');
+          }
+        }
+
+        public function request_password() {
+          $jsondata = array();
+          $user = json_decode($_POST['change_password'], true);
+          $arrArgument = array(
+              'column' => array('token'),
+              'like' => array($user['token']),
+              'field' => array('passwd'),
+              'new' => array(password_hash($user['password'], PASSWORD_BCRYPT))
+          );
+
+          set_error_handler('ErrorHandler');
+          try {
+              $value = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
+          } catch (Exception $e) {
+              $value = false;
+          }
+          restore_error_handler();
+
+          if ($value) {
+              echo json_encode(true);
+              exit;
+          } else {
+              echo json_encode(false);
+              exit;
+          }
+        }
+/////////////END RECOVERY PASSWORD//////////////////////////////////////////////
+
 //----------------------------------------------------------------------------------------------------------------/
  ////////////////////////////////////////////////////////////////// START PROFILE --- //////////////////////////////
         function profile() {
