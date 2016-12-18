@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#fb").click(function () {
+    $("#facebook").click(function () {
         Login();
     });
 });
@@ -44,10 +44,10 @@ function getUserInfo() {
             var data = {"id": response.id, "nombre": response.first_name, "apellidos": response.last_name, "email": response.email};
             var datos_social = JSON.stringify(data);
 
-            $.post(amigable('?module=user&function=social_signin'), {user: datos_social},
+            $.post(amigable('?module=users&function=social_signin'), {user: datos_social},
             function (response) {
                 if (!response.error) {
-                    Tools.createCookie("user", response[0]['usuario'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['nombre'], 1);
+                    Tools.createCookie("user", response[0]['name_user'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['name'], 1);
                     window.location.href = amigable("?module=main");
                 } else {
                     if (response.datos == 503)

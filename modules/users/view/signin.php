@@ -31,5 +31,5 @@
       <p>¿Has olvidado tu contraseña? <a href="https://projects-alumnes-yomogan.c9users.io/proj_final_login/JoinElderly/user/recuperar/" id="linkRest">Recupéra tu contraseña</a></p>
     </div>
   </div>
-
+<script type="text/javascript" src="<?php echo JS_USERS_PATH ?>facebook.js" ></script>
 <script type="text/javascript" src="<?php echo JS_USERS_PATH ?>signin.js" ></script>
