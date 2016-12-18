@@ -118,6 +118,8 @@ class users_dao {
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
         $sql2 = " FROM users WHERE ";
+        $sql = '';
+        $fields = '';
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
