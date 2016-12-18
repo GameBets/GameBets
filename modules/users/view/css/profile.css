@@ -1,16 +1,18 @@
 /****************Perfil***************************/
 #left {
-
+  margin-top: 20px;
   position: absolute;
   left: 1020px;
 }
 
 #mid {
+    margin-top: 20px;
   position: absolute;
   left: 520px;
 }
 
 #right {
+    margin-top: 20px;
   margin-left: 40px;
 }
 
