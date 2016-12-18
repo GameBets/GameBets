@@ -4,8 +4,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0-rc.2/jquery-ui.js"></script>
 <!-- JQUERY dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
 <link rel="stylesheet" href="<?php echo CSS_USERS_PATH ?>profile.css" type="text/css">
 <script type="text/javascript" src="<?php echo JS_USERS_PATH ?>profile.js" ></script>
 
@@ -22,11 +22,6 @@
   </section>
 
   <section>
-    <h3>Repetir contraseña</h3>
-    <input type="password" name="repeat_password" id="repeat_password" value="">
-  </section>
-
-  <section>
     <h3>Telefono</h3>
     <input type="text" name="phone" id="phone" value="">
   </section>
@@ -40,15 +35,17 @@
 
   <section>
     <h3>Avatar</h3>
+    <img id="avatar_user" src="" />
+    <span id="e_avatar" class="styerror" style="color:#FF0000"></span>
     <div id="progress">
-        <div id="bar"></div>
-        <div id="percent">0%</div >
-    </div>
-    <div class="msg"></div>
-    <div id="dropzone" class="dropzone"></div>
+          <div id="bar"></div>
+          <div id="percent">0%</div >
+      </div>
+      <div class="msg"></div>
+      <div id="dropzone" class="dropzone"></div>
   </section>
 </br>
-  <button type="button" class="submit" name="submit_users" id="submit_users" value="Confirmar">Confirmar</button>
+  <button type="button" class="submit" name="submitBtn_user" id="submitBtn_user" value="Confirmar">Confirmar</button>
 
 
 </div>
@@ -56,7 +53,7 @@
 <div id="right">
   <section>
     <h3>Nombre</h3>
-    <input type="text" name="name" id="name" value="">
+    <input type="text" name="named" id="named" value="">
   </section>
 
   <section>
@@ -71,19 +68,18 @@
 
   <section>
     <h3>Pais</h3>
-    <select name="pais" id="pais"></select>
+    <select name="country" id="country"></select>
   </section>
 
   <section>
     <h3>Provincia</h3>
-    <select name="provincia" id="provincia"></select>
+    <select name="province" id="province"></select>
   </section>
 
   <section>
     <h3>Población</h3>
-    <select name="ciudad" id="ciudad"></select>
+    <select name="town" id="town"></select>
   </section>
 </br>
 </div>
-	<!-- Submit -->
 	</form>

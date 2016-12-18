@@ -287,3 +287,1524 @@ Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_
 18/12/16 03:17:06 AM | ERROR: [8] Undefined variable: fields
 Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
  | users | response 200
+18/12/16 05:03:45 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:03:45 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:03:46 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:03:46 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:28:13 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:28:13 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:28:13 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:28:13 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:28:13 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:29:26 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:29:26 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:29:26 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 225 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:29:26 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:29:26 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:38:23 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:38:23 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:38:23 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:38:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:38:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:39:46 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:39:46 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:39:46 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:39:46 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:39:46 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:42:36 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:42:36 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:42:36 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:42:36 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:42:36 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:43:42 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:43:42 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:43:42 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:43:42 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:43:42 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:44:22 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:44:22 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:44:22 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:44:22 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:44:22 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:46:00 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:46:00 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:46:00 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:46:00 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:46:00 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:49:51 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:49:51 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:49:51 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:49:51 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:49:51 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:52:04 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:52:04 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:52:04 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:52:04 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:52:04 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:54:15 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:54:15 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:54:15 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:54:15 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:54:15 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:55:16 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:55:16 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:55:16 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:55:16 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:55:16 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:57:32 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:57:32 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:57:32 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:57:32 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:57:32 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:58:33 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:58:33 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:58:33 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:58:33 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:58:33 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:59:39 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:59:39 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:59:39 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 05:59:39 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 05:59:39 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:03:18 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:18 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:18 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:18 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:03:18 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:03:28 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:28 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:28 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:03:28 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:03:28 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:04:49 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:04:49 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:04:49 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:04:49 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:04:49 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:05:20 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:05:20 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:05:20 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:05:20 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:05:20 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:11:23 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:11:23 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:11:23 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:11:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:11:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:12:57 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:12:57 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:12:57 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:12:57 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:12:57 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:17:37 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:17:37 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:17:37 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:17:37 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:17:37 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:19:51 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:19:51 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:19:51 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:19:51 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:19:51 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:20:23 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:20:23 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:20:23 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:20:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:20:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:22:27 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:22:27 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:22:27 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:22:27 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:22:27 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:28:47 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:28:47 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:28:47 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:28:47 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:28:47 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:39:25 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:39:25 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:39:25 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:39:25 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:39:25 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:41:22 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:41:22 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:41:22 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:41:22 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:41:22 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:42:19 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:42:19 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:42:19 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:42:19 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:42:19 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:42:19 PM | error loadView general | users | response 400
+18/12/16 06:42:19 PM | error loadView general | users | response 400
+18/12/16 06:44:01 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:44:01 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:44:01 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:44:01 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:44:01 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:44:01 PM | error loadView general | users | response 400
+18/12/16 06:44:01 PM | error loadView general | users | response 400
+18/12/16 06:45:19 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:45:19 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:45:19 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:45:19 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:45:19 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:45:19 PM | error loadView general | users | response 400
+18/12/16 06:45:19 PM | error loadView general | users | response 400
+18/12/16 06:48:01 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:48:01 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:48:01 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:48:01 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:48:01 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:48:01 PM | error loadView general | users | response 400
+18/12/16 06:48:01 PM | error loadView general | users | response 400
+18/12/16 06:49:15 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:49:15 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:49:15 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:49:15 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:49:15 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:49:15 PM | error loadView general | users | response 400
+18/12/16 06:49:15 PM | error loadView general | users | response 400
+18/12/16 06:51:08 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:51:08 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:51:08 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:51:08 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:51:08 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:51:08 PM | error loadView general | users | response 400
+18/12/16 06:51:08 PM | error loadView general | users | response 400
+18/12/16 06:53:15 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:53:15 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:53:15 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 06:53:15 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:53:15 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 06:53:15 PM | error loadView general | users | response 400
+18/12/16 06:53:15 PM | error loadView general | users | response 400
+18/12/16 07:01:09 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:01:09 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:01:09 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:01:09 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:01:09 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:02:23 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:02:23 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:02:23 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:02:23 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:02:23 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:04:12 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:04:12 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:04:12 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:04:12 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:04:12 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:05:02 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:05:02 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:05:02 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:05:02 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:05:02 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:06:42 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:06:42 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:06:42 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:06:42 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:06:42 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:07:03 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:03 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:03 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:03 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:07:03 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:07:15 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:15 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:15 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:07:15 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:07:15 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:09:07 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:09:07 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:09:07 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:09:07 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:09:07 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:10:20 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:20 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:20 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:20 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:10:20 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:10:32 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:32 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:32 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:10:32 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:10:32 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:11:15 PM | error loadView general | users | response 400
+18/12/16 07:12:02 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:12:02 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:12:02 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:12:02 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:12:02 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:12:13 PM | error loadView general | users | response 400
+18/12/16 07:13:35 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:13:35 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:13:35 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:13:35 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:13:35 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:13:42 PM | error loadView general | users | response 400
+18/12/16 07:15:07 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:15:07 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:15:07 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:15:07 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:15:07 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:17:35 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:17:35 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:17:35 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:17:35 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:17:35 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:18:50 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:18:50 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:18:50 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:18:50 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:18:50 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:20:09 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:20:09 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:20:09 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:20:09 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:20:09 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:22:03 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:03 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:03 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:03 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:22:03 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:22:50 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:50 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:50 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:22:50 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:22:50 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:23:58 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:23:58 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:23:58 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:23:58 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:23:58 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:24:41 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:24:41 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:24:41 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:24:41 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:24:41 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:25:43 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:25:43 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:25:43 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:25:43 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:25:43 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:31:38 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:38 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:38 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:38 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:31:38 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:31:51 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:51 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:51 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:31:51 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:31:51 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:32:40 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:32:40 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:32:40 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:32:40 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:32:40 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:35:43 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:35:43 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:35:43 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:35:43 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:35:43 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:36:40 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:36:40 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:36:40 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:36:40 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:36:40 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:39:26 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:39:26 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:39:26 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:39:26 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:39:26 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:41:10 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:41:10 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:41:10 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:41:10 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:41:10 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:42:12 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:42:12 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:42:12 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 07:42:12 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 07:42:12 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:02:46 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:02:46 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:02:46 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:02:46 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:02:46 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:05:15 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:05:15 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:05:15 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:05:15 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:05:15 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:07:39 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:07:39 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:07:39 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 08:07:39 PM | ERROR: [8] Undefined variable: sql
+Notice on line 125 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 08:07:39 PM | ERROR: [8] Undefined variable: fields
+Notice on line 131 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:54:02 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:54:02 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:54:02 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:54:02 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:54:02 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:55:32 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:55:32 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:55:32 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:55:32 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:55:32 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:57:01 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:01 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:01 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:01 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:57:01 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:57:14 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:14 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:14 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:57:14 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:57:14 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:57:15 PM | ERROR: [8] Undefined variable: timeout
+Notice on line 57 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 09:58:03 PM | ERROR: [8] Undefined variable: timeout
+Notice on line 57 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:12:28 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:28 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:28 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:28 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:12:28 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:12:51 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:51 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:51 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:12:51 PM | ERROR: [8] Undefined variable: sql
+Notice on line 127 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:12:51 PM | ERROR: [8] Undefined variable: fields
+Notice on line 133 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:13:53 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:13:53 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:13:53 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:13:53 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:13:53 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:15:01 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:01 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:01 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:01 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:15:01 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:15:28 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:28 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:28 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:15:28 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:15:28 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:16:21 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:16:21 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:16:21 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:16:21 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:16:21 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:18:35 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:18:35 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:18:35 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:18:35 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:18:35 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:19:49 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:19:49 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:19:49 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:19:49 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:19:49 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:20:12 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:12 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:12 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:12 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:20:12 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:20:42 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:42 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:42 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:20:42 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:20:42 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:25:26 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:25:26 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:25:26 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:25:26 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:25:26 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:26:31 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:31 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:31 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:31 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:26:31 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:26:44 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:44 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:44 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:26:44 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:26:44 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:06 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:06 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:06 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:06 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:06 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:39 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:39 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:39 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:39 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:39 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:49 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:49 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:49 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+18/12/16 10:27:49 PM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+18/12/16 10:27:49 PM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:41:29 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:29 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:29 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:29 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:41:29 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:41:50 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:50 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:50 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:41:50 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:41:50 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:42:11 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:11 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:11 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:11 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:42:11 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:42:34 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:34 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:34 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:42:34 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:42:34 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:43:23 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:43:23 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:43:23 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:43:23 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:43:23 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:05 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:05 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:05 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:05 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:05 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:12 AM | error loadView general | users | response 400
+19/12/16 12:44:21 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:21 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:21 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:21 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:21 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:29 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:29 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:29 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:44:29 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:44:29 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:46:01 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:46:01 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:46:01 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:46:01 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:46:01 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:47:59 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:47:59 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:47:59 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:47:59 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:47:59 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:48:25 AM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:48:25 AM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:48:25 AM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+19/12/16 12:48:25 AM | ERROR: [8] Undefined variable: sql
+Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+19/12/16 12:48:25 AM | ERROR: [8] Undefined variable: fields
+Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
