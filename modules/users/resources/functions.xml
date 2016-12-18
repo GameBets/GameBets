@@ -25,6 +25,22 @@
         <uri>active</uri>
     </function>
     <function>
+        <name>recovery</name>
+        <uri>recovery</uri>
+    </function>
+    <function>
+        <name>recovery_password</name>
+        <uri>recovery_password</uri>
+    </function>
+    <function>
+        <name>request</name>
+        <uri>request</uri>
+    </function>
+    <function>
+        <name>request_password</name>
+        <uri>request_password</uri>
+    </function>
+    <function>
         <name>upload_avatar_users</name>
         <uri>upload_avatar_users</uri>
     </function>
