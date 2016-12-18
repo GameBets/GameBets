@@ -142,36 +142,9 @@ $("#province").change(function() {
   }
 });
 
-  //Control de seguridad para evitar que al volver atrás de la pantalla results a create, no nos imprima los datos
-  $.get("../../users/load_data_users/", {'load_data':true},
-    function (response) {
-      //alert(response.user);
-      if (response.users === "") {
-        $("#name_user").val('');
-        $("#password").val('');
-        $("#repeat_password").val('');
-        $("#name").val('');
-        $("#surname").val('');
-        $("#date_birthday").val('');
-        $("#email").val('');
-        $("#phone").val('');
-
-        $(this).fill_or_clean();//siempre que creemos un plugin debemos llamarlo, sino no funcionará
-      } else {
-        $("#name_user").val(response.users.name_user);
-        $("#password").val(response.users.password);
-        $("#repeat_password").val(response.users.repeat_password);
-        $("#name").val(response.users.name);
-        $("#surname").val(response.users.surname);
-        $("#date_birthday").val(response.users.date_birthday);
-        $("#email").val(response.users.email);
-        $("#phone").val(response.users.phone);
-      }
-    }, "json");
-
 	//Dropzone function
-    $("#dropzone").dropzone({
-        url: "../../users/upload_avatar_users/",
+  $("#dropzone").dropzone({
+        url: amigable("?module=users&function=upload_avatar"),
         params:{'upload':true},
         addRemoveLinks: true,
         maxFileSize: 1000,
@@ -200,7 +173,7 @@ $("#province").change(function() {
             var name = file.name;
             $.ajax({
                 type: "POST",
-                url: "../../users/delete_avatar_users/",
+                url: amigable("?module=user&function=delete_avatar&delete=true"),
                 data: {"filename": name, "delete":true},
                 success: function (data) {
                     //console.log(data);
@@ -429,69 +402,73 @@ function validate_users() {
     return false;
   }
 
+
+
   if (result) { //Si el resultado es positivo, cogemos todos los valores y se los enviamos al controlador de PHP  con un JSON
-    var data = {"name_user": name_user, "password": password, "name": name, "surname": surname, "date_birthday": date_birthday,
-                "email": email, "phone": phone, "country": country, "province": province, "town": town};
+var data = {"name_user": name_user, "password": password, "name": name, "surname": surname, "date_birthday": date_birthday,
+            "email": email, "phone": phone, "country": country, "province": province, "town": town};
 
-    //Metemos todos los datos en un JSON
-    var data_users_JSON = JSON.stringify(data);
+//Metemos todos los datos en un JSON
+var data_users_JSON = JSON.stringify(data);
 
-    //Le enviamos el JSON al Controllador de PHP
-    $.post("../../users/signup_users/",
-            {create_users: data_users_JSON},
-      function (response) { //Si la respuesta del controlador de PHP es positiva
-        //console.log(response);
-        if (response.success) {
-          window.location.href =response.redirect;
-        }
-    }, "json").fail(function (xhr){
-      //console.log(xhr);
-      if (xhr.responseJSON.error.name_user){ //Si la respuesta del controlador de PHP es negativa, pintamos los errores
-        $("#name_user").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name_user + "</span>");
-      }
-      if (xhr.responseJSON.error.password){
-        $("#password").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.password + "</span>");
-      }
-      if (xhr.responseJSON.success_avatar) {
-          if (xhr.responseJSON.img_users !== "/media/default-avatar.png") {
-              //$("#progress").show();
-              //$("#bar").width('100%');
-              //$("#percent").html('100%');
-              //$('.msg').text('').removeClass('msg_error');
-              //$('.msg').text('Success Upload image!!').addClass('msg_ok').animate({ 'right' : '300px' }, 300);
-          }
-      } else {
-          $("#progress").hide();
-          $('.msg').text('').removeClass('msg_ok');
-          $('.msg').text('Error Upload image!!').addClass('msg_error').animate({'width': '40vw'}, 300);
-      }
-      if (xhr.responseJSON.error.name){
-        $("#name").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name + "</span>");
-      }
-      if (xhr.responseJSON.error.surname){
-        $("#surname").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.surname + "</span>");
-      }
-      if (xhr.responseJSON.error.date_birthday){
-        $("#date_birthday").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.date_birthday + "</span>");
-      }
-      if (xhr.responseJSON.error.email){
-        $("#email").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.email + "</span>");
-      }
-      if (xhr.responseJSON.error.phone){
-        $("#phone").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.phone + "</span>");
-      }
-      if (xhr.responseJSON.error.country){
-        $("#country").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.country + "</span>");
-      }
-      if (xhr.responseJSON.error.province){
-        $("#province").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.province + "</span>");
-      }
-      if (xhr.responseJSON.error.town){
-        $("#town").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.town + "</span>");
-      }
-    });
+//Le enviamos el JSON al Controllador de PHP
+$.post("../users/alta_users/",
+        {create_users: data_users_JSON},
+  function (response) { //Si la respuesta del controlador de PHP es positiva
+    //console.log(response);
+    if (response.success) {
+      window.location.href =response.redirect;
+    }
+}, "json").fail(function (xhr){
+  //console.log(xhr);
+  if (xhr.responseJSON.error.name_user){ //Si la respuesta del controlador de PHP es negativa, pintamos los errores
+    $("#name_user").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name_user + "</span>");
   }
+  if (xhr.responseJSON.error.password){
+    $("#password").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.password + "</span>");
+  }
+  if (xhr.responseJSON.success_avatar) {
+      if (xhr.responseJSON.img_users !== "/media/default-avatar.png") {
+          //$("#progress").show();
+          //$("#bar").width('100%');
+          //$("#percent").html('100%');
+          //$('.msg').text('').removeClass('msg_error');
+          //$('.msg').text('Success Upload image!!').addClass('msg_ok').animate({ 'right' : '300px' }, 300);
+      }
+  } else {
+      $("#progress").hide();
+      $('.msg').text('').removeClass('msg_ok');
+      $('.msg').text('Error Upload image!!').addClass('msg_error').animate({'width': '40vw'}, 300);
+  }
+  if (xhr.responseJSON.error.name){
+    $("#name").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.name + "</span>");
+  }
+  if (xhr.responseJSON.error.surname){
+    $("#surname").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.surname + "</span>");
+  }
+  if (xhr.responseJSON.error.date_birthday){
+    $("#date_birthday").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.date_birthday + "</span>");
+  }
+  if (xhr.responseJSON.error.email){
+    $("#email").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.email + "</span>");
+  }
+  if (xhr.responseJSON.error.phone){
+    $("#phone").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.phone + "</span>");
+  }
+  if (xhr.responseJSON.error.country){
+    $("#country").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.country + "</span>");
+  }
+  if (xhr.responseJSON.error.province){
+    $("#province").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.province + "</span>");
+  }
+  if (xhr.responseJSON.error.town){
+    $("#town").focus().after("<span class='error_javascript'>" + xhr.responseJSON.error.town + "</span>");
+  }
+});
 }
+}
+
+
 
 function validate_pais(pais) {
     if (pais == null) {
@@ -546,31 +523,40 @@ function validate_poblacion(poblacion) {
     return false;
 }
 
-function load_countries_v2(cad) {
-    $.post( cad, function(data) {
-      $("#country").empty();
-      $("#country").append('<option value="" selected="selected">Selecciona un Pais</option>');
+function load_countries_v2(cad, pais) {
+  $.getJSON(cad, function (data) {
+         $("#country").empty();
+         //if (!pais)
+             $("#country").append('<option value="" selected="selected">Selecciona un Pais</option>');
 
-      $.each(data, function (i, valor) {
-        $("#country").append("<option value='" + valor.sISOCode + "'>" + valor.sName + "</option>");
-      });
-    }).fail(function() {
-        alert( "error load_countries" );
-    });
+         $.each(data, function (i, valor) {
+             if (valor.sName.length > 20)
+                 valor.sName = valor.sName.substring(0, 19);
+             if (pais == valor.sISOCode)
+                 $("#country").append("<option value='" + valor.sISOCode + "' selected='selected' >" + valor.sName + "</option>");
+             else
+                 $("#country").append("<option value='" + valor.sISOCode + "'>" + valor.sName + "</option>");
+
+         });
+     })
+     .fail(function () {
+         alert("error load_countries");
+     });
 }
 
-function load_countries_v1() {
-    $.post( "../../users/load_pais_users/",{'load_pais':true},
-        function( response ) {
-            //console.log(response);
-            if(response.match(/error/gi)){
-                load_countries_v2("../../resources/ListOfCountryNamesByName.json");
-            }else{
-                load_countries_v2("../../users/load_pais_users/",{'load_pais':true}); //oorsprong.org
-            }
-    }).fail(function(response) {
-        load_countries_v2("../../resources/ListOfCountryNamesByName.json");
-    });
+function load_countries_v1(pais) {
+  $.post(amigable("?module=users&function=load_pais_users"), {load_pais: true},
+  function (response) {
+      //console.log(response);
+      if (response === 'error') {
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json", pais);
+      } else {
+          load_countries_v2(amigable("?module=users&function=load_pais_users&load_pais=true"), pais); //oorsprong.org
+      }
+  })
+  .fail(function (response) {
+      load_countries_v2("../../resources/ListOfCountryNamesByName.json", pais);
+  });
 }
 
 function load_provincias_v2() {
@@ -589,7 +575,7 @@ function load_provincias_v2() {
 }
 
 function load_provincias_v1() { //provinciasypoblaciones.xml - xpath
-    $.post( "../../users/load_provincias_users/",{'load_provincias':true},
+    $.post( "../users/load_provincias_users/",{'load_provincias':true},
         function( response ) {
             $("#province").empty();
 	          $("#province").append('<option value="" selected="selected">Selecciona una Provincia</option>');
@@ -626,7 +612,7 @@ function load_poblaciones_v2(prov) {
 
 function load_poblaciones_v1(prov) { //provinciasypoblaciones.xml - xpath
     var datos = { idPoblac : prov  };
-	$.post("../../users/load_poblacion_users/", datos, function(response) {
+	$.post("../users/load_poblacion_users/", datos, function(response) {
 	  //alert(response);
     var json = JSON.parse(response);
 		var poblaciones=json.poblaciones;

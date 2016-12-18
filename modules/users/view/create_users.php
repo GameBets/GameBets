@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
 
 <script type="text/javascript" src="<?php echo JS_USERS_PATH ?>create_users.js" ></script>
-<link rel="stylesheet" href="<?php echo CSS_USERS_PATH ?>users.css" type="text/css">
+
 
 <form name="form_users" id="form_users">
   <section>
@@ -30,7 +30,6 @@
     <div class="msg"></div>
     <div id="dropzone" class="dropzone"></div>
   </section>
-
   <section>
     <h3>Repetir contraseña</h3>
     <input type="password" name="repeat_password" id="repeat_password" value="">

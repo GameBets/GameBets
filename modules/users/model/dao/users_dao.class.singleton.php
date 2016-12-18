@@ -49,11 +49,12 @@ class users_dao {
         return $db->ejecutar($sql);
     }
 
-    public function obtain_paises_dao($url) {
+
+    public function obtain_paises_DAO($url) {
         $ch = curl_init();
-        curl_setopt ($ch, CURLOPT_URL, $url);
-        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $file_contents = curl_exec($ch);
         curl_close($ch);
 
@@ -165,7 +166,7 @@ class users_dao {
 
 
         $sql = $sql1 . $change . $sql2 . $sql;
-        
+
         return $db->ejecutar($sql);
     }
 }

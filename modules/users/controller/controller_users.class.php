@@ -194,30 +194,33 @@
 /////////////END SIGNUP/////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------------/
  ////////////////////////////////////////////////////////////////// START PROFILE --- //////////////////////////////
-        function profile() {
-            loadView('modules/users/view/', 'profile.php');
-        }
 
-        function upload_avatar() {
-	        $result_avatar = upload_files();
-	        $_SESSION['avatar'] = $result_avatar;
-        }
 
-        function delete_avatar() {
-           $_SESSION['avatar'] = array();
-           $result = remove_files();
-           if ($result === true) {
-               echo json_encode(array("res" => true));
-           } else {
-               echo json_encode(array("res" => false));
-           }
-       }
+ ////////////////////////////////////////////////////begin profile///////////////////////////////////////////
+     function profile() {
+         loadView('modules/users/view/', 'profile.php');
+     }
 
-       function profile_filler() {
-        if (isset($_POST['usuario'])) {
+     function upload_avatar_users() {
+         $result_avatar = upload_files();
+         $_SESSION['avatar'] = $result_avatar;
+     }
+
+     function delete_avatar_users() {
+         $_SESSION['avatar'] = array();
+         $result = remove_files();
+         if ($result === true) {
+             echo json_encode(array("res" => true));
+         } else {
+             echo json_encode(array("res" => false));
+         }
+     }
+
+     function profile_filler() {
+        if (isset($_POST['name_user'])) {
             set_error_handler('ErrorHandler');
             try {
-                $arrValue = loadModel(MODEL_USER, "users_model", "select", array(column => array('usuario'), like => array($_POST['usuario']), field => array('*')));
+                $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", array(column => array('name_user'), like => array($_POST['name_user']), field => array('*')));
             } catch (Exception $e) {
                 $arrValue = false;
             }
@@ -235,90 +238,86 @@
                 echo json_encode($jsondata);
                 exit();
             }
-            } else {
-                $url = amigable('?module=main', true);
-                $jsondata["success"] = false;
-                $jsondata['redirect'] = $url;
-                echo json_encode($jsondata);
-                exit();
-                }
-            }
-
-            ///////////// PROVINC ....
-
-
-      public function load_pais_users() {
-        if(  (isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)  ){
-          $json = array();
-
-          $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
-
-          try {
-            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_paises", $url);
-          } catch (Exception $e) {
-            $json = array();
-          }
-
-          if($json){
-            echo $json;
-            exit;
-          }else{
-            $json = "error";
-            echo $json;
-            exit;
-          }
+        } else {
+            $url = amigable('?module=main', true);
+            $jsondata["success"] = false;
+            $jsondata['redirect'] = $url;
+            echo json_encode($jsondata);
+            exit();
         }
-      }
+    }
 
-      public function load_provincias_users() {
-        echo json_encode("HOLA");
-        exit;
-        if(  (isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)  ){
-          $jsondata = array();
-          $json = array();
 
-          try {
-            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_provincias");
-          } catch (Exception $e) {
-            $json = array();
-          }
+     public function load_pais_users() {
+         if(  (isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)  ){
+           $json = array();
 
-          if($json){
-            $jsondata["provincias"] = $json;
-            echo json_encode($jsondata);
-            exit;
-          }else{
-            $jsondata["provincias"] = "error";
-            echo json_encode($jsondata);
-            exit;
-          }
-        }
-      }
+           $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
 
-      public function load_poblacion_users() {
-        if(  isset($_POST['idPoblac']) ){
-          $jsondata = array();
-          $json = array();
+           try {
+             $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_paises", $url);
+           } catch (Exception $e) {
+             $json = array();
+           }
 
-          try {
-            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_poblaciones", $_POST['idPoblac']);
-          } catch (Exception $e) {
-            $json = array();
-          }
+           if($json){
+             echo $json;
+             exit;
+           }else{
+             $json = "error";
+             echo $json;
+             exit;
+           }
+         }
+       }
 
-          if($json){
-            $jsondata["poblaciones"] = $json;
-            echo json_encode($jsondata);
-            exit;
-          }else{
-            $jsondata["poblaciones"] = "error";
-            echo json_encode($jsondata);
-            exit;
-          }
-        }
-      }
+       public function load_provincias_users() {
+             	if(  (isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)  ){
+             		$jsondata = array();
+                 $json = array();
 
-        public function modify(){
+                 try {
+                   $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_provincias");
+                 } catch (Exception $e) {
+                   $json = array();
+                 }
+
+             		if($json){
+             			$jsondata["provincias"] = $json;
+             			echo json_encode($jsondata);
+             			exit;
+             		}else{
+             			$jsondata["provincias"] = "error";
+             			echo json_encode($jsondata);
+             			exit;
+             		}
+             	}
+             }
+
+             public function load_poblacion_users() {
+             	if(  isset($_POST['idPoblac']) ){
+           	    $jsondata = array();
+                 $json = array();
+
+                 try {
+                   $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_poblaciones", $_POST['idPoblac']);
+                 } catch (Exception $e) {
+                   $json = array();
+                 }
+
+             		if($json){
+             			$jsondata["poblaciones"] = $json;
+             			echo json_encode($jsondata);
+             			exit;
+             		}else{
+             			$jsondata["poblaciones"] = "error";
+             			echo json_encode($jsondata);
+             			exit;
+             		}
+               }
+             }
+
+/*        public function modify(){
           $jsondata = array();
                 $userJSON = json_decode($_POST['mod_user_json'], true);
                 $userJSON['password2'] = $userJSON['password'];
@@ -341,7 +340,7 @@
                     );
 
                     /* Control de registro */
-                set_error_handler('ErrorHandler');
+            /*    set_error_handler('ErrorHandler');
                 try {
                     //loadModel
                     $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('name_user'), 'like' => array($arrArgument['name_user'])));
@@ -363,7 +362,7 @@
 
 
 
-                if($arrValue) {
+            /*    if($arrValue) {
                     set_error_handler('ErrorHandler');
                     try {
                     $arrArgument['token'] = md5(uniqid(rand(), true));
@@ -391,7 +390,7 @@
             }
           }
         }
-
+*/
 
 ////////////////////////////////////// END PROFILE -- /////////////////////////////////////////////////////
 
