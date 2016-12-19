@@ -7,7 +7,7 @@
       //FILTER
       //Valores que se pueden verificar con expresiones regulares
       $filtro = array(
-          'password' => array(
+          'passwd' => array(
               'filter' => FILTER_VALIDATE_REGEXP,
               'options' => array('regexp' => '/^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/')
           ),
@@ -23,8 +23,8 @@
 
       if ($resultado != null && $resultado) {
 
-          if (!$resultado['password']) {
-              $error['password'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
+          if (!$resultado['passwd']) {
+              $error['passwd'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
               $valido = false;
           }
 
@@ -51,11 +51,11 @@
               'filter' => FILTER_VALIDATE_REGEXP,
               'options' => array('regexp' => '/^[0-9a-zA-z]+$/')
           ),
-          'password' => array(
-              'filter' => FILTER_VALIDATE_REGEXP,
-              'options' => array('regexp' => '/^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/')
+          'passwd' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/')
           ),
-          'name' => array(
+          'named' => array(
               'filter' => FILTER_VALIDATE_REGEXP,
               'options' => array('regexp' => '/^[a-zA-Z]+$/')
           ),
@@ -119,13 +119,13 @@
               $valido = false;
           }
 
-          if (!$resultado['password']) {
-              $error['password'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
+          if (!$resultado['passwd']) {
+              $error['passwd'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
               $valido = false;
           }
 
-          if (!$resultado['name']) {
-              $error['name'] = 'Solo puede contener letras';
+          if (!$resultado['named']) {
+              $error['named'] = 'Solo puede contener letras';
               $valido = false;
           }
 

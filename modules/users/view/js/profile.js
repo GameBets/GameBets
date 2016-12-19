@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   fill();
 
-  $("#name_user, #surname, #password").keyup(function () {
+  $("#name_user, #surname, #passwd").keyup(function () {
       if ($(this).val() !== "") {
           $(".error").fadeOut();
           return false;
@@ -32,7 +32,7 @@ $(document).ready(function () {
       }
   });
 
-  $("#password").keyup(function () {
+  $("#passwd").keyup(function () {
       if ($(this).val() !== "" && password_reg.test($(this).val())) {
           $(".error_javascript").fadeOut();
           return false;
@@ -195,7 +195,7 @@ function validate_modify_user() {
 
   //Recogemos los valores del usuario
   var name_user = document.getElementById('name_user').value;
-  var password = document.getElementById('password').value;
+  var passwd = document.getElementById('passwd').value;
   var named = document.getElementById('named').value;
   var surname = document.getElementById('surname').value;
   var date_birthday = document.getElementById('date_birthday').value;
@@ -228,12 +228,12 @@ function validate_modify_user() {
       return false;
   }
 
-  if ($("#password").val() === "" || $("#password").val() == "Contraseña") {
-      $("#password").focus().after("<span class='error_javascript'>Inserte contraseña</span>");
+  if ($("#passwd").val() === "" || $("#passwd").val() == "Contraseña") {
+      $("#passwd").focus().after("<span class='error_javascript'>Inserte contraseña</span>");
       result = false;
       return false;
-  } else if (!password_reg.test($("#password").val())) {
-      $("#password").focus().after("<span class='error_javascript'>Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial</span>");
+  } else if (!password_reg.test($("#passwd").val())) {
+      $("#passwd").focus().after("<span class='error_javascript'>Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial</span>");
       result = false;
       return false;
   }
@@ -327,20 +327,23 @@ function validate_modify_user() {
                          return '';
                      }*/
 
-                     var data = {"name_user": name_user, "password": password, "name": named, "surname": surname, "date_birthday": date_birthday,
+                     var data = {"name_user": name_user, "passwd": passwd, "named": named, "surname": surname, "date_birthday": date_birthday,
                                  "email": email, "phone": phone, "country": country, "province": province, "town": town};
-                                 console.log(data);
+                                // console.log(data);
 
                    var data_users_JSON = JSON.stringify(data);
+
                      $.post(amigable('?module=users&function=modify'), {mod_user_json: data_users_JSON},
                      function (response) {
+
                          if (response.success) {
+
                              window.location.href = response.redirect;
                          } else {
                              if (response.redirect) {
                                  window.location.href = response.redirect;
                              } else
-                             if (response["datos"]["named"] !== undefined && response["datos"]["named"] !== null) {
+                            if (response["datos"]["named"] !== undefined && response["datos"]["named"] !== null) {
                                  $("#named").focus().after("<span class='error'>" + response["datos"]["named"] + "</span>");
                              }
                              if (response["datos"]["name_user"] !== undefined && response["datos"]["name_user"] !== null) {
@@ -349,14 +352,14 @@ function validate_modify_user() {
                              if (response["datos"]["surname"] !== undefined && response["datos"]["surname"] !== null) {
                                  $("#surname").focus().after("<span class='error'>" + response["datos"]["surname"] + "</span>");
                              }
-                             if (response["datos"]["password"] !== undefined && response["datos"]["password"] !== null) {
-                                 $("#inputPass").focus().after("<span class='error'>" + response.error.password + "</span>");
+                             if (response["datos"]["passwd"] !== undefined && response["datos"]["passwd"] !== null) {
+                                 $("#passwd").focus().after("<span class='error'>" + response.error.passwd + "</span>");
                              }
                              if (response["datos"]["date_birthday"] !== undefined && response["datos"]["date_birthday"] !== null) {
-                                 $("#inputBirth").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
+                                 $("#date_birthday").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
                              }
-                             if (response["datos"]["dni"] !== undefined && response["datos"]["dni"] !== null) {
-                                 $("#inputDni").focus().after("<span class='error'>" + response["datos"]["dni"] + "</span>");
+                             if (response["datos"]["phone"] !== undefined && response["datos"]["phone"] !== null) {
+                                 $("#phone").focus().after("<span class='error'>" + response["datos"]["phone"] + "</span>");
                              }
                              if (response["datos"]["country"] !== undefined && response["datos"]["country"] !== null) {
                                  $("#country").focus().after("<span class='error'>" + response["datos"]["country"] + "</span>");
@@ -404,8 +407,12 @@ function validate_modify_user() {
                       $("#named").val(response.user['named']);
                       $("#surname").val(response.user['surname']);
                       $("#date_birthday").val(response.user['date_birthday']);
-                      $("#password").val("");
-                      $("#name_user").html(response.user['name_user']);
+                      $("#passwd").val("");
+                      $("#name_user").val(response.user['name_user']);
+                      $("#phone").val(response.user['phone']);
+                      $("#country").val(response.user['country']);
+                      $("#province").val(response.user['province']);
+                      $("#town").val(response.user['town']);
                       $("#avatar_user").attr('src', response.user['avatar']);
                       $("#email").val(response.user['email']);
                       if (response.user['email'])

@@ -18,7 +18,7 @@
 
   <section>
     <h3>Contraseña</h3>
-    <input type="password" name="password" id="password" value="">
+    <input type="password" name="passwd" id="passwd" value="">
   </section>
 
   <section>

@@ -172,8 +172,8 @@
                 $arrArgument = array(
                     'column' => array('token'),
                     'like' => array($_GET['aux']),
-                    'field' => array('active', 'nombre', 'apaellidos'),
-                    'new' => array('1', 'nombre', 'apellidos')
+                    'field' => array('active'),
+                    'new' => array('1')
                 );
                 set_error_handler('ErrorHandler');
                 try {
@@ -308,35 +308,10 @@
 
     public function modify(){
 
-    /*  if ($_POST['mod_user_json']) {
-        $user = json_decode($_POST['mod_user_json']);
-        //falta validar els datos per php
-          $arrArgument = array(
-              'column' => array('token'),
-              'like' => array($user['token']),
-              'field' => array('name_user', 'passwd','avatar','named','surname','date_birthday','email','phone','country','province','town'),
-              'new' => array($user['name_user'], $user['passwd'],$user['avatar'],$user['named'],$user['surname'],$user['date_birthday'],$user['email'],$user['phone'],$user['country'],$user['province'],$user['town'])
-          );
-          set_error_handler('ErrorHandler');
-          try {
-              $value = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
-          } catch (Exception $e) {
-              $value = false;
-          }
-          restore_error_handler();
-
-          if ($value) {
-              loadView('modules/users/view/', 'profile.php');
-          } else {
-              showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
-          }
-      }*/
-
       $jsondata = array();
       $userJSON = json_decode($_POST['mod_user_json'], true);
-    //  $userJSON['password2'] = $userJSON['password'];
 
-      //$result = validate_userPHP($userJSON);
+      $result = validate_users($userJSON);
       if ($result['resultado']) {
           $arrArgument = array(
               'named' => $result['datos']['named'],
@@ -344,22 +319,24 @@
               'email' => $result['datos']['email'],
               'passwd' => password_hash($result['datos']['passwd'], PASSWORD_BCRYPT),
               'date_birthday' => strtoupper($result['datos']['date_birthday']),
-              'type' => $result['datos']['type'],
               'phone' => $result['datos']['phone'],
-              'avatar' => $_SESSION['avatar']['datos'],
+            //	'avatar' => $result_avatar['datos'],
               'name_user' => $result['datos']['name_user'],
               'country' => $result['datos']['country'],
               'province' => $result['datos']['province'],
               'town' => $result['datos']['town']
           );
-          $arrayDatos = array(
-              column => array(
-                  'email'
-              ),
-              like => array(
-                  $arrArgument['email']
-              )
-          );
+
+
+         $arrayDatos = array(
+                      'column' => array(
+                          'email'
+                      ),
+                      'like' => array(
+                          $arrArgument['email']
+                      )
+                  );
+
           $j = 0;
           foreach ($arrArgument as $clave => $valor) {
               if ($valor != "") {
@@ -368,23 +345,28 @@
                   $j++;
               }
           }
-          console.log($arrArgument);
+
+
           set_error_handler('ErrorHandler');
           try {
               $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrayDatos);
+
           } catch (Exception $e) {
               $arrValue = false;
           }
+
+
           restore_error_handler();
           if ($arrValue) {
-              $url = amigable('?module=users&function=profile&param=done', true);
+
+              $url = amigable('?module=users&function=profile', true);
               $jsondata["success"] = true;
               $jsondata["redirect"] = $url;
               echo json_encode($jsondata);
               exit;
           } else {
               $jsondata["success"] = false;
-              $jsondata["redirect"] = $url = amigable('?module=users&function=profile&param=503', true);
+              $jsondata["redirect"] = showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
               echo json_encode($jsondata);
           }
       } else {
