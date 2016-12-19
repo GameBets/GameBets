@@ -5,7 +5,7 @@
 <div class="head-top">
 	<div class="logo">
 
-		<h1><a href="index.html"><span> G</span>ames <span>C</span>enter</a></h1>
+		<h1><a href="index.html"><span>G</span>ame<span>B</span>ets</a></h1>
 
 	</div>
 <div class="top-nav">

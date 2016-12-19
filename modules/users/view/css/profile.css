@@ -54,13 +54,28 @@ input {
   border: 1px solid #CCCCCC;
 }
 
+
 input[type="text"] {
   font-size: 18px;
-  color:black;
+  font-weight: bold;
+  width: 200px;
+
+
+}
+
+input[type="password"]{
+  width: 200px;
+}
+
+input[type="email"]{
+  width: 220px;
+  font-size: 18px;
+  background-color: #CCCCCC;
+  font-weight: bold;
 }
 
 h3::first-letter {
-  color: #8fbf00;
+  color: #bd1010;
 }
 
 h3{
