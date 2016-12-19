@@ -12,24 +12,24 @@
 <form name="form_users" id="form_users">
 <div id="left">
   <section>
-    <h3>Correo electronico</h3>
+    <h3>Email</h3>
     <input type="email" name="email" id="email" value="">
   </section>
 </br>
   <section>
-    <h3>Contraseña</h3>
+    <h3>Password</h3>
     <input type="password" name="passwd" id="passwd" value="">
   </section>
 </br>
   <section>
-    <h3>Telefono</h3>
+    <h3>Phone</h3>
     <input type="text" name="phone" id="phone" value="">
   </section>
 </div>
 
 <div id="mid">
   <section>
-    <h3>Nombre de usuario</h3>
+    <h3>Username</h3>
     <input type="text" name="name_user" id="name_user" value="">
   </section>
 </br>
@@ -45,7 +45,7 @@
       <div id="dropzone" class="dropzone"></div>
   </section>
 </br>
-  <button type="button" class="submit" name="submitBtn_user" id="submitBtn_user" value="Confirmar">Confirmar</button>
+  <button type="button" class="ghost-button-border-color" name="submitBtn_user" id="submitBtn_user" value="Confirmar">CONFIRM</button>
 
 <img src="<?php echo USERS_IMG_PATH ?>tick.jpg" id="tick" alt="tick"><h2 id="text">PROFILE UPDATED</h2></img>
 </div>
@@ -53,32 +53,32 @@
 <div id="right">
 
   <section>
-    <h3>Nombre</h3>
+    <h3>Name</h3>
     <input type="text" name="named" id="named" value="">
   </section>
 </br>
   <section>
-    <h3>Apellidos</h3>
+    <h3>Surname</h3>
     <input type="text" name="surname" id="surname" value="">
   </section>
 </br>
   <section>
-    <h3>Fecha de nacimiento</h3>
+    <h3>Date Birthday</h3>
     <input type="text" name="date_birthday" id="date_birthday" value="">
   </section>
 </br>
   <section>
-    <h3>Pais</h3>
+    <h3>Country</h3>
     <select name="country" id="country"></select>
   </section>
 </br>
   <section>
-    <h3>Provincia</h3>
+    <h3>Province</h3>
     <select name="province" id="province"></select>
   </section>
 </br>
   <section>
-    <h3>Población</h3>
+    <h3>Town</h3>
     <select name="town" id="town"></select>
   </section>
 </br>
