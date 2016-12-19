@@ -49,6 +49,7 @@
   define('UTILS_USERS_PATH', MODULES_PATH . 'users/utils/');
   define('JS_USERS_PATH', SITE_PATH . 'modules/users/view/js/');
   define('CSS_USERS_PATH', SITE_PATH . 'modules/users/view/css/');
+  define('USERS_IMG_PATH', SITE_PATH . 'modules/users/view/images/');
 
   //MODULE PRODUCTS
   define('CONTROLLER_PRODUCTS_PATH', MODULES_PATH . 'products/controller/');

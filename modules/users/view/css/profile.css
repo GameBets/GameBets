@@ -18,11 +18,52 @@
 
 #mid button {
   position: absolute;
-  left: 60px;
+  left: 80px;
 }
 
 #mid img {
+  border: 2px solid #CCCCCC;
+  width: 240px;
+  height: 120px;
+  margin-bottom: 2px;
+}
 
-  width: 100px;
-  height: 40px;
+.dropzone {
+    height: 50px !important;
+}
+
+#form_users {
+  height: 500px;
+}
+
+img#tick  {
+  position: relative;
+  top: 30px;
+  right: 75px;
+  width: 60px;
+  visibility: hidden;
+  height: 50px;
+}
+
+h2#text {
+  visibility: hidden;
+  color:green;
+}
+
+input {
+  border: 1px solid #CCCCCC;
+}
+
+input[type="text"] {
+  font-size: 18px;
+  color:black;
+}
+
+h3::first-letter {
+  color: #8fbf00;
+}
+
+h3{
+  text-transform: uppercase;
+  font-weight: bold;
 }

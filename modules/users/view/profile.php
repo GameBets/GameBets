@@ -15,12 +15,12 @@
     <h3>Correo electronico</h3>
     <input type="email" name="email" id="email" value="">
   </section>
-
+</br>
   <section>
     <h3>Contraseña</h3>
     <input type="password" name="passwd" id="passwd" value="">
   </section>
-
+</br>
   <section>
     <h3>Telefono</h3>
     <input type="text" name="phone" id="phone" value="">
@@ -32,7 +32,7 @@
     <h3>Nombre de usuario</h3>
     <input type="text" name="name_user" id="name_user" value="">
   </section>
-
+</br>
   <section>
     <h3>Avatar</h3>
     <img id="avatar_user" src="" />
@@ -47,35 +47,36 @@
 </br>
   <button type="button" class="submit" name="submitBtn_user" id="submitBtn_user" value="Confirmar">Confirmar</button>
 
-
+<img src="<?php echo USERS_IMG_PATH ?>tick.jpg" id="tick" alt="tick"><h2 id="text">PROFILE UPDATED</h2></img>
 </div>
 
 <div id="right">
+
   <section>
     <h3>Nombre</h3>
     <input type="text" name="named" id="named" value="">
   </section>
-
+</br>
   <section>
     <h3>Apellidos</h3>
     <input type="text" name="surname" id="surname" value="">
   </section>
-
+</br>
   <section>
     <h3>Fecha de nacimiento</h3>
     <input type="text" name="date_birthday" id="date_birthday" value="">
   </section>
-
+</br>
   <section>
     <h3>Pais</h3>
     <select name="country" id="country"></select>
   </section>
-
+</br>
   <section>
     <h3>Provincia</h3>
     <select name="province" id="province"></select>
   </section>
-
+</br>
   <section>
     <h3>Población</h3>
     <select name="town" id="town"></select>

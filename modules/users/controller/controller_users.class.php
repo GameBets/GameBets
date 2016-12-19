@@ -306,6 +306,7 @@
           }
         }
 
+
     public function modify(){
 
       $jsondata = array();
@@ -327,7 +328,6 @@
               'town' => $result['datos']['town']
           );
 
-
          $arrayDatos = array(
                       'column' => array(
                           'email'
@@ -346,7 +346,6 @@
               }
           }
 
-
           set_error_handler('ErrorHandler');
           try {
               $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrayDatos);
@@ -355,10 +354,8 @@
               $arrValue = false;
           }
 
-
           restore_error_handler();
           if ($arrValue) {
-
               $url = amigable('?module=users&function=profile', true);
               $jsondata["success"] = true;
               $jsondata["redirect"] = $url;
