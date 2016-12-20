@@ -21,9 +21,10 @@ class users_dao {
         $email = $arrArgument['email'];
         $active = $arrArgument['active'];
         $type = $arrArgument['type'];
+        $online = $arrArgument['online'];
 
-        $sql = "INSERT INTO users (token, passwd, avatar, email, active, type ) "
-              . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type')";
+        $sql = "INSERT INTO users (token, passwd, avatar, email, active, type, online) "
+              . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type', '$online')";
         return $db->ejecutar($sql);
     }
 
@@ -117,6 +118,8 @@ class users_dao {
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
         $sql2 = " FROM users WHERE ";
+        $sql = '';
+        $fields = '';
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
@@ -165,7 +168,7 @@ class users_dao {
 
 
         $sql = $sql1 . $change . $sql2 . $sql;
-        
+
         return $db->ejecutar($sql);
     }
 }

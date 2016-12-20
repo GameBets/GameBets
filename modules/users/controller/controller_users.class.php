@@ -48,13 +48,34 @@
 
                         if ($arrValue[0]["total"] == 1) {
                             $arrArgument = array(
-                                'column' => array("email"),
+                                'column' => array('email'),
                                 'like' => array($user['email']),
-                                'field' => array('*')
+                                'field' => array('online'),
+                                'new' => array('1')
                             );
-                            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
-                            echo json_encode($arrValue);
-                            exit();
+                            set_error_handler('ErrorHandler');
+                            try {
+                                $value = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
+                            } catch (Exception $e) {
+                                $value = false;
+                            }
+                            if ($value) {
+                              $arrArgument = array(
+                                  'column' => array("email"),
+                                  'like' => array($user['email']),
+                                  'field' => array('*')
+                              );
+                              $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+                              echo json_encode($arrValue);
+                              exit();
+                            } else {
+                              $value = array(
+                                  "error" => true,
+                                  "datos" => "No se ha podido verificar el acceso, vuelvelo a intentar"
+                              );
+                              echo json_encode($value);
+                              exit();
+                            }
                         } else {
                             $value = array(
                                 "error" => true,
@@ -72,6 +93,7 @@
                         "datos" => "El usuario y la contraseña no coinciden"
                     );
                     echo json_encode($value);
+                    exit;
                 }
             } else {
                 showErrorPage(4, "", 'HTTP/1.0 503 Service Unavailable', 503);
@@ -80,6 +102,30 @@
         }
 
 /////////////END SIGNIN/////////////////////////////////////////////////////////
+
+////////////LOGOUT//////////////////////////////////////////////////////////////
+        public function logout() {
+            if (isset($_POST['login_json'])) {
+                $user = json_decode($_POST['login_json'], true);
+                $arrArgument = array(
+                    'column' => array('token'),
+                    'like' => array($user['token']),
+                    'field' => array('online'),
+                    'new' => array('0')
+                );
+                set_error_handler('ErrorHandler');
+                try {
+                    $value = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
+                } catch (Exception $e) {
+                    $value = false;
+                }
+                restore_error_handler();
+
+                echo json_encode($value);
+                exit;
+            }
+        }
+////////////END LOGOUT//////////////////////////////////////////////////////////
 
 /////////////SIGNUP/////////////////////////////////////////////////////////////
 
@@ -109,7 +155,8 @@
         					'email' => $result['datos']['email'],
                   'type' => "client",
                   'active' => 0,
-                  'token' => ""
+                  'token' => "",
+                  'online' => 0
         				);
 
                 /* Control de registro */
@@ -192,6 +239,81 @@
         }
 
 /////////////END SIGNUP/////////////////////////////////////////////////////////
+
+/////////////RECOVERY PASSWORD//////////////////////////////////////////////////
+        public function recovery() {
+          loadView('modules/users/view/', 'recovery_password.php');
+        }
+
+        public function recovery_password() {
+          if(isset($_POST['recovery_json'])){
+            $userJSON = json_decode($_POST["recovery_json"], true);
+
+            /* Control de registro */
+            set_error_handler('ErrorHandler');
+            try {
+                //loadModel
+                $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('email'), 'like' => array($userJSON['email'])));
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            /* Fin de control de registro */
+
+            if ($arrValue[0]['total'] == 1) {
+              $arrArgument = array(
+                  'column' => array("email"),
+                  'like' => array($userJSON['email']),
+                  'field' => array('*')
+              );
+              $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+              send_email($arrValue[0], "update");
+
+              $value = false;
+              echo json_encode($value);
+              exit();
+            } else {
+              $value =  true;
+              echo json_encode($value);
+              exit();
+            }
+          }
+        }
+
+        public function request() {
+          if ($_GET['aux']) {
+            loadView('modules/users/view/', 'request_password.php');
+          }
+        }
+
+        public function request_password() {
+          $jsondata = array();
+          $user = json_decode($_POST['change_password'], true);
+          $arrArgument = array(
+              'column' => array('token'),
+              'like' => array($user['token']),
+              'field' => array('passwd'),
+              'new' => array(password_hash($user['password'], PASSWORD_BCRYPT))
+          );
+
+          set_error_handler('ErrorHandler');
+          try {
+              $value = loadModel(MODEL_USERS_PATH, "users_model", "update", $arrArgument);
+          } catch (Exception $e) {
+              $value = false;
+          }
+          restore_error_handler();
+
+          if ($value) {
+              echo json_encode(true);
+              exit;
+          } else {
+              echo json_encode(false);
+              exit;
+          }
+        }
+/////////////END RECOVERY PASSWORD//////////////////////////////////////////////
+
 //----------------------------------------------------------------------------------------------------------------/
  ////////////////////////////////////////////////////////////////// START PROFILE --- //////////////////////////////
         function profile() {

@@ -37,6 +37,7 @@ CREATE TABLE `users` (
   `town` varchar(50) DEFAULT NULL,
   `active` tinyint(1) NOT NULL,
   `type` varchar(45) NOT NULL,
+  `online` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -47,7 +48,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('2eeea84353a882b48e61d76c13b9cf8d',NULL,'$2y$10$TLWLp674SgtxBeC/a00KreCSphjhItS8n0fiZ8T3G/EGtOfLWkvuG','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client');
+INSERT INTO `users` VALUES ('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$zuveFVapGILVaqpsl5VCtuN7KsAfL5x6b7xOIpujUxVbH/sD4w8KS','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,4 +65,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-05 21:21:19
+-- Dump completed on 2016-12-14 19:30:17

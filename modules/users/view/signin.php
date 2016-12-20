@@ -28,7 +28,7 @@
 
     <div class="contact_signin">
       <p>¿Aun no te has registrado? <a href="<?php amigable('?module=users&function=signup'); ?>" id="linkReg">Regístrate ahora</a></p>
-      <p>¿Has olvidado tu contraseña? <a href="https://projects-alumnes-yomogan.c9users.io/proj_final_login/JoinElderly/user/recuperar/" id="linkRest">Recupéra tu contraseña</a></p>
+      <p>¿Has olvidado tu contraseña? <a href="<?php amigable('?module=users&function=recovery'); ?>" id="linkRest">Recupéra tu contraseña</a></p>
     </div>
   </div>
 

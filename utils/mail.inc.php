@@ -14,9 +14,9 @@
                 $body = 'Gracias por unirte a nuestra aplicaci&oacute;n<br> Para finalizar el registro, pulsa ' . $ruta;
                 break;
 
-            case 'modificacion':
+            case 'update':
                 $subject = 'Tu Nuevo Password en Gamebets<br>';
-                $ruta = '<a href="' . amigable("?module=login&function=activar&aux=F" . $arr['token'], true) . '">aqu&iacute;</a>';
+                $ruta = '<a href="' . amigable("?module=users&function=request", true) . $arr['token'] . '">aqu&iacute;</a>';
                 $body = 'Para recordar tu password pulsa ' . $ruta;
                 break;
 
