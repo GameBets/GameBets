@@ -52,6 +52,7 @@
         {
             // Deleting chats older than 10 minutes
           //  $h = loadModel(MODEL_CHAT_PATH, 'chat_model', 'delete_chats_low_than_10min',"");
+
           $result = loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_users_online', '');
           $j = 0;
           $array = [];
@@ -68,6 +69,44 @@
                   'total' => loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_n_users_online', ''),
               ));
             exit;
+        }
+
+        public function getChats()
+        {
+      		$result =  loadModel(MODEL_CHAT_PATH, 'chat_model', 'get_chats', '');
+          // DB::query('SELECT * FROM webchat_lines WHERE id > '.$lastID.' ORDER BY id ASC');
+          $j = 0;
+          $array = [];
+      		// $chats = array();
+          foreach ($result as $key) {
+            if ($key != "") {
+                $array['id'][$j] = $result[$j]['id'];
+                $array['author'][$j] = $result[$j]['author'];
+                $array['gravatar'][$j] = SITE_PATH.$result[$j]['gravatar'];
+                $array['text'][$j] = $result[$j]['text'];
+                $array['time'][$j] = array(
+                  	'hours'		=> gmdate('H',strtotime($result[$j]['ts'])),
+            				'minutes'	=> gmdate('i',strtotime($result[$j]['ts']))
+                );
+                $array['ts'][$j] = $result[$j]['ts'];
+                $j++;
+            }
+          }
+          echo json_encode( array(
+                'chats' => $array
+            ));
+          exit;
+      		return array('chats' => $chats);
+        }
+        public function submitMessage()
+        {
+          $gravatar = loadModel(MODEL_CHAT_PATH, 'chat_model', 'obtain_gravatar', ($_POST['user']));
+          $array = [$_POST['user'], $gravatar,$_POST['text']];
+          $result =  loadModel(MODEL_CHAT_PATH, 'chat_model', 'insert_chat', $array);
+          echo json_encode($result);
+          exit;
+
+
         }
 
         // public function login($name, $email)

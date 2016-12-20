@@ -31,6 +31,11 @@ class chat_dao {
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
+    public function get_chats_DAO($db) {
+        $sql = "SELECT * FROM webchat_lines ORDER BY id ASC";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
     public function get_n_users_online_DAO($db) {
         $sql = "SELECT COUNT(*) as cnt FROM users where online=1";
         $stmt = $db->ejecutar($sql);
@@ -41,5 +46,12 @@ class chat_dao {
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
+    public function insert_chat_DAO($db, $datos) {
+      $sql = "INSERT INTO webchat_lines (author, gravatar, text)
+        VALUES ('".$datos[0]."','".$datos[1][0]['avatar']."','".$datos[2]."')";
+      $stmt = $db->ejecutar($sql);
+      return $db->listar($stmt);
+    }
+
 
 }

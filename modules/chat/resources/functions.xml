@@ -12,4 +12,12 @@
         <name>getUsers</name>
         <uri>getUsers</uri>
     </function>
+    <function>
+        <name>getChats</name>
+        <uri>getChats</uri>
+    </function>
+    <function>
+        <name>submitMessage</name>
+        <uri>submitMessage</uri>
+    </function>
 </functions>

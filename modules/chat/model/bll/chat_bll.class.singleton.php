@@ -34,4 +34,11 @@ class chat_bll {
     public function get_n_users_online_BLL() {
         return $this->dao->get_n_users_online_DAO($this->db);
     }
+
+    public function get_chats_BLL() {
+        return $this->dao->get_chats_DAO($this->db);
+    }
+    public function insert_chat_BLL($datos) {
+        return $this->dao->insert_chat_DAO($this->db, $datos);
+    }
 }

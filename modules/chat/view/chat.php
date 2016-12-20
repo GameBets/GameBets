@@ -21,9 +21,9 @@
             <input type="submit" class="blueButton" value="Login" />
         </form>
 
-        <form id="submitForm" method="post" action="">
+        <form id="submitForm" method="post">
             <input id="chatText" name="chatText" class="rounded" maxlength="255" />
-            <input type="submit" class="blueButton" value="Submit" />
+            <input type="button" id="enviarmsg" class="blueButton" value="Submit" />
         </form>
 
     </div>

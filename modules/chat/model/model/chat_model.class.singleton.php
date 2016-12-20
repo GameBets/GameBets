@@ -43,4 +43,13 @@ class chat_model
     {
         return $this->bll->get_users_online_BLL();
     }
+    public function get_chats()
+    {
+        return $this->bll->get_chats_BLL();
+    }
+
+    public function insert_chat($datos)
+    {
+        return $this->bll->insert_chat_BLL($datos);
+    }
 }
