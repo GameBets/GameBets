@@ -1,5 +1,9 @@
 $(document).ready(function () {
+<<<<<<< HEAD
     $("#fb").click(function () {
+=======
+    $("#facebook").click(function () {
+>>>>>>> SignInSocial
         Login();
     });
 });
@@ -47,7 +51,11 @@ function getUserInfo() {
             $.post(amigable('?module=user&function=social_signin'), {user: datos_social},
             function (response) {
                 if (!response.error) {
+<<<<<<< HEAD
                     Tools.createCookie("user", response[0]['usuario'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['nombre'], 1);
+=======
+                    Tools.createCookie("user", response[0]['name_user'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['name'], 1);
+>>>>>>> SignInSocial
                     window.location.href = amigable("?module=main");
                 } else {
                     if (response.datos == 503)
