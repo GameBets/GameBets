@@ -416,14 +416,12 @@ function validate_modify_user() {
                       $("#name_user").val(response.user['name_user']);
                       $("#phone").val(response.user['phone']);
                       $("#country").val(response.user['country']);
-                    /*  if (response.user['country'] == "ES")
-                          $("#country").value = "Spain";*/
                       $("#province").val(response.user['province']);
                       $("#town").val(response.user['town']);
-                      $("#avatar_user").attr('src', response.user['avatar']);
+                      $("#avatar_user").attr('src',response.user['avatar']);
+                      console.log(response.user['avatar']);
                       $("#email").val(response.user['email']);
-                      if (response.user['email'])
-                          $("#email").attr('disabled', true);
+
                     }
                   });
 

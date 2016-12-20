@@ -311,6 +311,7 @@
 
       $jsondata = array();
       $userJSON = json_decode($_POST['mod_user_json'], true);
+      $result_avatar = $_SESSION['avatar'];
 
       $result = validate_users($userJSON);
       if ($result['resultado']) {
@@ -321,7 +322,7 @@
               'passwd' => password_hash($result['datos']['passwd'], PASSWORD_BCRYPT),
               'date_birthday' => strtoupper($result['datos']['date_birthday']),
               'phone' => $result['datos']['phone'],
-            //	'avatar' => $result_avatar['datos'],
+            	'avatar' => SITE_PATH.$result_avatar['datos'],
               'name_user' => $result['datos']['name_user'],
               'country' => $result['datos']['country'],
               'province' => $result['datos']['province'],
@@ -373,5 +374,67 @@
       }
     }
 ////////////////////////////////////// END PROFILE -- /////////////////////////////////////////////////////
+
+
+/////////// START LOGIN FACEBOOK ///////////////
+
+function social_signin() { //utilitzada per Facebook i Twitter
+        $user = json_decode($_POST['user'], true);
+        if ($user['twitter']) {
+            $user['apellidos'] = "";
+            $user['email'] = "";
+            $mail = $user['user_id'] . "@gmail.com";
+        }
+        set_error_handler('ErrorHandler');
+        try {
+            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('usuario'), 'like' => array($user['id'])));
+        } catch (Exception $e) {
+            $arrValue = false;
+        }
+        restore_error_handler();
+
+        if (!$arrValue[0]["total"]) {
+            if ($user['email'])
+                $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
+            else
+                $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
+
+            $arrArgument = array(
+                'token' => $user['id'],
+                'email' => $user['email'],
+                'tipo' => 'client',
+                'avatar' => $avatar,
+                'activado' => "1",
+                'online' => "0"
+            );
+
+            set_error_handler('ErrorHandler');
+            try {
+                $value = loadModel(MODEL_USERS_PATH, "users_model", "signup", $arrArgument);
+            } catch (Exception $e) {
+                $value = false;
+            }
+            restore_error_handler();
+        } else
+            $value = true;
+
+        if ($value) {
+            set_error_handler('ErrorHandler');
+            $arrArgument = array(
+                'column' => array("token"),
+                'like' => array($user['id']),
+                'field' => array('*')
+            );
+            $user = loadModel(MODEL_USERS_PATH, "users_model", "select", $arrArgument);
+            restore_error_handler();
+            echo json_encode($user);
+        } else {
+            echo json_encode(array('error' => true, 'datos' => 503));
+        }
+    }
+//////////// END OF LOGIN FACEBOOK ////////////////
+
+
+
 
       }/// end

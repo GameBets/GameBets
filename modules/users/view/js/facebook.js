@@ -38,12 +38,15 @@ function Login() {
 }
 
 function getUserInfo() {
-    FB.api('/me', function (response) {
-        FB.api('/me', {fields: 'id, first_name, last_name, email'},
-        function (response) {
-            var data = {"id": response.id, "nombre": response.first_name, "apellidos": response.last_name, "email": response.email};
-            var datos_social = JSON.stringify(data);
 
+    FB.api('/me', function (response) {
+
+        FB.api('/me', {fields: 'id, first_name, last_name, email'},
+
+        function (response) {
+        //  console.log(response);
+            var data = {"id": response.id, "email": response.email};
+            var datos_social = JSON.stringify(data);
             $.post(amigable('?module=users&function=social_signin'), {user: datos_social},
             function (response) {
                 if (!response.error) {
