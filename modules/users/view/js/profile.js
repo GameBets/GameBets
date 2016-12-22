@@ -5,7 +5,6 @@ $(document).ready(function () {
       validate_modify_user();
   });
 
-  fill();
 
   $("#name_user, #surname, #passwd").keyup(function () {
       if ($(this).val() !== "") {
@@ -187,6 +186,8 @@ $(document).ready(function () {
       $("#town").prop('disabled', false);
     }
     });
+
+    fill();
 
 
 });
@@ -416,10 +417,11 @@ function validate_modify_user() {
                       $("#name_user").val(response.user['name_user']);
                       $("#phone").val(response.user['phone']);
                       $("#country").val(response.user['country']);
+                      console.log($("#country").option);
                       $("#province").val(response.user['province']);
                       $("#town").val(response.user['town']);
                       $("#avatar_user").attr('src',response.user['avatar']);
-                      console.log(response.user['avatar']);
+                    //  console.log(response.user['avatar']);
                       $("#email").val(response.user['email']);
 
                     }

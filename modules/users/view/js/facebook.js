@@ -50,11 +50,11 @@ function getUserInfo() {
             $.post(amigable('?module=users&function=social_signin'), {user: datos_social},
             function (response) {
                 if (!response.error) {
-                    Tools.createCookie("user", response[0]['name_user'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['name'], 1);
-                    window.location.href = amigable("?module=main");
+                  Tools.createCookie("user", response[0]['token'] + "|" + response[0]['email'] + "|" + response[0]['avatar'] + "|" + response[0]['type'], 1);
+                    window.location.href = amigable("?module=main&function=begin");
                 } else {
                     if (response.datos == 503)
-                        window.location.href = amigable("?module=main&fn=begin&param=503");
+                        window.location.href = amigable("?module=main&function=begin");
                 }
             }, "json").fail(function (xhr, textStatus, errorThrown) {
                 console.log(xhr.responseText);

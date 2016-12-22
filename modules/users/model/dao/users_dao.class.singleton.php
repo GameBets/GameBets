@@ -21,9 +21,11 @@ class users_dao {
         $email = $arrArgument['email'];
         $active = $arrArgument['active'];
         $type = $arrArgument['type'];
+        $online = $arrArgument['online'];
 
-        $sql = "INSERT INTO users (token, passwd, avatar, email, active, type ) "
-              . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type')";
+        $sql = "INSERT INTO users (token, passwd, avatar, email, active, type, online ) "
+              . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type','$online')";
+                echo json_encode($sql);
         return $db->ejecutar($sql);
     }
 
@@ -100,6 +102,7 @@ class users_dao {
          * the number of positions the array have, this way we get a method that builds a
          * custom sql to select with the needed arguments
          */
+
         $i = count($arrArgument['column']);
 
         $sql = "SELECT COUNT(*) as total FROM users WHERE ";
@@ -108,6 +111,7 @@ class users_dao {
             if ($i > 1 && $j != 0)
                 $sql.=" AND ";
             $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+
         }
 
         $stmt = $db->ejecutar($sql);

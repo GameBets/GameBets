@@ -8,5 +8,5 @@ function amigable(url) {
         var aux = url[i].split("=");
         link +=  "/"+aux[1];
     }
-    return "http://ludogi.tk/Gamebets" + link;
+    return "http://localhost/Gamebets" + link;
 }

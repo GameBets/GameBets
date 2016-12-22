@@ -8772,3 +8772,138 @@ Notice on line 126 in file /var/www/html/Gamebets/modules/users/model/dao/users_
 Notice on line 132 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
  | users | response 200
 20/12/16 05:17:24 PM | error loadView general | users | response 400
+21/12/16 09:33:44 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:33:44 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:33:44 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:25 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:25 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:25 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:50 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:50 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:34:50 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:38:39 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:38:39 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:38:39 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:05 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:05 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:05 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:34 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:34 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:34 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:35 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:35 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:41:35 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:42:55 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:42:55 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:42:55 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:18 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:18 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:18 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:35 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:35 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:43:35 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:44:25 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:44:25 PM | ERROR: [8] Undefined index: active
+Notice on line 22 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:44:25 PM | ERROR: [8] Undefined index: type
+Notice on line 23 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:12 PM | ERROR: [8] Undefined index: password
+Notice on line 19 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:12 PM | ERROR: [8] Undefined variable: sql
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:12 PM | ERROR: [8] Undefined variable: fields
+Notice on line 136 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:47 PM | ERROR: [8] Undefined variable: sql
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:47 PM | ERROR: [8] Undefined variable: fields
+Notice on line 136 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:51 PM | ERROR: [8] Use of undefined constant column - assumed 'column'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+21/12/16 09:45:51 PM | ERROR: [8] Use of undefined constant like - assumed 'like'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+21/12/16 09:45:51 PM | ERROR: [8] Use of undefined constant field - assumed 'field'
+Notice on line 226 in file /var/www/html/Gamebets/modules/users/controller/controller_users.class.php
+ | users | response 200
+21/12/16 09:45:51 PM | ERROR: [8] Undefined variable: sql
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:45:51 PM | ERROR: [8] Undefined variable: fields
+Notice on line 136 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:46:01 PM | ERROR: [8] Undefined variable: sql
+Notice on line 130 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+21/12/16 09:46:01 PM | ERROR: [8] Undefined variable: fields
+Notice on line 136 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200

@@ -380,14 +380,14 @@
 
 function social_signin() { //utilitzada per Facebook i Twitter
         $user = json_decode($_POST['user'], true);
-        if ($user['twitter']) {
+  /*     if ($user['twitter']) {
             $user['apellidos'] = "";
             $user['email'] = "";
             $mail = $user['user_id'] . "@gmail.com";
-        }
+        }*/
         set_error_handler('ErrorHandler');
         try {
-            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('usuario'), 'like' => array($user['id'])));
+            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "count", array('column' => array('token'), 'like' => array($user['id'])));
         } catch (Exception $e) {
             $arrValue = false;
         }
@@ -402,9 +402,9 @@ function social_signin() { //utilitzada per Facebook i Twitter
             $arrArgument = array(
                 'token' => $user['id'],
                 'email' => $user['email'],
-                'tipo' => 'client',
+                'type' => 'client',
                 'avatar' => $avatar,
-                'activado' => "1",
+                'active' => "1",
                 'online' => "0"
             );
 
@@ -414,6 +414,7 @@ function social_signin() { //utilitzada per Facebook i Twitter
             } catch (Exception $e) {
                 $value = false;
             }
+                echo json_encode($value);
             restore_error_handler();
         } else
             $value = true;

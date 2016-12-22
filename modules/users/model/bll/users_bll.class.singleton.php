@@ -41,6 +41,7 @@
       }
 
       public function count_BLL($arrArgument) {
+        
           return $this->dao->count_DAO($this->db, $arrArgument);
       }
 
