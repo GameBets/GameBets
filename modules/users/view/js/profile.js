@@ -238,72 +238,72 @@ function validate_modify_user() {
 
   //Pintar los errores
   //Si no hemos insertado correctamente el valor, se nos mostrara el mensaje de error
-  if ($("#name_user").val() === "" || $("#name_user").val() == "Nombre de usuario") {
+  if ($("#name_user").val() == "Nombre de usuario") {
       $("#name_user").focus().after("<span class='error_javascript'>Introduzca nombre de usuario</span>");
       result = false;
       return false;
-  } else if (!name_user_reg.test($("#name_user").val())) {
+  } else if (!name_user_reg.test($("#name_user").val()) && $("#name_user").val() !== "") {
       $("#name_user").focus().after("<span class='error_javascript'>Solo puede contener numeros y letras</span>");
       result = false;
       return false;
   }
 
-  if ($("#passwd").val() === "" || $("#passwd").val() == "Contraseña") {
+  if ($("#passwd").val() == "Contraseña") {
       $("#passwd").focus().after("<span class='error_javascript'>Inserte contraseña</span>");
       result = false;
       return false;
-  } else if (!password_reg.test($("#passwd").val())) {
+  } else if (!password_reg.test($("#passwd").val()) && $("#passwd").val() !== "") {
       $("#passwd").focus().after("<span class='error_javascript'>Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial</span>");
       result = false;
       return false;
   }
 
 
-  if ($("#named").val() === "" || $("#named").val() == "Nombre") {
+  if ($("#named").val() == "Nombre") {
       $("#named").focus().after("<span class='error_javascript'>Inserte nombre</span>");
       result = false;
       return false;
-  } else if (!name_reg.test($("#named").val())) {
+  } else if (!name_reg.test($("#named").val()) && $("#named").val() !== "") {
       $("#named").focus().after("<span class='error_javascript'>Solo puede contener letras</span>");
       result = false;
       return false;
   }
 
-  if ($("#surname").val() === "" || $("#surname").val() == "Apellidos") {
+  if ($("#surname").val() == "Apellidos") {
       $("#surname").focus().after("<span class='error_javascript'>Inserte apellidos</span>");
       result = false;
       return false;
-  } else if (!surname_reg.test($("#surname").val())) {
+  } else if (!surname_reg.test($("#surname").val()) && $("#surname").val() !== "") {
       $("#surname").focus().after("<span class='error_javascript'>Solo puede contener letras y 1 espacio</span>");
       result = false;
       return false;
   }
 
-  if ($("#date_birthday").val() === "" || $("#date_birthday").val() == "mm/dd/yyyy") {
+  if ($("#date_birthday").val() == "mm/dd/yyyy") {
       $("#date_birthday").focus().after("<span class='error_javascript'>Inserte fecha de nacimiento</span>");
       result = false;
       return false;
-  } else if (!date_birthday_reg.test($("#date_birthday").val())) {
+  } else if (!date_birthday_reg.test($("#date_birthday").val()) && $("#date_birthday").val() !== "") {
       $("#date_birthday").focus().after("<span class='error_javascript'>Error formato de fecha [mm/dd/yyyy]</span>");
       result = false;
       return false;
   }
 
-  if ($("#email").val() === "" || $("#email").val() == "Correo electrónico") {
+  if ($("#email").val() == "Correo electrónico") {
       $("#email").focus().after("<span class='error_javascript'>Inserte correo electrónico</span>");
       result = false;
       return false;
-  } else if (!email_reg.test($("#email").val())) {
+  } else if (!email_reg.test($("#email").val()) && $("#email").val() !== "") {
       $("#email").focus().after("<span class='error_javascript'>Ejemplo: micorreo@ejemplo.com</span>");
       result = false;
       return false;
   }
 
-  if ($("#phone").val() === "" || $("#phone").val() == "Telefono") {
+  if ($("#phone").val() == "Telefono") {
       $("#phone").focus().after("<span class='error_javascript'>Inserte telefono</span>");
       result = false;
       return false;
-  } else if (!phone_reg.test($("#phone").val())) {
+  } else if (!phone_reg.test($("#phone").val()) && $("#phone").val() !== "") {
       $("#phone").focus().after("<span class='error_javascript'>Debe contener 9 digitos</span>");
       result = false;
       return false;
@@ -337,6 +337,7 @@ function validate_modify_user() {
 
                      $.post(amigable('?module=users&function=modify'), {mod_user_json: data_users_JSON},
                      function (response) {
+                       //console.log(response);
 
                          if (response.success) {
 
@@ -416,69 +417,87 @@ function validate_modify_user() {
                       $("#passwd").val("");
                       $("#name_user").val(response.user['name_user']);
                       $("#phone").val(response.user['phone']);
-                      $("#country").val(response.user['country']);
-                      console.log($("#country").option);
-                      $("#province").val(response.user['province']);
-                      $("#town").val(response.user['town']);
+                      $("#country").empty();
                       $("#avatar_user").attr('src',response.user['avatar']);
-                    //  console.log(response.user['avatar']);
                       $("#email").val(response.user['email']);
 
+                      load_countries_v1(response.user['country']);
+                      if (response.user['country'] == "ES") {
+                          $("#province").prop('disabled', false);
+                          $("#town").prop('disabled', false);
+                          load_provincias_v1(response.user['province']);
+                          load_poblaciones_v1(response.user['province'], response.user['town']);
+                      }
+
+
+                    /*  dataJSON = JSON.stringify({ruta_avatar: response.user['avatar']});
+                      $.post(amigable('?module=users&function=cargarAvatar'), {avatar_json: dataJSON},
+                        function(response){console.log(response)});*/
                     }
                   });
 
                 }
 
 
-          function load_countries_v2(cad) {
+          function load_countries_v2(cad, pais) {
               $.getJSON( cad, function(data) {
                 $("#country").empty();
                 $("#country").append('<option value="" selected="selected">Select a Country</option>');
 
                 $.each(data, function (i, valor) {
-                  $("#country").append("<option value='" + valor.sISOCode + "'>" + valor.sName + "</option>");
+                  if (valor.sName.length > 20) {
+                      valor.sName = valor.sName.substring(0, 19);
+                  }
+                  if (pais == valor.sISOCode){
+                      $("#country").append("<option value='" + valor.sISOCode + "' selected='selected' >" + valor.sName + "</option>");
+                  }else{
+                      $("#country").append("<option value='" + valor.sISOCode + "'>" + valor.sName + "</option>");
+                  }
                 });
               }).fail(function() {
                   alert( "error load_countries" );
               });
           }
 
-          function load_countries_v1() {
+          function load_countries_v1(pais) {
             $.post( amigable('?module=users&function=load_pais_users'),{'load_pais':true},
             function( response ) {
               //console.log(response);
               if(response.match(/error/gi)){
 
-                  load_countries_v2("../resources/ListOfCountryNamesByName.json");
+                  load_countries_v2("../resources/ListOfCountryNamesByName.json", pais);
               }else{
 
                   load_countries_v2(amigable('?module=users&function=load_pais_users'),{'load_pais':true}); //oorsprong.org
               }
             }).fail(function(response) {
-                load_countries_v2("../resources/ListOfCountryNamesByName.json");
+                load_countries_v2("../resources/ListOfCountryNamesByName.json", pais);
             });
         }
 
-          function load_provincias_v2() {
+          function load_provincias_v2(prov) {
               $.post("../resources/provinciasypoblaciones.xml", function (xml) {
           	    $("#province").empty();
           	    $("#province").append('<option value="" selected="selected">Select a Province</option>');
 
                   $(xml).find("provincia").each(function () {
-                      var id = $(this).attr('id');
-                      var nombre = $(this).find('nombre').text();
-                      $("#province").append("<option value='" + id + "'>" + nombre + "</option>");
+                    var id = $(this).attr('id');
+                    var nombre = $(this).find('nombre').text();
+                    if (prov == id)
+                        $("#province").append("<option value='" + id + "' selected='selected'>" + nombre + "</option>");
+                    else
+                        $("#province").append("<option value='" + id + "'>" + nombre + "</option>");
                   });
               }).fail(function() {
                   alert( "error load_provincias" );
               });
           }
 
-          function load_provincias_v1() { //provinciasypoblaciones.xml - xpath
+          function load_provincias_v1(prov) { //provinciasypoblaciones.xml - xpath
             $.post( amigable('?module=users&function=load_provincias_users'),{'load_provincias':true},
                 function( response ) {
 
-                  //  console.log(response);
+                    //console.log(response);
                       $("#province").empty();
           	          $("#province").append('<option value="" selected="selected">Select a Province</option>');
 
@@ -487,27 +506,37 @@ function validate_modify_user() {
 
 
               		    var provincias=json.provincias;
-                      console.log(provincias);
+                      //console.log(provincias);
                       if(provincias === 'error'){
-                          load_provincias_v2();
+                          load_provincias_v2(prov);
                       }else{
-                          for (var i = 0; i < provincias.length; i++) {
-                      		    $("#province").append("<option value='" + provincias[i].id + "'>" + provincias[i].nombre + "</option>");
-                  		    }
+                        for (var i = 0; i <  provincias.length; i++) {
+                            if (prov == provincias[i].id)
+                                $("#province").append("<option value='" + provincias[i].id + "' selected='selected'>" + provincias[i].nombre + "</option>");
+                            else
+                                $("#province").append("<option value='" + provincias[i].id + "'>" + provincias[i].nombre + "</option>");
+
+                        }
                       }
               }).fail(function(response) {
-                  load_provincias_v2();
+                  load_provincias_v2(prov);
               });
           }
 
-          function load_poblaciones_v2(prov) {
+          function load_poblaciones_v2(prov, pobl) {
               $.post("../resources/provinciasypoblaciones.xml", function (xml) {
           		$("#town").empty();
           	  $("#town").append('<option value="" selected="selected">Select a Town</option>');
 
           		$(xml).find('provincia[id=' + prov + ']').each(function(){
               		$(this).find('localidad').each(function(){
-              			 $("#town").append("<option value='" + $(this).text() + "'>" + $(this).text() + "</option>");
+                   var text = $(this).text();
+                   if (text.length > 22)
+                       text = text.substring(0, 21);
+                   if (pobl == text)
+                       $("#town").append("<option value='" + text + "' selected='selected' >" + text + "</option>");
+                   else
+                       $("#town").append("<option value='" + text + "'>" + text + "</option>");
               		});
               });
           	}).fail(function() {
@@ -515,9 +544,9 @@ function validate_modify_user() {
             });
           }
 
-          function load_poblaciones_v1(prov) { //provinciasypoblaciones.xml - xpath
+          function load_poblaciones_v1(prov, pobl) { //provinciasypoblaciones.xml - xpath
               var datos = { idPoblac : prov  };
-          	$.post("index.php?module=users&function=load_poblacion_users", datos, function(response) {
+          	$.post(amigable("?module=users&function=load_poblacion_users"), datos, function(response) {
           	  //alert(response);
               var json = JSON.parse(response);
           		var poblaciones=json.poblaciones;
@@ -529,14 +558,18 @@ function validate_modify_user() {
           	  $("#town").append('<option value="" selected="selected">Select a Town</option>');
 
                   if(poblaciones === 'error'){
-                      load_poblaciones_v2(prov);
+                      load_poblaciones_v2(prov, pobl);
                   }else{
-                      for (var i = 0; i < poblaciones.length; i++) {
-                      		$("#town").append("<option value='" + poblaciones[i].poblacion + "'>" + poblaciones[i].poblacion + "</option>");
-                  		}
+                    for (var i = 0; i < poblaciones.length; i++) {
+                      if (poblaciones[i].poblacion.length > 22)
+                          poblaciones[i].poblacion = poblaciones[i].poblacion.substring(0, 21);
+                      if (pobl == poblaciones[i].poblacion)
+                          $("#town").append("<option value='" + poblaciones[i].poblacion + "' selected='selected'>" + poblaciones[i].poblacion + "</option>");
+                      else
+                          $("#town").append("<option value='" + poblaciones[i].poblacion + "'>" + poblaciones[i].poblacion + "</option>");
+                    }
                   }
-          	})
-          	.fail(function() {
-                  load_poblaciones_v2(prov);
+          	}).fail(function() {
+                  load_poblaciones_v2(prov, pobl);
               });
           }
