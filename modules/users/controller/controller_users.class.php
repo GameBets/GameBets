@@ -273,7 +273,7 @@
         	if(  (isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)  ){
         		$jsondata = array();
 
-            $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "obtain_provincias", "");
+            $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_provincias", "");
 
         		if($json){
         			$jsondata["provincias"] = $json;
@@ -292,7 +292,7 @@
         	    $jsondata = array();
               $json = array();
 
-              $arrValue = loadModel(MODEL_USERS_PATH, "users_model", "obtain_poblaciones", $_POST['idPoblac']);
+              $json = loadModel(MODEL_USERS_PATH, "users_model", "obtain_poblaciones", $_POST['idPoblac']);
 
         		if($json){
         			$jsondata["poblaciones"] = $json;
