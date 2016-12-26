@@ -6,6 +6,11 @@ $(document).ready(function() {
     $('#enviarmsg').click(function() {
         chat.sendMessage();
     });
+    $("#enviarmsg").keypress(function(e) {
+       if(e.which == 13) {
+          chat.sendMessage();
+       }
+    });
 });
 
 var chat = {
@@ -115,39 +120,50 @@ var chat = {
 
     getChats: function(callback) {
       //vaciamos el panel para qe no se solapen los chats
-      // chat.data.jspAPI.getContentPane().html('');
-        $.post("../../chat/getChats/", function(data, status) {
+      chat.data.jspAPI.getContentPane().html('');
+        $.post(amigable("?module=chat&function=getChats"), function(data, status) {
             var json = JSON.parse(data);
             var array = [];
             var chats = [];
+            var clase = "";
             console.log(json);
             console.log(json.chats.author.length);
             for (var i = 0; i < json.chats.author.length; i++) {
-                // console.log(json.chats.id[i]);
-                array = [];
-                array.push(json.chats.id[i]);
-                array.push(json.chats.author[i]);
-                array.push(json.chats.gravatar[i]);
-                array.push(json.chats.text[i]);
-                array.push(json.chats.time[i]);
-                array.push(json.chats.ts[i]);
-                // chats.push(array);
+              // console.log(".chat chat-"+json.chats.id[i]+" rounded");
+              array = [];
+              array.push(json.chats.id[i]);
+              array.push(json.chats.author[i]);
+              array.push(json.chats.gravatar[i]);
+              array.push(json.chats.text[i]);
+              array.push(json.chats.time[i]);
+              array.push(json.chats.ts[i]);
+              // chats.push(array);
+              clase= '.chat chat-'+(json.chats.id[i])+' rounded';
+              // console.log(clase);
+              // console.log($(clase).text());
+              console.log($('#mi_id_unico 60'));
+
+              if($(clase)!=="undefined"){
                 chat.addChatLine(array);
+              }
+                // console.log(json.chats.id[i]);
+
             }
+            console.log($('.chat chat-60 rounded'));
             console.log(chats);
 
             if (!json.chats) {
                 chat.data.jspAPI.getContentPane().html('<p class="noChats">No chats yet</p>');
             }
 
-            setTimeout(callback, 15000);
+            setTimeout(function(){$('.chat').remove(); callback;}, 40000);
         });
     },
 
     // Requesting a list with all the users.
 
     getUsers: function(callback) {
-        $.post("../../chat/getUsers/", function(data, status) {
+        $.post(amigable("?module=chat&function=getUsers"), function(data, status) {
             // console.log(data);
             var json = JSON.parse(data);
             var array = [];
@@ -176,7 +192,7 @@ var chat = {
             $('#chatUsers').append('<p class="count">' + message + '</p>');
             setTimeout(callback, 15000);
         }).fail(function(xhr) {
-            $("#chatContainer").load("../../chat/view_error_true/", {
+            $("#chatContainer").load(amigable("?module=chat&function=view_error_true"), {
                 'view_error': true
             });
         });
@@ -201,7 +217,7 @@ var chat = {
 
             case 'chatLine':
                 arr = [
-                    '<div class="chat chat-', params[0], ' rounded"><span class="gravatar"><img src="', params[2],
+                    '<div class="chat chat-', params[0], ' rounded" id="mi_id_unico ', params[0],'"><span class="gravatar"><img src="', params[2],
                     '" width="23" height="23" onload="this.style.visibility=\'visible\'" />', '</span><span class="author">', params[1],
                     ':</span><span class="text">', params[3], '</span><span class="time">', params[4], '</span></div>'
                 ];
@@ -233,14 +249,17 @@ var chat = {
     },
 
     checkLogin: function() {
-        var user = Tools.createCookie("user", "angel", 10);
+        // var user = Tools.createCookie("user", "angel", 10);
         var user = Tools.readCookie("user");
         chat.init_jspAPI();
         if (user) {
-            $.post("../../chat/checkLogged/", {
-                'user': user
+          user = user.split("|");
+          console.log(user);
+
+            $.post(amigable("?module=chat&function=checkLogged"), {
+                'user': user[1]
             }, function(data, status) {
-                // console.log(data);
+                console.log(data);
                 var json = JSON.parse(data);
                 // console.log(json);
                 var logged = json.logged;
@@ -262,15 +281,10 @@ var chat = {
 
             }).fail(function(xhr) {
                 // console.log("holahola");
-                $("#chatContainer").load("../../chat/view_error_true/", {
+                $("#chatContainer").load(amigable("?module=chat&function=view_error_true"), {
                     'view_error': true
                 });
             });
-        } else {
-            // console.log("hola");
-            // window.location.href ="<?php amigable('?module=users&function=form_users'); ?>";
-            //la cookie no existe
-            //redirigir a sign up
         }
 
         // Self executing timeout functions
@@ -306,13 +320,15 @@ var chat = {
             };
 
         var user = Tools.readCookie("user");
+
         console.log(parametros);
         if (user) {
+          user = user.split("|");
             if ($('#chatText').val() != "") {
-                console.log("holaa324");
+                // console.log("holaa324");
 
-                $.post("../../chat/submitMessage/", {
-                    'user': user,
+                $.post(amigable("?module=chat&function=submitMessage"), {
+                    'user': user[1],
                     'text': $('#chatText').val()
                 }, function(data, status) {
                     if (status == "success") {
@@ -321,20 +337,15 @@ var chat = {
                         // the AJAX request to complete:
 
                         chat.agregarlineanueva($.extend({}, parametros));
-                    }
+                        $('#chatText').val("");
+                      }
                 }).fail(function(xhr) {
                     console.log(xhr);
-                    $("#chatContainer").load("../../chat/view_error_true/", {
+                    $("#chatContainer").load(amigable("?module=chat&function=view_error_true"), {
                         'view_error': true
                     });
                 });
-            } //fi if valor input buit
-            else {
-
-            }
-        } //fi user existent
-        else {
-
+            } //fi if valor input
         }
     }
 };

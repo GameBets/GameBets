@@ -27,7 +27,7 @@ class chat_dao {
     }
 
     public function get_users_online_DAO($db) {
-        $sql = "SELECT name_user, avatar FROM users WHERE online= 1 ORDER BY name_user ASC LIMIT 18";
+        $sql = "SELECT name_user, avatar FROM users WHERE online= 1 ORDER BY email ASC LIMIT 18";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
@@ -42,7 +42,7 @@ class chat_dao {
         return $db->listar($stmt);
     }
     public function obtain_gravatar_DAO($db, $user) {
-        $sql = "SELECT avatar FROM users WHERE name_user='".$user."'";
+        $sql = "SELECT avatar FROM users WHERE email='".$user."'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
