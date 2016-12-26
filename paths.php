@@ -17,6 +17,9 @@
   //PRETTY URL
   define('URL_AMIGABLES', true);
 
+  //LIBS
+  define('LIBS', SITE_ROOT . 'libs/');
+
   //MODEL
   define('MODEL_PATH', SITE_ROOT . 'model/');
 
@@ -56,7 +59,15 @@
   define('JS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/js/');
   define('CSS_PRODUCTS_PATH', SITE_PATH . 'modules/products/view/css/');
 
+  // MODULE CONTACT
+  define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
+  define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
+  define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
+  define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
+  define('CONTACT_VIEW_PATH', 'modules/contact/view/');
+
   //MODULE CHAT
   define('JS_CHAT_PATH', SITE_PATH . 'modules/chat/view/js/');
   define('CSS_CHAT_PATH', SITE_PATH . 'modules/chat/view/css/');
   define('MODEL_CHAT_PATH', MODULES_PATH . 'chat/model/model/');
+  define('CHAT_VIEW_PATH', 'modules/chat/view/');

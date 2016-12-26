@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for linux-glibc2.5 (x86_64)
 --
--- Host: localhost    Database: GameBets_DB
+-- Host: 127.0.0.1    Database: GameBets_DB
 -- ------------------------------------------------------
 -- Server version	5.7.16-0ubuntu0.16.04.1
 
@@ -48,13 +48,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$zuveFVapGILVaqpsl5VCtuN7KsAfL5x6b7xOIpujUxVbH/sD4w8KS','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
+INSERT INTO `users` VALUES ('750c89e5242f176d83a6d794b89d28b6',NULL,'$2y$10$JnB4Ab9IAULsvKm.Hlpjf.AF3/qBUIbVteadWTZOjZkxX8e1TXnDm','http://www.gravatar.com/avatar/9bc6139dddf1dbeab198921a12ca0c709bc6139dddf1dbeab198921a12ca0c70?s=400&d=identicon&r=g',NULL,NULL,NULL,'asdfg@gmail.com',NULL,NULL,NULL,NULL,1,'client',0),('9c5e32e90487f93c5479ad93b9cdb347',NULL,'$2y$10$H0Fxksc1tbHYOgPfNCJcsu2iBx74ZHdmC0K88JgXib9Sr0eEv1/yu','http://www.gravatar.com/avatar/3bccd59be0a57b39bdd9b2760702795e3bccd59be0a57b39bdd9b2760702795e?s=400&d=identicon&r=g',NULL,NULL,NULL,'dani@gmail.com',NULL,NULL,NULL,NULL,1,'client',1),('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$zuveFVapGILVaqpsl5VCtuN7KsAfL5x6b7xOIpujUxVbH/sD4w8KS','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'GameBets_DB'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -65,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-14 19:30:17
+-- Dump completed on 2016-12-24 17:28:31
