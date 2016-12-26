@@ -1,8 +1,10 @@
+CREATE DATABASE  IF NOT EXISTS `GameBets_DB` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `GameBets_DB`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
 -- Host: localhost    Database: GameBets_DB
 -- ------------------------------------------------------
--- Server version	5.7.16-0ubuntu0.16.04.1
+-- Server version	5.5.52-0+deb8u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,7 +25,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `token` varchar(1000) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `name_user` varchar(50) DEFAULT NULL,
   `passwd` varchar(1000) NOT NULL,
   `avatar` varchar(1000) NOT NULL,
@@ -48,13 +50,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$zuveFVapGILVaqpsl5VCtuN7KsAfL5x6b7xOIpujUxVbH/sD4w8KS','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
+INSERT INTO `users` VALUES ('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$3tzi5eTSL3esLui/ZiTS2OkpsSf9ahnK0AG7TssISjgvA1JjucyQa','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'GameBets_DB'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -65,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-14 19:30:17
+-- Dump completed on 2016-12-26 20:00:04
