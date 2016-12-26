@@ -118,13 +118,13 @@ class users_dao {
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
         $sql2 = " FROM users WHERE ";
-        $sql = '';
+        $sql3 = '';
         $fields = '';
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
                 $sql.=" AND ";
-            $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+            $sql3 .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
         }
 
         for ($l = 0; $l < $k; $l++) {
@@ -134,7 +134,7 @@ class users_dao {
         }
 
 
-        $sql = $sql1 . $fields . $sql2 . $sql;
+        $sql = $sql1 . $fields . $sql2 . $sql3;
 
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
@@ -150,6 +150,8 @@ class users_dao {
          */
         $i = count($arrArgument['field']);
         $k = count($arrArgument['column']);
+        $change = '';
+        $sql3 = '';
 
         $sql1 = "UPDATE users SET ";
         $sql2 = "  WHERE ";
@@ -162,12 +164,12 @@ class users_dao {
         for ($l = 0; $l < $k; $l++) {
             if ($k > 1 && $l != 0)
                 $sql.=" AND ";
-            $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
+            $sql3 .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
         }
 
 
 
-        $sql = $sql1 . $change . $sql2 . $sql;
+        $sql = $sql1 . $change . $sql2 . $sql3;
 
         return $db->ejecutar($sql);
     }
