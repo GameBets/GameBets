@@ -7,12 +7,12 @@ function validate_search(search_value) {
 }
 
 function search_not_empty(keyword) {
-    $.post("../../products/num_pages_products/", {'num_pages': true, 'keyword': keyword}, function (data, status) {
+    $.post(amigable("?module=products&function=num_pages_products"), {'num_pages': true, 'keyword': keyword}, function (data, status) {
         var json = JSON.parse(data);
         var pages = json.pages;
         var count = 0;
 
-        $("#results").load("../../products/obtain_products/", {'keyword': keyword});
+        $("#results").load(amigable("?module=products&function=obtain_products"), {'keyword': keyword});
 
         if (pages !== 0) {
             $('.pagination').val('');
@@ -26,13 +26,13 @@ function search_not_empty(keyword) {
                 prev: 'Prev'
             }).on("page", function (e, num) {
                 e.preventDefault();
-                $("#results").load("../../products/obtain_products/", {'page_num': num, 'keyword': keyword});
+                $("#results").load(amigable("?module=products&function=obtain_products"), {'page_num': num, 'keyword': keyword});
                 reset();
 
 
             });
         } else {
-            $("#results").load("../../products/view_error_false/", {'view_error': false}); //view_error=false
+            $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false}); //view_error=false
 
             $('.pagination').html('');
             reset();
@@ -45,18 +45,18 @@ function search_not_empty(keyword) {
 
     }).fail(function (xhr) {
         //"index.php?module=products&function=view_error_true&view_error=true"
-        $("#results").load("../../products/view_error_true/", {'view_error': true});
+        $("#results").load(amigable("?module=products&function=view_error_true"), {'view_error': true});
         $('.pagination').html('');
         reset();
     });
 }
 
 function search_empty() {
-    $.post("../../products/num_pages_products/", {'num_pages': true}, function (data, status) {
+    $.post(amigable("?module=products&function=num_pages_products"), {'num_pages': true}, function (data, status) {
         var json = JSON.parse(data);
-        console.log(json);
+
         var pages = json.pages;
-        $("#results").load("../../products/obtain_products/"); //load initial records
+        $("#results").load(amigable("?module=products&function=obtain_products")); //load initial records
 
         $(".pagination").bootpag({
             total: pages,
@@ -67,7 +67,7 @@ function search_empty() {
         }).on("page", function (e, num) {
             //console.log(num);
             e.preventDefault();
-            $("#results").load("../../products/obtain_products/", {'page_num': num});
+            $("#results").load(amigable("?module=products&function=obtain_products"), {'page_num': num});
             reset();
         });
 
@@ -77,14 +77,14 @@ function search_empty() {
 
 
     }).fail(function (xhr) {
-        $("#results").load("../../products/view_error_true/", {'view_error': true});
+        $("#results").load(amigable("?module=products&function=view_error_true"), {'view_error': true});
         $('.pagination').html('');
         reset();
     });
 }
 
 function search_product(keyword) {
-    $.post("../../products/nom_products/", {'nom_product': keyword}, function (data, status) {
+    $.post(amigable("?module=products&function=nom_products"), {'nom_product': keyword}, function (data, status) {
         var json = JSON.parse(data);
         var product = json.product_autocomplete;
         //alert(product.name);
@@ -104,18 +104,18 @@ function search_product(keyword) {
 
 
     }).fail(function (xhr) {
-        $("#results").load("../../products/view_error_false/", {'view_error': false});
+        $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false});
         $('.pagination').html('');
         reset();
     });
 }
 
 function count_product(keyword) {
-    $.post("../../products/count_products/", {'count_product': keyword}, function (data, status) {
+    $.post(amigable("?module=products&function=count_products"), {'count_product': keyword}, function (data, status) {
         var json = JSON.parse(data);
         var num_products = json.num_products;
         if (num_products == 0) {
-            $("#results").load("../../products/view_error_false/", {'view_error': false});
+            $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false});
             $('.pagination').html('');
             reset();
         }
@@ -128,7 +128,7 @@ function count_product(keyword) {
 
 
     }).fail(function () {
-        $("#results").load("../../products/view_error_false/", {'view_error': false});  //view_error=false
+        $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false});  //view_error=false
         $('.pagination').html('');
         reset();
     });
@@ -190,11 +190,11 @@ $(document).ready(function () {
         location.reload(true);
 
     });
-    $.post("../../products/autocomplete_products/", {'autocomplete': true}, function (data, status) {
+    $.post(amigable("?module=products&function=autocomplete_products"), {'autocomplete': true}, function (data, status) {
         //console.log(data);
         var json = JSON.parse(data);
         var nom_productos = json.nom_productos;
-        console.log(nom_productos);
+        //console.log(nom_productos);
         var suggestions = new Array();
         for (var i = 0; i < nom_productos.length; i++) {
             suggestions.push(nom_productos[i].name);
@@ -215,9 +215,9 @@ $(document).ready(function () {
     }).fail(function (xhr) {
         //if  we already have an error 404
         if (xhr.status === 404) {
-            $("#results").load("../../products/view_error_false/", {'view_error': false});
+            $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false});
         } else {
-            $("#results").load("../../products/view_error_true/", {'view_error': true});
+            $("#results").load(amigable("?module=products&function=view_error_true"), {'view_error': true});
         }
 
     });

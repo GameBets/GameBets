@@ -144,5 +144,5 @@ function ErrorHandler($errno, $errstr, $errfile, $errline) {
 
     $log = Log::getInstance();
     $log->add_log_general($msg, $_SESSION['module'], "response " . http_response_code()); //$text, $controller, $function
-    $log->add_log_products($msg, "", $_SESSION['module'], "response " . http_response_code()); //$msg, $username = "", $controller, $function
+  //  $log->add_log_products($msg, "", $_SESSION['module'], "response " . http_response_code()); //$msg, $username = "", $controller, $function
 }

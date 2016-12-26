@@ -14,7 +14,22 @@ class users_dao {
         return self::$_instance;
     }
 
+    public function signup_dao($db, $arrArgument) {
+        $token = $arrArgument['token'];
+        $passwd = $arrArgument['password'];
+        $avatar = $arrArgument['avatar'];
+        $email = $arrArgument['email'];
+        $active = $arrArgument['active'];
+        $type = $arrArgument['type'];
+        $online = $arrArgument['online'];
+
+        $sql = "INSERT INTO users (token, passwd, avatar, email, active, type, online) "
+              . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type', '$online')";
+        return $db->ejecutar($sql);
+    }
+
     public function create_users_dao($db, $arrArgument) {
+        $token = $arrArgument['token'];
         $name_user = $arrArgument['name_user'];
         $passwd = $arrArgument['password'];
         $avatar = $arrArgument['avatar'];
@@ -26,12 +41,12 @@ class users_dao {
         $country = $arrArgument['country'];
         $province = $arrArgument['province'];
         $town = $arrArgument['town'];
+        $active = 0;
 
-        $sql = "INSERT INTO users (name_user, passwd, avatar, named, surname, "
-              . "date_birthday, email, phone, country, province, town ) "
-              . "VALUES ('$name_user', '$passwd', '$avatar', '$named', '$surname', "
-              . "'$date_birthday', '$email', '$phone', '$country', '$province', '$town')";
-
+        $sql = "INSERT INTO users (token, name_user, passwd, avatar, named, surname, "
+              . "date_birthday, email, phone, country, province, town, active ) "
+              . "VALUES ('$token', '$name_user', '$passwd', '$avatar', '$named', '$surname', "
+              . "'$date_birthday', '$email', '$phone', '$country', '$province', '$town', '$active')";
         return $db->ejecutar($sql);
     }
 
@@ -77,5 +92,83 @@ class users_dao {
           array_push($json, $tmp);
         }
         return $json;
+    }
+
+    public function count_dao($db, $arrArgument) {
+        /* $arrArgument is composed by 2 array ("column" and "like"), this iterates
+         * the number of positions the array have, this way we get a method that builds a
+         * custom sql to select with the needed arguments
+         */
+        $i = count($arrArgument['column']);
+
+        $sql = "SELECT COUNT(*) as total FROM users WHERE ";
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+        }
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function select_dao($db, $arrArgument) {
+        $i = count($arrArgument['column']);
+        $k = count($arrArgument['field']);
+        $sql1 = "SELECT ";
+        $sql2 = " FROM users WHERE ";
+        $sql = '';
+        $fields = '';
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+        }
+
+        for ($l = 0; $l < $k; $l++) {
+            if ($l > 1 && $k != 0)
+                $fields.=", ";
+            $fields .= $arrArgument['field'][$l];
+        }
+
+
+        $sql = $sql1 . $fields . $sql2 . $sql;
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function update_dao($db, $arrArgument) {
+        /*
+         * @param= $arrArgument( column => array(colum),
+         *                          like => array(like),
+         *                          field => array(field),
+         *                          new => array(new)
+         *                      );
+         */
+        $i = count($arrArgument['field']);
+        $k = count($arrArgument['column']);
+
+        $sql1 = "UPDATE users SET ";
+        $sql2 = "  WHERE ";
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $change.=", ";
+            $change .= $arrArgument['field'][$j] . "='" . $arrArgument['new'][$j] . "'";
+        }
+        for ($l = 0; $l < $k; $l++) {
+            if ($k > 1 && $l != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
+        }
+
+
+
+        $sql = $sql1 . $change . $sql2 . $sql;
+
+        return $db->ejecutar($sql);
     }
 }

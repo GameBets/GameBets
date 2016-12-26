@@ -3,7 +3,7 @@ $("#details_prod").hide();
 $(document).ready(function () {
     $('.prod').click(function () {
         var id = this.getAttribute('id');
-        $.post("../../products/idProduct/", {'idProduct': id}, function (data, status) {
+        $.post(amigable("?module=products&function=idProduct"), {'idProduct': id}, function (data, status) {
             //console.log(data);
             var json = JSON.parse(data);
             var product = json.product;
@@ -29,9 +29,9 @@ $(document).ready(function () {
                 .fail(function (xhr) {
                     ///if  we already have an error 404
                     if (xhr.status === 404) {
-                        $("#results").load("../../products/view_error_false/", {'view_error': false});
+                        $("#results").load(amigable("?module=products&function=view_error_false"), {'view_error': false});
                     } else {
-                        $("#results").load("../../products/view_error_true/", {'view_error': true});
+                        $("#results").load(amigable("?module=products&function=view_error_true"), {'view_error': true});
                     }
                     $('.pagination').html('');
 
