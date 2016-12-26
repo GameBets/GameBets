@@ -20,7 +20,9 @@ var chat = {
         lastID: 0,
         noActivity: 0,
         lastIDmsg1: 0,
-        lastIDmsg2: 0
+        lastIDmsg2: 0,
+        usersonline:[],
+        nonline:0
     },
 
     // The login method hides displays the
@@ -107,7 +109,6 @@ var chat = {
         }
 
         // If this isn't a temporary chat:
-        console.log("chat agregado arriba su id");
         if (parametros.id.toString().charAt(0) != 't') {
             var previous = $('#chatLineHolder .chat-' + (+parametros.id - 1));
             if (previous.length) {
@@ -130,7 +131,7 @@ var chat = {
         $.ajax({
             url: amigable("?module=chat&function=getChats"),
             success: function(result) {
-                console.log(result);
+                // console.log(result);
                 var json = JSON.parse(result);
                 var array = [];
                 var chats = [];
@@ -139,7 +140,6 @@ var chat = {
                 for (var i = 0; i < json.chats.author.length; i++) {
                     // console.log(".chat chat-"+json.chats.id[i]+" rounded");
                     array = [];
-
                     // console.log("id n1");
                     // console.log(chat.data.lastIDmsg1);
                     // console.log("id n2");
@@ -160,8 +160,8 @@ var chat = {
                     chat.data.lastIDmsg1 = json.chats.id[i];
                 }
                 chat.data.lastIDmsg2 = chat.data.lastIDmsg1;
-                console.log(chat.data.lastIDmsg2);
-                console.log($('#chatLineHolder').last());
+                // console.log(chat.data.lastIDmsg2);
+                // console.log($('#chatLineHolder').last());
 
                 if (!json.chats) {
                     chat.data.jspAPI.getContentPane().html('<p class="noChats">No chats yet</p>');
@@ -175,40 +175,42 @@ var chat = {
     // Requesting a list with all the users.
 
     getUsers: function(callback) {
-        $.post(amigable("?module=chat&function=getUsers"), function(data, status) {
-            // console.log(data);
-            var json = JSON.parse(data);
-            var array = [];
-            // console.log(json.users);
-            var usuaris = [];
-            for (var i = 0; i < json.users.name.length; i++) {
-                var j = 0;
-                // usuaris = [];
-                if (json.users.name[i]) {
-                    // console.log(usuaris);
-                    usuaris[j] = json.users.name[i];
-                    j++;
-                    usuaris[j] = json.users.gravatar[i];
-                    usuaris.push(chat.render('user', usuaris));
+        $.ajax({
+            url: amigable("?module=chat&function=getUsers"),
+            success: function(result) {
+                // console.log(data);
+                var json = JSON.parse(result);
+                var array = [];
+                // console.log(json.users);
+                var usuaris = [];
+                for (var i = 0; i < json.users.name.length; i++) {
+                    var j = 0;
+                    // usuaris = [];
+                    if (json.users.name[i]) {
+                        // console.log(usuaris);
+                        usuaris[j] = json.users.name[i];
+                        // console.log(json.users.name[i]);
+                        j++;
+                        usuaris[j] = json.users.gravatar[i];
+                        usuaris.push(chat.render('user', usuaris));
+                    }
                 }
-            }
 
-            var message = '';
-            if (json.total[0].cnt < 1) {
-                message = 'No one is online';
-            } else {
-                message = json.total[0].cnt + ' ' + (json.total[0].cnt == 1 ? 'person' : 'people') + ' online';
-            }
-            //
+                var message = '';
+                if (json.total[0].cnt < 1) {
+                    message = 'No one is online';
+                } else {
+                    message = json.total[0].cnt + ' ' + (json.total[0].cnt == 1 ? 'person' : 'people') + ' online';
+                }
+                //
+                usuaris.splice(0,2);
+                usuaris.push('<p class="count">'+message+'</p>');
 
-            $('#chatUsers').append('<p class="count">' + message + '</p>');
-            setTimeout(callback, 15000);
-        }).fail(function(xhr) {
-            $("#chatContainer").load(amigable("?module=chat&function=view_error_true"), {
-                'view_error': true
-            });
+                $('#chatUsers').html(usuaris.join(''));
+                // $('#chatUsers').append('<p class="count">' + message + '</p>');
+                setTimeout(callback, 15000);
+            }
         });
-
     },
 
     // The render method generates the HTML markup
@@ -266,12 +268,12 @@ var chat = {
         chat.init_jspAPI();
         if (user) {
             user = user.split("|");
-            console.log(user);
+            // console.log(user);
 
             $.post(amigable("?module=chat&function=checkLogged"), {
                 'user': user[1]
             }, function(data, status) {
-                console.log(data);
+                // console.log(data);
                 var json = JSON.parse(data);
                 // console.log(json);
                 var logged = json.logged;
@@ -305,9 +307,9 @@ var chat = {
             chat.getChats(getChatsTimeoutFunction);
         })();
 
-        // (function getUsersTimeoutFunction() {
-        //     chat.getUsers(getUsersTimeoutFunction);
-        // })();
+        (function getUsersTimeoutFunction() {
+            chat.getUsers(getUsersTimeoutFunction);
+        })();
     },
 
     init_jspAPI: function() {

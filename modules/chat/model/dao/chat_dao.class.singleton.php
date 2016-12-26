@@ -27,7 +27,7 @@ class chat_dao {
     }
 
     public function get_users_online_DAO($db) {
-        $sql = "SELECT name_user, avatar FROM users WHERE online= 1 ORDER BY email ASC LIMIT 18";
+        $sql = "SELECT email, avatar FROM users WHERE online= 1 ORDER BY email ASC LIMIT 18";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

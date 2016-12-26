@@ -52,7 +52,7 @@
           $array = [];
           foreach ($result as $key) {
             if ($key != "") {
-                $array['name'][$j] = $result[$j]['name_user'];
+                $array['name'][$j] = $result[$j]['email'];
                 $array['gravatar'][$j] = $result[$j]['avatar'];
                 $j++;
             }
