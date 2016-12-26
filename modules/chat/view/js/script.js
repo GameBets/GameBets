@@ -7,9 +7,9 @@ $(document).ready(function() {
         chat.sendMessage();
     });
     $("#enviarmsg").keypress(function(e) {
-       if(e.which == 13) {
-          chat.sendMessage();
-       }
+        if (e.which == 13) {
+            chat.sendMessage();
+        }
     });
 });
 
@@ -18,7 +18,9 @@ var chat = {
 
     data: {
         lastID: 0,
-        noActivity: 0
+        noActivity: 0,
+        lastIDmsg1: 0,
+        lastIDmsg2: 0
     },
 
     // The login method hides displays the
@@ -87,7 +89,12 @@ var chat = {
 
         var markup = chat.render('chatLine2', parametros),
             exists = $('#chatLineHolder .chat-' + parametros.id);
+        //////////////////////////////
+        console.log(chat.data.lastIDmsg2);
 
+        chat.data.lastIDmsg2 = parseInt(chat.data.lastIDmsg2) + 1;
+        console.log(chat.data.lastIDmsg2);
+        //////////////////////////////
         if (exists.length) {
             exists.remove();
         }
@@ -100,6 +107,7 @@ var chat = {
         }
 
         // If this isn't a temporary chat:
+        console.log("chat agregado arriba su id");
         if (parametros.id.toString().charAt(0) != 't') {
             var previous = $('#chatLineHolder .chat-' + (+parametros.id - 1));
             if (previous.length) {
@@ -119,44 +127,48 @@ var chat = {
     // (since lastID), and adds them to the page.
 
     getChats: function(callback) {
-      //vaciamos el panel para qe no se solapen los chats
-      chat.data.jspAPI.getContentPane().html('');
-        $.post(amigable("?module=chat&function=getChats"), function(data, status) {
-            var json = JSON.parse(data);
-            var array = [];
-            var chats = [];
-            var clase = "";
-            console.log(json);
-            console.log(json.chats.author.length);
-            for (var i = 0; i < json.chats.author.length; i++) {
-              // console.log(".chat chat-"+json.chats.id[i]+" rounded");
-              array = [];
-              array.push(json.chats.id[i]);
-              array.push(json.chats.author[i]);
-              array.push(json.chats.gravatar[i]);
-              array.push(json.chats.text[i]);
-              array.push(json.chats.time[i]);
-              array.push(json.chats.ts[i]);
-              // chats.push(array);
-              clase= '.chat chat-'+(json.chats.id[i])+' rounded';
-              // console.log(clase);
-              // console.log($(clase).text());
-              console.log($('#mi_id_unico 60'));
+        $.ajax({
+            url: amigable("?module=chat&function=getChats"),
+            success: function(result) {
+                console.log(result);
+                var json = JSON.parse(result);
+                var array = [];
+                var chats = [];
+                // console.log(json);
+                // console.log(json.chats.author.length);
+                for (var i = 0; i < json.chats.author.length; i++) {
+                    // console.log(".chat chat-"+json.chats.id[i]+" rounded");
+                    array = [];
 
-              if($(clase)!=="undefined"){
-                chat.addChatLine(array);
-              }
-                // console.log(json.chats.id[i]);
+                    // console.log("id n1");
+                    // console.log(chat.data.lastIDmsg1);
+                    // console.log("id n2");
+                    // console.log(chat.data.lastIDmsg2);
+                    // console.log("id nchat");
+                    // console.log(json.chats.id[i]);
+                    if (json.chats.id[i] > chat.data.lastIDmsg2) {
+                        array.push(json.chats.id[i]);
+                        array.push(json.chats.author[i]);
+                        array.push(json.chats.gravatar[i]);
+                        array.push(json.chats.text[i]);
+                        array.push(json.chats.time[i]);
+                        array.push(json.chats.ts[i]);
+                        chat.addChatLine(array);
+                    }
 
+                    // console.log(json.chats.id[i]);
+                    chat.data.lastIDmsg1 = json.chats.id[i];
+                }
+                chat.data.lastIDmsg2 = chat.data.lastIDmsg1;
+                console.log(chat.data.lastIDmsg2);
+                console.log($('#chatLineHolder').last());
+
+                if (!json.chats) {
+                    chat.data.jspAPI.getContentPane().html('<p class="noChats">No chats yet</p>');
+                }
+                // function(){$('.chat').remove(); callback;}
+                setTimeout(callback, 20000);
             }
-            console.log($('.chat chat-60 rounded'));
-            console.log(chats);
-
-            if (!json.chats) {
-                chat.data.jspAPI.getContentPane().html('<p class="noChats">No chats yet</p>');
-            }
-
-            setTimeout(function(){$('.chat').remove(); callback;}, 40000);
         });
     },
 
@@ -217,7 +229,7 @@ var chat = {
 
             case 'chatLine':
                 arr = [
-                    '<div class="chat chat-', params[0], ' rounded" id="mi_id_unico ', params[0],'"><span class="gravatar"><img src="', params[2],
+                    '<div class="chat chat-', params[0], ' rounded" id="', params[0], '"><span class="gravatar"><img src="', params[2],
                     '" width="23" height="23" onload="this.style.visibility=\'visible\'" />', '</span><span class="author">', params[1],
                     ':</span><span class="text">', params[3], '</span><span class="time">', params[4], '</span></div>'
                 ];
@@ -253,8 +265,8 @@ var chat = {
         var user = Tools.readCookie("user");
         chat.init_jspAPI();
         if (user) {
-          user = user.split("|");
-          console.log(user);
+            user = user.split("|");
+            console.log(user);
 
             $.post(amigable("?module=chat&function=checkLogged"), {
                 'user': user[1]
@@ -272,7 +284,7 @@ var chat = {
 
                     chat.login(user, gravatar);
                     chat.getUsers();
-                    chat.getChats();
+                    // chat.getChats();
                 } else {
                     //pintar vista error o redirigir a sign up
                     window.location.href = json.redirect;
@@ -323,7 +335,7 @@ var chat = {
 
         console.log(parametros);
         if (user) {
-          user = user.split("|");
+            user = user.split("|");
             if ($('#chatText').val() != "") {
                 // console.log("holaa324");
 
@@ -338,7 +350,7 @@ var chat = {
 
                         chat.agregarlineanueva($.extend({}, parametros));
                         $('#chatText').val("");
-                      }
+                    }
                 }).fail(function(xhr) {
                     console.log(xhr);
                     $("#chatContainer").load(amigable("?module=chat&function=view_error_true"), {
