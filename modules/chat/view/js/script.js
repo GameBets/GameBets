@@ -6,8 +6,9 @@ $(document).ready(function() {
     $('#enviarmsg').click(function() {
         chat.sendMessage();
     });
-    $("#enviarmsg").keypress(function(e) {
+    $("#chatText").keypress(function(e) {
         if (e.which == 13) {
+          e.preventDefault();
             chat.sendMessage();
         }
     });

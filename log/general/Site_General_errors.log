@@ -184,3 +184,29 @@ Notice on line 165 in file /var/www/html/Gamebets/modules/users/model/dao/users_
 26/12/16 01:00:57 PM | error loadView general | chat | response 400
 26/12/16 01:01:16 PM | error loadView general | chat | response 400
 26/12/16 01:01:36 PM | error loadView general | chat | response 400
+27/12/16 11:08:52 AM | ERROR: [8] Undefined variable: change
+Notice on line 160 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+27/12/16 11:08:53 AM | ERROR: [8] Undefined variable: sql
+Notice on line 165 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+27/12/16 08:25:29 PM | error loadView general | chat | response 400
+27/12/16 08:29:21 PM | error loadView general | chat | response 400
+27/12/16 08:29:46 PM | error loadView general | chat | response 400
+27/12/16 08:32:06 PM | error loadView general | chat | response 400
+27/12/16 08:33:58 PM | error loadView general | chat | response 400
+27/12/16 08:34:17 PM | error loadView general | chat | response 400
+27/12/16 08:34:29 PM | error loadView general | chat | response 400
+27/12/16 08:34:38 PM | error loadView general | chat | response 400
+27/12/16 08:35:24 PM | error loadView general | chat | response 400
+27/12/16 08:35:34 PM | error loadView general | chat | response 400
+27/12/16 08:36:33 PM | error loadView general | chat | response 400
+27/12/16 08:36:49 PM | error loadView general | chat | response 400
+27/12/16 08:37:55 PM | error loadView general | chat | response 400
+27/12/16 08:45:06 PM | error loadView general | chat | response 400
+27/12/16 08:45:19 PM | error loadView general | chat | response 400
+27/12/16 08:45:23 PM | error loadView general | chat | response 400
+27/12/16 08:46:09 PM | error loadView general | chat | response 400
+27/12/16 08:46:30 PM | error loadView general | chat | response 400
+27/12/16 08:46:32 PM | error loadView general | chat | response 400
+27/12/16 08:46:39 PM | error loadView general | chat | response 400
