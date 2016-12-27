@@ -211,3 +211,9 @@ Notice on line 165 in file /var/www/html/Gamebets/modules/users/model/dao/users_
 27/12/16 08:46:32 PM | error loadView general | chat | response 400
 27/12/16 08:46:39 PM | error loadView general | chat | response 400
 27/12/16 08:53:38 PM | error loadView general | chat | response 400
+27/12/16 09:03:33 PM | ERROR: [8] Undefined variable: change
+Notice on line 160 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
+27/12/16 09:03:33 PM | ERROR: [8] Undefined variable: sql
+Notice on line 165 in file /var/www/html/Gamebets/modules/users/model/dao/users_dao.class.singleton.php
+ | users | response 200
