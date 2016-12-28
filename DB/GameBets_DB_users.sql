@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `GameBets_DB` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `GameBets_DB`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
 -- Host: localhost    Database: GameBets_DB
@@ -53,6 +51,10 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES ('d9d335a755697d1b7cb3b7f47cc332b3',NULL,'$2y$10$3tzi5eTSL3esLui/ZiTS2OkpsSf9ahnK0AG7TssISjgvA1JjucyQa','http://www.gravatar.com/avatar/c61b79758e271ae85e7e31eb05f8e1fdc61b79758e271ae85e7e31eb05f8e1fd?s=400&d=identicon&r=g',NULL,NULL,NULL,'ancoca1993@gmail.com',NULL,NULL,NULL,NULL,1,'client',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'GameBets_DB'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -62,5 +64,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
 
 -- Dump completed on 2016-12-26 20:00:04

@@ -6,9 +6,10 @@ $(document).ready(function () {
       user = user.split("|");
       $("#log").html("<a class='color4' href='#'>" + user[1] + "</a>");
       $("#log").after("<li><a class='color3' id='logout' href='#' >Log Out</a></li>");
-      if ( (user[2] === "worker") || (user[2] === "client")  ) {
+      if ( (user[3] === "worker") || (user[3] === "client")  ) {
+        $("#log").after('<li><a class="color5" href="'+amigable('?module=chat&function=chat_users')+'">Chat</a></li>');
 
-      } else if (user[2] === "admin") {
+      } else if (user[3] === "admin") {
 
       }
   }

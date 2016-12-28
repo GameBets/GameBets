@@ -1,0 +1,12 @@
+27/12/16 09:14:08 PM | ERROR: [2] mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost'
+Warning on line 39 in file /var/www/html/Gamebets/model/db.class.singleton.php
+ | users | response 200
+27/12/16 09:14:08 PM | ERROR: [2] mysqli::select_db(): Couldn't fetch mysqli
+Warning on line 40 in file /var/www/html/Gamebets/model/db.class.singleton.php
+ | users | response 200
+27/12/16 09:14:08 PM | ERROR: [2] mysqli::query(): Couldn't fetch mysqli
+Warning on line 44 in file /var/www/html/Gamebets/model/db.class.singleton.php
+ | users | response 200
+27/12/16 09:17:31 PM | error loadView general | chat | response 400
+28/12/16 05:27:04 PM | error loadView general | chat | response 400
+28/12/16 05:27:16 PM | error loadView general | chat | response 400
