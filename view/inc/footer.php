@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="footer-middle-in">
 					<h6>About us</h6>
-					<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+					<p>Formed by gamers, GameBets was created to help push eSports on Spain to a professional level, GameBets was launched as a company in final of 2016 and plans were immediately set in motion to deliver events and user experiences unlike any that had been seen in European eSports before it.</p>
 				</div>
 				<div class="footer-middle-in">
 					<h6>Information</h6>
@@ -40,6 +40,6 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-		<p class="footer-class">  Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		<p class="footer-class">  Designed by GameBets </p>
 
 	</div>

@@ -25,6 +25,7 @@ class users_dao {
 
         $sql = "INSERT INTO users (token, passwd, avatar, email, active, type, online) "
               . "VALUES ('$token', '$passwd', '$avatar', '$email', '$active', '$type', '$online')";
+
         return $db->ejecutar($sql);
     }
 
@@ -50,55 +51,58 @@ class users_dao {
         return $db->ejecutar($sql);
     }
 
-    public function obtain_paises_dao($url) {
-        $ch = curl_init();
-        curl_setopt ($ch, CURLOPT_URL, $url);
-        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-        $file_contents = curl_exec($ch);
-        curl_close($ch);
+      public function obtain_paises_DAO($url) {
+          $ch = curl_init();
+          curl_setopt($ch, CURLOPT_URL, $url);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+          curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+          $file_contents = curl_exec($ch);
+          curl_close($ch);
 
-        return ($file_contents) ? $file_contents : FALSE;
-    }
+          return ($file_contents) ? $file_contents : FALSE;
+      }
 
-    public function obtain_provincias_dao() {
-        $json = array();
-        $tmp = array();
+    public function obtain_provincias_DAO() {
+          $json = array();
+          $tmp = array();
 
-        $provincias = simplexml_load_file(RESOURCES_PATH ."provinciasypoblaciones.xml");
-        $result = $provincias->xpath("/lista/provincia/nombre | /lista/provincia/@id");
-        for ($i=0; $i<count($result); $i+=2) {
-          $e=$i+1;
-          $provincia=$result[$e];
+          $provincias = simplexml_load_file(RESOURCES_PATH . "provinciasypoblaciones.xml");
+          $result = $provincias->xpath("/lista/provincia/nombre | /lista/provincia/@id");
+          for ($i = 0; $i < count($result); $i+=2) {
+              $e = $i + 1;
+              $provincia = $result[$e];
 
-          $tmp = array(
-            'id' => (string) $result[$i], 'nombre' => (string) $provincia
-          );
-          array_push($json, $tmp);
-        }
-        return $json;
-    }
+              $tmp = array(
+                  'id' => (string) $result[$i], 'nombre' => (string) $provincia
+              );
+              array_push($json, $tmp);
+          }
+          return $json;
+      }
 
-    public function obtain_poblaciones_dao($arrArgument) {
-        $json = array();
-        $tmp = array();
+      public function obtain_poblaciones_DAO($arrArgument) {
+          $json = array();
+          $tmp = array();
 
-        $filter = (string)$arrArgument;
-        $xml = simplexml_load_file(RESOURCES_PATH . "provinciasypoblaciones.xml");
-        $result = $xml->xpath("/lista/provincia[@id='$filter']/localidades");
+          $filter = (string) $arrArgument;
+          $xml = simplexml_load_file(RESOURCES_PATH . 'provinciasypoblaciones.xml');
+          $result = $xml->xpath("/lista/provincia[@id='$filter']/localidades");
 
-        for ($i=0; $i<count($result[0]); $i++) {
-          $tmp = array('poblacion' => (string) $result[0]->localidad[$i]);
-          array_push($json, $tmp);
-        }
-        return $json;
-    }
+          for ($i = 0; $i < count($result[0]); $i++) {
+              $tmp = array(
+                  'poblacion' => (string) $result[0]->localidad[$i]
+              );
+              array_push($json, $tmp);
+          }
+          return $json;
+      }
 
-    public function count_dao($db, $arrArgument) {
+  public function count_dao($db, $arrArgument) {
         /* $arrArgument is composed by 2 array ("column" and "like"), this iterates
          * the number of positions the array have, this way we get a method that builds a
          * custom sql to select with the needed arguments
          */
+
         $i = count($arrArgument['column']);
 
         $sql = "SELECT COUNT(*) as total FROM users WHERE ";
@@ -107,6 +111,7 @@ class users_dao {
             if ($i > 1 && $j != 0)
                 $sql.=" AND ";
             $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+
         }
 
         $stmt = $db->ejecutar($sql);
@@ -168,7 +173,8 @@ class users_dao {
 
 
         $sql = $sql1 . $change . $sql2 . $sql;
-
+    //    echo json_encode($sql);
+        //exit;
         return $db->ejecutar($sql);
     }
 }

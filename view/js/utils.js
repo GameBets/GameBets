@@ -8,5 +8,5 @@ function amigable(url) {
         var aux = url[i].split("=");
         link +=  "/"+aux[1];
     }
-    return "http://127.0.0.1/Gamebets" + link;
+    return "http://localhost/Gamebets" + link;
 }

@@ -37,7 +37,7 @@ CREATE TABLE `users` (
   `town` varchar(50) DEFAULT NULL,
   `active` tinyint(1) NOT NULL,
   `type` varchar(45) NOT NULL,
-  `online` tinyint(1) DEFAULT NULL,
+  `online` tinyint(1) NOT NULL,
   PRIMARY KEY (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

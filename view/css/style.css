@@ -24,8 +24,8 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 /*----*/
 .top-header{
-	background:#8fbf00;
-
+	background: black;
+	border-bottom: 3px solid #bd1010;
 }
 .search{
 	position:relative;
@@ -64,11 +64,12 @@ ul.header-in li{
 ul.header-in li a{
 	text-decoration:none;
 	color:#fff;
-	font-size:1em;
+	font-size:16px;
+	font-weight: bold;
 	margin:0em 1em;
 }
 ul.header-in li a:hover{
-	color:#2d2d2d;
+	color: #bd1010;
 }
 .head-top {
   padding: 0 15px;
@@ -86,11 +87,11 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .logo h1 a{
 	text-decoration: none;
-	color:#2d2d2d;
+	color: white;
 }
 .logo h1 a span{
 	text-decoration: none;
-	color:#8fbf00;
+	color: #bd1010;
 }
 .top-nav{
 	float:right;
@@ -104,13 +105,16 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .top-nav ul li  a {
 	display: inline-block;
-	color: #000;
+	color: white;
 	text-decoration: none;
-	font-size: 1.1em;
+	font-size: 16px;
+	font-weight: bold;
 	padding:0.5em 1.3em;
 }
 .top-nav ul li  a:hover{
 	color:#fff;
+	font-size: 16px;
+	font-weight: bold;
 }
 .top-nav ul li a.color1:hover{
 	background:#d52685;
@@ -131,9 +135,9 @@ font-family: 'Montserrat Alternates', sans-serif;
 	background:#FFE500;
 }
 .header-top {
-	background:#fff;
+	background:black;
 	  padding: 2em 0 ;
-	    border-bottom: 1px solid #D3D2D2;
+	    border-bottom: 3px solid #bd1010;
 }
 /*--banner--*/
 .wmuSlider {
@@ -145,7 +149,8 @@ font-family: 'Montserrat Alternates', sans-serif;
 	position: absolute;
 	right:0%;
 	top:0%;
-	background:#fff;
+	background: black;
+	border: 0.2px solid #bd1010;
 }
 ul.wmuSliderPagination {
 
@@ -164,7 +169,7 @@ ul.wmuSliderPagination {
 	text-indent: -9999px;
 	width:8px;
 	height:8px;
-	background:#8fbf00;
+	background:#bd1010;
 	border-radius:50px;
 
 }
@@ -197,14 +202,18 @@ ul.wmuSliderPagination {
 }
 /*--//banner--*/
 /*--content--*/
+
+.content {
+	background: black;
+}
 h2.new{
-	color:#000;
+	color:white;
 	font-size:1.5em;
 	  padding: 0 0.7em;
 }
  h2.new:after, h2.new:before{
 	content:"";
-	background:#8FBF00;
+	background:#bd1010;
 	width:489px;
 	height:2px;
 	display:inline-block;
@@ -241,7 +250,7 @@ h2.new{
 }
 
 a.more-in{
-	background:#8fbf00;
+	background:#bd1010;
   text-decoration: none;
   font-size: 1em;
   padding: 0.5em 1em;
@@ -272,10 +281,10 @@ a.fashion {
 }
 .grid-product p a{
 	text-decoration:none;
-	color:#000;
+	color: white;
 }
 .grid-product p a:hover{
-	color:#8fbf00;
+	color: white;
 }
 .late {
   padding: 2em 0 0;
@@ -290,7 +299,7 @@ a.fashion {
 a.comment{
 	text-decoration: none;
 	font-size: 1em;
-	color:#8fbf00;
+	color:#CCCCCC;
 }
 a.comment i{
 	background:url(../images/img-sprite.png)no-repeat -41px -16px;
@@ -338,13 +347,14 @@ a.comment i{
 	display:block;
 }
 .footer-middle-in  ul li a:hover{
-	color:#8FBF00;
+	color: white;
 }
 .footer-class{
 	color:#fff;
 	font-size:1em;
 	text-align:center;
-	background:#8FBF00;
+	background:#2d2d2d;
+	border-top: 2px solid #bd1010;
 	padding:1em 0;
 }
 .footer-class a{
@@ -356,6 +366,9 @@ a.comment i{
 }
 /*--//footer--*/
 /*--games--*/
+.footer {
+	border-top: 3px solid #bd1010;
+}
 .games {
   padding: 3em 0 4em;
 }
@@ -398,7 +411,7 @@ a.comment i{
 .send input[type="submit"]{
 	width: 14%;
 	font-size: 1.1em;
-	background:#8FBF00;
+	background:#bd1010;
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
@@ -432,7 +445,7 @@ a.comment i{
 	color: #9A9898;
 }
 .address-more p a:hover{
-	color: #8FBF00;
+	color: #bd1010;
 }
 /*--//contact--*/
 /*--four--*/
@@ -442,7 +455,7 @@ a.comment i{
   min-height: 477px;
 }
 .four h2{
-	  color: #8fbf00;
+	  color: #bd1010;
   font-size: 7em;
 font-family: 'Montserrat Alternates', sans-serif;
   padding: 0.1em 0 0.2em;
@@ -476,7 +489,7 @@ font-family: 'Montserrat Alternates', sans-serif;
 	text-decoration: none;
 }
 .col-1 h4 a:hover{
-	color:#8fbf00;
+	color:#bd1010;
 }
 .col-1 p{
 	color:#2d2d2d;
@@ -515,14 +528,14 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .blog-left b{
 	font-size:3.5em;
-	color:#8fbf00;
+	color:#bd1010;
 	display:block;
 	height:55px;
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 .blog-left span{
 	font-size:1.7em;
-	color:#8fbf00;
+	color:#bd1010;
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 ul.men-grid li{
@@ -535,7 +548,7 @@ ul.men-grid li{
 }
 .top-blog p a{
 	text-decoration:none;
-	color:#8fbf00;
+	color:#bd1010;
 }
 .top-blog  a.fast{
 	text-decoration:none;
@@ -544,23 +557,23 @@ ul.men-grid li{
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 .top-blog a.fast:hover,.top-blog p a:hover,ul.popular li a:hover,a.more-dummy:hover{
-	color:#8fbf00;
+	color:#bd1010;
 }
 .pagination > .active > a,.pagination > .active > a:hover{
-	background:#8FBF00;
-	border-color:#8FBF00;
+	background:#bd1010;
+	border-color:#bd1010;
 }
 .pagination {
   margin: 0;
 }
 .pagination > li > a:hover{
   color: #FFFFFF;
-  border-color: #8FBF00;
-  background: #8FBF00;
+  border-color: #bd1010;
+  background: #bd1010;
 }
 a.more {
   color: #fff;
-  background: #8FBF00;
+  background: #bd1010;
   padding: 0.5em 1em;
   display: inline-block;
   text-decoration: none;
@@ -602,7 +615,7 @@ font-size: 2.5em;
 .single-bottom  input[type="submit"]{
 	width: 10%;
 	font-size: 1.3em;
-	background: #8fbf00;
+	background: #bd1010;
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
@@ -660,7 +673,7 @@ font-size: 2.5em;
 	font-size: 1.1em;
 }
 ul.grid-part li a i{
-	background: #8fbf00;
+	background: #bd1010;
 	width:5px;
 	height: 5px;
 	display: inline-block;
@@ -668,7 +681,7 @@ ul.grid-part li a i{
   margin-right: 10px;
 }
  ul.grid-part li a:hover{
-	color:#8fbf00;
+	color:#bd1010;
 	padding-left:0.2em;
 }
 ul.grid-part {
@@ -713,7 +726,7 @@ h2.new:after, h2.new:before {
 	z-index: 9999;
 	left: 0%;
 	margin:2em 0em;
-	background:#8fbf00;
+	background:#bd1010;
 	border:0;
 }
 .top-nav span.menu{
@@ -768,6 +781,7 @@ a.fashion {
 }
 .content-top {
   padding: 3em 0 3em;
+
 }
 .footer-middle-in h6 {
   font-size: 1.1em;
@@ -884,6 +898,7 @@ ul.grid-part {
 @media(max-width:568px){
 ul.header-in li a {
   margin: 0em 0.3em;
+
 }
 }
 @media(max-width:480px){
@@ -1030,6 +1045,7 @@ a.fashion {
 .featured {
   padding: 1.5em 0 1em;
 }
+
 .content-top {
   padding: 1.5em 0;
 }
