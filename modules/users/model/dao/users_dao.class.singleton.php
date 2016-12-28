@@ -135,7 +135,7 @@ class users_dao {
 
 
         $sql = $sql1 . $fields . $sql2 . $sql3;
-
+        
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
