@@ -461,6 +461,9 @@
 
           $j = 0;
           foreach ($arrArgument as $clave => $valor) {
+              if($clave == 'avatar' && $valor == SITE_PATH){
+                $valor = "";
+              }
               if ($valor != "") {
                   $arrayDatos['field'][$j] = $clave;
                   $arrayDatos['new'][$j] = $valor;

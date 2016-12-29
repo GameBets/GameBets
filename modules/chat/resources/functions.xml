@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>chat_users</name>
+        <uri>chat_users</uri>
+    </function>
+    <function>
+        <name>checkLogged</name>
+        <uri>checkLogged</uri>
+    </function>
+    <function>
+        <name>getUsers</name>
+        <uri>getUsers</uri>
+    </function>
+    <function>
+        <name>getChats</name>
+        <uri>getChats</uri>
+    </function>
+    <function>
+        <name>submitMessage</name>
+        <uri>submitMessage</uri>
+    </function>
+</functions>

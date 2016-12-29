@@ -7,9 +7,10 @@
       //FILTER
       //Valores que se pueden verificar con expresiones regulares
       $filtro = array(
-          'passwd' => array(
+          'password' => array(
               'filter' => FILTER_VALIDATE_REGEXP,
               'options' => array('regexp' => '/^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*-_])(?=.{8,})/')
+
           ),
           'email' => array(
               'filter' => FILTER_VALIDATE_REGEXP,
@@ -23,8 +24,8 @@
 
       if ($resultado != null && $resultado) {
 
-          if (!$resultado['passwd']) {
-              $error['passwd'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
+          if (!$resultado['password']) {
+              $error['password'] = 'Debe contener 8 caracteres minimo entre los cuales debe haber 1 letra, 1 numero y 1 caracter especial';
               $valido = false;
           }
 

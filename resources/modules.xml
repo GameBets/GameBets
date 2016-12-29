@@ -16,4 +16,8 @@
       <name>contact</name>
       <uri>contact</uri>
     </module>
+    <module>
+      <name>chat</name>
+      <uri>chat</uri>
+    </module>
 </modules>
