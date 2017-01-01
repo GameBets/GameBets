@@ -1,4 +1,3 @@
-<br><br><br><br><br><br><br><br><br>
 
 <script src="<?php echo CONTACT_LIB_PATH; ?>bootstrap-button.js"></script>
 <script src="<?php echo CONTACT_LIB_PATH; ?>jquery.validate.min.js"></script>
@@ -9,7 +8,7 @@
 <link href="<?php echo CONTACT_CSS_PATH; ?>custom.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 
-
+<br>
 <div class="container">
     <form id="contact_form" name="contact_form" class="form-contact">
         <h2 class="form-contact-heading">Contact Us</h2>

@@ -1,28 +1,19 @@
 /****************Perfil***************************/
 
 #left {
-    margin-top: 20px;
-    position: absolute;
-    left: 1020px;
+    margin: 20px auto;
 }
 
-#mid {
-    margin-top: 20px;
-    position: absolute;
-    left: 520px;
+#middle {
+    margin: 20px auto;
+    justify-content: center;
 }
 
 #right {
-    margin-top: 20px;
-    margin-left: 40px;
+    margin: 20px auto;
 }
 
-#mid button {
-    position: absolute;
-    left: 25px;
-}
-
-#mid img {
+#middle img {
     border: 2px solid #CCCCCC;
     width: 240px;
     height: 120px;
@@ -30,11 +21,15 @@
 }
 
 .dropzone {
-    height: 50px !important;
+    height: 200px !important;
+    width: 100% !important;
 }
 
 #form_users {
     height: 500px;
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
 }
 
 img#tick {
@@ -81,11 +76,11 @@ h3 {
     font-weight: bold;
 }
 
-#mid h3 {
+#middle h3 {
     text-align: center;
 }
 
-#mid input[type="text"] {
+#middle input[type="text"] {
     position: relative;
     left: 14px;
     font-size: 20px;
@@ -93,7 +88,7 @@ h3 {
     text-align: center;
 }
 
-#mid input[type="button"] {
+#middle input[type="button"] {
     position: relative;
     left: 14px;
     font-size: 20px;

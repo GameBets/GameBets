@@ -22,7 +22,7 @@
 
             case 'contact':
                 $subject = 'Tu Peticion a Gamebets ha sido enviada<br>';
-                $ruta = '<a href=' . 'http://ludogi.tk'. '>aqu&iacute;</a>';
+                $ruta = '<a href="' . amigable("?module=main&function=begin", true) . '">aqu&iacute;</a>';
                 $body = 'Para visitar nuestra web, pulsa ' . $ruta;
                 break;
 

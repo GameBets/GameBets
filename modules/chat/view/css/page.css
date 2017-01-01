@@ -6,17 +6,8 @@
 body {
     color: #eee;
     background: url('../img/page_bg.jpg') repeat-x #323232;
-    font: 15px Calibri, Arial, sans-serif;
+    /*font: 15px Calibri, Arial, sans-serif;*/
     border-top: 5px solid #212121;
-}
-
-#footer {
-    background-color: #212121;
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    bottom: 0;
-    left: 0;
 }
 
 a.tzine, a.tzine:visited {
@@ -43,27 +34,6 @@ a.tzine, a.tzine:visited {
     position: absolute;
     top: 0;
     width: 0;
-}
-
-h1 {
-    font-size: 20px;
-    font-weight: normal;
-    left: 50%;
-    margin-left: -400px;
-    padding: 25px 0;
-    position: absolute;
-    width: 480px;
-}
-
-a, a:visited {
-    text-decoration: none;
-    outline: none;
-    border-bottom: 1px dotted #97cae6;
-    color: #97cae6;
-}
-
-a:hover {
-    border-bottom: 1px dashed transparent;
 }
 
 .clear {

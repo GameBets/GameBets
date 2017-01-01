@@ -10,77 +10,77 @@
 <script type="text/javascript" src="<?php echo JS_USERS_PATH ?>profile.js" ></script>
 
 <form name="form_users" id="form_users">
-<div id="left">
-  <section>
-    <h3>Email</h3>
-    <input type="email" name="email" id="email" value="">
-  </section>
-</br>
-  <section>
-    <h3>Password</h3>
-    <input type="password" name="passwd" id="passwd" value="">
-  </section>
-</br>
-  <section>
-    <h3>Phone</h3>
-    <input type="text" name="phone" id="phone" value="">
-  </section>
-</div>
 
-<div id="mid">
-  <section>
-    <h3>Username</h3>
-    <input type="text" name="name_user" id="name_user" value="">
-  </section>
-</br>
-  <section>
-    <h3>Avatar</h3>
-    <img id="avatar_user" src="" />
-    <span id="e_avatar" class="styerror" style="color:#FF0000"></span>
-    <div id="progress">
-          <div id="bar"></div>
-          <div id="percent">0%</div >
+  <div id="left">
+    <section>
+      <h3>Name</h3>
+      <input type="text" name="named" id="named" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Surname</h3>
+      <input type="text" name="surname" id="surname" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Date Birthday</h3>
+      <input type="text" name="date_birthday" id="date_birthday" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Country</h3>
+      <select name="country" id="country"></select>
+    </section>
+    </br>
+    <section>
+      <h3>Province</h3>
+      <select name="province" id="province"></select>
+    </section>
+    </br>
+    <section>
+      <h3>Town</h3>
+      <select name="town" id="town"></select>
+    </section>
+  </div>
+
+  <div id="middle">
+    <section>
+      <h3>Username</h3>
+      <input type="text" name="name_user" id="name_user" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Avatar</h3>
+      <img id="avatar_user" src="" />
+      <span id="e_avatar" class="styerror" style="color:#FF0000"></span>
+      <div id="progress">
+        <div id="bar"></div>
+        <div id="percent">0%</div>
       </div>
       <div class="msg"></div>
       <div id="dropzone" class="dropzone"></div>
-  </section>
-</br>
-  <button type="button" class="ghost-button-border-color" name="submitBtn_user" id="submitBtn_user" value="Confirmar">CONFIRM</button>
+    </section>
+    </br>
+    <section>
+      <button type="button" class="ghost-button-border-color" name="submitBtn_user" id="submitBtn_user" value="Confirmar">CONFIRM</button>
+      <img src="<?php echo USERS_IMG_PATH ?>tick.jpg" id="tick" alt="tick"><h2 id="text">PROFILE UPDATED</h2></img>
+    </section>
+  </div>
 
-<img src="<?php echo USERS_IMG_PATH ?>tick.jpg" id="tick" alt="tick"><h2 id="text">PROFILE UPDATED</h2></img>
-</div>
-
-<div id="right">
-
-  <section>
-    <h3>Name</h3>
-    <input type="text" name="named" id="named" value="">
-  </section>
-</br>
-  <section>
-    <h3>Surname</h3>
-    <input type="text" name="surname" id="surname" value="">
-  </section>
-</br>
-  <section>
-    <h3>Date Birthday</h3>
-    <input type="text" name="date_birthday" id="date_birthday" value="">
-  </section>
-</br>
-  <section>
-    <h3>Country</h3>
-    <select name="country" id="country"></select>
-  </section>
-</br>
-  <section>
-    <h3>Province</h3>
-    <select name="province" id="province"></select>
-  </section>
-</br>
-  <section>
-    <h3>Town</h3>
-    <select name="town" id="town"></select>
-  </section>
-</br>
-</div>
-	</form>
+  <div id="right">
+    <section>
+      <h3>Email</h3>
+      <input type="email" name="email" id="email" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Password</h3>
+      <input type="password" name="passwd" id="passwd" value="">
+    </section>
+    </br>
+    <section>
+      <h3>Phone</h3>
+      <input type="text" name="phone" id="phone" value="">
+    </section>
+  </div>
+</form>

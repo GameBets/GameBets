@@ -225,8 +225,7 @@ var chat = {
                 // console.log(params);
                 arr = [
                     '<span><img src="', params.gravatar, '" width="23" height="23" />',
-                    '<span class="name">', params.name,
-                    '</span><a href="" class="logoutButton rounded">Logout</a></span>'
+                    '<span class="name">', params.name
                 ];
                 break;
 
