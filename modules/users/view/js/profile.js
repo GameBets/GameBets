@@ -398,12 +398,12 @@ function load_countries_v1(pais) {
   $.post( amigable('?module=users&function=load_pais_users'),{'load_pais':true},
   function( response ) {
       if(response.match(/error/gi)){
-          load_countries_v2("http://92.222.89.83/Gamebets/resources/ListOfCountryNamesByName.json", pais);
+          load_countries_v2("http://localhost/Gamebets/resources/ListOfCountryNamesByName.json", pais);
       }else{
           load_countries_v2(amigable('?module=users&function=load_pais_users'),{'load_pais':true}); //oorsprong.org
       }
   }).fail(function(response) {
-      load_countries_v2("http://92.222.89.83/Gamebets/resources/ListOfCountryNamesByName.json", pais);
+      load_countries_v2("http://localhost/Gamebets/resources/ListOfCountryNamesByName.json", pais);
   });
 }
 
