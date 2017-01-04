@@ -1,0 +1,38 @@
+<!---->
+
+<div ng-controller="menuCtrl" class="header-top">
+<div class="container">
+<div class="head-top">
+	<div class="logo">
+		<h1><a href="#/"><span>G</span>ame<span>B</span>ets</a></h1>
+	</div>
+	<div class="top-nav">
+		<span class="menu"><img src="frontend/assets/images/menu.png" alt=""> </span>
+
+		<ul>
+			<li class="active"><a class="color1" href="#/>"  >Home</a></li>
+			<li><a class="color2" href="#/products"  >Games</a></li>
+			<li><a class="color4" href="#/contact">Contact</a></li>
+			<li><a ng-show="chatV" class="color5" href="#/chat">Chat</a>
+			<a ng-show="profileV" class="color4" href="#/user/profile">{{nombre}}</a>
+			<li id="log">
+				<a ng-show="signinV" class="color6" href="#/signin"  >Sign In</a>
+				<a ng-show="logoutV" class='color3' id='logout' ng-click="loogut()" >Log Out</a>
+			</li>
+			<div class="clearfix"> </div>
+		</ul>
+
+		<script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(500, function(){
+				});
+			});
+	</script>
+
+		</div>
+
+		<div class="clearfix"> </div>
+</div>
+</div>
+</div>
+</div>
