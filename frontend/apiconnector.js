@@ -1,5 +1,5 @@
 app.factory("services", ['$http','$q', function ($http, $q) {
-    var serviceBase = '/Gamebets/backend/index.php?module=';
+    var serviceBase = 'backend/index.php?module=';
     var obj = {};
 
         obj.get = function (module, functi) {
