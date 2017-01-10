@@ -9,52 +9,27 @@
 
     function loadClasses($className)
     {
-        if (file_exists('modules/users/model/bll/'.$className.'.class.singleton.php')) {
-            //require(BLL_USERS . "user_bll.class.singleton.php");
-            set_include_path('modules/users/model/bll/');
-            spl_autoload($className);
-        } elseif (file_exists('modules/users/model/dao/'.$className.'.class.singleton.php')) {
-            //require(DAO_USERS . "user_dao.class.singleton.php");
-            set_include_path('modules/users/model/dao/');
-            spl_autoload($className);
-        } elseif (file_exists('model/'.$className.'.class.singleton.php')) {
-            //require(MODEL_PATH . "db.class.singleton.php");
-            set_include_path('model/');
-            spl_autoload($className);
-        }
+      $ext = '.class.singleton.php';
+      $arrArguments = explode("_", $className);
 
-        if (file_exists('modules/products/model/bll/'.$className.'.class.singleton.php')) {
-            //require(BLL_USERS . "user_bll.class.singleton.php");
-            set_include_path('modules/products/model/bll/');
-            spl_autoload($className);
-        } elseif (file_exists('modules/products/model/dao/'.$className.'.class.singleton.php')) {
-            //require(DAO_USERS . "user_dao.class.singleton.php");
-            set_include_path('modules/products/model/dao/');
-            spl_autoload($className);
-        } elseif (file_exists('model/'.$className.'.class.singleton.php')) {
-            //require(MODEL_PATH . "db.class.singleton.php");
-            set_include_path('model/');
-            spl_autoload($className);
-        } elseif (file_exists('classes/email/'.$className.'.class.singleton.php')) {
-            //require(EMAIL . 'email.class.singleton.php');
-            set_include_path('classes/email/');
-            spl_autoload($className);
-        } elseif (file_exists('libs/PHPMailer_v5.1/class.'.$className.'.php')) {
-            //require(LIBS . 'PHPMailer_v5.1/class.phpmailer.php');
-            set_include_path('libs/PHPMailer_v5.1/');
-            spl_autoload('class.'.$className);
-        }
-        if (file_exists('modules/chat/model/bll/'.$className.'.class.singleton.php')) {
-            //require(BLL_CHAT . "CHAT_bll.class.singleton.php");
-            set_include_path('modules/chat/model/bll/');
-            spl_autoload($className);
-        } elseif (file_exists('modules/chat/model/dao/'.$className.'.class.singleton.php')) {
-            //require(DAO_CHAT . "CHAT_dao.class.singleton.php");
-            set_include_path('modules/chat/model/dao/');
-            spl_autoload($className);
-        } elseif (file_exists('model/'.$className.'.class.singleton.php')) {
-            //require(MODEL_PATH . "db.class.singleton.php");
-            set_include_path('model/');
-            spl_autoload($className);
-        }
+      if (count($arrArguments) > 1) {
+          if (file_exists(MODULES_PATH . $arrArguments[0] . "/model/" . $arrArguments[1] . "/" . $className . $ext)) {
+              set_include_path(MODULES_PATH . $arrArguments[0] . "/model/" . $arrArguments[1] . "/");
+              spl_autoload($className);
+          }
+      } else {
+          if (file_exists('classes/' . $className . "/" . $className . $ext)) {
+              set_include_path('classes/' . $className . "/");
+              spl_autoload($className);
+          } elseif (file_exists(MODEL_PATH . $className . $ext)) {
+              set_include_path(MODEL_PATH);
+              spl_autoload($className);
+          } elseif (file_exists(LIBS . 'PHPMailerv5/class.' . $className . '.php')) {
+              set_include_path(LIBS . 'PHPMailerv5/');
+              spl_autoload('class.' . $className);
+          } elseif (file_exists(LIBS . $className . '.class.php')) {
+              set_include_path(LIBS);
+              spl_autoload($className);
+          }
+      }
     }

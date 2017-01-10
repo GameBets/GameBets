@@ -1,10 +1,10 @@
 <?php
   //SITE ROOT
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/Gamebets/';
+  $path = $_SERVER['DOCUMENT_ROOT'] . '/Gamebets/backend/';
   define('SITE_ROOT', $path);
 
   //SITE PATH
-  define('SITE_PATH', 'http://'.$_SERVER['HTTP_HOST'].'/Gamebets/');
+  define('SITE_PATH', 'http://'.$_SERVER['HTTP_HOST'].'/Gamebets/backend/');
 
   //LOG
   define('LOG_DIR', SITE_ROOT . 'classes/Log.class.singleton.php');
@@ -66,7 +66,7 @@
   define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
   define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
   define('CONTACT_VIEW_PATH', 'modules/contact/view/');
-  
+
   //MODULE CHAT
   define('JS_CHAT_PATH', SITE_PATH . 'modules/chat/view/js/');
   define('CSS_CHAT_PATH', SITE_PATH . 'modules/chat/view/css/');
