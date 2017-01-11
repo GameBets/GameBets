@@ -23,8 +23,8 @@
             } elseif (file_exists(MODEL_PATH . $className . $ext)) {
                 set_include_path(MODEL_PATH);
                 spl_autoload($className);
-            } elseif (file_exists(LIBS . 'PHPMailerv5/class.' . $className . '.php')) {
-                set_include_path(LIBS . 'PHPMailerv5/');
+            } elseif (file_exists(LIBS . 'PHPMailer_v5.1/class.' . $className . '.php')) {
+                set_include_path(LIBS . 'PHPMailer_v5.1/');
                 spl_autoload('class.' . $className);
             } elseif (file_exists(LIBS . $className . '.class.php')) {
                 set_include_path(LIBS);
