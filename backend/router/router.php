@@ -1,6 +1,7 @@
 <?php
+
 	require_once("paths.php");
-	require_once("autoload.php");
+	require 'autoload.php';
 
 	include(LOG_DIR);
 	include(UTILS_PATH . "common.inc.php");
