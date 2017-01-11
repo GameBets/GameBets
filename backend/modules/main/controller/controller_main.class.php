@@ -5,4 +5,7 @@
 
         }
 
+        public function begin() {
+            loadView('modules/main/view/', 'main.php');
+        }
     }
