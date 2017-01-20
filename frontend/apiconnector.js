@@ -53,11 +53,13 @@ app.factory("services", ['$http','$q', function ($http, $q) {
                 method: 'POST',
                 url: serviceBase + module + '&function=' + functi,
                 data: dada
+
             }).success(function(data, status, headers, config) {
       	       defered.resolve(data);
             }).error(function(data, status, headers, config) {
                defered.reject(data);
             });
+
           return promise;
         };
 

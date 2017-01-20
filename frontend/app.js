@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute'/*, 'ngAnimate', 'ui.bootstrap', 'ngCookies', 'facebook'*/]);
+var app = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'/*, 'ngCookies', 'facebook'*/]);
 
 app.config(['$routeProvider',
     function ($routeProvider) {
@@ -12,6 +12,11 @@ app.config(['$routeProvider',
                 .when("/chat", {
                   templateUrl: "frontend/modules/chat/view/chat.view.html",
                   controler: 'chatCtrl'
+                })
+                
+                .when("/contact", {
+                  templateUrl: "frontend/modules/contact/view/contact.view.html",
+                  controller: "contactCtrl"
                 })
 
                 // else 404

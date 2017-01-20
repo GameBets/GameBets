@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html  ng-app="myApp" ng-app lang="en">
   <head>
-    <title>Games Center A Games Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+    <title>Games Center A Games Category Flat Bootstarp Resposive Website Template | Home </title>
     <!--META-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,6 +27,7 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="frontend/modules/chat/view/css/chat.css" rel="stylesheet" type="text/css">
+    <link href="frontend/modules/contact/css/custom.css" rel="stylesheet"/>
 
     <!--JAVASCRIPT-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1-rc2/jquery.min.js"></script>
@@ -36,20 +37,26 @@
     <script type="text/javascript" src="<?php echo JS_USERS_PATH ?>logout.js"></script>-->
   </head>
   <body>
+
+    <!-- VIEWS -->
     <div ng-include='"frontend/assets/inc/header.view.html"'></div>
     <div ng-include='"frontend/assets/inc/menu.view.html"'></div>
     <div ng-view></div>
     <div ng-include='"frontend/assets/inc/footer.view.html"'></div>
 
+    <!-- CDN ANGULAR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-cookies.min.js" ></script>
 
+    <!-- CONTROLLERS -->
     <script src="frontend/app.js"></script>
     <script src="frontend/modules/main/controller/main.controller.js"></script>
     <script src="frontend/modules/chat/controller/chat.controller.js"></script>
     <script src="frontend/modules/chat/directives/chat.directives.js"></script>
+    <script src="frontend/modules/contact/controller/contact.controller.js"></script>
+>>>>>>> b3c3e24c977b1a72cfd8dcdb2a5c22984c8bc4d5
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
 
     <script src="frontend/apiconnector.js"></script>

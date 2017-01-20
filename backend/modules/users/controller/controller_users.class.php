@@ -11,9 +11,6 @@
         }
 
 /////////////SIGNIN/////////////////////////////////////////////////////////////
-        public function signin() {
-          loadView('modules/users/view/', 'signin.php');
-        }
 
         public function signin_users() {
           if(isset($_POST['login_json'])){
@@ -127,9 +124,6 @@
 ////////////END LOGOUT//////////////////////////////////////////////////////////
 
 /////////////SIGNUP/////////////////////////////////////////////////////////////
-        public function signup() {
-            loadView('modules/users/view/', 'signup.php');
-        }
 
         public function signup_users(){
           //Si hay datos del formulario en el json enviado por el controlador de javascript
@@ -238,9 +232,6 @@
 /////////////END SIGNUP/////////////////////////////////////////////////////////
 
 /////////////RECOVERY PASSWORD//////////////////////////////////////////////////
-        public function recovery() {
-          loadView('modules/users/view/', 'recovery_password.php');
-        }
 
         public function recovery_password() {
           if(isset($_POST['recovery_json'])){
@@ -277,12 +268,7 @@
           }
         }
 
-        public function request() {
-          if ($_GET['aux']) {
-            loadView('modules/users/view/', 'request_password.php');
-          }
-        }
-
+///// REQUEST PASSWORD
         public function request_password() {
           $jsondata = array();
           $user = json_decode($_POST['change_password'], true);
