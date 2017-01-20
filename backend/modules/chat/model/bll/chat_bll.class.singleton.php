@@ -15,30 +15,35 @@ class chat_bll {
         return self::$_instance;
     }
 
-    public function checkLogged_BLL() {
-        return $this->dao->checkLogged_DAO($this->db);
+    public function getMessages_BLL() {
+        return $this->dao->getMessages_DAO($this->db);
     }
 
-    public function obtain_gravatar_BLL($user) {
-        return $this->dao->obtain_gravatar_DAO($this->db, $user);
+    public function addMessage_BLL($arrArgument) {
+        return $this->dao->addMessage_DAO($this->db, $arrArgument);
     }
 
-    public function delete_chats_low_than_10min_BLL() {
-        return $this->dao->delete_chats_low_than_10min_DAO($this->db);
+    public function removeMessages_BLL() {
+        return $this->dao->removeMessages_DAO($this->db);
     }
 
-    public function get_users_online_BLL() {
-        return $this->dao->get_users_online_DAO($this->db);
+    public function removeOldMessages_BLL() {
+        return $this->dao->removeOldMessages_DAO($this->db);
     }
 
-    public function get_n_users_online_BLL() {
-        return $this->dao->get_n_users_online_DAO($this->db);
+    public function getOnline_BLL() {
+        return $this->dao->getOnline_DAO($this->db);
     }
 
-    public function get_chats_BLL() {
-        return $this->dao->get_chats_DAO($this->db);
+    public function getIpOnline_BLL() {
+        return $this->dao->getIpOnline_DAO($this->db);
     }
-    public function insert_chat_BLL($datos) {
-        return $this->dao->insert_chat_DAO($this->db, $datos);
+
+    public function updateOnline_BLL($arrArgument) {
+        return $this->dao->updateOnline_DAO($this->db, $arrArgument);
+    }
+
+    public function clearOffline_BLL() {
+        return $this->dao->clearOffline_DAO($this->db);
     }
 }

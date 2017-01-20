@@ -12,46 +12,60 @@ class chat_dao {
             self::$_instance = new self();
         return self::$_instance;
     }
-    //
-    // public function checkLogged_DAO($db) {
-    //     $sql = "SELECT name_user FROM users";
-    //     $stmt = $db->ejecutar($sql);
-    //     return $db->listar($stmt);
-    // }
 
+    public function getMessages_DAO($db) {
+        $sql = "SELECT * FROM messages ORDER BY `date` DESC LIMIT 150 ORDER BY `date` ASC";
 
-    public function delete_chats_low_than_10min_DAO($db) {
-        $sql = "DELETE FROM webchat_lines WHERE ts < SUBTIME(NOW(),'0:10:0')";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
 
-    public function get_users_online_DAO($db) {
-        $sql = "SELECT email, avatar FROM users WHERE online= 1 ORDER BY email ASC LIMIT 18";
+    public function addMessage_DAO($db, $datos) {
+        $sql = "INSERT INTO messages VALUES (NULL, '".$datos['username']."', '".$datos['message']."', '".$datos['ip']."', NOW())";
+
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
-    }
-    public function get_chats_DAO($db) {
-        $sql = "SELECT * FROM webchat_lines ORDER BY id ASC";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
-    }
-    public function get_n_users_online_DAO($db) {
-        $sql = "SELECT COUNT(*) as cnt FROM users where online=1";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
-    }
-    public function obtain_gravatar_DAO($db, $user) {
-        $sql = "SELECT avatar FROM users WHERE email='".$user."'";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
-    }
-    public function insert_chat_DAO($db, $datos) {
-      $sql = "INSERT INTO webchat_lines (author, gravatar, text)
-        VALUES ('".$datos[0]."','".$datos[1][0]['avatar']."','".$datos[2]."')";
-      $stmt = $db->ejecutar($sql);
-      return $db->listar($stmt);
     }
 
+    public function removeMessages_DAO($db) {
+        $sql = "TRUNCATE TABLE messages";
 
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function removeOldMessages_DAO($db) {
+        $sql = "DELETE FROM messages WHERE id NOT IN (SELECT id FROM messages ORDER BY date DESC LIMIT 150)");
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function getOnline_DAO($db) {
+        $sql = "SELECT count(*) as total FROM online";
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function getIpOnline_DAO($db) {
+        $sql = "SELECT ip FROM online";
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function updateOnline_DAO($db, $datos) {
+        $sql = "REPLACE INTO online VALUES ('".$datos['$hash']."', '".$datos['$ip']."', NOW())";
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
+    public function clearOffline_DAO($db) {
+        $sql = "DELETE FROM online WHERE last_update <= (NOW() - INTERVAL 1 MINUTE)";
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
 }

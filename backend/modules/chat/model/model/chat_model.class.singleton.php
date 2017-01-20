@@ -19,37 +19,35 @@ class chat_model
         return self::$_instance;
     }
 
-    public function checkLogged()
-    {
-        return $this->bll->checkLogged_BLL();
+    public function getMessages() {
+        return $this->bll->getMessages_BLL();
     }
 
-    public function obtain_gravatar($user)
-    {
-        return $this->bll->obtain_gravatar_BLL($user);
+    public function addMessage($arrArgument) {
+        return $this->bll->addMessage_BLL($arrArgument);
     }
 
-    public function get_n_users_online()
-    {
-        return $this->bll->get_n_users_online_BLL();
+    public function removeMessages() {
+        return $this->bll->removeMessages_BLL();
     }
 
-    public function delete_chats_low_than_10min()
-    {
-        return $this->bll->delete_chats_low_than_10min_BLL();
+    public function removeOldMessages() {
+        return $this->bll->removeOldMessages_BLL();
     }
 
-    public function get_users_online()
-    {
-        return $this->bll->get_users_online_BLL();
-    }
-    public function get_chats()
-    {
-        return $this->bll->get_chats_BLL();
+    public function getOnline() {
+        return $this->bll->getOnline_BLL();
     }
 
-    public function insert_chat($datos)
-    {
-        return $this->bll->insert_chat_BLL($datos);
+    public function getIpOnline() {
+        return $this->bll->getIpOnline_BLL();
+    }
+
+    public function updateOnline($arrArgument) {
+        return $this->bll->updateOnline_BLL($arrArgument);
+    }
+
+    public function clearOffline() {
+        return $this->bll->clearOffline_BLL();
     }
 }
