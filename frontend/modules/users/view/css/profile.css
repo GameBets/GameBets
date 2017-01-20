@@ -1,0 +1,120 @@
+/****************Perfil***************************/
+
+#left {
+    margin: 20px auto;
+}
+
+#middle {
+    margin: 20px auto;
+    justify-content: center;
+}
+
+#right {
+    margin: 20px auto;
+}
+
+#middle img {
+    border: 2px solid #CCCCCC;
+    width: 240px;
+    height: 120px;
+    margin-bottom: 2px;
+}
+
+.dropzone {
+    height: 200px !important;
+    width: 100% !important;
+}
+
+#form_users {
+    height: 500px;
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+}
+
+img#tick {
+    position: relative;
+    top: 30px;
+    right: 75px;
+    width: 60px;
+    visibility: hidden;
+    height: 50px;
+}
+
+h2#text {
+    visibility: hidden;
+    color: green;
+}
+
+input {
+    border: 1px solid #CCCCCC;
+}
+
+input[type="text"] {
+    font-size: 18px;
+    font-weight: bold;
+    width: 200px;
+}
+
+input[type="password"] {
+    width: 200px;
+}
+
+input[type="email"] {
+    width: 220px;
+    font-size: 18px;
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+h3::first-letter {
+    color: #bd1010;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#middle h3 {
+    text-align: center;
+}
+
+#middle input[type="text"] {
+    position: relative;
+    left: 14px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#middle input[type="button"] {
+    position: relative;
+    left: 14px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ghost-button-border-color {
+  background: #bd1010;
+  display: inline-block;
+  font-weight: bold;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: border-color 0.3s ease-out,
+              color 0.3s ease-out;
+}
+.ghost-button-border-color:hover,
+.ghost-button-border-color:active {
+  color: white;
+  border-color: grey;
+  font-weight: bold;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
+}
