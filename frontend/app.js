@@ -9,6 +9,11 @@ app.config(['$routeProvider',
                   controller: "mainCtrl"
                 })
 
+                .when("/chat", {
+                  templateUrl: "frontend/modules/chat/view/chat.view.html",
+                  controler: 'chatCtrl'
+                })
+
                 // else 404
                 .otherwise("/", {
                   templateUrl: "frontend/modules/main/view/main.view.html",
