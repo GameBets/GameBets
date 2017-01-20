@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute'/*, 'ngAnimate', 'ui.bootstrap', 'ngCookies', 'facebook'*/]);
+var app = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'/*, 'ngCookies', 'facebook'*/]);
 
 app.config(['$routeProvider',
     function ($routeProvider) {
