@@ -18,6 +18,8 @@ app.use(logger('dev'));
 
 app.use('/api', require('./routes'));
 
+require('./contact/contact.router.js')(app);
+
 console.log('About to crank up node');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
