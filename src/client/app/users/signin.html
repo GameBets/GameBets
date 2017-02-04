@@ -1,0 +1,62 @@
+<!-- <div class="form">
+
+  <ul class="tab-group">
+    <li class="tab active">
+      <a href="#signup">GAMEBETS</a>
+
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="signup">
+      <h1></h1> -->
+
+<form name="signupform" novalidate method="POST" class="form-horizontal" id="formulario_signup" ng-submit="vm.signup()">
+
+  <div class="top-row">
+    <div class="field-wrap">
+      <label>
+        Usuario<span class="req">*</span>
+      </label>
+      <input required ng-model="vm.datos.username" id="username" name="username" type="text"/>
+      <span class="text-danger" ng-show="signupform.username.$error.required && (signupform.username.$dirty || signupform.username.$touched)">El camp &eacute;s obligatori</span>
+    </div>
+
+    <div class="field-wrap">
+      <label>
+        Email<span class="req">*</span>
+      </label>
+      <input required ng-model="vm.datos.email" id="email" name="email" type="email"/>
+    </div>
+    <span class="text-danger" ng-show="signupform.email.$error.required && (signupform.email.$dirty || signupform.email.$touched)">El camp &eacute;s obligatori</span>
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Contraseña<span class="req">*</span>
+    </label>
+    <input required ng-model="vm.datos.password" id="password" name="password" type="password"/>
+    <span class="text-danger" ng-show="signupform.password.$error.required && (signupform.password.$dirty || signupform.password.$touched)">El camp &eacute;s obligatori</span>
+
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Repetir Contraseña<span class="req">*</span>
+    </label>
+    <input required ng-model="vm.datos.password2" id="password2" name="password2" type="password"/>
+    <span class="text-danger" ng-show="signupform.password2.$error.required && (signupform.password2.$dirty || signupform.password2.$touched)">El camp &eacute;s obligatori</span>
+  </div>
+
+  <input name="send" class="button button-block" type="submit" value="SIGN UP">
+  <!-- <button type="submit" class="button button-block">SIGN UP</button> -->
+
+</form>
+
+<!-- </div>
+
+</div> -->
+<!-- tab-content -->
+
+<!-- </div> -->
+<!-- /form -->
