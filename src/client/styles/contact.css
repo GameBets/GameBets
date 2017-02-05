@@ -92,7 +92,7 @@ textarea {
   resize: none;
 }
 
-p.msg_error {
+.msg_error {
   position: relative;
   float: right;
   top: 10px;
@@ -108,7 +108,7 @@ p.msg_error {
   bottom: 87%;
 }
 
-div#resultMessageFail {
+#resultMessageFail {
   font-weight: bold;
   font-size:20px;
   position: relative;
@@ -118,7 +118,7 @@ div#resultMessageFail {
   color: red;
 }
 
-div#resultMessageOk {
+#resultMessageOk {
   font-weight: bold;
   font-size:20px;
   position: relative;
@@ -219,9 +219,10 @@ div#resultMessageOk {
   transition: all 0.3s;
   font-weight: 700;
   position: relative;
-  left: 29%;
+  left: 35%;
   top: 50px;
   width: 500px;
+
 }
 
 .btn-tech:hover {
@@ -262,14 +263,7 @@ div#resultMessageOk {
   color: #3498db;
 }
 
-.p-sup {
-  position: relative;
-  float: left;
-  left: 35%;
-  top: 200px;
-  font-weight: bold;
-  font-size: 16px;
-}
+
 
 .ease {
   width: 0px;
@@ -287,21 +281,6 @@ div#resultMessageOk {
   background-color: white;
 }
 
-i.fa.fa-life-ring {
-  position: relative;
-  left: 38%;
-  z-index: 1;
-  color: black;
-  top: 55px;
-}
-
-i.fa-file-text {
-  position: relative;
-  right: 34%;
-  z-index: 1;
-  color: black;
-  top: 200px;
-}
 
 @media only screen and (max-width: 580px) {
   #form-div {
@@ -338,16 +317,16 @@ i.fa-file-text {
   height: 25px;
 }
 
-ul.header-in {
+.header-in {
   float: left;
   margin-top: 0.5em;
 }
 
-ul.header-in li {
+.header-in li {
   display: inline-block;
 }
 
-ul.header-in li a {
+.header-in li a {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
@@ -355,7 +334,7 @@ ul.header-in li a {
   margin: 0em 1em;
 }
 
-ul.header-in li a:hover {
+.header-in li a:hover {
   color: #bd1010;
 }
 
@@ -367,7 +346,182 @@ ul.header-in li a:hover {
   padding: 0 15px;
 }
 
-@media(max-width: 815px) {
+@media(max-width: 1300px) {
+
+  .btn-supp {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  .btn-tech {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  hr.style-two {
+    width: 80%;
+  }
+
+  h1#h1-supp{
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: 210px;
+  }
+
+  h1#h1-contact {
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: 1%;
+  }
+
+}
+
+
+@media(max-width: 1170px) and (min-width: 1125px) {
+
+  .btn-supp {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  .btn-tech {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  hr.style-two {
+    width: 70%;
+  }
+
+  h1#h1-supp{
+    width: auto;
+    position: relative;
+    left: 190px;
+  }
+
+  h1#h1-contact {
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: 1%;
+  }
+
+}
+
+@media(max-width: 1124px) and (min-width: 1076px) {
+
+  .btn-supp {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  .btn-tech {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  hr.style-two {
+    width: 70%;
+    position: relative;
+    left: 120px;
+  }
+
+  h1#h1-supp{
+    width: auto;
+    position: relative;
+    left: 160px;
+  }
+
+  h1#h1-contact {
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: 1%;
+  }
+
+}
+
+@media(max-width: 1077px) and (min-width: 1045px ) {
+
+  .btn-supp {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  .btn-tech {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  hr.style-two {
+    width: 70%;
+    position: relative;
+    left: 120px;
+  }
+
+  h1#h1-supp{
+    width: auto;
+    position: relative;
+    left: 140px;
+  }
+
+  h1#h1-contact {
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: -10px;
+  }
+
+}
+
+
+@media(max-width: 1044px) and (min-width: 1016px) {
+
+  .btn-supp {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  .btn-tech {
+    width: 70%;
+    position: relative;
+    left: 38%;
+  }
+
+  hr.style-two {
+    width: 70%;
+    position: relative;
+    left: 110px;
+  }
+
+  h1#h1-supp{
+    width: auto;
+    position: relative;
+    left: 130px;
+  }
+
+  h1#h1-contact {
+    height: 70%;
+    width: auto;
+    position: relative;
+    left: -10px;
+  }
+
+}
+
+
+@media(max-width: 1015px){
   #contorno {
     background-color: grey;
     border-right: none;
@@ -381,15 +535,203 @@ ul.header-in li a:hover {
   #feedback-page {
     text-align: center;
   }
-  div.contact.ng-scope {
+  .contact.ng-scope {
     height: 750px;
   }
-  hr.style-four {
+  .style-four {
+    position: relative;
+    left: 100px;
     height: 12px;
     border: 0;
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
   }
-  hr.style-two {
+  .style-two {
+    display: none;
+  }
+  #contorno {
+    width: 720px;
+    background-color: white;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    margin-left: -260px;
+    float: left;
+    position: relative;
+    left: 300px;
+  }
+  #inputName {
+    width: 100%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+  }
+  #inputEmail {
+    width: 100%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+  }
+  #inputMessage {
+    width: 100%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 100px;
+  }
+
+  .subject {
+    position: relative;
+    top: 90px;
+    right: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    height: 10px;
+  }
+  textarea {
+    resize: none;
+  }
+  .msg_error {
+    position: relative;
+    float: right;
+    top: 10px;
+    font-weight: bold;
+    color: red;
+  }
+  #resultMessageFail {
+    font-weight: bold;
+    color: red;
+    position: relative;
+    top: 218px;
+    left: 100px;
+  }
+  #inputSubject {
+    width: 100%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+    font-weight: bold;
+  }
+  .btn-tech {
+    display: none;
+  }
+  .btn-supp {
+    display: none;
+  }
+  .p-sup {
+    display: none;
+  }
+  #h1-contact {
+    position: relative;
+    font: 100px comic, Sans-Serif;
+    letter-spacing: -5px;
+    color: white;
+  }
+  #h1-contact:after {
+    content: "CONTACT";
+    position: absolute;
+    left: 210px;
+    top: 5px;
+    color: black;
+  }
+  #h1-supp {
+    display: none;
+  }
+  .input-contact {
+    border: 5px solid black;
+    -webkit-box-shadow: inset 0 0 8px black, 0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: white;
+    margin: 0 0 10px 0;
+  }
+  #submitBtn {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    float: left;
+    position: relative;
+    left: 208px;
+    top: 10px;
+    width: 66%;
+    border: grey solid 4px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+    height: 80px;
+  }
+  #submitBtn:hover {
+    background-color: black;
+    color: white;
+    border: grey solid 4px;
+  }
+  .submit:hover {
+    color: #3498db;
+  }
+  .p-sup {
+    position: relative;
+    float: left;
+    left: 400px;
+    top: 240px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .ease {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+  }
+  .submit:hover .ease {
+    width: 100%;
+    background-color: white;
+  }
+
+}
+
+
+@media(max-width: 830px) {
+  #contorno {
+    background-color: yellow;
+    border-right: none;
+  }
+  .search {
+    position: relative;
+    border-left: 1px solid #fff;
+    float: right;
+    width: 23%;
+  }
+  #feedback-page {
+    text-align: center;
+  }
+  .contact.ng-scope {
+    height: 750px;
+  }
+  .style-four {
+    width: 70%;
+    position: relative;
+    left: -8px;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  .style-two {
     display: none;
   }
   #contorno {
@@ -438,14 +780,14 @@ ul.header-in li a:hover {
   textarea {
     resize: none;
   }
-  p.msg_error {
+  .msg_error {
     position: relative;
     float: right;
     top: 10px;
     font-weight: bold;
     color: red;
   }
-  div#resultMessageFail {
+  #resultMessageFail {
     font-weight: bold;
     color: red;
     position: relative;
@@ -474,12 +816,12 @@ ul.header-in li a:hover {
     left: 100px;
     font: 100px comic, Sans-Serif;
     letter-spacing: -5px;
-    color: #C5C5C5;
+    color: white;
   }
   #h1-contact:after {
     content: "CONTACT";
     position: absolute;
-    left: 10px;
+    left: 90px;
     top: 5px;
     color: black;
   }
@@ -546,20 +888,384 @@ ul.header-in li a:hover {
     width: 100%;
     background-color: white;
   }
-  i.fa.fa-life-ring {
+
+}
+
+
+@media(max-width: 650px) and (min-width: 413) {
+  #contorno {
+    background-color: grey;
+    border-right: none;
+  }
+  .search {
+    position: relative;
+    border-left: 1px solid #fff;
+    float: right;
+    width: 23%;
+  }
+  #feedback-page {
+    text-align: center;
+  }
+  .contact.ng-scope {
+    height: 750px;
+  }
+  .style-four {
+    width: 50%;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  .style-two {
     display: none;
   }
-  i.fa.fa-life-ring .btn-tech:hover {
+  #contorno {
+    width: 720px;
+    background-color: white;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    margin-left: -260px;
+    float: left;
+    position: relative;
+    left: 300px;
+  }
+  #inputName {
+    width: 60%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+  }
+  #inputEmail {
+    width: 60%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+  }
+  #inputMessage {
+    width: 60%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 100px;
+  }
+  .subject {
+    position: relative;
+    top: 90px;
+    right: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    height: 10px;
+  }
+  textarea {
+    resize: none;
+  }
+  .msg_error {
+    position: relative;
+    float: right;
+    top: 10px;
+    font-weight: bold;
+    color: red;
+  }
+  #resultMessageFail {
+    font-weight: bold;
+    color: red;
+    position: relative;
+    top: 218px;
+    left: 100px;
+  }
+  #inputSubject {
+    width: 60%;
+    float: left;
+    position: relative;
+    left: 100px;
+    height: 10px;
+    font-weight: bold;
+  }
+  .btn-tech {
     display: none;
   }
-  i.fa-file-text {
+  .btn-supp {
     display: none;
   }
-  i.fa-arrow-circle-right {
+  .p-sup {
     display: none;
   }
-  i.fa-arrow-circle-right:hover {}
-  i.fa-chevron-circle-right {
+  #h1-contact {
+    display: inline;
+    position: relative;
+    left: 100px;
+    font: 100px comic, Sans-Serif;
+    letter-spacing: -5px;
+    color: white;
+  }
+  #h1-contact:after {
+    content: "CONTACT";
+    position: absolute;
+    left: 70px;
+    top: 5px;
+    color: black;
+  }
+  #h1-supp {
     display: none;
   }
+  .input-contact {
+    border: 5px solid black;
+    -webkit-box-shadow: inset 0 0 8px black, 0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: white;
+    margin: 0 0 10px 0;
+  }
+  #submitBtn {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    float: left;
+    position: relative;
+    left: 130px;
+    top: 10px;
+    width: 50%;
+    border: grey solid 4px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+    height: 80px;
+  }
+  #submitBtn:hover {
+    background-color: black;
+    color: white;
+    border: grey solid 4px;
+  }
+  .submit:hover {
+    color: #3498db;
+  }
+  .p-sup {
+    position: relative;
+    float: left;
+    left: 400px;
+    top: 240px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .ease {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+  }
+  .submit:hover .ease {
+    width: 100%;
+    background-color: white;
+  }
+
+}
+
+@media(max-width:460px){
+
+  #contorno {
+    border-right: none;
+  }
+  .search {
+    position: relative;
+    border-left: 1px solid #fff;
+    float: right;
+    width: 23%;
+  }
+  #feedback-page {
+    text-align: center;
+  }
+  .contact.ng-scope {
+    height: 750px;
+  }
+  .style-four {
+    width: 80%;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 5, 0, 0.5);
+  }
+  .style-two {
+    display: none;
+  }
+  #contorno {
+    width: 90%;
+    background-color: white;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    margin-left: -260px;
+    float: left;
+    position: relative;
+    left: 300px;
+  }
+  #inputName {
+    width: 100%;
+    bottom: 20px;
+    position: relative;
+    height: 50px;
+    margin-left: -100px;
+  }
+  #inputEmail {
+    width: 100%;
+    float: left;
+    top: -10px;
+    position: relative;
+    left: 0px;
+    height: 50px;
+  }
+  #inputMessage {
+    width: 100%;
+    float: left;
+    position: relative;
+    left: -2px;
+    height: 100px;
+    top: -50px;
+  }
+  .subject {
+    position: relative;
+    top: 90px;
+    right: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    height: 10px;
+  }
+  textarea {
+    resize: none;
+  }
+  .msg_error {
+    font-size: 10px;
+    position: relative;
+    float:right;
+  }
+  #resultMessageFail {
+    font-weight: bolder;
+    color: red;
+    float: left;
+    position: relative;
+    top: -410px;
+    left: 40px;
+  }
+
+  #resultMessageOk {
+    font-weight: bolder;
+    color: green;
+    float: left;
+    position: relative;
+    top: -410px;
+    left: 15px;
+  }
+  #inputSubject {
+    width: 100%;
+    float: left;
+    left: -1px;
+    position: relative;
+    height: 60px;
+    font-weight: bold;
+    top: -30px;
+  }
+  .btn-tech {
+    display: none;
+  }
+  .btn-supp {
+    display: none;
+  }
+  .p-sup {
+    display: none;
+  }
+  #h1-contact {
+    display: inline;
+    position: relative;
+    bottom: 1px;
+    font: 70px comic, Sans-Serif;
+    color: white;
+  }
+  #h1-contact:after {
+    content: "CONTACT";
+    position: absolute;
+    left: 1px;
+    top: 5px;
+    color: black;
+  }
+  #h1-supp {
+    display: none;
+  }
+  .input-contact {
+    border: 5px solid black;
+    -webkit-box-shadow: inset 0 0 8px black, 0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: white;
+    margin: 0 0 10px 0;
+  }
+  #submitBtn {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    float: left;
+    position: relative;
+    left: 75px;
+    top: -30px;
+    width: 40%;
+    border: grey solid 4px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+    height: 80px;
+  }
+  #submitBtn:hover {
+    background-color: black;
+    color: white;
+    border: grey solid 4px;
+  }
+  .submit:hover {
+    color: #3498db;
+  }
+  .p-sup {
+    position: relative;
+    float: left;
+    left: 400px;
+    top: 240px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .ease {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+  }
+  .submit:hover .ease {
+    width: 100%;
+    background-color: white;
+  }
+
 }
