@@ -12,22 +12,34 @@
 // // router.put('/users/:userId', auth.ensured, userCtrl.findById, userCtrl.update, mainCtrl.toJSON('user'));
 // // router.delete('/users/:userId', auth.ensured, userCtrl.delete);
 // module.exports = router;
-var Controller = require ('../controller/user');
+
 //var passport =require('./utils/passport');
 
 //module.exports = function(app) {
    // app.post('/api/signup', Controller.signup);
 //};
 
-module.exports = function(app,passport) {
-  // var passport = require('passport');
-  console.log("entro1");
+// // module.exports = function(app,passport) {
+// module.exports = function(app) {
+//
+//   // var passport = require('passport');
+//   console.log("entro1");
+//
+//     app.post('/api/users_signup', passport.authenticate('local-signup',function(err, user, next) {
+//       console.log("entro2");
+//         // if (err){ return next(err);}
+//         // if (!user) {return next(null, false);}
+//         // return next(null, user);
+//
+//     }));
+// };
 
-    app.post('/api/users_signup', passport.authenticate('local-signup',function(err, user, next) {
-      console.log("entro2");
-        // if (err){ return next(err);}
-        // if (!user) {return next(null, false);}
-        // return next(null, user);
 
-    }));
+
+var Controller = require ('../controller/user');
+var passport = require('passport');
+
+module.exports = function (app) {
+    app.post('/api/users_signup', Controller.signup);
+    // app.post('/api/localSignin', Controller.localSignin);
 };
