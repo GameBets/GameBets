@@ -33,8 +33,7 @@ hr.style-four {
 
 hr.style-two {
   position: relative;
-  top: 16px;
-  ;
+  bottom: 635px;
   left: 150px;
   width: 600px;
   height: 12px;
@@ -105,7 +104,6 @@ textarea {
   width: 50%;
   position: relative;
   left: 42%;
-  bottom: 87%;
 }
 
 #resultMessageFail {
@@ -159,7 +157,7 @@ textarea {
   font: 100px comic, Sans-Serif;
   letter-spacing: -5px;
   color: #C5C5C5;
-  top: 15px;
+  bottom: 640px;
 }
 
 #h1-supp:after {
@@ -182,7 +180,7 @@ textarea {
 
 .btn-supp {
   position: relative;
-  top: 100px;
+  bottom: 700px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   border: black solid 4px;
   left: 35%;
@@ -220,7 +218,7 @@ textarea {
   font-weight: 700;
   position: relative;
   left: 35%;
-  top: 50px;
+  bottom: 450px;
   width: 500px;
 
 }
