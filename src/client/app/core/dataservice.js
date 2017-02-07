@@ -10,6 +10,7 @@
   function dataservice($http, $q, exception, logger) {
     var service = {
       sendEmail: sendEmail
+    //  login: login
     };
 
     return service;
@@ -28,6 +29,26 @@
         return false;
       }
     }
+
+
+
+    function login(data) {
+      return $http.post('/api/login', data)
+        .then(success)
+        .catch(fail);
+      //console.log("success: "+success);
+      //console.log("fail: "+fail);
+
+      // Success
+      function success(response) {
+        return response;
+      }
+      //Fail
+      function fail() {
+        return false;
+      }
+    }
+
   }
 
 })();
