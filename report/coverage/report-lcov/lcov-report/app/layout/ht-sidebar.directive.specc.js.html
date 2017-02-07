@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/layout/ht-sidebar.directive.specc.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">app/layout/ht-sidebar.directive.specc.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(63 / 63)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(63 / 63)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/layout/</a> &#187; ht-sidebar.directive.specc.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jshint -W117, -W030 */
+/* jshint multistr:true */
+describe('htSidebar directive: ', function() {
+  var dropdownElement;
+  var el;
+  var innerElement;
+  var isOpenClass = 'dropy';
+  var scope;
+&nbsp;
+  beforeEach(module('app.layout'));
+&nbsp;
+  beforeEach(inject(function($compile, $rootScope) {
+    // The minimum necessary template HTML for this spec.
+    // Simulates a menu link that opens and closes a dropdown of menu items
+    // The `when-done-animating` attribute is optional (as is the vm's implementation)
+    //
+    // N.B.: the attribute value is supposed to be an expression that invokes a $scope method
+    //       so make sure the expression includes '()', e.g., "vm.sidebarReady(42)"
+    //       no harm if the expression fails ... but then scope.sidebarReady will be undefined.
+    //       All parameters in the expression are passed to vm.sidebarReady ... if it exists
+    //
+    // N.B.: We do NOT add this element to the browser DOM (although we could).
+    //       spec runs faster if we don't touch the DOM (even the PhantomJS DOM).
+    el = angular.element(
+      '&lt;ht-sidebar when-done-animating="vm.sidebarReady(42)"&gt;' +
+      '&lt;div class="sidebar-dropdown"&gt;&lt;a href=""&gt;Menu&lt;/a&gt;&lt;/div&gt;' +
+      '&lt;div class="sidebar-inner" style="display: none"&gt;&lt;/div&gt;' +
+      '&lt;/ht-sidebar&gt;');
+&nbsp;
+    // The spec examines changes to these template parts
+    dropdownElement = el.find('.sidebar-dropdown a'); // the link to click
+    innerElement = el.find('.sidebar-inner');      // container of menu items
+&nbsp;
+    // ng's $compile service resolves nested directives (there are none in this example)
+    // and binds the element to the scope (which must be a real ng scope)
+    scope = $rootScope;
+    $compile(el)(scope);
+&nbsp;
+    // tell angular to look at the scope values right now
+    scope.$digest();
+  }));
+&nbsp;
+  /// tests ///
+  describe('the isOpenClass', function() {
+    it('is absent for a closed menu', function() {
+      hasIsOpenClass(false);
+    });
+&nbsp;
+    it('is added to a closed menu after clicking', function() {
+      clickIt();
+      hasIsOpenClass(true);
+    });
+&nbsp;
+    it('is present for an open menu', function() {
+      openDropdown();
+      hasIsOpenClass(true);
+    });
+&nbsp;
+    it('is removed from a closed menu after clicking', function() {
+      openDropdown();
+      clickIt();
+      hasIsOpenClass(false);
+    });
+  });
+&nbsp;
+  describe('when animating w/ jQuery fx off', function() {
+    beforeEach(function() {
+      // remember current state of jQuery's global FX duration switch
+      this.oldFxOff = $.fx.off;
+      // when jQuery fx are of, there is zero animation time; no waiting for animation to complete
+      $.fx.off = true;
+      // must add to DOM when testing jQuery animation result
+      el.appendTo(document.body);
+    });
+&nbsp;
+    afterEach(function() {
+      $.fx.off = this.oldFxOff;
+      el.remove();
+    });
+&nbsp;
+    it('dropdown is visible after opening a closed menu', function() {
+      dropdownIsVisible(false); // hidden before click
+      clickIt();
+      dropdownIsVisible(true); // visible after click
+    });
+&nbsp;
+    it('dropdown is hidden after closing an open menu', function() {
+      openDropdown();
+      dropdownIsVisible(true); // visible before click
+      clickIt();
+      dropdownIsVisible(false); // hidden after click
+    });
+&nbsp;
+    it('click triggers "when-done-animating" expression', function() {
+      // spy on directive's callback when the animation is done
+      var spy = sinon.spy();
+&nbsp;
+      // Recall the pertinent tag in the template ...
+      // '    &lt;div ht-sidebar  when-done-animating="vm.sidebarReady(42)" &gt;
+      // therefore, the directive looks for scope.vm.sidebarReady
+      // and should call that method with the value '42'
+      scope.vm = { sidebarReady: spy };
+&nbsp;
+      // tell angular to look again for that vm.sidebarReady property
+      scope.$digest();
+&nbsp;
+      // spy not called until after click which triggers the animation
+      expect(spy).not.to.have.been.called;
+&nbsp;
+      // this click triggers an animation
+      clickIt();
+&nbsp;
+      // verify that the vm's method (sidebarReady) was called with '42'
+      // FYI: spy.args[0] is the array of args passed to sidebarReady()
+      expect(spy).to.have.been.called;
+      expect(spy).to.have.been.calledWith(42);
+    });
+  });
+&nbsp;
+  /////// helpers //////
+&nbsp;
+  // put the dropdown in the 'menu open' state
+  function openDropdown() {
+    dropdownElement.addClass(isOpenClass);
+    innerElement.css('display', 'block');
+  }
+&nbsp;
+  // click the "menu" link
+  function clickIt() {
+    dropdownElement.trigger('click');
+  }
+&nbsp;
+  // assert whether the "menu" link has the class that means 'is open'
+  function hasIsOpenClass(isTrue) {
+    var hasClass = dropdownElement.hasClass(isOpenClass);
+    expect(hasClass).equal(!!isTrue,
+      'dropdown has the "is open" class is ' + hasClass);
+  }
+&nbsp;
+  // assert whether the dropdown container is 'block' (visible) or 'none' (hidden)
+  function dropdownIsVisible(isTrue) {
+    var display = innerElement.css('display');
+    expect(display).to.equal(isTrue ? 'block' : 'none',
+      'innerElement display value is ' + display);
+  }
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Feb 02 2017 20:56:00 GMT+0100 (CET)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
