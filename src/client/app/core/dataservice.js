@@ -25,10 +25,14 @@
         .catch(fail);
 
         function success(response) {
+          console.log("RESPONSE");
+          console.log(response.data);
           return response.data;
         }
 
         function fail(e) {
+          console.log("FAIL");
+          console.log('XHR Failed for sign up');
           return exception.catcher('XHR Failed for sign up')(e);
         }
     }

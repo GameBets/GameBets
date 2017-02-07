@@ -11,10 +11,10 @@
     var vm = this;
     console.log("hola");
     vm.datos = {
-      username:'',
-      email:'',
-      password:'',
-      password2:''
+      user:'',
+      // email:'',
+      password:''
+      // password2:''
     };
     vm.signup = signup;
 
@@ -26,10 +26,9 @@
     }
 
     function signup(){
-
-      console.log(vm.datos);
-      console.log("hola");
-      dataservice.signup(vm.datos);
+      var dataUserJSON = JSON.stringify(vm.datos);
+      console.log(dataUserJSON);
+      dataservice.signup(dataUserJSON);
       // .then(function (data){
       //   console.log(data);
       // });
