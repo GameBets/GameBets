@@ -59,7 +59,7 @@ module.exports = function (passport) {
               //               return done(null, row);
               //             }
               //         });              // we are checking to see if the user trying to login already exists
-              mysql.connection.query('SELECT COUNT(*) AS userCount FROM user_test WHERE username like "' + username + '"',
+              mysql.connection.query('SELECT COUNT(*) AS userCount FROM user_test WHERE email like "' + req.body.email + '"',
                 function(error, rows) {
                   if (error) {
                     return done(error);
@@ -73,8 +73,9 @@ module.exports = function (passport) {
                     var newUser = {
                       username: username,
                       email: req.body.email,
-                      password: bcrypt.hashSync(password, null, null)
+                      passwd: bcrypt.hashSync(password, null, null)
                     };
+                    console.log(newUser);
                     console.log('no existe y lo inserto');
                     mysql.connection.query('INSERT INTO user_test SET ?', newUser, function(error, res) {
                       if (error) {
