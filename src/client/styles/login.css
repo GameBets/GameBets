@@ -1,0 +1,72 @@
+.modal-content {
+  max-width: 100%;
+  height: 500px;
+  background-color: black;
+  border: 2px solid red;
+}
+
+  .label-login {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.input-email {
+
+
+}
+
+hr {
+  	border-top: 3px double #8c8b8b;
+    position: relative;
+    top: 40px;
+}
+
+
+.input-passw {
+
+}
+
+.h1-login {
+  margin-left: 1%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: serif;
+  font-weight: bold;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#email-log {
+  margin-left: 1%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+#passw-log {
+  margin-left: 1%;
+  position: absolute;
+  top: 40%;
+  left: 2.5%;
+}
+
+#linkRest {
+  margin-left: 1%;
+  position: absolute;
+  top: 80%;
+  left: 12%;
+}
+
+.p-login {}
+
+#SubmitLogin {
+  margin-left: 1%;
+  position: absolute;
+  top: 60%;
+  width: 43%;
+  left: 2.5%;
+}
