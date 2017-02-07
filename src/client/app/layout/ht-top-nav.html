@@ -31,15 +31,19 @@
 		      <ul>
 		        <li class=" nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
 		          <a class="color2" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+
 		        </li>
-		  			<div class="clearfix"> </div>
+						<li class=" nlightblue fade-selection-animation">
+									<a class="color3" ng-click="vm.showSignInModal()">Log In</a>
+						</li>
+						<div class="clearfix"> </div>
 		      </ul>
 		  		<script>
 		  			$("span.menu").click(function(){
 		  				$(".top-nav ul").slideToggle(500, function(){
 		  				});
 		  			});
-		  	</script>
+		  		</script>
 
 		  		</div>
 		  </div>
