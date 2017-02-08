@@ -2,9 +2,9 @@
 <div class="login">
   <form id="login_form" name="login_form" novalidate>
 
-      <h1 class="h1-login"><C>Sign In</C></h1>
+    <img src="images/signin.gif" class="h1-login" />
     </br>
-  <hr>
+    <hr class="hr-login">
     <div id="email-log">
       <md-input-container class="md-block">
         <label class="label-login">E-mail</label>
@@ -21,6 +21,13 @@
         <div ng-messages="login_form.inputPass.$error" role="alert">
         </div>
     </div>
+    <div id="bar-vertical-v1">
+    </div>
+    <hr class="hr-horizontal-v1">
+    <img class="logo-gb" src="images/GFAv.png">
+    <hr class="hr-horizontal-v2">
+    <div id="bar-vertical-v2">
+    </div>
     </br>
     </md-input-container>
     <a href="#" id="linkRest">¿Has olvidado tu contraseña?</a> </br>
@@ -29,7 +36,14 @@
     <div id="resultMessageFail" class="msg_error">{{vm.resultMessageFail}}</div>
     <div id="resultMessageOk" class="msg_error">{{vm.resultMessageOk}}</div>
 
-    <!---<p class=p-login>¿Eres un nuevo cliente?</p><-->
+
+
+      <div id="social-media">
+        <div class="facebook"><img class="logo-login" src="images/logo-face.png"/><h5 class="login-h5">Login with <p>Facebook<p><h5></div>
+        <div class="twitter"><img class="logo-login" src="images/logo-twitter.png"/><h5 class="login-h5">Login with <p>Twitter<p><h5></div>
+        <div class="google"><img class="logo-login" src="images/logo-gooogle.png"/><h5 class="login-h5">Login with <p>Google<p><h5></div>
+      </div>
+      <!---<p class=p-login>¿Eres un nuevo cliente?</p><-->
 
 </div>
 </form>
