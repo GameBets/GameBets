@@ -22,7 +22,7 @@
           controllerAs: 'vm',
           title: 'Chat',
           settings: {
-            nav: 4,
+            nav: 2,
             content: '<i class="fa fa-lock"></i> Chat'
           }
         }
