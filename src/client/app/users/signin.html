@@ -1,15 +1,4 @@
-<!-- <div class="form">
-
-  <ul class="tab-group">
-    <li class="tab active">
-      <a href="#signup">GAMEBETS</a>
-
-    </li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="signup">
-      <h1></h1> -->
+<!-- <link rel="stylesheet" href="styles/home.css" media="screen" title="no title"> -->
 
 <form name="signupform" novalidate method="POST" class="form-horizontal" id="formulario_signup" ng-submit="vm.signup()">
 
@@ -18,8 +7,12 @@
       <label>
         Usuario<span class="req">*</span>
       </label>
-      <input required ng-model="vm.datos.user" id="user" name="user" type="text"/>
-      <span class="text-danger" ng-show="signupform.user.$error.required && (signupform.user.$dirty || signupform.user.$touched)">El camp &eacute;s obligatori</span>
+      <input required ng-model="vm.datos.user" id="user" name="user" type="text" ng-maxlength="15" ng-minlength="5" ng-pattern="/^[a-zA-Z0-9]*$/"/>
+      <span class="text-danger" ng-show="signupform.user.$error.required && (signupform.user.$dirty || signupform.user.$touched)">El campo es obligatorio</span>
+      <span class="text-danger" ng-show="signupform.user.$error.pattern && signupform.user.$touched">El nombre de usuario debe tener solo letras y numeros.</span>
+      <span class="text-danger" ng-show="signupform.user.$error.maxlength && signupform.user.$touched">El nombre de usuario debe tener menos de 15 caracteres.</span>
+      <span class="text-danger" ng-show="signupform.user.$error.minlength && signupform.user.$touched">El nombre de usuario debe tener mas de 5 caracteres.</span>
+
     </div>
 
     <div class="field-wrap">
@@ -28,15 +21,22 @@
       </label>
       <input required ng-model="vm.datos.email" id="email" name="email" type="email"/>
     </div>
-    <span class="text-danger" ng-show="signupform.email.$error.required && (signupform.email.$dirty || signupform.email.$touched)">El camp &eacute;s obligatori</span>
+    <span class="text-danger" ng-show="signupform.email.$error.required && (signupform.email.$dirty || signupform.email.$touched)">El campo es obligatorio.</span>
+    <span class="text-danger" ng-show="signupform.email.$error.email && signupform.email.$touched">El email no es valido.</span>
+
   </div>
 
   <div class="field-wrap">
     <label>
       Contraseña<span class="req">*</span>
     </label>
-    <input required ng-model="vm.datos.password" id="password" name="password" type="password"/>
-    <span class="text-danger" ng-show="signupform.password.$error.required && (signupform.password.$dirty || signupform.password.$touched)">El camp &eacute;s obligatori</span>
+    <input required ng-model="vm.datos.password" id="password" name="password" type="{{vm.inputType}}" ng-maxlength="25" ng-minlength="8" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/"/>
+    <img src="{{vm.imgSrc}}" name="imgPasswd" alt="View/Hide Password" ng-click="vm.showHidePasswd()"/>
+    <span class="text-danger" ng-show="signupform.password.$error.required && (signupform.password.$dirty || signupform.password.$touched)">El campo es obligatorio.</span>
+    <span class="text-danger" ng-show="signupform.password.$error.pattern && signupform.password.$touched">La contrase&ntilde;a debe tener al menos una letra minuscula, una mayuscula y un caracter especial.</span>
+    <span class="text-danger" ng-show="signupform.password.$error.maxlength && signupform.password.$touched">El contrase&ntilde;a debe tener menos de 25 caracteres.</span>
+    <span class="text-danger" ng-show="signupform.password.$error.minlength && signupform.password.$touched">El contrase&ntilde;a debe tener mas de 8 caracteres.</span>
+    <!-- <span class="text-danger" ng-show="!signupform.password == signupform.password2">La contrase&ntilde;a no coincide.</span> -->
 
   </div>
 
@@ -44,8 +44,10 @@
     <label>
       Repetir Contraseña<span class="req">*</span>
     </label>
-    <input required ng-model="vm.datos.password2" id="password2" name="password2" type="password"/>
+    <input required ng-model="vm.datos.password2" id="password2" name="password2" type="{{vm.inputType2}}"/>
+    <img src="{{vm.imgSrc2}}" name="imgPasswd2" alt="View/Hide Password" ng-click="vm.showHidePasswd2()"/>
     <span class="text-danger" ng-show="signupform.password2.$error.required && (signupform.password2.$dirty || signupform.password2.$touched)">El camp &eacute;s obligatori</span>
+    <span class="text-danger" ng-show="!vm.checkPasswd() && signupform.password2.$touched">La contrase&ntilde;a no coincide.</span>
   </div>
 
   <input name="send" class="button button-block" type="submit" value="SIGN UP">
