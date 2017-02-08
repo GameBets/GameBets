@@ -7,7 +7,8 @@
     'app.admin',
     'app.dashboard',
     'app.layout',
-    'app.contact'
+    'app.contact',
+    'app.chat'
   ]);
 
 })();
