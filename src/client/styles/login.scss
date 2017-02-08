@@ -1,4 +1,71 @@
 
 // Variables en sass
+//colorsss
 $color_font: black;
-$color_background: white;
+$white: white;
+$red: red;
+$red-gb: #bd1010;
+
+//borders solid
+$border-2x: 2px solid;
+$border-3x: 3px solid;
+$border-4x: 4px solid;
+
+// fonts-type
+
+$uppercase: uppercase;
+$bold: bold;
+
+
+// sizes
+
+$half: 50%;
+$total: 100%;
+
+// Headers
+
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 20px;
+$h5: 18px;
+
+
+/// transform
+$45gr: rotate(45deg);
+$35gr: rotate(35deg);
+$25gr: rotate(25deg);
+$90gr: rotate(-45deg);
+
+////////////////// FUNCTIONS --
+.modal-content {
+  max-width: 100%;
+  height: 500px;
+  background-color: $black;
+  border: $border-3x $red;
+}
+
+.label-login {
+  color: $white;
+  text-transform: $uppercase;
+  font-size: 20px;
+}
+
+
+.logo-gb {
+  position: absolute;
+  top: 160px;
+  left: 380px;
+  width: 210px;
+  transform: $90gr;
+}
+
+
+#bar-vertical-v1 {
+  width: 0%;
+  height: 25%;
+  position: absolute;
+  border: $border-2x $red;
+  top: 80px;
+  left: 490px;
+}
