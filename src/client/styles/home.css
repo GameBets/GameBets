@@ -181,7 +181,7 @@ textarea {
 }
 .slideshow:after {
     content: '';
-    background: transparent url('../images/images.png') repeat top left;
+    background-color: #FFF;
 }
 .slideshow li span {
     width: 100%;
@@ -196,11 +196,11 @@ textarea {
     opacity: 0;
     z-index: 0;
 	-webkit-backface-visibility: hidden;
-    -webkit-animation: imageAnimation 16s linear infinite;
-    -moz-animation: imageAnimation 16s linear infinite ;
-    -o-animation: imageAnimation 16s linear infinite ;
-    -ms-animation: imageAnimation 16s linear infinite;
-    animation: imageAnimation 16s linear infinite ;
+    -webkit-animation: imageAnimation 12s linear infinite;
+    -moz-animation: imageAnimation 12s linear infinite ;
+    -o-animation: imageAnimation 12s linear infinite ;
+    -ms-animation: imageAnimation 12s linear infinite;
+    animation: imageAnimation 12s linear infinite ;
 }
 .slideshow li div {
     z-index: 1000;
@@ -261,16 +261,16 @@ textarea {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
 	}
-	8% {
+	20% {
 	    opacity: 1;
 	    -webkit-transform: scale(1.05);
 	    -webkit-animation-timing-function: ease-out;
 	}
-	17% {
+	40% {
 	    opacity: 1;
 	    -webkit-transform: scale(1.1);
 	}
-	25% {
+	60% {
 	    opacity: 0;
 	    -webkit-transform: scale(1.1);
 	}
@@ -281,16 +281,16 @@ textarea {
 	    opacity: 0;
 	    -moz-animation-timing-function: ease-in;
 	}
-	8% {
+	20% {
 	    opacity: 1;
 	    -moz-transform: scale(1.05);
 	    -moz-animation-timing-function: ease-out;
 	}
-	17% {
+	40% {
 	    opacity: 1;
 	    -moz-transform: scale(1.1);
 	}
-	25% {
+	60% {
 	    opacity: 0;
 	    -moz-transform: scale(1.1);
 	}
@@ -301,16 +301,16 @@ textarea {
 	    opacity: 0;
 	    -o-animation-timing-function: ease-in;
 	}
-	8% {
+	20% {
 	    opacity: 1;
 	    -o-transform: scale(1.05);
 	    -o-animation-timing-function: ease-out;
 	}
-	17% {
+	40% {
 	    opacity: 1;
 	    -o-transform: scale(1.1);
 	}
-	25% {
+	60% {
 	    opacity: 0;
 	    -o-transform: scale(1.1);
 	}
@@ -321,16 +321,16 @@ textarea {
 	    opacity: 0;
 	    -ms-animation-timing-function: ease-in;
 	}
-	8% {
+	20% {
 	    opacity: 1;
 	    -ms-transform: scale(1.05);
 	    -ms-animation-timing-function: ease-out;
 	}
-	17% {
+	40% {
 	    opacity: 1;
 	    -ms-transform: scale(1.1);
 	}
-	25% {
+	60% {
 	    opacity: 0;
 	    -ms-transform: scale(1.1);
 	}
@@ -341,16 +341,16 @@ textarea {
 	    opacity: 0;
 	    animation-timing-function: ease-in;
 	}
-	8% {
+	20% {
 	    opacity: 1;
 	    transform: scale(1.05);
 	    animation-timing-function: ease-out;
 	}
-	17% {
+	40% {
 	    opacity: 1;
 	    transform: scale(1.1);
 	}
-	25% {
+	60% {
 	    opacity: 0;
 	    transform: scale(1.1);
 	}
