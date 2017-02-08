@@ -13,8 +13,8 @@
   }
 
   var config = {
-    appErrorPrefix: '[helloWorld Error] ',
-    appTitle: 'helloWorld'
+    appErrorPrefix: '[GameBets Error] ',
+    appTitle: 'GameBets'
   };
 
   core.value('config', config);

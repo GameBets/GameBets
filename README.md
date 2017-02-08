@@ -1,4 +1,4 @@
-# helloWorld
+# GameBets
 
 **Generated from HotTowel Angular**
 

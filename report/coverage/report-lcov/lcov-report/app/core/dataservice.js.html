@@ -15,10 +15,10 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">app/core/dataservice.js</span></h1>
     <h2>
-        Statements: <span class="metric">78.57% <small>(11 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">65.38% <small>(17 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">76.92% <small>(10 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">25% <small>(3 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">64% <small>(16 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/core/</a> &#187; dataservice.js</div>
@@ -59,7 +59,37 @@
 32
 33
 34
-35</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -69,14 +99,44 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -105,7 +165,9 @@
   function dataservice($http, $q, exception, logger) {
     var service = {
       getPeople: getPeople,
-      getMessageCount: getMessageCount
+      getMessageCount: getMessageCount,
+      chatInsertMessage: chatInsertMessage,
+      chatGetMessages: chatGetMessages
     };
 &nbsp;
     return service;
@@ -125,6 +187,34 @@
 <span class="cstat-no" title="statement not covered" >        return exception.catcher('XHR Failed for getPeople')(e);</span>
       }
     }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function chatInsertMessage(data) {</span>
+<span class="cstat-no" title="statement not covered" >      return $http.post('/api/chat_insertMessage', data)</span>
+        .then(sucess)
+        .catch(fail);
+&nbsp;
+<span class="fstat-no" title="function not covered" >      function sucess(response) {</span>
+<span class="cstat-no" title="statement not covered" >        return response.data;</span>
+      }
+&nbsp;
+<span class="fstat-no" title="function not covered" >      function fail(e) {</span>
+<span class="cstat-no" title="statement not covered" >        return exception.catcher('XHR Failed for insertMessage')(e);</span>
+      }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function chatGetMessages() {</span>
+<span class="cstat-no" title="statement not covered" >      return $http.get('/api/chat_getMessages')</span>
+        .then(sucess)
+        .catch(fail);
+&nbsp;
+<span class="fstat-no" title="function not covered" >      function sucess(response) {</span>
+<span class="cstat-no" title="statement not covered" >        return response.data;</span>
+      }
+&nbsp;
+<span class="fstat-no" title="function not covered" >      function fail(e) {</span>
+<span class="cstat-no" title="statement not covered" >        return exception.catcher('XHR Failed for insertMessage')(e);</span>
+      }
+    }
   }
 })();
 &nbsp;</pre></td></tr>
@@ -132,7 +222,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jan 12 2017 21:51:40 GMT+0100 (CET)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Feb 02 2017 20:56:00 GMT+0100 (CET)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

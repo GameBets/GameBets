@@ -1,0 +1,39 @@
+<div class="chat">
+    <div class="container">
+        <div class="box box-warning direct-chat direct-chat-warning">
+            <div class="box-body">
+                <div class="direct-chat-messages">
+                    <div class="direct-chat-msg" ng-repeat="message in vm.messages" ng-if="historyFromId < message.id" ng-class="{'right':message.username !== vm.me.username}">
+                        <div class="direct-chat-info clearfix">
+                            <span class="direct-chat-name" ng-class="{'pull-left':message.username === vm.me.username, 'pull-right':message.username !== vm.me.username}">{{ message.username }}</span>
+                            <span class="direct-chat-timestamp " ng-class="{'pull-left':message.username !== vm.me.username, 'pull-right':message.username === vm.me.username}">{{ message.date }}</span>
+                        </div>
+                        <img class="direct-chat-img" ng-src="http://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif" alt="">
+                        <div class="direct-chat-text right">
+                            <span>{{ message.message }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <form ng-submit="vm.saveMessage()">
+                        <div class="input-group">
+                            <input type="text" placeholder="Type message..." autofocus="autofocus" class="form-control" ng-model="vm.me.message" ng-enter="vm.saveMessage()">
+                            <span class="input-group-btn">
+                            <button type="submit" class="btn btn-warning btn-flat">Send</button>
+                            </span>
+                        </div>
+                    </form>
+                    <div class="clearfix">
+                        <span class="badge pull-left">Online users: {{ vm.online || '1' }}</span>
+                        <!--
+                        <span class="pull-right">Use shortcodes <span class="badge">[img]http://image.url[/img]</span>
+                        <span class="badge">[url]http://url.link/[/url]</span>
+                        -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

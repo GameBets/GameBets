@@ -8,6 +8,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var config = require('./config/routes');
+
+io.on('connection', function(socket) {
+    console.log('Un cliente se ha conectado con id');
+    socket.on('new-message', function(data) {
+      console.log('HOLA');
+      socket.broadcast.emit('remit-message', data);
+    });
+});
 
 var environment = process.env.NODE_ENV;
 
@@ -16,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-app.use('/api', require('./routes'));
+config.init(app);
 
 require('./contact/contact.router.js')(app);
 
@@ -54,4 +65,8 @@ app.listen(port, function() {
   console.log('env = ' + app.get('env') +
     '\n__dirname = ' + __dirname +
     '\nprocess.cwd = ' + process.cwd());
+});
+
+http.listen(8081,function() {
+    console.log('Listening on 8081');
 });

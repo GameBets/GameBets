@@ -1,6 +1,6 @@
 {
-  "name": "helloWorld",
-  "description": "helloWorld Project Generated from HotTowel Angular",
+  "name": "GameBets",
+  "description": "GameBets Project Generated from HotTowel Angular",
   "version": "0.0.0",
   "scripts": {
     "init": "npm install",
@@ -12,10 +12,11 @@
     "body-parser": "^1.8.2",
     "express": "^4.9.3",
     "morgan": "^1.1.1",
+    "nodemailer": "^2.1.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "mysql": "^2.13.0",
     "serve-favicon": "^2.0.1",
-    "mysql": "^2.12.0",
-   "nodemailer": "^2.1.0",
-   "nodemailer-sendgrid-transport": "^0.2.0"
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
     "browser-sync": "~2.11.2",
