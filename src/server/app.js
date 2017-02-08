@@ -3,20 +3,49 @@
 
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
-
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');//////////
+var session = require('express-session');
 var environment = process.env.NODE_ENV;
+var config = require('./config/routes');
+////PASSPORT////////////////////////
+
+// var session  = require('express-session');//
+///////////////////////////////////////////
+/////Login////
+// config.init(app);
+////////////////
 
 app.use(favicon(__dirname + '/favicon.ico'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
+app.use(cookieParser());//esto se debe poner sino da fallo conect.sid
 
-app.use('/api', require('./routes'));
+require('./config/passport.js')(passport); // pass passport for configuration
+
+require('./modules/users/routes/routes.js')(app,passport);
+
+/////////////
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+
+// app.use(favicon(__dirname + '/favicon.ico'));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(logger('dev'));
+
+// app.use('/api', require('./routes'));
 
 console.log('About to crank up node');
 console.log('PORT=' + port);

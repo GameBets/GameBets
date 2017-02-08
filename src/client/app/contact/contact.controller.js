@@ -5,9 +5,9 @@
     .module('app.contact')
     .controller('ContactController', ContactController);
 
-  DashboardController.$inject = ['$q', 'dataservice', 'logger'];
+  ContactController.$inject = ['$q', 'dataservice', 'logger'];
   /* @ngInject */
-  function DashboardController($q, dataservice, logger) {
-    
+  function ContactController($q, dataservice, logger) {
+
   }
 })();

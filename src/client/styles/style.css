@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	outline: none;
   top: 5px;
   right: 0px;
-  background-image: url("../images/img-sprite.png");
+  background: url("../images/img-sprite.png") no-repeat -6px -12px;
 	background-color: black;
   width: 25px;
   height: 25px;

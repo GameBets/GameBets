@@ -10,12 +10,32 @@
   function dataservice($http, $q, exception, logger) {
     var service = {
       getPeople: getPeople,
-      getMessageCount: getMessageCount
+      getMessageCount: getMessageCount,
+      signup: signup
     };
 
     return service;
 
     function getMessageCount() { return $q.when(72); }
+
+    function signup(data){
+      console.log(data);
+      return $http.post('/api/users_signup', data)
+        .then(success)
+        .catch(fail);
+
+        function success(response) {
+          console.log("RESPONSE");
+          console.log(response.data);
+          return response.data;
+        }
+
+        function fail(e) {
+          console.log("FAIL");
+          console.log('XHR Failed for sign up');
+          return exception.catcher('XHR Failed for sign up')(e);
+        }
+    }
 
     function getPeople() {
       return $http.get('/api/people')
