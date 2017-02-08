@@ -73,7 +73,7 @@
       var dataUserJSON = JSON.stringify(vm.datos);
       console.log(dataUserJSON);
       console.log($scope.signupform.$valid);
-      // dataservice.signup(dataUserJSON);
+      dataservice.signup(dataUserJSON);
       // .then(function (data){
       //   console.log(data);
       // });
