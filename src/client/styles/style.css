@@ -108,6 +108,41 @@ h1, h2, h3, h4, h5, h6, label, p {
   border-bottom: 3px solid #bd1010;
 }
 
+.search {
+  position: relative;
+  height: 50px;
+}
+
+ul.header-in {
+  position: relative;
+  top: 10px;
+  right: 20px;
+}
+
+.header-facebook {
+  position: relative;
+  border: 2px solid white;
+  border-top: none;
+  border-bottom: 1px solid #bd1010;
+  border-left: none;
+}
+
+.header-twitter {
+  position: relative;
+  left: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-bottom: 1px solid #bd1010;
+}
+
+.header-google {
+  position: relative;
+  left: 20px;
+  border: 2px solid white;
+  border-top: none;
+  border-bottom: 1px solid #bd1010;
+}
+
 
 /*--footer--*/
 
@@ -188,8 +223,6 @@ h1, h2, h3, h4, h5, h6, label, p {
     width: 86%;
   }
 }
-
-
 
 @media(max-width:768px) {
   span.menu {
