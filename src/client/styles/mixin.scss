@@ -1,0 +1,8 @@
+//font mixin
+@mixin label-text($family: Arial, $size: 20px, $weight: bold, $color: white, $upper: uppercase){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-transform: $upper;
+}

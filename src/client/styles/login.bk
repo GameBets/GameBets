@@ -1,0 +1,149 @@
+@import "login";
+
+
+.input-email {
+  width: 144%;
+  height: 38px;
+  border: 4px solid red;
+  background: white;
+}
+
+
+hr.hr-login {
+  border-top: 3px double red;
+  position: relative;
+  top: 40px;
+}
+
+
+hr.hr-horizontal-v1 {
+  border: 2px solid red;
+  width: 6%;
+  position: absolute;
+  left: 463px;
+  top: 182px;
+}
+
+hr.hr-horizontal-v2 {
+  border: 2px solid red;
+  width: 6%;
+  position: absolute;
+  left: 463px;
+  top: 352px;
+}
+
+#bar-vertical-v2 {
+  width: 0%;
+  height: 25%;
+  position: absolute;
+  border: 1px solid red;
+  top: 373px;
+  left: 490px;
+}
+
+.input-passw {
+  width: 120%;
+  height: 38px;
+  border: 4px solid red;
+  background: white;
+}
+
+.h1-login {
+  margin-left: 1%;
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#email-log {
+  margin-left: 1%;
+  position: absolute;
+  top: 24%;
+  left: 4%;
+}
+
+#passw-log {
+  margin-left: 1%;
+  position: absolute;
+  top: 44%;
+  left: 4%;
+}
+
+#linkRest {
+  margin-left: 1%;
+  position: absolute;
+  top: 80%;
+  left: 12%;
+  color: red;
+  font-weight: bold;
+}
+.btn.btn-lg.btn-primary{
+  background: red;
+  border: 2px solid white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.p-login {}
+
+#SubmitLogin {
+  margin-left: 1%;
+  position: absolute;
+  top: 65%;
+  width: 38%;
+  left: 4%;
+}
+
+
+.logo-login {
+
+width: 50px;
+height: 50px;
+position: relative;
+top: 4px;
+border-right: 2px solid white;
+}
+
+
+.facebook {
+  position: relative;
+  top: 2px;
+  left: 610px;
+  width: 230px;
+  height: 60px;
+  border: 2px solid white;
+  background: #3b5998;
+}
+
+.twitter {
+  position: relative;
+  top: 47px;
+  left: 610px;
+  width: 230px;
+  height: 60px;
+  border: 2px solid white;
+  background: #0084b4;
+}
+
+.google {
+  position: relative;
+  top: 90px;
+  left: 610px;
+  width: 230px;
+  height: 60px;
+  border: 2px solid white;
+  background: #F44336;
+}
+
+
+.login-h5 {
+  position: relative;
+  left: 70px;
+  bottom: 64%;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}

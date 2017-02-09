@@ -97,6 +97,25 @@
         return exception.catcher('XHR Failed for insertMessage')(e);
       }
     }
+
+    function login(data) {
+      return $http.post('/api/login', data)
+        .then(success)
+        .catch(fail);
+      //console.log("success: "+success);
+      //console.log("fail: "+fail);
+
+      // Success
+      function success(response) {
+        return response;
+      }
+      //Fail
+      function fail() {
+        return false;
+      }
+    }
+
+
   }
 
 })();

@@ -5,12 +5,13 @@
     .module('app.layout')
     .controller('SidebarController', SidebarController);
 
-  SidebarController.$inject = ['$state', 'routerHelper'];
+  SidebarController.$inject = ['$state', 'routerHelper', '$uibModal'];
   /* @ngInject */
-  function SidebarController($state, routerHelper) {
+  function SidebarController($state, routerHelper, $uibModal) {
     var vm = this;
     var states = routerHelper.getStates();
     vm.isCurrent = isCurrent;
+    vm.showSignInModal = showSignInModal;
 
     activate();
 
@@ -31,5 +32,16 @@
       var menuName = route.title;
       return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
     }
+
+   function showSignInModal() {
+      var modalInstance = $uibModal.open({
+          animation: 'true',
+          templateUrl: 'app/login/login.html',
+          controller: 'LoginController',
+          controllerAs: 'vm',
+          size: 'lg'
+      });
+  }
+
   }
 })();
