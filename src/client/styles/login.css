@@ -6,16 +6,11 @@
 }
 
 .label-login {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
   color: white;
   text-transform: uppercase;
-  font-size: 20px;
-}
-
-.input-email {
-  width: 144%;
-  height: 38px;
-  border: 4px solid red;
-  background: white;
 }
 
 .logo-gb {
@@ -26,19 +21,26 @@
   transform: rotate(-45deg);
 }
 
-hr.hr-login {
-  border-top: 3px double red;
-  position: relative;
-  top: 40px;
-}
-
 #bar-vertical-v1 {
   width: 0%;
   height: 25%;
   position: absolute;
-  border: 1px solid red;
+  border: 2px solid red;
   top: 80px;
   left: 490px;
+}
+
+.input-email {
+  width: 144%;
+  height: 38px;
+  border: 4px solid red;
+  background: white;
+}
+
+hr.hr-login {
+  border-top: 3px double red;
+  position: relative;
+  top: 40px;
 }
 
 hr.hr-horizontal-v1 {
@@ -103,15 +105,14 @@ hr.hr-horizontal-v2 {
   color: red;
   font-weight: bold;
 }
-.btn.btn-lg.btn-primary{
+
+.btn.btn-lg.btn-primary {
   background: red;
   border: 2px solid white;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 22px;
 }
-
-.p-login {}
 
 #SubmitLogin {
   margin-left: 1%;
@@ -121,16 +122,13 @@ hr.hr-horizontal-v2 {
   left: 4%;
 }
 
-
 .logo-login {
-
-width: 50px;
-height: 50px;
-position: relative;
-top: 4px;
-border-right: 2px solid white;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 4px;
+  border-right: 2px solid white;
 }
-
 
 .facebook {
   position: relative;
@@ -162,7 +160,6 @@ border-right: 2px solid white;
   background: #F44336;
 }
 
-
 .login-h5 {
   position: relative;
   left: 70px;
@@ -172,3 +169,5 @@ border-right: 2px solid white;
   font-size: 16px;
   text-transform: uppercase;
 }
+
+/*# sourceMappingURL=login.css.map */
