@@ -1,4 +1,3 @@
-/*jshint node:true*/
 'use strict';
 
 var express = require('express');
@@ -7,19 +6,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var config = require('./config/routes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');//////////
 var session = require('express-session');
-var environment = process.env.NODE_ENV;
-var config = require('./config/routes');
-////PASSPORT////////////////////////
 
-// var session  = require('express-session');//
-///////////////////////////////////////////
-/////Login////
-// config.init(app);
-////////////////
+var environment = process.env.NODE_ENV;
+
+io.on('connection', function(socket) {
+    console.log('Un cliente se ha conectado con id');
+    socket.on('new-message', function(data) {
+      console.log('HOLA');
+      socket.broadcast.emit('remit-message', data);
+    });
+});
 
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({
@@ -27,25 +30,16 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
-app.use(cookieParser());//esto se debe poner sino da fallo conect.sid
+app.use(cookieParser());//uso obligatorio por posible fallo conect.sid
 
-require('./config/passport.js')(passport); // pass passport for configuration
+require('./config/passport.js')(passport);
 
-require('./modules/users/routes/routes.js')(app,passport);
-
-/////////////
-// required for passport
+/* required for passport */
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-
-// app.use(favicon(__dirname + '/favicon.ico'));
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(logger('dev'));
-
-// app.use('/api', require('./routes'));
+config.init(app);
 
 console.log('About to crank up node');
 console.log('PORT=' + port);
@@ -81,4 +75,8 @@ app.listen(port, function() {
   console.log('env = ' + app.get('env') +
     '\n__dirname = ' + __dirname +
     '\nprocess.cwd = ' + process.cwd());
+});
+
+http.listen(8081,function() {
+    console.log('Listening on 8081');
 });

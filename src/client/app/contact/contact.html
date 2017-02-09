@@ -1,43 +1,55 @@
-<script src="<?php echo CONTACT_JS_PATH; ?>contact.js"></script>
-<link href="<?php echo CONTACT_CSS_PATH; ?>custom.css" rel="stylesheet">
+<div class="contact">
+  <!-- CONTACT -->
+  <div id="contorno">
+    <form id="contact_form" name="contact_form" class="details-holder" novalidate>
+      <h1 id="h1-contact">CONTACT</h1>
+      <hr class="style-four">
+      </br>
+      <div>
+        <input required ng-model="vm.inputName" id="inputName" class="input input-contact" type="text" name="inputName" placeholder="Name">
+        <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo <br>es obligatorio</p>
+      </div>
+      </br>
+      <div>
+        <input required ng-model="vm.inputEmail" id="inputEmail" class="input input-contact" type="email" name="inputEmail" placeholder="Email *">
+        <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">El campo <br>es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputEmail.$error.email && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">Email not valid</p>
+      </div>
+      </br>
+      <div>
+        <label class="subject" for="sel1"></label>
+        <select required ng-model="vm.inputSubject" class="select input-contact" id="inputSubject" name="inputSubject" title="Choose subject">
+                    <option value="compra">Informacion relativa a tu compra</option>
+                    <option value="apuesta">Comentanos sobre tu apuesta</option>
+                    <option value="contacta">Contactanos</option>
+                    <option value="trabaja">Trabaja con nosotros</option>
+                    <option value="proyectos">Propon proyectos</option>
+                    <option value="sugerencias">Haznos sugerencias</option>
+                    <option value="reclamaciones">Atendemos tus reclamaciones</option>
+                    <option value="info">Informacion relativa de Gamebets</option>
+                    <option value="sociales">Proyectos sociales</option>
+                    <option value="novedades">Te avisamos de nuestras novedades</option>
+                    <option value="distinto">Algo distinto</option>
+                </select>
+        <p class="msg_error" ng-show="contact_form.inputSubject.$error.required && (contact_form.inputSubject.$dirty || contact_form.inputSubject.$touched)">El campo <br>es obligatorio</p>
+      </div>
+      </br>
+      <div>
+        <textarea required ng-model="vm.inputMessage" id="inputMessage" class="input input-contact" type="text" rows="4" name="inputMessage" placeholder="Message *" style="max-width: 100%;"></textarea>
+        <p class="msg_error" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)">El campo <br>es obligatorio</p>
+      </div>
+      </br>
+      <input class="btn-read-more" type="submit" name="submit" id="submitBtn" value="SEND" ng-click="vm.SubmitContact()" />
+      <div id="resultMessageOk" class="alert-success">{{vm.resultMessageOk}}</div>
+      <div id="resultMessageFail" class="alert-danger">{{vm.resultMessageFail}}</div>
 
-<div class="container">
-    <form id="contact_form" name="contact_form" class="form-contact">
-        <h2 class="form-contact-heading">Contact Us</h2>
-
-        <div class="control-group">
-            <input type="text" id="inputName" name="inputName" placeholder="Name" class="input-block-level" dir="auto" maxlength="100">
-        </div>
-        <div class="control-group">
-            <input type="text" id="inputEmail" name="inputEmail" placeholder="Email *" class="input-block-level" maxlength="100">
-        </div>
-        <div class="control-group">
-            <label for="sel1">Subject</label>
-            <select class="form-control" id="inputSubject" name="inputSubject" title="Choose subject">
-                <option value="compra">Info relativa a tu apuesta</option>
-                <option value="evento">Ladder</option>
-                <option value="programacion">Contacta con nuestro dpto de programacion</option>
-                <option value="Trabaja">Trabaja con nosotros</option>
-                <option value="proyectos">Deseas proponernos proyectos</option>
-                <option value="sugerencias">Haznos sugerencias</option>
-                <option value="reclamaciones">Atendemos tus reclamaciones</option>
-                <option value="club">Club Gamebets</option>
-                <option value="sociales">Proyectos sociales</option>
-                <option value="festivos">Premios</option>
-                <option value="novedades">Te avisamos de nuestras novedades</option>
-                <option value="diferente">Algo distinto</option>
-            </select>
-        </div>
-        <div class="control-group">
-              <textarea class="input-block-level" rows="4" name="inputMessage" placeholder="Message *" style="max-width: 100%;" dir="auto"></textarea>
-        </div>
-
-        <input type="hidden" name="token" value="contact_form" />
-
-        <input class="btn btn-primary" type="submit" name="submit" id="submitBtn" disabled="disabled" value="Send" />
-
-        <img src="<?php echo CONTACT_IMG_PATH; ?>ajax-loader.gif" alt="ajax loader icon" class="ajaxLoader" /><br/><br/>
-
-        <div id="resultMessage" style="display: none;"></div>
     </form>
+  </div>
+  <!-- SUPPORT DIV -->
+  <div class="support">
+    <h1 id="h1-supp">SUPPORT</h1>
+    <hr class="style-two">
+    <input class="btn-tech " type="submit" name="submit" id="btnSupp" value="TECHNICAL SUPPORT" ng-click="vm.SubmitSupp()" />
+    <input class="btn-supp" type="submit" name="submit" id="btnDocument" value="DOCUMENTATION" ng-click="vm.SubmitDoc()" />
+    </div>
 </div>

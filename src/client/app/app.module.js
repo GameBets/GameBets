@@ -9,6 +9,7 @@
     'app.home',
     'app.layout',
     'app.contact',
+    'app.chat',
     'app.users'
   ]);
 

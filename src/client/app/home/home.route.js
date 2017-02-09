@@ -16,13 +16,13 @@
       {
         state: 'home',
         config: {
-          url: '/home',
+          url: '/',
           templateUrl: 'app/home/home.html',
           controller: 'HomeController',
           controllerAs: 'vm',
           title: 'Home',
           settings: {
-            nav: 2,
+            nav: 1,
             content: '<i class="fa fa-dashboard"></i> Home'
           }
         }
