@@ -6,6 +6,8 @@ var confAuth = require('./auth'); // use this one for testing
 var LocalStrategy = require('passport-local').Strategy;
 //var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var OAuthStrategy = require('passport-oauth').OAuthStrategy; //encara que no es gaste, fa falta
+var OAuth2Strategy = require('passport-oauth').OAuth2Strategy; //encara que no es gaste, fa falta
 
 //exportamos lalibreria de funciones
 module.exports = function(passport) {
