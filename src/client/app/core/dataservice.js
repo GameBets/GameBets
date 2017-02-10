@@ -5,16 +5,17 @@
     .module('app.core')
     .factory('dataservice', dataservice);
 
-  dataservice.$inject = ['$http', '$q', 'exception', 'logger'];
+  dataservice.$inject = ['$http', '$q', 'exception', 'logger','$rootScope','$state','$location'];
   /* @ngInject */
-  function dataservice($http, $q, exception, logger) {
+  function dataservice($http, $q, exception, logger, $rootScope, $state, $location) {
     var service = {
       sendEmail: sendEmail,
       getPeople: getPeople,
       getMessageCount: getMessageCount,
       chatInsertMessage: chatInsertMessage,
       chatGetMessages: chatGetMessages,
-      signup: signup
+      signup: signup,
+      facebook: facebook
     };
 
     return service;
@@ -116,6 +117,83 @@
     }
 
 
-  }
+  /*  //================================================
+       // Check if the user is connected
+       //================================================
+       function checkLoggedin(){
 
-})();
+         return $http.get('/api/loggedin')
+           .then(success)
+           .catch(fail);
+
+         function success(responseUser) {
+            if (responseUser.data === '0'){
+                $rootScope.authUser = false;
+                $state.go('login');
+           }else{
+               $rootScope.authUser = responseUser.data;
+           }
+         }
+
+         function fail(e) {
+           return exception.catcher('XHR Failed for /api/loggedin')(e);
+         }
+       }
+
+       function isLoggedin(){
+         return $http.get('/api/loggedin')
+           .then(success)
+           .catch(fail);
+
+         function success(responseUser) {
+            if (responseUser.data === '0'){
+                 $rootScope.authUser = false;
+                return false;
+           }else{
+             $rootScope.authUser = responseUser.data;
+             return responseUser.data;
+           }
+         }
+
+         function fail(e) {
+           return exception.catcher('XHR Failed for /api/loggedin')(e);
+         }
+       }
+
+       function logout(){
+         return $http({
+               url: '/api/logout',
+               method: 'POST'
+           })
+           .then(function(responseUser) {
+               console.log('OKKK:'+responseUser);
+                $rootScope.authUser =false;
+               $state.go('/');
+
+          },
+          function(responseError) { // optional
+              console.log('ERRRRROR: '+responseError);
+              //$state.go('login');
+          });
+       }*/
+        /// api faceboook
+        function facebook() {
+            return $http.get('/auth/success')
+                    .then(success)
+                    .catch(fail);
+
+            function success(response) {
+
+                return response;
+            }
+
+            function fail() {
+
+                return false;
+            }
+        }
+
+
+     }
+
+   })();
