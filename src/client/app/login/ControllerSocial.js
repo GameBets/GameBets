@@ -17,7 +17,7 @@
             dataservice.facebook().then(function (response) {
                 console.log(response);
                 logger.success('Usuario autentificado');
-                $state.go('dashboard');
+                $state.go('home');
             });
         }
     }
