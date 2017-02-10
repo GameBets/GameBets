@@ -31,7 +31,7 @@ LoginController.facebook = function (req, res, next) {
             return res.send('errorcredentials');
         }
         //return res.send(user);
-        res.redirect('/');
+        res.redirect('home');
     })(req, res, next);
 
 };
