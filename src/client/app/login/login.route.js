@@ -1,28 +1,32 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('app.login')
-    .run(appRun);
+    angular
+      .module('app.login')
+      .run(appRun);
 
-  appRun.$inject = ['routerHelper'];
-  /* @ngInject */
-  function appRun(routerHelper) {
-    routerHelper.configureStates(getStates());
-  }
+    appRun.$inject = ['routerHelper'];
+    /* @ngInject */
+    function appRun(routerHelper) {
+      routerHelper.configureStates(getStates());
+    }
 
-  function getStates() {
-    return [
-      {
-        state: 'login',
-        config: {
-          url: '/login',
-          templateUrl: 'app/login/login.html',
-          controller: 'LoginController',
-          controllerAs: 'vm',
-          title: 'login',
-        }
+    function getStates() {
+      return [{
+          state: 'login',
+          config: {
+            url: '/login',
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginController',
+            controllerAs: 'vm',
+            title: 'login',
+          } {
+            state: 'socialsignin',
+            config: {
+              url: '/socialsignin',
+              controller: 'ControllerSocial'
+            }
+          }
+        ];
       }
-    ];
-  }
-})();
+    })();
