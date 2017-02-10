@@ -7,9 +7,11 @@
 				<li><a href="#">   How To Use</a></li>
 			</ul>
 			<div class="search">
-				<img src="images/face-mini.png" class="header-facebook" />
+				<a target="_self" href="/auth/facebook">
+					<img src="images/face-mini.png" class="header-facebook" />
+				</a>
 				<img src="images/twitter-mini.png" class="header-twitter" />
-					<img src="images/google-mini.png" class="header-google" />
+				<img src="images/google-mini.png" class="header-google" />
 			</div>
 
 			<div class="clearfix"> </div>
@@ -25,7 +27,7 @@
 			</div>
 			<div class="top-nav" ng-controller="SidebarController as vm">
 				<span class="menu"><img src="frontend/assets/images/menu.png" alt=""> </span>
-			<ul>
+				<ul>
 					<li class=" nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
 						<a class="color2" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
 					</li>
