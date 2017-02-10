@@ -20,7 +20,9 @@
             controller: 'LoginController',
             controllerAs: 'vm',
             title: 'login',
-          } {
+          }
+        },
+          {
             state: 'socialsignin',
             config: {
               url: '/socialsignin',
