@@ -20,24 +20,41 @@ LoginController.signup = function(req, res, next) {
 
 
 
-LoginController.facebook = function (req, res, next) {
+LoginController.facebook = function(req, res, next) {
 
-    passport.authenticate('facebook', function (err, user, info) {
+  passport.authenticate('facebook', {
+    scope: 'email'
 
-        if (err) {
-            return res.send('err');
-        }
-        if (!user) {
-            return res.send('errorcredentials');
-        }
-        //return res.send(user);
-        res.redirect('home');
-    })(req, res, next);
+  });
 
 };
 
+LoginController.facebookCallback = function(req, res, next) {
+
+  passport.authenticate('facebook', {
+    successRedirect: '/socialsignin',
+    failureRedirect: 'home'
+  });
 
 
+}
+
+
+LoginController.twitter = function(req, res, next) {
+
+  passport.authenticate('twitter');
+
+};
+
+LoginController.twitterCallback = function(req, res, next) {
+
+  passport.authenticate('twitter', {
+    successRedirect: '/socialsignin',
+    failureRedirect: 'home'
+
+  });
+
+};
 
 
 // authenticate logger
@@ -46,6 +63,10 @@ LoginController.logger = function(req, res) {
   res.send(req.isAuthenticated() ? req.user : '0');
 };
 
+LoginController.auth = function(req, res) {
+  // console.log(req.user);
+  res.json(req.user);
+}
 
 
 
