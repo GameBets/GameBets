@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var cors = require('cors');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
 var http = require('http').Server(app);
@@ -22,7 +23,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
-app.use(cookieParser()); //uso obligatorio por posible fallo conect.sid
+app.use(cookieParser());//esto se debe poner sino da fallo conect.sid
+app.use(cors());
 
 require('./config/passport.js')(passport);
 
@@ -38,18 +40,36 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
-    app.get('/auth/facebook/callback', passport.authenticate('facebook',
-    { successRedirect: '/socialsignin', failureRedirect: '/social/failure' }));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/socialsignin',
+  failureRedirect: '/social/failure'
+}));
 
-    app.get('/auth/success', function(req, res) {
+app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+  successRedirect: '/socialsignin',
+  failureRedirect: '/social/failure'
+}));
 
-        res.json(req.user);
+app.get('/auth/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}));
 
-    });
-    app.get('/social/failure', function(req, res) {
-        console.log('fail');
-        res.render('after-auth', { state: 'failure', user: null });
-    });
+app.get('/auth/google/callback', passport.authenticate('google', {
+  successRedirect: '/socialsignin',
+  failureRedirect: '/social/failure'
+}));
+
+app.get('/auth/success', function(req, res) {
+
+  res.json(req.user);
+
+});
+app.get('/social/failure', function(req, res) {
+  console.log('fail');
+  res.render('after-auth', {
+    state: 'failure',
+    user: null
+  });
+});
 
 
 console.log('About to crank up node');
