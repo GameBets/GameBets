@@ -183,12 +183,13 @@ module.exports = function(passport) {
      },
      function(req, token, refreshToken, profile, done) {
         modeloUsuarios.countUser_Social(profile.id, function (rows) {
+        console.log(profile);
              if (rows[0].userCount === 0) {
                  //console.log(profile);
                  console.log('no existe e inserto google');
                  var newUser = {
                      username: profile.id,
-                     email: profile.id,
+                     email: '',
                      usertype: 'client',
                      passwd:''
                  };
