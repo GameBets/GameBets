@@ -8,6 +8,8 @@
       <ul class="navi">
         <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
           <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+          <a id='profile' ng-show="profileV" href='' class="profile"> Bienvenido: {{profile}}</a>
+
         </li>
       </ul>
     </div>
