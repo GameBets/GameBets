@@ -5,39 +5,42 @@
     .module('app.core')
     .factory('dataservice', dataservice);
 
-  dataservice.$inject = ['$http', '$q', 'exception', 'logger'];
+  dataservice.$inject = ['$http', 'exception', 'logger', '$state', '$location'];
   /* @ngInject */
-  function dataservice($http, $q, exception, logger) {
+  function dataservice($http, exception, logger, $state, $location) {
     var service = {
       sendEmail: sendEmail,
       getPeople: getPeople,
       getMessageCount: getMessageCount,
       chatInsertMessage: chatInsertMessage,
       chatGetMessages: chatGetMessages,
-      signup: signup
+      signup: signup,
+      ControllerSocialLogin: ControllerSocialLogin
     };
 
     return service;
 
-    function getMessageCount() { return $q.when(72); }
+    function getMessageCount() {
+      return $q.when(72);
+    }
 
-    function signup(data){
+    function signup(data) {
       console.log(data);
       return $http.post('/api/users_signup', data)
         .then(success)
         .catch(fail);
 
-        function success(response) {
-          console.log("RESPONSE");
-          console.log(response.data);
-          return response.data;
-        }
+      function success(response) {
+        console.log("RESPONSE");
+        console.log(response.data);
+        return response.data;
+      }
 
-        function fail(e) {
-          console.log("FAIL");
-          console.log('XHR Failed for sign up');
-          return exception.catcher('XHR Failed for sign up')(e);
-        }
+      function fail(e) {
+        console.log("FAIL");
+        console.log('XHR Failed for sign up');
+        return exception.catcher('XHR Failed for sign up')(e);
+      }
     }
 
     function getPeople() {
@@ -112,6 +115,41 @@
       //Fail
       function fail() {
         return false;
+      }
+    }
+
+    function logout() {
+      return $http({
+          url: '/api/logout',
+          method: 'POST'
+        })
+        .then(function(responseUser) {
+            console.log('OKKK:' + responseUser);
+            $rootScope.authUser = false;
+            $state.go('/');
+
+          },
+          function(responseError) { // optional
+            console.log('ERRRRROR: ' + responseError);
+            //$state.go('login');
+          });
+    }
+    /// api Social
+    function ControllerSocialLogin() {
+      return $http.get('/auth/success')
+        .then(success)
+        .catch(fail);
+
+
+      function success(response) {
+
+
+        return response;
+      }
+
+      function fail(e) {
+
+        return exception.catcher('XHR Failed for socialSignin')(e);
       }
     }
 

@@ -17,11 +17,13 @@
     vm.CloseModal = CloseModal;
 
     function CloseModal() {
-  //    $uibModal.dismiss('cancel');
+      //    $uibModal.dismiss('cancel');
     }
 
     function SubmitLogin() {
       //$uibModal.dismiss('cancel');
     }
+
+
   }
 })();
