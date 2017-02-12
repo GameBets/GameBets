@@ -5,9 +5,9 @@
     .module('app.core')
     .factory('dataservice', dataservice);
 
-  dataservice.$inject = ['$http', '$q', 'exception', 'logger', '$rootScope', '$state', '$location'];
+  dataservice.$inject = ['$http', 'exception', 'logger', '$state', '$location'];
   /* @ngInject */
-  function dataservice($http, $q, exception, logger, $rootScope, $state, $location) {
+  function dataservice($http, exception, logger, $state, $location) {
     var service = {
       sendEmail: sendEmail,
       getPeople: getPeople,
@@ -118,66 +118,22 @@
       }
     }
 
+    function logout() {
+      return $http({
+          url: '/api/logout',
+          method: 'POST'
+        })
+        .then(function(responseUser) {
+            console.log('OKKK:' + responseUser);
+            $rootScope.authUser = false;
+            $state.go('/');
 
-    /*  //================================================
-         // Check if the user is connected
-         //================================================
-         function checkLoggedin(){
-
-           return $http.get('/api/loggedin')
-             .then(success)
-             .catch(fail);
-
-           function success(responseUser) {
-              if (responseUser.data === '0'){
-                  $rootScope.authUser = false;
-                  $state.go('login');
-             }else{
-                 $rootScope.authUser = responseUser.data;
-             }
-           }
-
-           function fail(e) {
-             return exception.catcher('XHR Failed for /api/loggedin')(e);
-           }
-         }
-
-         function isLoggedin(){
-           return $http.get('/api/loggedin')
-             .then(success)
-             .catch(fail);
-
-           function success(responseUser) {
-              if (responseUser.data === '0'){
-                   $rootScope.authUser = false;
-                  return false;
-             }else{
-               $rootScope.authUser = responseUser.data;
-               return responseUser.data;
-             }
-           }
-
-           function fail(e) {
-             return exception.catcher('XHR Failed for /api/loggedin')(e);
-           }
-         }
-
-         function logout(){
-           return $http({
-                 url: '/api/logout',
-                 method: 'POST'
-             })
-             .then(function(responseUser) {
-                 console.log('OKKK:'+responseUser);
-                  $rootScope.authUser =false;
-                 $state.go('/');
-
-            },
-            function(responseError) { // optional
-                console.log('ERRRRROR: '+responseError);
-                //$state.go('login');
-            });
-         }*/
+          },
+          function(responseError) { // optional
+            console.log('ERRRRROR: ' + responseError);
+            //$state.go('login');
+          });
+    }
     /// api Social
     function ControllerSocialLogin() {
       return $http.get('/auth/success')
