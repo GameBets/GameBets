@@ -3,11 +3,11 @@
 
     angular
             .module('app.login')
-            .controller('ControllerSocial', LoginController);
+            .controller('ControllerSocial', ControllerSocial);
 
-    LoginController.$inject = ['dataservice', '$state', '$timeout', 'logger', 'cookiesService'];
+    ControllerSocial.$inject = ['dataservice', '$state', '$timeout', 'logger', 'cookiesService'];
 
-    function LoginController(dataservice, $state, $timeout, logger, cookiesService) {
+    function ControllerSocial(dataservice, $state, $timeout, logger, cookiesService) {
         var vm = this;
 
         social();
