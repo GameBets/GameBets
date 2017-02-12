@@ -5,20 +5,22 @@
             .module('app.login')
             .controller('ControllerSocial', LoginController);
 
-    LoginController.$inject = ['dataservice', '$state', '$timeout', 'logger'];
+    LoginController.$inject = ['dataservice', '$state', '$timeout', 'logger', 'cookiesService'];
 
-    function LoginController(dataservice, $state, $timeout, logger) {
+    function LoginController(dataservice, $state, $timeout, logger, cookiesService) {
         var vm = this;
 
         social();
 
         function social() {
 
-            dataservice.facebook().then(function (response) {
+            dataservice.ControllerSocialLogin().then(function (response) {
                 console.log(response);
+                cookiesService.SetCredentials(response.data);
                 logger.success('Usuario autentificado');
                 $state.go('home');
             });
         }
+
     }
 })();
