@@ -10,21 +10,23 @@ router.post('/users_signup', loginController.signup);
 // route to test if the user is logged in or not
 router.get('/loggedin', loginController.logger);
 
-/*router.get('/loginTwitter',
-  passport.authenticate('twitter'));
+router.get('/auth/facebook', loginController.facebook);
 
-router.get('/auth/twitter/callback',
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  function(req, res) {
-    console.log('TWITTER login '+JSON.stringify(req.user));
-    res.redirect('/');
-  });
+router.get('/auth/facebook/callback', loginController.facebookCallback);
+
+router.get('/auth/twitter', loginController.twitter);
+router.get('/auth/twitter/callback', loginController.twitterCallback);
+/*
+app.get('/auth/google', passport.authenticate('google', {
+  scope: 'profile email'
+}));
+app.get('/auth/google/callback', passport.authenticate('google', {
+  successRedirect: '/socialsignin',
+  failureRedirect: '/'
+}));
 */
-
-/*app.get('/auth/facebook', loginController.facebook);
-
-
-app.get('/auth/facebook/callback', loginController.facebook);*/
+//retorno del cliente para recoger los datos
+router.get('/auth/success', loginController.auth);
 
 
 // route to log out
