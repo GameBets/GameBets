@@ -4,8 +4,9 @@ var modeloUsuarios = require('./../modules/login/login.model');
 var passport = require('passport');
 var confAuth = require('./auth'); // use this one for testing
 var LocalStrategy = require('passport-local').Strategy;
-//var TwitterStrategy = require('passport-twitter').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var OAuthStrategy = require('passport-oauth').OAuthStrategy; //encara que no es gaste, fa falta
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy; //encara que no es gaste, fa falta
 
@@ -94,40 +95,125 @@ module.exports = function(passport) {
       profileFields: ['name', 'email', 'link', 'locale', 'timezone'],
       passReqToCallback: true
     },
-    function (req, accessToken, refreshToken, profile, done) {
+    function(req, accessToken, refreshToken, profile, done) {
 
-           modeloUsuarios.countUser_Face(profile.id, function (rows) {
-               if (rows[0].userCount === 0) {
+      modeloUsuarios.countUser_Social(profile.id, function(rows) {
+        if (rows[0].userCount === 0) {
 
-                   console.log('no existe e inserto');
-                   var newUser = {
-                       username: profile.id,
-                       email: profile._json.email,
-                       usertype: 'client',
-                       passwd:''
-                   };
-                   console.log(newUser);
-                   modeloUsuarios.insertUser(newUser, function (rows) {
-                       if (rows) {
-                           return done(null, rows);
-                       }
-                   });//fin de consulta
-                   return done(null, rows);
-               } else {
-                   console.log('si existe y devuelvo datos');
-                   modeloUsuarios.getUser(profile.id, function (error, rows) {
-                       if (!rows.length) {
+          console.log('no existe e inserto');
+          var newUser = {
+            username: profile.id,
+            email: profile._json.email,
+            usertype: 'client',
+            passwd: ''
+          };
+          console.log(newUser);
+          modeloUsuarios.insertUser(newUser, function(rows) {
+            if (rows) {
+              return done(null, rows);
+            }
+          }); //fin de consulta
+          return done(null, rows);
+        } else {
+          console.log('si existe y devuelvo datos');
+          modeloUsuarios.getUser(profile.id, function(error, rows) {
+            if (!rows.length) {
 
-                           return done(null, false, 'nouser');
+              return done(null, false, 'nouser');
 
-                       } else {
-                          console.log(rows[0]);
-                           return done(null, rows[0]);
-                       }
-                   });
+            } else {
+              console.log(rows[0]);
+              return done(null, rows[0]);
+            }
+          });
 
-               }//fin del else
-           });//fin de count
- }));
+        } //fin del else
+      }); //fin de count
+    }));
 
+
+  passport.use(new TwitterStrategy({
+      consumerKey: confAuth.twitterAuth.consumerKey,
+      consumerSecret: confAuth.twitterAuth.consumerSecret,
+      callbackURL: confAuth.twitterAuth.callbackURL,
+      passReqToCallback: true
+    },
+
+    function(req, token, tokenSecret, profile, done) {
+
+      modeloUsuarios.countUser_Social(profile.id, function(rows) {
+        if (rows[0].userCount === 0) {
+
+          console.log('no existe e inserto twitter');
+          var newUser = {
+            username: profile.id,
+            email: 'default',
+            usertype: 'client',
+            passwd: ''
+          };
+          console.log(newUser);
+          modeloUsuarios.insertUser(newUser, function(rows) {
+            if (rows) {
+              return done(null, newUser);
+            }
+          }); //fin de consulta
+          //return done(null, rows);
+        } else {
+          console.log('si existe y devuelvo datos twitter');
+          modeloUsuarios.getUser(profile.id, function(error, rows) {
+            if (!rows.length) {
+
+              return done(null, false, 'nouser');
+
+            } else {
+
+              return done(null, rows[0]);
+            }
+          });
+
+        } //fin del else
+      });
+    }));
+
+   passport.use(new GoogleStrategy({
+         clientID       : confAuth.googleAuth.GOOGLE_ID,
+         clientSecret    : confAuth.googleAuth.GOOGLE_SECRET,
+         callbackURL     : confAuth.googleAuth.callbackURL,
+         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+     },
+     function(req, token, refreshToken, profile, done) {
+        modeloUsuarios.countUser_Social(profile.id, function (rows) {
+             if (rows[0].userCount === 0) {
+                 //console.log(profile);
+                 console.log('no existe e inserto google');
+                 var newUser = {
+                     username: profile.id,
+                     email: profile.id,
+                     usertype: 'client',
+                     passwd:''
+                 };
+
+                 modeloUsuarios.insertUser(newUser, function (rows) {
+                     if (rows) {
+
+                         return done(null,newUser );
+                     }
+                 });//fin de consulta
+                 //return done(null, rows);
+             } else {
+                 console.log('si existe y devuelvo datos google');
+                 modeloUsuarios.getUser(profile.id, function (error, rows) {
+                     if (!rows.length) {
+
+                         return done(null, false, 'nouser');
+
+                     } else {
+
+                         return done(null, rows[0]);
+                     }
+                 });
+
+               } //fin del else
+             });
+           }));
 };
