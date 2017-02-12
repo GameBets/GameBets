@@ -21,10 +21,6 @@
           controller: 'UsersController',
           controllerAs: 'vm',
           title: 'Users',
-          settings: {
-            nav: 5,
-            content: '<i class="fa fa-dashboard"></i> Sign Up'
-          }
         }
       }
     ];
