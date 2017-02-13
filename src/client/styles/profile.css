@@ -1,34 +1,64 @@
-.menu{
-    list-style:none;
-	padding:0px;
-	margin:0px;
+.picture {
+  position: relative;
+  display: block;
+  bottom: 5px;
+  right: 0.2%;
 }
-.menu li{
-	margin:0px;
-	padding:0px;
-	float:left;
-	position:relative;
-	box-shadow: 2px 2px 4px 1px #000;
-}
-.menu li a{
-	display: block;
-	width: 100px;
-	height: 30px;
-	padding: 6px;
-	line-height:30px;
-	text-decoration: none;
-	text-align: center;
-	color: #FFF;
-	background-color: #063;
-	position: relative;
-	border-left: 2px solid #333;
 
+.avatar {
+  border-radius: 8px;
+  border: 4px solid white;
+  border-left: 3px solid white;
 }
-.menu li a:hover{
-	color:#CF3;
-	background-color:#603;
-  
-}.menu li:hover ul{
-    opacity:1;
-	visibility:visible;
+
+.welcome {
+  border: 4px solid white;
+  border-right: 3px solid white;
+}
+
+.h1-profile {
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}
+
+.avatar-profile{
+  float:right;
+  display: block;
+  position: relative;
+  bottom: 250px;
+  left: 400px;
+}
+
+.h2-profile {
+  font-weight: bold;
+  color:black;
+  text-transform: uppercase;
+}
+
+.p-profile {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.h2-profile::first-letter {
+  color: #bd1010;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.login-profile{
+  float:left;
+  display: block;
+  position: relative;
+  top: 90px;
+  left: 200px;
 }
