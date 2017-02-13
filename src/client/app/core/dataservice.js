@@ -28,7 +28,7 @@
 
     function localSignIn(data) {
       console.log(data);
-      return $http.get('/api/users_signin', data)
+      return $http.post('/api/users_signin', data)
         .then(success)
         .catch(fail);
 
