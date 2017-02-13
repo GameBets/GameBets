@@ -26,7 +26,6 @@ cookies.$inject =['$cookies'];
             //var usertype = Base64_encode(users.usertype);
             var email = Base64_encode(users.email);
             //var name = Base64_encode(users.name);
-
             //almacenarlos en la cookie session
             $cookies.putObject('session',
             //{user: user, avatar: users.avatar, usertype: usertype, email: email, name:name},
