@@ -18,23 +18,20 @@ LoginController.signup = function(req, res, next) {
 };
 
 LoginController.signin = function(req, res, next) {
-  console.log(req.body);
+  console.log(req.body.email);
+  console.log(req.body.passwd);
   console.log('entra al signin');
-  // passport.authenticate('local-signup', function(err, user, info) {
-  //   if (err) {
-  //     return res.send('err');
-  //   }
-  //   if (!user) {
-  //     return res.send('Usuario ya existe');
-  //   }
-  //   return res.send(true);
-  //
-  // })(req, res, next);
+  passport.authenticate('local-login', function(err, user, info) {
+    if (err) {
+      return res.send('err');
+    }
+    if (!user) {
+      return res.send(info);
+    }
+    return res.send(user);
+  })(req, res, next);
 
 };
-
-
-
 
 LoginController.facebook = function(req, res, next) {
 
