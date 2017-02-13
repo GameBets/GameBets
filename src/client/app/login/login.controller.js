@@ -27,7 +27,7 @@
     function SubmitLogin() {
       var dataUserJSON = JSON.stringify(vm.datos);
       console.log(dataUserJSON);
-      // dataservice.signup(dataUserJSON).
+      dataservice.localSignIn(dataUserJSON);
       //$uibModal.dismiss('cancel');
     }
 
