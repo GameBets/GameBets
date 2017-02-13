@@ -11,7 +11,7 @@ LoginController.signup = function(req, res, next) {
     if (!user) {
       return res.send('Usuario ya existe');
     }
-    return res.send(true);
+    return res.send(user);
 
   })(req, res, next);
 
@@ -50,7 +50,7 @@ LoginController.facebookCallback = function(req, res, next) {
   });
 
 
-}
+};
 
 
 LoginController.twitter = function(req, res, next) {
@@ -79,7 +79,7 @@ LoginController.logger = function(req, res) {
 LoginController.auth = function(req, res) {
   // console.log(req.user);
   res.json(req.user);
-}
+};
 
 
 
