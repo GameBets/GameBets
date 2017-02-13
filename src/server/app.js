@@ -17,6 +17,14 @@ var session = require('express-session');
 
 var environment = process.env.NODE_ENV;
 
+io.on('connection', function(socket) {
+    console.log('Un cliente se ha conectado con id');
+    socket.on('new-message', function(data) {
+      console.log('HOLA');
+      socket.broadcast.emit('remit-message', data);
+    });
+});
+
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({
   extended: true
