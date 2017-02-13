@@ -21,10 +21,6 @@
           controller: 'ProfileController',
           controllerAs: 'vm',
           title: 'Profile',
-          settings: {
-           nav: 4,
-           content: '<i class="fa fa-lock"></i> Profile'
-         },
         }
       }
     ];
