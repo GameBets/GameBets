@@ -10,7 +10,7 @@
   function ProfileController(logger) {
     var vm = this;
     vm.title = 'Profile';
-//    vm.ClickMeToRedirect = ClickMeToRedirect;
+    //    vm.ClickMeToRedirect = ClickMeToRedirect;
 
     activate();
 
