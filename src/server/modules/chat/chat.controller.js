@@ -3,7 +3,6 @@ var chatModel = require('./chat.model');
 var chatController = {};
 
 chatController.chatInsertMessage = function(req, res, next) {
-  console.log(req.body.message);
   chatModel.insertMessage(req.body, function(error, data) {
     if (!error) {
       res.status(200).json(data);

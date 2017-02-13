@@ -14,10 +14,13 @@ exports.sendEmail = function(req, res) {
 
       body = '<body>' +
         '<div id="contact-email">' +
-        '<div> <h1>Contacto con Gamebets</h1> <h4>Asunto: ' + req.body.subject +
+        '<div> <h1>Contacto con Gamebets</h1> <h4>Asunto: ' +
+        req.body.subject +
         '</h4></div>' +
         '<section>' +
-        '<p>El usuario' + ' ' + req.body.name +  ' '+ ' Ha enviado un correo a nuestro equipo de soporte' +
+        '<p>El usuario ' +
+        req.body.name +
+        ' ' + ' Ha enviado un correo a nuestro equipo de soporte' +
         'el equipo de soporte de Gamebets, responderá su mail en breve, gracias.</p>' +
         '</div>' +
         ' </body>';
@@ -38,9 +41,7 @@ exports.sendEmail = function(req, res) {
         '</div>' +
         ' </body>';
       break;
-
-
-  }
+    }
 
   var template =
     '<html>' +

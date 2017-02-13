@@ -15,7 +15,6 @@
         function social() {
 
             dataservice.ControllerSocialLogin().then(function (response) {
-                console.log(response);
                 cookiesService.SetCredentials(response.data);
                 logger.success('Usuario autentificado');
                 $state.go('home');

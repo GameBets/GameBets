@@ -8,8 +8,8 @@
     <div id="email-log">
       <md-input-container class="md-block">
         <label class="label-login">E-mail</label>
-        <input required type="email" name="inputEmail" class="input-email" ng-model="vm.inputEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-        <div ng-messages="login_form.inputEmail.$error" role="alert">
+        <input required type="email" name="email" class="input-email" ng-model="vm.datos.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+        <div ng-messages="login_form.email.$error" role="alert">
         </div>
       </md-input-container>
     </div>
@@ -17,8 +17,8 @@
     <div id="passw-log">
       <md-input-container class="md-block">
         <label class="label-login">Password</label>
-        <input required ng-minlength="5" class="input-passw" ng-maxlength="10" type="password" name="inputPass" ng-model="vm.inputPass">
-        <div ng-messages="login_form.inputPass.$error" role="alert">
+        <input required ng-minlength="5" class="input-passw" ng-maxlength="10" type="password" name="passwd" ng-model="vm.datos.passwd">
+        <div ng-messages="login_form.passwd.$error" role="alert">
         </div>
     </div>
     <div id="bar-vertical-v1">

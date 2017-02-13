@@ -51,7 +51,8 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', {
   failureRedirect: '/social/failure'
 }));
 
-app.get('/auth/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}));
+var googleUrl = {scope: 'https://www.googleapis.com/auth/plus.login'};
+app.get('/auth/google', passport.authenticate('google', googleUrl));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
   successRedirect: '/socialsignin',
@@ -59,18 +60,14 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 }));
 
 app.get('/auth/success', function(req, res) {
-
   res.json(req.user);
-
 });
 app.get('/social/failure', function(req, res) {
-  console.log('fail');
   res.render('after-auth', {
     state: 'failure',
     user: null
   });
 });
-
 
 console.log('About to crank up node');
 console.log('PORT=' + port);

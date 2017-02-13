@@ -28,11 +28,9 @@
         text: vm.inputMessage,
         type: 'admin'
       };
-      console.log(data);
       dataservice.sendEmail(data).then(function(response) {
         if (response) {
           data.type = 'user';
-          console.log(data);
           dataservice.sendEmail(data).then(function(response) {
 
             if (response) {

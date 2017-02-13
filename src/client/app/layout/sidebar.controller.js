@@ -46,10 +46,9 @@
       });
     }
 
-
     function logout() {
-              headerService.logout();
-          }
+        headerService.logout();
+    }
 
   }
 })();

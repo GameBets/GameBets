@@ -88,7 +88,6 @@
     }
     function listMessages(wasListingForMySubmission) {
         dataservice.chatGetMessages().then(function(data) {
-          console.log(data);
           vm.messages = [];
           angular.forEach(data.result, function(message) {
               vm.messages.push(message);

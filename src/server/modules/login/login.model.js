@@ -17,8 +17,8 @@ modeloUsuarios.insertUser = function(usuario, callback) {
 modeloUsuarios.countUser = function(email, callback) {
 
   if (mysql.connection) {
-    //mysql.connection.query('INSERT INTO users SET ?', userData.user, function(error, result) {
-    mysql.connection.query('SELECT COUNT(*) AS userCount FROM user_test WHERE email like "' + email + '"', function(err, rows) {
+    var sql = 'SELECT COUNT(*) AS userCount FROM user_test WHERE email like "' + email + '"';
+    mysql.connection.query(sql, function(err, rows) {
       if (err) {
         throw err;
       } else {
@@ -28,11 +28,11 @@ modeloUsuarios.countUser = function(email, callback) {
   }
 };
 
-modeloUsuarios.countUser_Social = function(user, callback) {
+modeloUsuarios.countUserSocial = function(user, callback) {
 
   if (mysql.connection) {
-    //mysql.connection.query('INSERT INTO users SET ?', userData.user, function(error, result) {
-    mysql.connection.query('SELECT COUNT(*) AS userCount FROM user_test WHERE username like "' + user + '"', function(err, rows) {
+    var sql = 'SELECT COUNT(*) AS userCount FROM user_test WHERE username like "' + user + '"';
+    mysql.connection.query(sql, function(err, rows) {
       if (err) {
         throw err;
       } else {
@@ -45,6 +45,19 @@ modeloUsuarios.countUser_Social = function(user, callback) {
 modeloUsuarios.getUser = function(user, callback) {
   if (mysql.connection) {
     mysql.connection.query('SELECT * FROM user_test WHERE username like "' + user + '"',
+      function(error, rows) {
+        if (error) {
+          throw error;
+        } else {
+          callback(null, rows);
+        }
+      });
+  }
+};
+
+modeloUsuarios.getUserByEmail = function(email, callback) {
+  if (mysql.connection) {
+    mysql.connection.query('SELECT * FROM user_test WHERE email like "' + email + '"',
       function(error, rows) {
         if (error) {
           throw error;

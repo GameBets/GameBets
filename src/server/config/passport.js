@@ -3,7 +3,6 @@ var bcrypt = require('bcrypt-nodejs');
 var modeloUsuarios = require('./../modules/login/login.model');
 var passport = require('passport');
 var confAuth = require('./auth'); // use this one for testing
-var LocalStrategy = require('passport-local').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -32,15 +31,6 @@ module.exports = function(passport) {
     done(null, user);
   });
 
-  /*
-  // used to deserialize the user
-  passport.deserializeUser(function(id, done) {
-    console.log('uso deserialize'); //no borrar
-    mysql.connection.query('SELECT * FROM user_test WHERE id =' + id, function(err, rows) {
-      done(err, rows[0]);
-    });
-  });*/
-
   //En este ejemplo, sólo el ID de usuario se serializa en la sesión, manteniendo
   //pequeña la cantidad de datos almacenados dentro de la sesión. Cuando se reciben
   //solicitudes posteriores, este ID se utiliza para encontrar al usuario, que se
@@ -59,11 +49,6 @@ module.exports = function(passport) {
         passReqToCallback: true // allows us to pass back the entire request to the callback
       },
       function(req, username, password, done) {
-        console.log('dentro de passport');
-        console.log(username);
-        console.log(password);
-        console.log(req.body.user);
-
         modeloUsuarios.countUser(req.body.email, function(rows) {
           if (rows[0].userCount >= 1) {
             return done(null, false, 'el nombre de usuario ya existe');
@@ -71,20 +56,45 @@ module.exports = function(passport) {
             // if there is no user with that username
             // create the user
             var newUser = {
-              username: username,
+              username: '',
               passwd: bcrypt.hashSync(password, null, null),
-              email: req.body.email
+              email: req.body.email,
+              displayName: username,
+              usertype: 'client'
             };
 
             modeloUsuarios.insertUser(newUser, function(rows) {
               if (rows) {
-                return done(null, username);
+                return done(null, newUser);
               }
             }); //fin de consulta
           } //fin del else
         }); //fin de count
-      })); //fin de local   )
+      })); //fin de local
 
+  passport.use(
+    'local-login',
+    new LocalStrategy({
+        // by default, local strategy uses username and password, we will override with email
+        usernameField: 'email',
+        passwordField: 'passwd',
+        passReqToCallback: true // allows us to pass back the entire request to the callback
+      },
+      function(req, email, passwd, done) {
+        modeloUsuarios.getUserByEmail(email, function(error, rows) {
+          if (!rows.length) {
+            return done(null, false, 'Email incorrecto');
+          }
+          if (!bcrypt.compareSync(passwd, rows[0].passwd)) {
+            return done(null, false, 'Password incorrecto');
+          } else {
+
+            return done(null, rows[0]);
+          }
+        });
+
+      })
+  );
 
   /////////////////////// FacebookStrategy
 
@@ -92,22 +102,22 @@ module.exports = function(passport) {
       clientID: confAuth.facebookAuth.clientID,
       clientSecret: confAuth.facebookAuth.clientSecret,
       callbackURL: confAuth.facebookAuth.callbackURL,
-      profileFields: ['name', 'email', 'link', 'locale', 'timezone'],
+      profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'picture'],
       passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
 
-      modeloUsuarios.countUser_Social(profile.id, function(rows) {
+      modeloUsuarios.countUserSocial(profile.id, function(rows) {
         if (rows[0].userCount === 0) {
-
-          console.log('no existe e inserto');
           var newUser = {
             username: profile.id,
             email: profile._json.email,
+            displayName: profile.name.givenName,
             usertype: 'client',
-            passwd: ''
+            passwd: '',
+            picture: profile._json.picture.data.url
           };
-          console.log(newUser);
+
           modeloUsuarios.insertUser(newUser, function(rows) {
             if (rows) {
               return done(null, rows);
@@ -115,14 +125,13 @@ module.exports = function(passport) {
           }); //fin de consulta
           return done(null, rows);
         } else {
-          console.log('si existe y devuelvo datos');
           modeloUsuarios.getUser(profile.id, function(error, rows) {
             if (!rows.length) {
 
               return done(null, false, 'nouser');
 
             } else {
-              console.log(rows[0]);
+
               return done(null, rows[0]);
             }
           });
@@ -130,7 +139,6 @@ module.exports = function(passport) {
         } //fin del else
       }); //fin de count
     }));
-
 
   passport.use(new TwitterStrategy({
       consumerKey: confAuth.twitterAuth.consumerKey,
@@ -141,17 +149,17 @@ module.exports = function(passport) {
 
     function(req, token, tokenSecret, profile, done) {
 
-      modeloUsuarios.countUser_Social(profile.id, function(rows) {
+      modeloUsuarios.countUserSocial(profile.id, function(rows) {
         if (rows[0].userCount === 0) {
-
-          console.log('no existe e inserto twitter');
           var newUser = {
             username: profile.id,
             email: 'default',
             usertype: 'client',
-            passwd: ''
+            displayName: profile.displayName,
+            passwd: '',
+            picture: profile._json.profile_image_url
           };
-          console.log(newUser);
+
           modeloUsuarios.insertUser(newUser, function(rows) {
             if (rows) {
               return done(null, newUser);
@@ -159,7 +167,6 @@ module.exports = function(passport) {
           }); //fin de consulta
           //return done(null, rows);
         } else {
-          console.log('si existe y devuelvo datos twitter');
           modeloUsuarios.getUser(profile.id, function(error, rows) {
             if (!rows.length) {
 
@@ -175,46 +182,46 @@ module.exports = function(passport) {
       });
     }));
 
-   passport.use(new GoogleStrategy({
-         clientID       : confAuth.googleAuth.GOOGLE_ID,
-         clientSecret    : confAuth.googleAuth.GOOGLE_SECRET,
-         callbackURL     : confAuth.googleAuth.callbackURL,
-         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
-     },
-     function(req, token, refreshToken, profile, done) {
-        modeloUsuarios.countUser_Social(profile.id, function (rows) {
-        console.log(profile);
-             if (rows[0].userCount === 0) {
-                 //console.log(profile);
-                 console.log('no existe e inserto google');
-                 var newUser = {
-                     username: profile.id,
-                     email: '',
-                     usertype: 'client',
-                     passwd:''
-                 };
+  passport.use(new GoogleStrategy({
+      clientID: confAuth.googleAuth.GOOGLE_ID,
+      clientSecret: confAuth.googleAuth.GOOGLE_SECRET,
+      callbackURL: confAuth.googleAuth.callbackURL,
+      // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+      passReqToCallback: true
+    },
+    function(req, token, refreshToken, profile, done) {
+      modeloUsuarios.countUserSocial(profile.id, function(rows) {
+        if (rows[0].userCount === 0) {
+          var newUser = {
+            username: profile.id,
 
-                 modeloUsuarios.insertUser(newUser, function (rows) {
-                     if (rows) {
+            displayName: profile.displayName,
+            email: 'default',
+            usertype: 'client',
+            passwd: '',
+            picture: profile._json.image.url
+          };
 
-                         return done(null,newUser );
-                     }
-                 });//fin de consulta
-                 //return done(null, rows);
-             } else {
-                 console.log('si existe y devuelvo datos google');
-                 modeloUsuarios.getUser(profile.id, function (error, rows) {
-                     if (!rows.length) {
+          modeloUsuarios.insertUser(newUser, function(rows) {
+            if (rows) {
 
-                         return done(null, false, 'nouser');
+              return done(null, newUser);
+            }
+          }); //fin de consulta
+          //return done(null, rows);
+        } else {
+          modeloUsuarios.getUser(profile.id, function(error, rows) {
+            if (!rows.length) {
 
-                     } else {
+              return done(null, false, 'nouser');
 
-                         return done(null, rows[0]);
-                     }
-                 });
+            } else {
 
-               } //fin del else
-             });
-           }));
+              return done(null, rows[0]);
+            }
+          });
+
+        } //fin del else
+      });
+    }));
 };

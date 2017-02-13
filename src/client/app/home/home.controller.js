@@ -9,7 +9,6 @@
   /* @ngInject */
   function HomeController($q, dataservice, logger, $scope) {
     var vm = this;
-  
     activate();
 
     function activate() {

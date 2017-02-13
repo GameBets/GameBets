@@ -1,3 +1,12 @@
+.help-block > dcha{
+  width: 50%;
+  float: right;
+}
+.help-block > izda{
+  width: 50%;
+  float: left;
+
+}
 .home-a {
   text-decoration: none;
   color: #1ab188;
@@ -104,8 +113,8 @@
 
 .home-input {
   font-size: 2em;
-  display: block;
-  width: 100%;
+  /*display: block;*/
+  width: 90%;
   height: 100%;
   padding: 5px 10px;
   background: none;
@@ -116,6 +125,9 @@
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
+/*.home-input > home-input-img{
+  float: right;
+}*/
 .home-input:focus {
   outline: 0;
   border-color: #1ab188;
@@ -124,6 +136,7 @@
 .home-field-wrap {
   position: relative;
   margin-bottom: 40px;
+  display: block;
 }
 
 .home-top-row:after {
@@ -133,8 +146,8 @@
 }
 .home-top-row > div {
   float: left;
-  width: 48%;
-  margin-right: 4%;
+  width: 46%;
+  margin-right: 3%;
 }
 .home-top-row > div:last-child {
   margin: 0;

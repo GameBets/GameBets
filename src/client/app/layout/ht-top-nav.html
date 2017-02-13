@@ -6,7 +6,7 @@
 				<li><a href="#">   Contact Us</a></li>
 				<li><a href="#">   How To Use</a></li>
 			</ul>
-			<div class="search" >
+			<div class="search">
 				<a target="_self" href="/auth/facebook">
 					<img src="images/face-mini.png" class="header-facebook" />
 				</a>
@@ -33,20 +33,26 @@
 				<span class="menu"><img src="images/menu.png" alt=""> </span>
 				<ul>
 					<li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
-						<a class="color2"ng-show="$root.generalG" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+						<a class="color2" ng-show="$root.generalG" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
 					</li>
 					<li class="nlightblue fade-selection-animation">
 						<a class="color6" ng-show="$root.signUpG" ng-click="">Sign Up</a>
 					</li>
+
 					<li class="nlightblue fade-selection-animation">
 						<a class="color3" ng-show="$root.loginG" ng-click="vm.showSignInModal()">Log In</a>
+					</li>
+
+					<li class="nlightblue fade-selection-animation">
+						<a ng-show="$root.profile" ng-click="vm.profile" href='' class="color5 welcome"> Welcome: {{$root.displayName}}</a>
+					</li>
+					<li class="nlightblue fade-selection-animation picture">
+						<img ng-show="$root.profile" class="avatar" src="{{$root.picture}}" />
 					</li>
 					<li class="nlightblue fade-selection-animation">
 						<a id='logout' ng-show="$root.logoutG" class="color4" ng-click='vm.logout()'>Log Out</a>
 					</li>
-					<li class="nlightblue fade-selection-animation">
-						<a ng-show="$root.profile" href='' class="color5"> Welcome: {{$root.profile}}</a>
-					</li>
+
 					<div class="clearfix"> </div>
 				</ul>
 				<script>
