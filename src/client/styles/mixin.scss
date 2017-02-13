@@ -6,3 +6,10 @@
     color: $color;
     text-transform: $upper;
 }
+
+@mixin modal-login($max-width: 100%, $height: 500px, $background-color: black, $border: 3px solid red){
+  max-width: $max-width;
+  height: $height;
+  background-color: $background-color;
+  border: $border;
+}
