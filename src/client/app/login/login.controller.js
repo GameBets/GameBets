@@ -11,8 +11,12 @@
 
   function LoginController(dataservice, $state, $timeout, $uibModal) {
     var vm = this;
-    vm.inputEmail = '';
-    vm.inputPass = '';
+
+    vm.datos= {
+      email:'',
+      passwd: ''
+    };
+
     vm.SubmitLogin = SubmitLogin;
     vm.CloseModal = CloseModal;
 
@@ -21,6 +25,9 @@
     }
 
     function SubmitLogin() {
+      var dataUserJSON = JSON.stringify(vm.datos);
+      console.log(dataUserJSON);
+      // dataservice.signup(dataUserJSON).
       //$uibModal.dismiss('cancel');
     }
 
