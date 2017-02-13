@@ -18,15 +18,15 @@
   text-align: center;
   font: 100px comic, Sans-Serif;
   letter-spacing: -5px;
-  color: #C5C5C5;
-  text-shadow: -0.1em -0.1em 0em #000;
+  color: #000;
+  text-shadow: -0.1em -0.1em 0em #C5C5C5;
 }
 #h1-supp {
   text-align: center;
   font: 100px comic, Sans-Serif;
   letter-spacing: -5px;
-  color: #C5C5C5;
-  text-shadow: -0.1em -0.1em 0em #000;
+  color: #000;
+  text-shadow: -0.1em -0.1em 0em #C5C5C5;
 }
 .style-four {
   height: 12px;
@@ -171,5 +171,21 @@
     float: left;
     width: 100%;
     text-align: center;
+  }
+}
+@media(max-width:458px){
+  #h1-contact {
+    font: 50px comic, Sans-Serif;
+  }
+  #h1-supp {
+    font: 50px comic, Sans-Serif;
+  }
+  .btn-supp {
+    font-size: 20px;
+    padding: 15px;
+  }
+  .btn-tech {
+    font-size: 20px;
+    padding: 15px;
   }
 }
