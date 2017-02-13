@@ -4,7 +4,7 @@
   angular.module('app.home', [
     'app.core',
     'app.widgets',
-    'app.users'
+    'app.login'
   ]);
 
 })();
