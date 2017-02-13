@@ -17,6 +17,22 @@ LoginController.signup = function(req, res, next) {
 
 };
 
+LoginController.signin = function(req, res, next) {
+  console.log(req.body);
+  console.log('entra al signin');
+  // passport.authenticate('local-signup', function(err, user, info) {
+  //   if (err) {
+  //     return res.send('err');
+  //   }
+  //   if (!user) {
+  //     return res.send('Usuario ya existe');
+  //   }
+  //   return res.send(true);
+  //
+  // })(req, res, next);
+
+};
+
 
 
 
