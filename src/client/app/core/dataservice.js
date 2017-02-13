@@ -15,13 +15,34 @@
       chatInsertMessage: chatInsertMessage,
       chatGetMessages: chatGetMessages,
       signup: signup,
-      ControllerSocialLogin: ControllerSocialLogin
+      ControllerSocialLogin: ControllerSocialLogin,
+      localSignIn: localSignIn
     };
 
     return service;
 
     function getMessageCount() {
       return $q.when(72);
+
+    }
+
+    function localSignIn(data) {
+      console.log(data);
+      return $http.get('/api/users_signin', data)
+        .then(success)
+        .catch(fail);
+
+      function success(response) {
+        console.log("RESPONSE");
+        console.log(response.data);
+        return response.data;
+      }
+
+      function fail(e) {
+        console.log("FAIL");
+        console.log('XHR Failed for sign up');
+        return exception.catcher('XHR Failed for sign up')(e);
+      }
     }
 
     function signup(data) {
