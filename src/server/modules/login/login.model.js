@@ -55,4 +55,17 @@ modeloUsuarios.getUser = function(user, callback) {
   }
 };
 
+modeloUsuarios.getUserByEmail = function(email, callback) {
+  if (mysql.connection) {
+    mysql.connection.query('SELECT * FROM user_test WHERE email like "' + email + '"',
+      function(error, rows) {
+        if (error) {
+          throw error;
+        } else {
+          callback(null, rows);
+        }
+      });
+  }
+};
+
 module.exports = modeloUsuarios;
