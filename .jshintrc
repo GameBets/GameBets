@@ -57,6 +57,7 @@
     "globals": {
         "angular": false,
         "$": false,
-        "io": false
+        "io": false,
+        "mysql": false
     }
 }
