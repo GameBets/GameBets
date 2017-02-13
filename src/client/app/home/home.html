@@ -11,49 +11,86 @@
 </ul>
 
 <div class="home-slogan">
- <span>JOIN, PLAY,</span><br>
- <span>WIN</span>
+  <span>JOIN, PLAY,</span><br>
+  <span>WIN</span>
 </div>
 
-<div class="home-form" >
+<div class="home-form" ng-controller="UsersController as vm">
+
   <ul class="home-tab-group">
     <li class="tab active">
       <a class="home-a" href="#signup">GAMEBETS</a>
-
     </li>
   </ul>
   <div class="home-tab-content">
-    <div id="signup">
-      <h1 class="home-h1"></h1>
-      <form action="/" method="post">
-        <div class="home-top-row">
+    <h1 class="home-h1"></h1>
+    <form name="signupform" novalidate method="POST" id="formulario_signup" ng-submit="vm.signup()">
+      <div class="home-top-row">
+        <div class="form-group">
           <div class="home-field-wrap">
             <label class="home-label">
               Usuario<span class="req">*</span>
             </label>
-            <input class="home-input" type="text" required autocomplete="off"/>
+            <input class="home-input" required ng-model="vm.datos.user" id="user" name="user" type="text" ng-maxlength="15" ng-minlength="5" ng-pattern="/^[a-zA-Z0-9]*$/" autocomplete="off"/>
+            <span class="help-block" ng-show="signupform.user.$error.required && (signupform.user.$dirty || signupform.user.$touched)">El campo es obligatorio</span>
+            <span class="help-block" ng-show="signupform.user.$error.pattern && signupform.user.$touched">El nombre de usuario debe tener solo letras y numeros.</span>
+            <span class="help-block" ng-show="signupform.user.$error.maxlength && signupform.user.$touched">El nombre de usuario debe tener menos de 15 caracteres.</span>
+            <span class="help-block" ng-show="signupform.user.$error.minlength && signupform.user.$touched">El nombre de usuario debe tener mas de 5 caracteres.</span>
+
           </div>
+        </div>
+        <div class="form-group">
           <div class="home-field-wrap">
             <label class="home-label">
               Email<span class="req">*</span>
             </label>
-            <input class="home-input" type="email" required autocomplete="off"/>
+            <input class="home-input" required ng-model="vm.datos.email" id="email" name="email" type="email" autocomplete="off"/>
           </div>
+          <span style="position:relative; top:-35px;" class="help-block" ng-show="signupform.email.$error.required && (signupform.email.$dirty || signupform.email.$touched)">El campo es obligatorio.</span>
+          <span style="position:relative; top:-35px;" class="help-block" ng-show="signupform.email.$error.email && signupform.email.$touched">El email no es valido.</span>
+
         </div>
-        <div class="home-field-wrap">
-          <label class="home-label">
-            Contraseña<span class="req">*</span>
-          </label>
-          <input class="home-input" type="password" required autocomplete="off"/>
-        </div>
-        <div class="home-field-wrap">
-          <label class="home-label">
-            Repetir Contraseña<span class="req">*</span>
-          </label>
-          <input class="home-input" type="password" required autocomplete="off"/>
-        </div>
-        <button type="submit" class="home-button home-button-block">SIGN UP</button>
-      </form>
-    </div>
+
+      </div>
+
+      <div class="home-field-wrap">
+        <label class="home-label">
+          Contraseña<span class="req">*</span>
+        </label>
+        <input
+          class="home-input"
+          required
+          ng-model="vm.datos.password"
+          id="password"
+          name="password"
+          type="{{vm.inputType}}"
+          ng-maxlength="25"
+          ng-minlength="8"
+          ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/"
+          autocomplete="off"/>
+        <img class="home-input-img" src="{{vm.imgSrc}}" name="imgPasswd" alt="View/Hide Password" ng-click="vm.showHidePasswd()"/>
+        <span class="help-block" ng-show="signupform.password.$error.required && (signupform.password.$dirty || signupform.password.$touched)">El campo es obligatorio.</span>
+        <span class="help-block" ng-show="signupform.password.$error.pattern && signupform.password.$touched">La contrase&ntilde;a debe tener al menos una letra minuscula, una mayuscula y un caracter especial.</span>
+        <span class="help-block" ng-show="signupform.password.$error.maxlength && signupform.password.$touched">El contrase&ntilde;a debe tener menos de 25 caracteres.</span>
+        <span class="help-block" ng-show="signupform.password.$error.minlength && signupform.password.$touched">El contrase&ntilde;a debe tener mas de 8 caracteres.</span>
+
+      </div>
+
+      <div class="home-field-wrap">
+        <label class="home-label">
+          Repetir Contraseña<span class="req">*</span>
+        </label>
+        <input class="home-input" required ng-model="vm.datos.password2" id="password2" name="password2" type="{{vm.inputType2}}" autocomplete="off"/>
+        <img src="{{vm.imgSrc2}}" name="imgPasswd2" alt="View/Hide Password" ng-click="vm.showHidePasswd2()"/>
+        <span class="help-block" ng-show="signupform.password2.$error.required && (signupform.password2.$dirty || signupform.password2.$touched)">El camp &eacute;s obligatori</span>
+        <span class="help-block" ng-show="!vm.checkPasswd() && signupform.password2.$touched">La contrase&ntilde;a no coincide.</span>
+      </div>
+
+      <input name="send" class="home-button home-button-block" type="submit" value="SIGN UP">
+      <!-- <button type="submit" class="button button-block">SIGN UP</button> -->
+
+    </form>
   </div>
+  <!-- Fi div home-tab-group -->
 </div>
+<!-- Fi div home-form -->
