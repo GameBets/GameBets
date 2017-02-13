@@ -7,13 +7,13 @@
 
   /*** Login ***/
 
-  LoginController.$inject = ['dataservice', '$state', '$timeout', '$uibModal'];
+  LoginController.$inject = ['dataservice', '$state', '$timeout', '$uibModal', 'logger','$uibModalInstance', 'cookiesService', 'headerService'];
 
-  function LoginController(dataservice, $state, $timeout, $uibModal) {
+  function LoginController(dataservice, $state, $timeout, $uibModal, logger, $uibModalInstance, cookiesService, headerService ) {
     var vm = this;
 
-    vm.datos= {
-      email:'',
+    vm.datos = {
+      email: '',
       passwd: ''
     };
 
@@ -27,7 +27,24 @@
     function SubmitLogin() {
       var dataUserJSON = JSON.stringify(vm.datos);
       console.log(dataUserJSON);
-      dataservice.localSignIn(dataUserJSON);
+      dataservice.localSignIn(dataUserJSON).then(function(response) {
+        if (response === 'Email incorrecto') {
+          logger.error(response);
+        } else if (response === 'Password incorrecto') {
+          logger.error(response);
+        } else if (response.email === vm.datos.email) {
+          console.log(response);
+          $uibModalInstance.dismiss('cancel');
+          cookiesService.SetCredentials(response);
+          logger.success('Usuario autentificado');
+          headerService.login();
+          $state.go('home');
+
+        } else {
+          console.log("Error");
+        }
+        console.log(response);
+      });
       //$uibModal.dismiss('cancel');
     }
 
