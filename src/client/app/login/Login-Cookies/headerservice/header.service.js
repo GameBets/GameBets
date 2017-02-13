@@ -25,6 +25,7 @@
         $rootScope.signUpG = false;
         $rootScope.profile = user.email;
         $rootScope.user = user.user;
+        $rootScope.displayName = user.displayName;
         $rootScope.generalG = true;
         $rootScope.socialNetwork = true;
         $rootScope.picture = user.picture;
@@ -42,6 +43,7 @@
         // cleaning...
         $rootScope.profile = '';
         $rootScope.user = '';
+        $rootScope.displayName = '';
         $rootScope.logoutG = false;
         $rootScope.generalG = false;
         $rootScope.picture = '';
@@ -58,6 +60,7 @@
       $rootScope.signUpG = true;
       // cleaning...
       $rootScope.profile = '';
+      $rootScope.displayName = '';
       $rootScope.user = '';
       $rootScope.picture = '';
       $rootScope.ProfilePersonal = false;
