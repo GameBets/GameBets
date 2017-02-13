@@ -38,19 +38,21 @@
 					<li class="nlightblue fade-selection-animation">
 						<a class="color6" ng-show="$root.signUpG" ng-click="">Sign Up</a>
 					</li>
+
 					<li class="nlightblue fade-selection-animation">
 						<a class="color3" ng-show="$root.loginG" ng-click="vm.showSignInModal()">Log In</a>
 					</li>
-					<li class="nlightblue fade-selection-animation">
-						<a ng-show="$root.profile" ng-click="vm.profile" href='' class="color5"> Welcome: {{$root.profile}}</a>
-					</li>
-					<li class="nlightblue fade-selection-animation">
-						<img ng-show="{{$root.picture.value}}" />IMG
-							</li>
 
+					<li class="nlightblue fade-selection-animation">
+						<a ng-show="$root.profile" ng-click="vm.profile" href='' class="color5 welcome"> Welcome: {{$root.displayName}}</a>
+					</li>
+					<li class="nlightblue fade-selection-animation picture">
+						<img class="avatar" src="{{$root.picture}}" />
+					</li>
 					<li class="nlightblue fade-selection-animation">
 						<a id='logout' ng-show="$root.logoutG" class="color4" ng-click='vm.logout()'>Log Out</a>
 					</li>
+
 					<div class="clearfix"> </div>
 				</ul>
 				<script>
