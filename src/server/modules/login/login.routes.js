@@ -6,6 +6,9 @@ var loginController = require('./login.controller');
 
 router.post('/users_signup', loginController.signup);
 
+router.get('/users_signin', loginController.signin);
+
+
 router.get('/auth/facebook', loginController.facebook);
 
 router.get('/auth/facebook/callback', loginController.facebookCallback);
