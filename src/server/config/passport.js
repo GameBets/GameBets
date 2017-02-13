@@ -92,12 +92,14 @@ module.exports = function(passport) {
       clientID: confAuth.facebookAuth.clientID,
       clientSecret: confAuth.facebookAuth.clientSecret,
       callbackURL: confAuth.facebookAuth.callbackURL,
-      profileFields: ['name', 'email', 'link', 'locale', 'timezone'],
+      profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'photos'],
       passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
 
       modeloUsuarios.countUser_Social(profile.id, function(rows) {
+        console.log(profile);
+        console.log("eee");
         if (rows[0].userCount === 0) {
 
           console.log('no existe e inserto');
@@ -105,7 +107,8 @@ module.exports = function(passport) {
             username: profile.id,
             email: profile._json.email,
             usertype: 'client',
-            passwd: ''
+            passwd: '',
+            picture: profile.photos,
           };
           console.log(newUser);
           modeloUsuarios.insertUser(newUser, function(rows) {
