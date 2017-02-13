@@ -1,18 +1,18 @@
 <div class="contact">
   <!-- CONTACT -->
-  <div id="contorno">
+  <div class="contorno">
     <form id="contact_form" name="contact_form" class="details-holder" novalidate>
       <h1 id="h1-contact">CONTACT</h1>
       <hr class="style-four">
       </br>
       <div>
         <input required ng-model="vm.inputName" id="inputName" class="input input-contact" type="text" name="inputName" placeholder="Name">
-        <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo <br>es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo es obligatorio</p>
       </div>
       </br>
       <div>
         <input required ng-model="vm.inputEmail" id="inputEmail" class="input input-contact" type="email" name="inputEmail" placeholder="Email *">
-        <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">El campo <br>es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">El campo es obligatorio</p>
         <p class="msg_error" ng-show="contact_form.inputEmail.$error.email && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">Email not valid</p>
       </div>
       </br>
@@ -31,12 +31,12 @@
                     <option value="novedades">Te avisamos de nuestras novedades</option>
                     <option value="distinto">Algo distinto</option>
                 </select>
-        <p class="msg_error" ng-show="contact_form.inputSubject.$error.required && (contact_form.inputSubject.$dirty || contact_form.inputSubject.$touched)">El campo <br>es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputSubject.$error.required && (contact_form.inputSubject.$dirty || contact_form.inputSubject.$touched)">El campo es obligatorio</p>
       </div>
       </br>
       <div>
         <textarea required ng-model="vm.inputMessage" id="inputMessage" class="input input-contact" type="text" rows="4" name="inputMessage" placeholder="Message *" style="max-width: 100%;"></textarea>
-        <p class="msg_error" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)">El campo <br>es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)">El campo es obligatorio</p>
       </div>
       </br>
       <input class="btn-read-more" type="submit" name="submit" id="submitBtn" value="SEND" ng-click="vm.SubmitContact()" />
@@ -49,7 +49,11 @@
   <div class="support">
     <h1 id="h1-supp">SUPPORT</h1>
     <hr class="style-two">
-    <input class="btn-tech " type="submit" name="submit" id="btnSupp" value="TECHNICAL SUPPORT" ng-click="vm.SubmitSupp()" />
-    <input class="btn-supp" type="submit" name="submit" id="btnDocument" value="DOCUMENTATION" ng-click="vm.SubmitDoc()" />
+    <div>
+      <input class="btn-tech " type="submit" name="submit" id="btnSupp" value="TECHNICAL SUPPORT" ng-click="vm.SubmitSupp()" />
     </div>
+    <div>
+      <input class="btn-supp" type="submit" name="submit" id="btnDocument" value="DOCUMENTATION" ng-click="vm.SubmitDoc()" />
+    </div>
+  </div>
 </div>
