@@ -21,7 +21,7 @@ cookies.$inject =['$cookies'];
 //////////////////////////////////////////////////////////////////////
         function SetCredentials(users) {
             //encriptar data
-
+            console.log(users);
             var user = Base64_encode(users.username);
             //var usertype = Base64_encode(users.usertype);
             var email = Base64_encode(users.email);
