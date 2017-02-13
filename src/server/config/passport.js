@@ -72,17 +72,18 @@ module.exports = function(passport) {
             var newUser = {
               username: username,
               passwd: bcrypt.hashSync(password, null, null),
-              email: req.body.email
+              email: req.body.email,
+              usertype: 'client'
             };
 
             modeloUsuarios.insertUser(newUser, function(rows) {
               if (rows) {
-                return done(null, username);
+                return done(null, newUser);
               }
             }); //fin de consulta
           } //fin del else
         }); //fin de count
-      })); //fin de local   )
+      })); //fin de local
 
   passport.use(
     'local-login',
