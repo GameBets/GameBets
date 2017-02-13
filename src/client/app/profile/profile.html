@@ -3,16 +3,27 @@
     <div class="container">
       <div class="row">
         <div class="widget-content user">
-          <h1>Your Profile</h1>
+          </br>
+          <h1 class="h1-profile">Your Profile</h1>
           </br>
           <div class="login-profile">
-
-            <label> Email: </label>
-            <p> {{$root.profile}}</p>
-            <label> Username:  </label>
-            <p> {{$root.user}}</p>
-            <p> {{$root.photos[0].value}}</p>
-
+            <div class="single-data-profile">
+              <h2 class="h2-profile"> Email: </h2>
+              <p class="p-profile"> {{$root.profile}}</p>
+              </br>
+              <h2 class="h2-profile"> Id:  </h2>
+              <p class="p-profile"> {{$root.user}}</p>
+              </br>
+              <h2 class="h2-profile"> Username:  </h2>
+              <p class="p-profile"> {{$root.displayName}} </p>
+              </br>
+            </div>
+            <div class="avatar-profile">
+              <h2 class="h2-profile"> Avatar:  </h2>
+              <p class="p-profile"><img src="{{$root.picture}}" width="200" height="200" /></p>
+              </br>
+            </div>
+            </br>
           </div>
 
         </div>
