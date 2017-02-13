@@ -92,7 +92,7 @@ module.exports = function(passport) {
       clientID: confAuth.facebookAuth.clientID,
       clientSecret: confAuth.facebookAuth.clientSecret,
       callbackURL: confAuth.facebookAuth.callbackURL,
-      profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'photos'],
+      profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'picture'],
       passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
@@ -101,16 +101,17 @@ module.exports = function(passport) {
         console.log(profile);
         console.log("eee");
         if (rows[0].userCount === 0) {
-
+          console.log(profile);
           console.log('no existe e inserto');
           var newUser = {
             username: profile.id,
             email: profile._json.email,
+            displayName: profile.name.givenName,
             usertype: 'client',
             passwd: '',
-            picture: profile.photos,
+            picture: profile._json.picture.data.url
           };
-          console.log(newUser);
+
           modeloUsuarios.insertUser(newUser, function(rows) {
             if (rows) {
               return done(null, rows);
@@ -118,7 +119,7 @@ module.exports = function(passport) {
           }); //fin de consulta
           return done(null, rows);
         } else {
-          console.log('si existe y devuelvo datos');
+          console.log('existe y devuelvo datos');
           modeloUsuarios.getUser(profile.id, function(error, rows) {
             if (!rows.length) {
 
@@ -126,6 +127,7 @@ module.exports = function(passport) {
 
             } else {
               console.log(rows[0]);
+
               return done(null, rows[0]);
             }
           });
@@ -146,14 +148,16 @@ module.exports = function(passport) {
 
       modeloUsuarios.countUser_Social(profile.id, function(rows) {
         if (rows[0].userCount === 0) {
-
           console.log('no existe e inserto twitter');
           var newUser = {
             username: profile.id,
             email: 'default',
             usertype: 'client',
-            passwd: ''
+            displayName: profile.displayName,
+            passwd: '',
+            picture: profile._json.profile_image_url
           };
+
           console.log(newUser);
           modeloUsuarios.insertUser(newUser, function(rows) {
             if (rows) {
@@ -178,46 +182,48 @@ module.exports = function(passport) {
       });
     }));
 
-   passport.use(new GoogleStrategy({
-         clientID       : confAuth.googleAuth.GOOGLE_ID,
-         clientSecret    : confAuth.googleAuth.GOOGLE_SECRET,
-         callbackURL     : confAuth.googleAuth.callbackURL,
-         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
-     },
-     function(req, token, refreshToken, profile, done) {
-        modeloUsuarios.countUser_Social(profile.id, function (rows) {
+  passport.use(new GoogleStrategy({
+      clientID: confAuth.googleAuth.GOOGLE_ID,
+      clientSecret: confAuth.googleAuth.GOOGLE_SECRET,
+      callbackURL: confAuth.googleAuth.callbackURL,
+      passReqToCallback: true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+    },
+    function(req, token, refreshToken, profile, done) {
+      modeloUsuarios.countUser_Social(profile.id, function(rows) {
         console.log(profile);
-             if (rows[0].userCount === 0) {
-                 //console.log(profile);
-                 console.log('no existe e inserto google');
-                 var newUser = {
-                     username: profile.id,
-                     email: '',
-                     usertype: 'client',
-                     passwd:''
-                 };
+        if (rows[0].userCount === 0) {
+          //console.log(profile);
+          console.log('no existe e inserto google');
+          var newUser = {
+            username: profile.id,
+            displayName: profile.displayName,
+            email: 'default',
+            usertype: 'client',
+            passwd: '',
+            picture: profile._json.image.url
+          };
 
-                 modeloUsuarios.insertUser(newUser, function (rows) {
-                     if (rows) {
+          modeloUsuarios.insertUser(newUser, function(rows) {
+            if (rows) {
 
-                         return done(null,newUser );
-                     }
-                 });//fin de consulta
-                 //return done(null, rows);
-             } else {
-                 console.log('si existe y devuelvo datos google');
-                 modeloUsuarios.getUser(profile.id, function (error, rows) {
-                     if (!rows.length) {
+              return done(null, newUser);
+            }
+          }); //fin de consulta
+          //return done(null, rows);
+        } else {
+          console.log('si existe y devuelvo datos google');
+          modeloUsuarios.getUser(profile.id, function(error, rows) {
+            if (!rows.length) {
 
-                         return done(null, false, 'nouser');
+              return done(null, false, 'nouser');
 
-                     } else {
+            } else {
 
-                         return done(null, rows[0]);
-                     }
-                 });
+              return done(null, rows[0]);
+            }
+          });
 
-               } //fin del else
-             });
-           }));
+        } //fin del else
+      });
+    }));
 };
