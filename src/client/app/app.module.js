@@ -10,7 +10,8 @@
     'app.layout',
     'app.contact',
     'app.chat',
-    'app.login'
+    'app.login',
+    'app.profile'
 
   ]);
 
