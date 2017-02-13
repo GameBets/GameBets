@@ -7,7 +7,26 @@
 .home-a:hover {
   color: #179b77;
 }
-
+.home-form {
+  background: rgba(19, 35, 47, 0.9);
+  right: 40px;
+  padding: 40px;
+  width:40%;
+  max-width: 600px;
+  margin: 40px 40px 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.home-slogan > span {
+  background: rgba(19, 35, 47, 0.9);
+  margin: 40px auto 40px 40px;
+  padding: 3px 20px;
+  border-radius: 4px;
+  font-family: "helvetica neue", helvetica;
+  text-transform: uppercase;
+  font-size: 4.5em;
+  color: #FFF;
+}
 .home-tab-group {
   list-style: none;
   padding: 0;
@@ -33,11 +52,11 @@
   transition: .5s ease;
 }
 .home-tab-group li a:hover {
-  background: #179b77;
+  background: #DB2020;
   color: #ffffff;
 }
 .home-tab-group .active a {
-  background: #1ab188;
+  background: #BD1010;
   color: #ffffff;
 }
 
@@ -48,8 +67,8 @@
 .home-h1 {
   text-align: center;
   color: #ffffff;
-  font-weight: 300;
-  margin: 0 0 40px;
+  font-weight: 0;
+  margin: 0 0 20px;
 }
 
 .home-label {
@@ -66,7 +85,7 @@
 }
 .home-label .req {
   margin: 2px;
-  color: #1ab188;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .home-label.active {
@@ -130,14 +149,14 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #DB1010;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .home-button:hover, .home-button:focus {
-  background: #179b77;
+  background: #BD2020;
 }
 
 .home-button-block {
@@ -448,89 +467,79 @@
 
 /*MEDIAQUERY*/
 @media (min-width: 1200px) {
-  .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-  }
-  .home-slogan > span {
-    background: rgba(19, 35, 47, 0.9);
-    margin: 40px auto 40px 40px;
-    padding: 10px;
-    font-family: "helvetica neue", helvetica;
-    text-transform: uppercase;
-    font-size: 5em;
-    color: #FFF;
+  .home-button {
+    font-size: 3em;
   }
 }
 @media (max-width: 1199px) {
   .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    padding: 30px;
+  }
+  .home-slogan > span {
+    font-size: 4em;
+  }
+  .home-button {
+    font-size: 2.5em;
+  }
+  .home-tab-group li a {
+    font-size: 3.5em;
+  }
+  .home-label {
+    font-size: 1.5em;
+  }
+  .home-input {
+    font-size: 1.5em;
   }
 }
 @media (max-width: 991px) {
   .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    padding: 20px;
+  }
+  .home-slogan > span {
+    font-size: 3em;
+  }
+  .home-button {
+    font-size: 2em;
+  }
+  .home-tab-group li a {
+    font-size: 3em;
+  }
+  .home-label {
+    font-size: 1em;
+  }
+  .home-input {
+    font-size: 1em;
   }
 }
 @media (max-width: 767px) {
   .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    left: 0;
+    padding: 20px;
+    width: 95%;
+    margin: 70vh auto 10px auto;
+    box-sizing: border-box;
+  }
+  .home-slogan {
+    display: none;
+  }
+  .home-button {
+    font-size: 2em;
+  }
+  .home-tab-group li a {
+    font-size: 3em;
+  }
+  .home-label {
+    font-size: 1em;
+  }
+  .home-input {
+    font-size: 1em;
   }
 }
 @media (max-width: 479px) {
-  .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  .home-top-row > div {
+    width: 100%;
   }
-}
-@media (max-width: 244px) {
-  .home-form {
-    background: rgba(19, 35, 47, 0.9);
-    right: 40px;
-    padding: 40px;
-    width:40%;
-    max-width: 600px;
-    min-width: 500px;
-    margin: 40px 40px 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  .home-input-special{
+    margin-bottom: 40px;
   }
 }
