@@ -11,7 +11,8 @@
     'app.contact',
     'app.chat',
     'app.users',
-    'app.login'
+    'app.login',
+    'app.profile'
 
   ]);
 
