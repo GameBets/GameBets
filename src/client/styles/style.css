@@ -80,6 +80,23 @@ ul.header-in li a:hover{
 .top-head {
   padding: 0 15px;
 }
+/*--lang--*/
+.lang {
+	position: relative;
+	float:right;
+	bottom: 10px;
+	left: 160px;
+}
+
+.lang-es:active {
+	border-bottom: 5px solid white;
+	border-top: 5px solid white;
+}
+
+.lang-en:active {
+	border-bottom: 5px solid white;
+	border-top: 5px solid white;
+}
 /*--logo--*/
 .logo {
 	float:left;
