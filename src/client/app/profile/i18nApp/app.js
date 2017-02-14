@@ -17,17 +17,13 @@
         id: "Id",
         username: "Username",
         avatar: "Avatar",
-        BUTTON_LANG_EN: "ENGLISH",
-        BUTTON_LANG_ES: "SPANISH"
-      });
+          });
       $translateProvider.translations('es', {
         h1_your_profile: "Tu Perfil",
         email: "Correo Electronico",
         id: "Identificador",
         username: "Nombre del Usuario",
         avatar: "Icono",
-        BUTTON_LANG_EN: "INGLES",
-        BUTTON_LANG_ES: "ESPAÑOL"
       });
 
       $translateProvider.useSanitizeValueStrategy('escape');
