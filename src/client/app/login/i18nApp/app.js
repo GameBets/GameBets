@@ -1,8 +1,8 @@
-/*'use strict';
+'use strict';
 
 var app =
   angular
-  .module('app.login', ['pascalprecht.translate']);
+  .module('app.login');
 
   app.config(function($translateProvider) {
    $translateProvider.fallbackLanguage('en');
@@ -34,5 +34,3 @@ var app =
     $translateProvider.preferredLanguage('en');
 
   });
-
-  */
