@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="top-head">
 			<ul class="header-in">
-				<li><a href="#">  Help</a></li>
-				<li><a href="/contact">   Contact Us</a></li>
-				<li><a href="#">   How To Use</a></li>
+				<li><a href="#" translate="help"> </a></li>
+				<li><a href="/contact" translate="conact_menu"></a></li>
+				<li><a href="#" translate="how_to_use"></a></li>
 			</ul>
 			<div class="search">
 				<a target="_self" href="/auth/facebook">
@@ -36,11 +36,11 @@
 						<a class="color2" ng-show="$root.generalG" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
 					</li>
 					<li class="nlightblue fade-selection-animation">
-						<a class="color6" ng-show="$root.signUpG" ng-click="">Sign Up</a>
+						<a class="color6" ng-show="$root.signUpG" ng-click="" translate="sign_up_menu"></a>
 					</li>
 
 					<li class="nlightblue fade-selection-animation">
-						<a class="color3" ng-show="$root.loginG" ng-click="vm.showSignInModal()">Log In</a>
+						<a class="color3" ng-show="$root.loginG" ng-click="vm.showSignInModal()" translate="login_menu"></a>
 					</li>
 
 					<li class="nlightblue fade-selection-animation">
@@ -50,9 +50,12 @@
 						<img ng-show="$root.profile" class="avatar" src="{{$root.picture}}" />
 					</li>
 					<li class="nlightblue fade-selection-animation">
-						<a id='logout' ng-show="$root.logoutG" class="color4" ng-click='vm.logout()'>Log Out</a>
+						<a id='logout' ng-show="$root.logoutG" class="color4" ng-click='vm.logout()' translate="logout_menu"></a>
 					</li>
-
+					<div class="lang">
+						<img src="images/eng.svg" class="lang-en" ng-click="changeLanguage('en')"></img>
+						<img src="images/spain.svg" class="lang-es" ng-click="changeLanguage('es')"></img>
+					</div>
 					<div class="clearfix"> </div>
 				</ul>
 				<script>

@@ -6,6 +6,7 @@
     'app.core',
     'app.widgets',
     'ngAnimate',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'pascalprecht.translate',
   ]);
 })();

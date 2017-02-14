@@ -12,7 +12,5 @@
     'app.chat',
     'app.login',
     'app.profile'
-
   ]);
-
 })();

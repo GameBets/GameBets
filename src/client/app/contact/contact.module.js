@@ -3,7 +3,8 @@
 
   angular.module('app.contact', [
     'app.core',
-    'app.widgets'
+    'app.widgets',
+    'pascalprecht.translate'
   ]);
 
 })();

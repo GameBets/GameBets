@@ -173,6 +173,23 @@ ul.header-in li a:hover {
   border-bottom: 3px solid #bd1010;
 }
 
+/*--lang--*/
+.lang {
+	position: relative;
+	float:right;
+	bottom: 10px;
+	left: 160px;
+}
+
+.lang-es:active {
+	border-bottom: 5px solid white;
+	border-top: 5px solid white;
+}
+
+.lang-en:active {
+	border-bottom: 5px solid white;
+	border-top: 5px solid white;
+}
 
 /*--footer--*/
 

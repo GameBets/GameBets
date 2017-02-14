@@ -5,15 +5,17 @@
     .module('app.layout')
     .controller('SidebarController', SidebarController);
 
-  SidebarController.$inject = ['$state', 'routerHelper', '$uibModal', 'headerService'];
+  SidebarController.$inject = ['$state','$scope', '$translate','routerHelper', '$uibModal', 'headerService'];
   /* @ngInject */
-  function SidebarController($state, routerHelper, $uibModal, headerService) {
+  function SidebarController($state, $scope, $translate, routerHelper, $uibModal, headerService) {
     var vm = this;
     var states = routerHelper.getStates();
     vm.isCurrent = isCurrent;
     vm.showSignInModal = showSignInModal;
     vm.logout = logout;
+  //  vm.changeLanguage = changeLanguage;
     activate();
+    changeLanguage();
 
     function activate() {
       getNavRoutes();
@@ -34,6 +36,12 @@
       }
       var menuName = route.title;
       return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
+    }
+
+    function changeLanguage() {
+      $scope.changeLanguage = function(key) {
+        $translate.use(key);
+      };
     }
 
     function showSignInModal() {
