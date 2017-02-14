@@ -2,7 +2,7 @@
 
   var app =
     angular
-    .module('app.profile', ['pascalprecht.translate']);
+    .module('app.profile');
 
     app.config(function($translateProvider) {
      $translateProvider.fallbackLanguage('en');

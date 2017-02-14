@@ -3,7 +3,8 @@
 
   angular.module('app.profile', [
     'app.core',
-    'app.widgets'
+    'app.widgets',
+    'pascalprecht.translate'
   ]);
 
 })();
