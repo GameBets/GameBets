@@ -18,7 +18,7 @@
     vm.inputSubject = '';
     vm.inputMessage = '';
     vm.SubmitContact = SubmitContact;
-    vm.changeLanguage = changeLanguage;
+  //  vm.changeLanguage = changeLanguage;
 
     changeLanguage();
 

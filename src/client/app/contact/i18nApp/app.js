@@ -1,8 +1,8 @@
-  /* 'use strict';
+ 'use strict';
 
-
-  var app =  angular
-    .module('app.contact', ['pascalprecht.translate']);
+  var app =
+    angular
+    .module('app.contact');
 
   app.config(function($translateProvider) {
     $translateProvider.fallbackLanguage('en');
@@ -17,19 +17,19 @@
       valid_email: "Email not valid",
       support: "SUPPORT",
       technical: "TECHNICAL SUPPORT",
-      documentation: "DOCUMENTATION"
+      documentation: "DOCUMENTATION",
 
     });
     $translateProvider.translations('es', {
       contact: "CONTACTO",
       required: "El campo es obligatorio",
-      valid_email: "El email no es valido",
+      valid_email: "El email no es válido",
       support: "SOPORTE",
-      technical: "SOPORTE TECNICO",
-      documentation: "DOCUMENTACION"
+      technical: "SOPORTE TÉCNICO",
+      documentation: "DOCUMENTACIÓN",
     });
 
     $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.preferredLanguage('en');
 
-  });*/
+  });
