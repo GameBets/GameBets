@@ -1,0 +1,11 @@
+@media print {
+  body{
+  	background:yellow;
+  	font-family: 'PT Sans', sans-serif;
+  	padding-top: 0;
+  }
+  header nav, footer {
+    display: none;
+    }
+
+}
