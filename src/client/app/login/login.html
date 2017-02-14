@@ -1,13 +1,16 @@
 <!--<div ng-controller="LoginController as vm">-->
 <div class="login">
   <form id="login_form" name="login_form" novalidate>
-
-    <img src="images/signin.gif" class="h1-login" />
+    <div class="lang-login">
+      <img src="images/eng.svg" class="lang-en" ng-click="changeLanguage('en')"></img>
+      <img src="images/spain.svg" class="lang-es" ng-click="changeLanguage('es')"></img>
+    </div>
+    <h1 class="h1-login">SIGN IN<h1/>
     </br>
     <hr class="hr-login">
     <div id="email-log">
       <md-input-container class="md-block">
-        <label class="label-login">E-mail</label>
+        <label class="label-login" >E-MAIL</label>
         <input required type="email" name="email" class="input-email" ng-model="vm.datos.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
         <div ng-messages="login_form.email.$error" role="alert">
         </div>
@@ -16,7 +19,7 @@
     </br>
     <div id="passw-log">
       <md-input-container class="md-block">
-        <label class="label-login">Password</label>
+        <label class="label-login">PASSWORD</label>
         <input required ng-minlength="5" class="input-passw" ng-maxlength="10" type="password" name="passwd" ng-model="vm.datos.passwd">
         <div ng-messages="login_form.passwd.$error" role="alert">
         </div>
@@ -30,9 +33,9 @@
     </div>
     </br>
     </md-input-container>
-    <a href="#" id="linkRest">¿Has olvidado tu contraseña?</a> </br>
+    <a href="#" id="linkRest" >¿Forgotten your password?</a> </br>
     <br>
-    <button class="btn btn-lg btn-primary" type="submit" id="SubmitLogin" ng-disabled="login_form.$invalid" ng-click="vm.SubmitLogin()">Sign In</button>
+    <button class="btn btn-lg btn-primary" type="submit" id="SubmitLogin" ng-disabled="login_form.$invalid" ng-click="vm.SubmitLogin()">SIGN IN</button>
     <div id="resultMessageFail" class="msg_error">{{vm.resultMessageFail}}</div>
     <div id="resultMessageOk" class="msg_error">{{vm.resultMessageOk}}</div>
 
@@ -41,13 +44,13 @@
     <div id="social-media">
       <a target="_self" href="/auth/facebook">
         <div class="facebook"><img class="logo-login" src="images/logo-face.png" />
-          <h5 class="login-h5">Login with <p>Facebook<p><h5>       </div>
+          <h5 class="login-h5">Sign In Facebook</div>
       </a>
       <a target="_self" href="/auth/twitter">
-        <div class="twitter"><img class="logo-login" src="images/logo-twitter.png"/><h5 class="login-h5">Login with <p>Twitter<p><h5></div>
+        <div class="twitter"><img class="logo-login" src="images/logo-twitter.png"/><h5 class="login-h5" >Sign In Twitter<h5></div>
       </a>
       <a target="_self" href="/auth/google">
-        <div class="google"><img class="logo-login" src="images/logo-gooogle.png"/><h5 class="login-h5">Login with <p>Google<p><h5></div>
+        <div class="google"><img class="logo-login" src="images/logo-gooogle.png"/><h5 class="login-h5" >Sign in Google<h5></div>
       </a>
       </div>
       <!---<p class=p-login>¿Eres un nuevo cliente?</p><-->

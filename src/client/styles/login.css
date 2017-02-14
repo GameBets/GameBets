@@ -13,6 +13,16 @@
   text-transform: uppercase;
 }
 
+
+.lang-login {
+
+float:right;
+position: relative;
+top: 4px;
+right: 4px;
+
+}
+
 .logo-gb {
   position: absolute;
   top: 160px;
@@ -80,6 +90,10 @@ hr.hr-horizontal-v2 {
   position: absolute;
   top: 9%;
   left: 50%;
+  color: white;
+  font-family: sans, Arial;
+  font-weight: bold;
+  font-size: 40px;
   transform: translate(-50%, -50%);
 }
 
@@ -168,6 +182,9 @@ hr.hr-horizontal-v2 {
   color: white;
   font-size: 16px;
   text-transform: uppercase;
+  word-wrap: break-word;
+  margin-bottom: 25px;
+  width: 150px;
 }
 
 /*# sourceMappingURL=login.css.map */

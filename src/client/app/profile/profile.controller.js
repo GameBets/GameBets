@@ -5,14 +5,20 @@
     .module('app.profile')
     .controller('ProfileController', ProfileController);
 
-  ProfileController.$inject = ['logger'];
+  ProfileController.$inject = ['logger', '$scope', '$translate'];
   /* @ngInject */
-  function ProfileController(logger) {
+  function ProfileController(logger, $scope, $translate) {
     var vm = this;
     vm.title = 'Profile';
-    //    vm.ClickMeToRedirect = ClickMeToRedirect;
 
     activate();
+    changeLanguage();
+
+    function changeLanguage() {
+      $scope.changeLanguage = function(key) {
+        $translate.use(key);
+      }
+    }
 
     function activate() {
       logger.info('Activated Profile View');

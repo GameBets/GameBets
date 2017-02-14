@@ -7,9 +7,9 @@
 
   /*** CONTACT ***/
 
-  ContactController.$inject = ['dataservice', '$state', '$timeout'];
+  ContactController.$inject = ['dataservice', '$state', '$scope', '$translate', '$timeout'];
 
-  function ContactController(dataservice, $state, $timeout) {
+  function ContactController(dataservice, $state, $scope, $translate, $timeout) {
     var vm = this;
 
     vm.title = 'Contact';
@@ -18,6 +18,15 @@
     vm.inputSubject = '';
     vm.inputMessage = '';
     vm.SubmitContact = SubmitContact;
+    vm.changeLanguage = changeLanguage;
+
+    changeLanguage();
+
+    function changeLanguage() {
+      $scope.changeLanguage = function(key) {
+        $translate.use(key);
+      }
+    }
 
     function SubmitContact() {
       var data = {

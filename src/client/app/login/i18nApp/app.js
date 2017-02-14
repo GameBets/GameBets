@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 var app =
   angular
@@ -14,7 +14,7 @@ var app =
     $translateProvider.translations('en', {
       passwd: "Password",
       email_login: "E-Mail",
-      sing_in: "Sign In",
+      sign_in: "SIGN IN",
       login_F: "Login using Facebook",
       login_Tw: "Login using Twitter",
       login_Gplus: "Login using Google+",
@@ -23,10 +23,10 @@ var app =
     $translateProvider.translations('es', {
       passwd: "Contraseña",
       email_login: "Correo",
-      sing_in: "Entrar",
+      sign_in: "ENTRAR",
       login_F: "Entrar usando Facebook",
       login_Tw: "Entrar usando Twiter",
-      login_Gplus: "Entrar usando Google+",
+      login_Gplus: "Entrar con Google+",
       reset_pw: "¿Has olvidado tu contraseña?"
     });
 
@@ -34,3 +34,5 @@ var app =
     $translateProvider.preferredLanguage('en');
 
   });
+
+  */

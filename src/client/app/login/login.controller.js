@@ -7,11 +7,11 @@
 
   /*** SignIn ***/
 
-  LoginController.$inject = ['dataservice', '$state', '$timeout', '$uibModal', 'logger',
+  LoginController.$inject = ['dataservice', '$state', '$scope', '$translate','$timeout', '$uibModal', 'logger',
     '$uibModalInstance', 'cookiesService', 'headerService'
   ];
 
-  function LoginController(dataservice, $state, $timeout, $uibModal, logger,
+  function LoginController(dataservice, $state, $scope, $translate, $timeout, $uibModal, logger,
     $uibModalInstance, cookiesService, headerService) {
     var vm = this;
 
@@ -22,6 +22,15 @@
 
     vm.SubmitLogin = SubmitLogin;
     vm.CloseModal = CloseModal;
+
+    changeLanguage();
+
+    function changeLanguage() {
+      console.log("EEESESE")
+      $scope.changeLanguage = function(key) {
+        $translate.use(key);
+      }
+    }
 
     function CloseModal() {
       //    $uibModal.dismiss('cancel');

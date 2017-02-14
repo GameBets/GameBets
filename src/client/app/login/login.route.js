@@ -27,6 +27,7 @@
             config: {
               url: '/socialsignin',
               controller: 'ControllerSocial'
+
             }
           }
         ];

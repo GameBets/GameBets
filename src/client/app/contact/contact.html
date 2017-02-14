@@ -7,12 +7,12 @@
       </br>
       <div>
         <input required ng-model="vm.inputName" id="inputName" class="input input-contact" type="text" name="inputName" placeholder="Name">
-        <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo es obligatorio></p>
       </div>
       </br>
       <div>
         <input required ng-model="vm.inputEmail" id="inputEmail" class="input input-contact" type="email" name="inputEmail" placeholder="Email *">
-        <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">El campo es obligatorio</p>
+        <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">"El campo es obligatorio"</p>
         <p class="msg_error" ng-show="contact_form.inputEmail.$error.email && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">Email not valid</p>
       </div>
       </br>
