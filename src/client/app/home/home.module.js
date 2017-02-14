@@ -4,7 +4,8 @@
   angular.module('app.home', [
     'app.core',
     'app.widgets',
-    'app.login'
+    'app.login',
+    'pascalprecht.translate',
   ]);
 
 })();
