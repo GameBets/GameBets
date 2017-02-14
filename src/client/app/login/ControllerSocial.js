@@ -18,7 +18,6 @@
 
             dataservice.ControllerSocialLogin().then(function (response) {
                 cookiesService.SetCredentials(response.data);
-                LoginController.changeLanguage();
                 logger.success('Usuario autentificado');
                 $state.go('home');
             });
