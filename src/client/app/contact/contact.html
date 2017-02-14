@@ -39,7 +39,7 @@
         <p class="msg_error" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)" translate="required"></p>
       </div>
       </br>
-      <input class="btn-read-more" type="submit" name="submit" id="submitBtn" value="SEND" ng-click="vm.SubmitContact()" />
+      <button class="btn-read-more" type="submit" name="submit" id="submitBtn" translate="send" ng-click="vm.SubmitContact()"></button>
       <div id="resultMessageOk" class="alert-success">{{vm.resultMessageOk}}</div>
       <div id="resultMessageFail" class="alert-danger">{{vm.resultMessageFail}}</div>
 

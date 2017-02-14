@@ -18,6 +18,7 @@
       support: "SUPPORT",
       technical: "TECHNICAL SUPPORT",
       documentation: "DOCUMENTATION",
+      send: "SEND",
 
     });
     $translateProvider.translations('es', {
@@ -27,6 +28,7 @@
       support: "SOPORTE",
       technical: "SOPORTE TÉCNICO",
       documentation: "DOCUMENTACIÓN",
+      send: "ENVIAR",
     });
 
     $translateProvider.useSanitizeValueStrategy('escape');
