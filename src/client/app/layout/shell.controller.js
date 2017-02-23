@@ -16,6 +16,7 @@
     activate();
 
     function activate() {
+      console.log('Prueba deploy');
       socketFactory.init();
       logger.success(config.appTitle + ' loaded!', null);
       hideSplash();
