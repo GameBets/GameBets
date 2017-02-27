@@ -5,20 +5,14 @@
             .module('app.login')
             .controller('ControllerSocial', ControllerSocial);
 
-    ControllerSocial.$inject = ['dataservice', '$state', '$timeout', '$scope',
+    ControllerSocial.$inject = ['dataservice', '$translatePartialLoader', '$state', '$timeout', '$scope',
     '$translate', 'logger', 'cookiesService'];
 
-    function ControllerSocial(dataservice, $state, $scope , $translate, $timeout, logger, cookiesService) {
+    function ControllerSocial(dataservice, $translatePartialLoader, $state,
+      $scope , $translate, $timeout, logger, cookiesService) {
         var vm = this;
-
         social();
-        changeLanguage();
-
-        function changeLanguage() {
-          $scope.changeLanguage = function(key) {
-            $translate.use(key);
-          };
-        }
+        $translatePartialLoader.addPart('login');
 
         function social() {
             dataservice.ControllerSocialLogin().then(function (response) {

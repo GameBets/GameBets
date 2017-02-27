@@ -1,0 +1,9 @@
+{
+"contact": "CONTACT",
+"required": "This field is required",
+"valid_email": "Email not valid",
+"support": "SUPPORT",
+"technical": "TECHNICAL SUPPORT",
+"documentation": "DOCUMENTATION",
+"send": "SEND"
+}

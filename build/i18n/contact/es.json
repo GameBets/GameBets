@@ -1,0 +1,9 @@
+{
+"contact": "CONTACTO",
+"required": "El campo es obligatorio",
+"valid_email": "El email no es válido",
+"support": "SOPORTE",
+"technical": "SOPORTE TÉCNICO",
+"documentation": "DOCUMENTACIÓN",
+"send": "ENVIAR"
+}

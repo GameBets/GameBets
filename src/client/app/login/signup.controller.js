@@ -5,17 +5,20 @@
     .module('app.login')
     .controller('SignUpController', SignUpController);
 
-  SignUpController.$inject = ['dataservice', 'logger',  '$scope', '$translate', '$state',
+  SignUpController.$inject = ['dataservice', 'logger',  '$scope', '$translate',
+  '$translatePartialLoader', '$state',
     'cookiesService', 'headerService'
   ];
   /* @ngInject */
-  function SignUpController(dataservice, logger, $scope, $translate, $state, cookiesService, headerService) {
+  function SignUpController(dataservice, logger, $scope, $translate, $translatePartialLoader,
+     $state, cookiesService, headerService) {
     var vm = this;
     //Variables
     vm.inputType = 'password';
     vm.inputType2 = 'password';
     vm.imgSrc = '../../images/view.png';
     vm.imgSrc2 = '../../images/view.png';
+    $translatePartialLoader.addPart('login');
 
     //Datos del usuario
     vm.datos = {
@@ -37,14 +40,6 @@
     // function activate() {
     //   logger.info('Activated Users View');
     // }
-
-    changeLanguage();
-
-    function changeLanguage() {
-      $scope.changeLanguage = function(key) {
-        $translate.use(key);
-      };
-    }
 
     function limpiarCampos() {
       vm.datos.user = '';

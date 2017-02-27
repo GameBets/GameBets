@@ -3,7 +3,7 @@
 		<div class="top-head">
 			<ul class="header-in">
 				<li><a href="#" translate="help"> </a></li>
-				<li><a href="/contact" translate="conact_menu"></a></li>
+				<li><a href="/contact" translate="contact_menu"></a></li>
 				<li><a href="#" translate="how_to_use"></a></li>
 			</ul>
 			<div class="search">
@@ -33,7 +33,7 @@
 				<span class="menu"><img src="images/menu.png" alt=""> </span>
 				<ul>
 					<li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
-						<a class="color2" ng-show="$root.generalG" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+						<a class="color2" ng-show="$root.generalG" ui-sref="{{r.name}}" ng-bind-html="r.settings.content"  translate="{{r.title}}"></a>
 					</li>
 					<li class="nlightblue fade-selection-animation">
 						<a class="color6" ng-show="$root.signUpG" ng-click="" translate="sign_up_menu"></a>
@@ -53,8 +53,8 @@
 						<a id='logout' ng-show="$root.logoutG" class="color4" ng-click='vm.logout()' translate="logout_menu"></a>
 					</li>
 					<div class="lang">
-						<img src="images/eng.svg" class="lang-en" ng-click="changeLanguage('en')"></img>
-						<img src="images/spain.svg" class="lang-es" ng-click="changeLanguage('es')"></img>
+						<img src="images/eng.svg" class="lang-en" ng-click="vm.setLang('en')"></img>
+						<img src="images/spain.svg" class="lang-es" ng-click="vm.setLang('es')"></img>
 					</div>
 					<div class="clearfix"> </div>
 				</ul>

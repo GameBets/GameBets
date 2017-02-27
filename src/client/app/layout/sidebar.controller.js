@@ -5,17 +5,20 @@
     .module('app.layout')
     .controller('SidebarController', SidebarController);
 
-  SidebarController.$inject = ['$state','$scope', '$translate','routerHelper', '$uibModal', 'headerService'];
+  SidebarController.$inject = ['$state','$scope', '$translate', '$translatePartialLoader',
+  'routerHelper', '$uibModal', 'headerService'];
   /* @ngInject */
-  function SidebarController($state, $scope, $translate, routerHelper, $uibModal, headerService) {
+  function SidebarController($state, $scope, $translate, $translatePartialLoader,
+    routerHelper, $uibModal, headerService) {
     var vm = this;
+     $translatePartialLoader.addPart('layout');
     var states = routerHelper.getStates();
     vm.isCurrent = isCurrent;
     vm.showSignInModal = showSignInModal;
     vm.logout = logout;
+    vm.setLang = setLang;
   //  vm.changeLanguage = changeLanguage;
     activate();
-    changeLanguage();
 
     function activate() {
       getNavRoutes();
@@ -38,11 +41,11 @@
       return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
     }
 
-    function changeLanguage() {
-      $scope.changeLanguage = function(key) {
-        $translate.use(key);
-      };
-    }
+    function setLang(langKey) {
+         // You can change the language during runtime
+         console.log('Language set to ' + langKey);
+         $translate.use(langKey);
+       }
 
     function showSignInModal() {
       var modalInstance = $uibModal.open({

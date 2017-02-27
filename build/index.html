@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+    /* Since Angular has this but needs to load, this gives us the class early. */
+
+    .ng-hide {
+      display: none!important;
+    }
+  </style>
+  <title ng-bind="title">
+    GameBets
+  </title>
+  <meta charset="utf-8" />
+  <meta name="encoding" charset="utf-8"/>
+  <meta name="Gamebets" content="Join, play, Win!"/>
+  <meta name="author" content="Angel Conesa Camarena, Daniel Adrian Pribeagu and Luis Donat Girones"/>
+  <meta name="description" content="Pagina web de apuestas eSports, donde el principal objetivo es jugar un usuario contra otro donde se fijara una cantidad previa de dinero y el ganador se llevara todo excepto un 15% que se llevara la empresa organizador, es decir, Gamebets S.L."/>
+  <meta name="keywords" content="Gamebets, gamebets, apuestas, apuesta, esports, eSports, lol, league of legends, counterStrike, counter, strike, cs, cs:go, csgo, global, global ofensive, fifa, futbol, fifa17, games, bets, bet"/>
+  <meta http-equiv="refresh" content="3600; URL=index.html" />
+  <meta name="robots" content="index, nofollow" />
+  <meta name="date" content="2016-09-20T00:00:00+01:00"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <base href="/">
+
+  <link rel="stylesheet" href="styles/lib-5f0be7f4db.css">
+
+  <link rel="stylesheet" href="styles/app-37e7417f2f.css">
+  <!--<script src="node_modules/socket.io-client/dist/socket.io.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/imprimir.css" media="print"> -->
+  <link rel="stylesheet" href="styles/home.css" media="screen">
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/chat.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/profile.css">
+<!-- FAVICON FOR PADS, AND MOBILES.. -->
+  	<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+</head>
+
+<body>
+  <div>
+    <div ng-include="'app/layout/shell.html'"></div>
+    <div id="splash-page" ng-show="showSplash">
+      <div class="page-splash">
+        <div class="page-splash-message">
+          GameBets
+        </div>
+        <div class="progress progress-striped active page-progress-bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/lib-098066af7a.js"></script>
+
+  <script src="js/app-c69ccdaa5f.js"></script>
+
+</body>
+
+</html>
