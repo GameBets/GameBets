@@ -35,16 +35,16 @@ In the following link you will be able to find a live demo where you will see th
 
 - With 5 steps you will be able to deploy the app.
 
-- 1. `npm install gith`
+1. `npm install gith`
      `npm install forever -g`
 
-- 2. Check if script hook.sh is working.
+2. Check if script hook.sh is working.
 
-- 3. `forever hook.js`
+3. `forever hook.js`
 
-- 4. Set webhook on github. To do it you should go to Settings - Webhooks and Add new Webhook.
+4. Set webhook on github. To do it you should go to Settings - Webhooks and Add new Webhook.
 
-- 5. Finally make a push on github and check that everything is working.
+5. Finally make a push on github and check that everything is working.
 
 ## Running HotTowel
 
