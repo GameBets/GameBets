@@ -19,7 +19,7 @@
     return services;
 
     function init() {
-      socket = io.connect('http://localhost:8081');
+      socket = io.connect('http://conely.tk:8081');
     }
 
     function on(eventName, callback) {
